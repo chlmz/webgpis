@@ -9,9 +9,9 @@
     <!-- FUENTE SECUNDARIA: Montserrat (Para títulos, impactante) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap 5.3 CSS - CORREGIDO INTEGRITY -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome para Iconos - CORREGIDO INTEGRITY -->
+    <!-- Bootstrap 5.3 CSS - INTEGRITY CORREGIDO -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjHh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome para Iconos - INTEGRITY CORREGIDO -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5vJ4wJ3WfF9R5/Y1n7z3R9Gz4w0J8UqQ/9m0jL2/v/o9X0O5V+g6n7z+a4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
@@ -29,8 +29,14 @@
             /* Fuente base: legible y profesional */
             font-family: 'Roboto Condensed', sans-serif;
             color: var(--gpis-text-dark);
-            background-color: var(--gpis-bg-white);
             scroll-behavior: smooth;
+            
+            /* --- FLUIDEZ Y PARALLAX GLOBAL --- */
+            background-image: url('https://images.pexels.com/photos/1020352/pexels-photo-1020352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Abstracto (Fluidez del Tiempo) */
+            background-attachment: fixed; /* Clave del Parallax Global */
+            background-size: cover;
+            background-position: center;
+            background-color: #f0f4f8; /* Fallback */
         }
 
         /* Navbar Sticky y Estilo */
@@ -51,12 +57,31 @@
             color: var(--gpis-highlight) !important;
         }
 
-        /* Estilo General de Secciones */
+        /* Contenido de la Página Única: Ajuste de secciones para visibilidad */
         .page-content {
-            display: none;
-            min-height: calc(100vh - 120px);
-            padding-top: 5rem;
+            min-height: auto;
+            padding: 5rem 0;
+            position: relative;
+            /* Fondo semi-opaco para legibilidad sobre el Parallax fijo */
+            background-color: rgba(255, 255, 255, 0.95);
+            margin-top: 50px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Sombra para destacarse del fondo */
         }
+        
+        /* Alternar fondos para contraste visual entre secciones */
+        #home { 
+            padding-top: 0; 
+            margin-top: 0; 
+            background-color: transparent; /* El carrusel se encarga de su propio fondo */
+            box-shadow: none;
+        }
+        #about { background-color: rgba(240, 244, 248, 0.95); } /* Gris suave */
+        #research { background-color: rgba(255, 255, 255, 0.95); } /* Blanco limpio */
+        #impact { background-color: rgba(240, 244, 248, 0.95); } /* Gris suave */
+        #team { background-color: rgba(255, 255, 255, 0.95); } /* Blanco limpio */
+        #contact { background-color: rgba(240, 244, 248, 0.95); } /* Gris suave */
+
+
         .section-heading {
             /* Fuente impactante para títulos principales */
             font-family: 'Montserrat', sans-serif;
@@ -100,9 +125,9 @@
         .card-gpis {
             border: none;
             border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 76, 140, 0.1); /* Sombra más pronunciada del color primario */
+            box-shadow: 0 10px 30px rgba(0, 76, 140, 0.1);
             transition: var(--gpis-transition);
-            background-color: var(--gpis-secondary);
+            background-color: var(--gpis-bg-white); /* Fondo blanco puro para contraste */
             overflow: hidden;
         }
         .card-gpis:hover {
@@ -116,20 +141,20 @@
             transition: color 0.3s;
         }
 
-        /* Efecto Parallax */
+        /* Efecto Parallax (Mantengo el estilo original para la sección específica) */
         .parallax-section {
-            /* Imagen conceptual de crecimiento y estabilidad */
             background-image: url('https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-            background-attachment: fixed; /* Clave del efecto parallax */
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
             padding: 6rem 0;
             position: relative;
+            background-color: var(--gpis-primary); /* Sello de color para la sección */
         }
         .parallax-overlay {
-            background-color: rgba(0, 0, 0, 0.65); /* Más oscuro para contraste con el texto */
+            background-color: rgba(0, 0, 0, 0.5); /* Más ligero ya que la sección ya es oscura */
             position: absolute;
             top: 0;
             left: 0;
@@ -151,7 +176,7 @@
         .btn-primary-custom:hover {
             background-color: #003366;
             border-color: #003366;
-            transform: translateY(-2px); /* Pequeña animación */
+            transform: translateY(-2px);
         }
 
         /* Estilos de equipo y colaboradores */
@@ -194,7 +219,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto" id="nav-links">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Cultura</a></li>
                         <li class="nav-item"><a class="nav-link" href="#research">Investigación</a></li>
                         <li class="nav-item"><a class="nav-link" href="#impact">Impacto & Visión</a></li>
@@ -207,10 +232,10 @@
     </header>
 
     <main id="main-content">
-        <!-- RENDERED PAGES START HERE -->
+        <!-- RENDERED PAGES START HERE: Ahora una sola página fluida con scroll -->
 
         <!-- Home Page Content (Header Slider / Carousel) -->
-        <section id="home" class="page-content p-0 d-block">
+        <section id="home" class="page-content p-0">
             <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -218,24 +243,24 @@
                     <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <!-- Slide 1: Impacto en la Salud Pública - Imagen de comunidad/familia -->
-                    <div class="carousel-item active" style="background-image: url('https://images.pexels.com/photos/5699479/pexels-photo-5699479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+                    <!-- Slide 1: Impacto en la Salud Pública - Imagen de comunidad/familia (Conexión) -->
+                    <div class="carousel-item active" style="background-image: url('https://images.pexels.com/photos/7176527/pexels-photo-7176527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1 class="fw-bold animate__animated animate__fadeInDown">GPIS: Investigación para el Impacto Social</h1>
+                            <h1 class="fw-bold">GPIS: Investigación para el Impacto Social</h1>
                             <p class="lead fs-5 mt-3">Lideramos la epidemiología en salud mental materno-infantil en entornos de ingresos medios.</p>
                             <a href="#research" class="btn btn-lg btn-primary-custom fw-bold rounded-pill mt-3" role="button">Ver Proyecto Principal <i class="fa-solid fa-flask ms-2"></i></a>
                         </div>
                     </div>
-                    <!-- Slide 2: Innovación y Tecnología - Imagen de análisis de datos o IA -->
-                    <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/7740505/pexels-photo-7740505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+                    <!-- Slide 2: Innovación y Tecnología - Imagen de análisis de datos o IA (Abstracta) -->
+                    <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/8540702/pexels-photo-8540702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="fw-bold">Innovación Constante: De Datos a Soluciones</h1>
                             <p class="lead fs-5 mt-3">Usamos IA, cámaras portátiles y métodos computacionales avanzados para analizar interacciones sociales.</p>
                             <a href="#research" class="btn btn-lg btn-primary-custom fw-bold rounded-pill mt-3" role="button">Conoce la Metodología <i class="fa-solid fa-lightbulb ms-2"></i></a>
                         </div>
                     </div>
-                    <!-- Slide 3: Visión y Colaboración Global - Imagen de colaboración/mapa mundial -->
-                    <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/7065963/pexels-photo-7065963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+                    <!-- Slide 3: Visión y Colaboración Global - Imagen de colaboración/mapa mundial (Colaboración) -->
+                    <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/3472714/pexels-photo-3472714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="fw-bold">Buscando el Liderazgo Global</h1>
                             <p class="lead fs-5 mt-3">Nuestra visión es convertirnos en un grupo financiado (Wellcome, CNPq), haciendo de la investigación nuestra actividad principal.</p>
@@ -263,8 +288,8 @@
             </div>
         </section>
 
-        <!-- Our Culture & Values Page Content -->
-        <section id="about" class="page-content py-5 bg-white">
+        <!-- Our Culture & Values Section -->
+        <section id="about" class="page-content">
             <div class="container">
                 <h2 class="section-heading text-center">Nuestros Valores y Cultura</h2>
                 <div class="row g-4">
@@ -300,8 +325,8 @@
             </div>
         </section>
 
-        <!-- Primary Research Project Page Content -->
-        <section id="research" class="page-content py-5 bg-light">
+        <!-- Primary Research Project Section -->
+        <section id="research" class="page-content">
             <div class="container">
                 <h2 class="section-heading text-center">Investigación Destacada: Coorte de Nacimiento Rio Grande 2019</h2>
                 <div class="row">
@@ -312,7 +337,7 @@
                         
                         <!-- IMAGEN CONCEPTUAL DEL PROYECTO PRINCIPAL -->
                         <div class="text-center mb-5">
-                            <img src="https://images.pexels.com/photos/6303728/pexels-photo-6303728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen de un niño pequeño jugando tranquilamente con su madre, simbolizando la salud mental materno-infantil." class="img-fluid rounded shadow">
+                            <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen simple de un niño pequeño jugando tranquilamente con su madre, simbolizando la salud mental materno-infantil." class="img-fluid rounded shadow">
                             <small class="text-muted d-block mt-2">Seguimiento generacional: Nuestro enfoque en la salud mental intergeneracional.</small>
                         </div>
                         <!-- END IMAGEN CONCEPTUAL DEL PROYECTO PRINCIPAL -->
@@ -337,8 +362,8 @@
             </div>
         </section>
 
-        <!-- Impact & Vision (KPIs) Page Content with Parallax and Gemini Tool -->
-        <section id="impact" class="page-content py-5 bg-white">
+        <!-- Impact & Vision (KPIs) Section -->
+        <section id="impact" class="page-content">
             <div class="container">
                 <h2 class="section-heading text-center">Midiendo el Éxito: Impacto y Visión de Futuro</h2>
                 <p class="lead text-center mb-5">Nuestra propuesta de valor para las organizaciones financiadoras es una investigación innovadora y de alto impacto que se alinea con las prioridades de salud pública global.</p>
@@ -373,7 +398,7 @@
                     </div>
                 </div>
                 
-                <!-- SECCIÓN PARALLAX (Visión a Largo Plazo) -->
+                <!-- SECCIÓN PARALLAX ESPECÍFICA (Visión a Largo Plazo) -->
                 <div class="parallax-section my-5 rounded-3 shadow-lg">
                     <div class="parallax-overlay"></div>
                     <div class="container parallax-content text-center">
@@ -411,8 +436,8 @@
             </div>
         </section>
 
-        <!-- Team Members Page Content -->
-        <section id="team" class="page-content py-5 bg-light">
+        <!-- Team Members Section -->
+        <section id="team" class="page-content">
             <div class="container">
                 <h2 class="section-heading text-center">Conoce a Nuestro Equipo Dedicado</h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center" id="team-members-list">
@@ -421,8 +446,8 @@
             </div>
         </section>
 
-        <!-- Contact Page Content -->
-        <section id="contact" class="page-content py-5 bg-white">
+        <!-- Contact Section -->
+        <section id="contact" class="page-content">
             <div class="container text-center">
                 <h2 class="section-heading">Contáctanos</h2>
                 <p class="lead mb-4">Para colaboraciones, consultas de financiación o preguntas generales, comunícate con nuestro líder de grupo.</p>
@@ -454,7 +479,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS (Required for carousel and navbar toggler functionality) -->
+    <!-- Bootstrap JS (Required for carousel and navbar toggler functionality) - INTEGRITY CORREGIDO -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         // --- DATA MODELS (Para facilitar el mantenimiento) ---
@@ -513,41 +538,39 @@
                 </li>
             `).join('');
         }
+        
+        // --- INICIALIZACIÓN ---
 
-
-        // --- CLIENT-SIDE ROUTER ---
-
-        function navigate() {
-            // Determinar qué página mostrar según el hash de la URL
-            let hash = window.location.hash || '#home';
-            const pageId = hash.substring(1); // Eliminar el '#'
-
-            // 1. Ocultar todo el contenido de la página
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.style.display = 'none';
-            });
-
-            // 2. Mostrar la página solicitada
-            const activePage = document.getElementById(pageId);
-            if (activePage) {
-                activePage.style.display = 'block';
-            } else {
-                // Por defecto a inicio si el hash no es válido
-                document.getElementById('home').style.display = 'block';
-                hash = '#home';
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Establecer el año actual dinámicamente
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
             }
 
-            // 3. Actualizar el estilo del enlace de navegación activo
-            document.querySelectorAll('#nav-links .nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === hash) {
-                    link.classList.add('active');
-                }
+            // 2. Renderizar contenido dinámico
+            renderTeamMembers();
+            renderCollaborators();
+            
+            // 3. Adjuntar detector de eventos para la función Gemini
+            const generateBtn = document.getElementById('generateSummaryBtn');
+            if (generateBtn) {
+                generateBtn.addEventListener('click', handleGenerateSummary);
+            }
+            
+            // 4. Activar el scrolling suave para los links de la navbar (ya está en CSS)
+            document.querySelectorAll('#nav-links a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Cierra el menú en móvil después de hacer clic
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        bsCollapse.hide();
+                    }
+                });
             });
+        });
 
-            // Asegurar que la página se desplace hacia arriba al navegar
-            window.scrollTo(0, 0);
-        }
 
         // --- GEMINI API INTEGRATION (Community Translation) ---
 
@@ -648,30 +671,6 @@
                 spinner.classList.add('d-none');
             }
         }
-
-        // --- INICIALIZACIÓN ---
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // 1. Establecer el año actual dinámicamente
-            const yearElement = document.getElementById('currentYear');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-
-            // 2. Renderizar contenido dinámico
-            renderTeamMembers();
-            renderCollaborators();
-
-            // 3. Configurar el enrutador de cliente
-            window.addEventListener('hashchange', navigate);
-            navigate(); // Llamada de navegación inicial
-            
-            // 4. Adjuntar detector de eventos para la función Gemini
-            const generateBtn = document.getElementById('generateSummaryBtn');
-            if (generateBtn) {
-                generateBtn.addEventListener('click', handleGenerateSummary);
-            }
-        });
     </script>
 </body>
 </html>

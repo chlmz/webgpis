@@ -1,240 +1,659 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GPIS Research Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPIS Grupo de Investigación - Salud Pública e Innovación</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjHh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5vJ4wJ3WfF9R5/Y1n7z3R9Gz4w0J8UqQ/9m0jL2/v/o9X0O5V+g6n7z+a4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Variables de Diseño Moderno */
+        :root {
+            --gpis-primary: #004c8c; /* Azul Académico Profundo */
+            --gpis-secondary: #f0f4f8; /* Gris Suave y Limpio para Fondos */
+            --gpis-highlight: #ff6f61; /* Rojo Coral para Énfasis (Moderno) */
+            --gpis-text-dark: #212529;
+            --gpis-bg-white: #ffffff;
+            --gpis-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Slick Slider -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Custom Styles -->
-  <style>
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
-    .navbar {
-      background: rgba(0,0,0,0.8);
-    }
-    .navbar a {
-      color: #fff !important;
-      font-weight: 500;
-    }
-    .hero-slider img {
-      width: 100%;
-      height: 85vh;
-      object-fit: cover;
-    }
-    .hero-caption {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      text-align: center;
-      background: rgba(0,0,0,0.5);
-      padding: 2rem;
-      border-radius: 10px;
-    }
-    .section-parallax {
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-    .kpi-card {
-      border: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .kpi-card:hover {
-      transform: translateY(-5px);
-    }
-    footer {
-      background: #111;
-      color: #bbb;
-      padding: 2rem;
-    }
-  </style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gpis-text-dark);
+            background-color: var(--gpis-bg-white);
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Sticky y Estilo */
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--gpis-highlight) !important;
+        }
+
+        /* Estilo General de Secciones */
+        .page-content {
+            display: none;
+            min-height: calc(100vh - 120px);
+            padding-top: 5rem;
+        }
+        .section-heading {
+            color: var(--gpis-primary);
+            font-weight: 800;
+            margin-bottom: 3.5rem;
+            font-size: 2.8rem;
+        }
+
+        /* Estilo de Carrusel (Header Slider) */
+        .carousel-item {
+            height: 85vh; /* Altura moderna */
+            min-height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            bottom: 20%;
+        }
+        .carousel-caption h1 {
+            font-weight: 900;
+            font-size: 3.5rem;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        /* Tarjetas Modernas */
+        .card-gpis {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 76, 140, 0.1); /* Sombra más pronunciada del color primario */
+            transition: var(--gpis-transition);
+            background-color: var(--gpis-secondary);
+            overflow: hidden;
+        }
+        .card-gpis:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 76, 140, 0.2);
+            border-bottom: 4px solid var(--gpis-highlight);
+        }
+        .kpi-icon {
+            color: var(--gpis-highlight);
+            font-size: 3.5rem;
+            transition: color 0.3s;
+        }
+
+        /* Efecto Parallax */
+        .parallax-section {
+            background-image: url('https://placehold.co/1920x400/003c66/ffffff?text=Long-Term+Vision');
+            background-attachment: fixed; /* Clave del efecto parallax */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding: 6rem 0;
+            position: relative;
+        }
+        .parallax-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Estilo del Botón */
+        .btn-primary-custom {
+            background-color: var(--gpis-primary);
+            border-color: var(--gpis-primary);
+            transition: background-color 0.3s;
+        }
+        .btn-primary-custom:hover {
+            background-color: #003366;
+            border-color: #003366;
+            transform: translateY(-2px); /* Pequeña animación */
+        }
+
+        /* Estilos de equipo y colaboradores */
+        .team-member-card {
+            transition: var(--gpis-transition);
+        }
+        .team-member-card:hover {
+            border-left: 5px solid var(--gpis-highlight);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+            .carousel-item {
+                height: 60vh;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand text-white fw-bold" href="#home">GPIS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon text-white"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kpis">KPIs</a></li>
-        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navigation Bar (Sticky Menu) -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home">GPIS Research Group</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-links">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Cultura</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#research">Investigación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#impact">Impacto & Visión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Nuestro Equipo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<!-- Hero Slider -->
-<header id="home" class="hero-slider">
-  <div>
-    <img src="https://source.unsplash.com/1600x900/?science,team" alt="Research team">
-    <div class="hero-caption" data-aos="fade-up">
-      <h1>GPIS Research Group</h1>
-      <p>Social Impact & Constant Innovation in Epidemiology</p>
-    </div>
-  </div>
-  <div>
-    <img src="https://source.unsplash.com/1600x900/?health,research" alt="Health Research">
-    <div class="hero-caption" data-aos="fade-up">
-      <h1>2019 Rio Grande Birth Cohort</h1>
-      <p>Investigating life course epidemiology & intergenerational health</p>
-    </div>
-  </div>
-</header>
+    <main id="main-content">
+        <!-- RENDERED PAGES START HERE -->
 
-<!-- About Section -->
-<section id="about" class="py-5">
-  <div class="container" data-aos="fade-right">
-    <h2 class="text-center mb-4">Our Culture</h2>
-    <p class="lead text-center">
-      GPIS is built on <strong>horizontal structure</strong>, <strong>mutual trust</strong>, and 
-      <strong>collaboration</strong>. Guided by social impact and constant innovation, 
-      we aim to transform research into real-world health improvements.
-    </p>
-  </div>
-</section>
+        <!-- Home Page Content (Header Slider / Carousel) -->
+        <section id="home" class="page-content p-0 d-block">
+            <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Slide 1: Impacto en la Salud Pública -->
+                    <div class="carousel-item active" style="background-image: url('https://placehold.co/1920x1080/004c8c/ffffff?text=Salud+Publica+Materno+Infantil');">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="fw-bold animate__animated animate__fadeInDown">GPIS: Investigación para el Impacto Social</h1>
+                            <p class="lead fs-5 mt-3">Lideramos la epidemiología en salud mental materno-infantil en entornos de ingresos medios.</p>
+                            <a href="#research" class="btn btn-lg btn-primary-custom fw-bold rounded-pill mt-3" role="button">Ver Proyecto Principal <i class="fa-solid fa-flask ms-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Innovación y Tecnología -->
+                    <div class="carousel-item" style="background-image: url('https://placehold.co/1920x1080/004c8c/ff6f61?text=Inteligencia+Artificial+en+Investigacion');">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="fw-bold">Innovación Constante: De Datos a Soluciones</h1>
+                            <p class="lead fs-5 mt-3">Usamos IA, cámaras portátiles y métodos computacionales avanzados para analizar interacciones sociales.</p>
+                            <a href="#research" class="btn btn-lg btn-primary-custom fw-bold rounded-pill mt-3" role="button">Conoce la Metodología <i class="fa-solid fa-lightbulb ms-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Visión y Colaboración Global -->
+                    <div class="carousel-item" style="background-image: url('https://placehold.co/1920x1080/004c8c/ffc107?text=Colaboracion+Internacional+y+Fondos');">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="fw-bold">Buscando el Liderazgo Global</h1>
+                            <p class="lead fs-5 mt-3">Nuestra visión es convertirnos en un grupo financiado (Wellcome, CNPq), haciendo de la investigación nuestra actividad principal.</p>
+                            <a href="#impact" class="btn btn-lg btn-primary-custom fw-bold rounded-pill mt-3" role="button">Nuestras Metas <i class="fa-solid fa-sack-dollar ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+            
+            <div class="container py-5">
+                 <div class="row text-center justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h3 fw-bolder mb-4 text-primary mt-4">Impulsados por la Confianza, la Innovación y la Acción Social</h2>
+                        <p class="fs-5 text-muted">Nuestra estructura horizontal, basada en la **confianza**, fomenta la autonomía. Buscamos producir ciencia de clase mundial y asegurar su **aplicación directa** para mejorar la salud de la población. Innovamos constantemente, desde la recopilación de datos hasta la participación comunitaria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Parallax -->
-<section class="section-parallax" style="background-image:url('https://source.unsplash.com/1600x900/?community,health');">
-  <div class="container">
-    <h2 data-aos="fade-up">Our Vision</h2>
-    <p data-aos="fade-up" data-aos-delay="200">
-      To become a leading, well-funded research group managing large-scale projects 
-      with direct social impact in public health.
-    </p>
-  </div>
-</section>
+        <!-- Our Culture & Values Page Content -->
+        <section id="about" class="page-content py-5 bg-white">
+            <div class="container">
+                <h2 class="section-heading text-center">Nuestros Valores y Cultura</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-gpis p-4 h-100">
+                            <i class="fa-solid fa-users-line fa-3x mb-3 text-primary"></i>
+                            <h3 class="h5 card-title fw-bold">Confianza No Jerárquica</h3>
+                            <p class="card-text">Operamos como iguales, con fuerte **confianza mutua** y autonomía. Cada contribución, sin importar el rol, es valorada y respetada.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-gpis p-4 h-100">
+                            <i class="fa-solid fa-heart-pulse fa-3x mb-3 text-primary"></i>
+                            <h3 class="h5 card-title fw-bold">Impacto Social Prioritario</h3>
+                            <p class="card-text">Ciencia para el bien público. Comprometidos con traducir hallazgos en **soluciones tangibles** que mejoren la salud de la comunidad que estudiamos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-gpis p-4 h-100">
+                            <i class="fa-solid fa-lightbulb fa-3x mb-3 text-primary"></i>
+                            <h3 class="h5 card-title fw-bold">Innovación y Vanguardia</h3>
+                            <p class="card-text">Evitamos el estancamiento. Exploramos métodos de vanguardia, desde análisis de datos avanzados hasta IA, para **optimizar nuestra investigación**.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-gpis p-4 h-100">
+                            <i class="fa-solid fa-handshake-angle fa-3x mb-3 text-primary"></i>
+                            <h3 class="h5 card-title fw-bold">Colaboración e Inclusión</h3>
+                            <p class="card-text">Compartimos objetivos comunes y valoramos toda participación. Buscamos ser un mejor entorno de **aprendizaje y mentoría** para nuestros estudiantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Project -->
-<section id="project" class="py-5 bg-light">
-  <div class="container" data-aos="fade-left">
-    <h2 class="text-center mb-5">Primary Project: 2019 Rio Grande Birth Cohort</h2>
-    <p class="text-center">
-      A prospective, population-based cohort of 2,051 mothers and infants born in Rio Grande (2019).
-      We study mental health, intergenerational effects, and crisis impacts such as COVID-19 and floods.
-    </p>
-    <ul>
-      <li>Wearable cameras & AI to study mother-child interactions</li>
-      <li>Flood impact studies on maternal and child mental health</li>
-    </ul>
-    <p class="mt-3"><strong>Collaborators:</strong> Rebecca Pearson (MMU), Ana Luiza Soares (Bristol), Marc Bornstein (NICHD).</p>
-  </div>
-</section>
+        <!-- Primary Research Project Page Content -->
+        <section id="research" class="page-content py-5 bg-light">
+            <div class="container">
+                <h2 class="section-heading text-center">Investigación Destacada: Coorte de Nacimiento Rio Grande 2019</h2>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h3 class="h4 fw-bold text-primary mb-3">Resumen del Proyecto</h3>
+                        <p class="lead">Estudio de cohorte fijo, prospectivo y basado en la población diseñado para investigar la epidemiología del curso de vida de la salud mental y su transmisión intergeneracional en un país de ingresos medios.</p>
+                        <p class="mb-4">El estudio incluye **2,051 madres y sus bebés** nacidos en Rio Grande en 2019, proporcionando un conjunto de datos culturalmente específico y único.</p>
+                        
+                        <!-- IMAGE DEMO LOCATION -->
+                        <div class="text-center mb-5">
+                            <img src="https://placehold.co/800x450/004c8c/ffc107?text=Visualizacion+de+Cohorte+e+Interacciones" alt="Imagen conceptual que representa el seguimiento de la salud mental a lo largo de las generaciones en un entorno comunitario diverso." class="img-fluid rounded shadow">
+                            <small class="text-muted d-block mt-2">Representación visual de nuestro enfoque en la salud mental intergeneracional.</small>
+                        </div>
+                        <!-- END IMAGE DEMO LOCATION -->
 
-<!-- KPIs -->
-<section id="kpis" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5" data-aos="fade-up">Our Key Performance Indicators</h2>
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="zoom-in">
-        <div class="card kpi-card p-4 text-center">
-          <h3>Publications</h3>
-          <p>High-quality publications in impact journals. Quality over quantity.</p>
+                        <h3 class="h4 fw-bold text-primary mt-4 mb-3">Hallazgos Clave y Subproyectos</h3>
+                        <div class="card p-4 mb-4 border-warning border-3 shadow-sm">
+                            <p class="fs-5 mb-2 fw-bold text-danger">Hallazgo Crítico: Impacto del COVID-19</p>
+                            <p class="card-text">Se encontró un aumento significativo en problemas de salud mental materna durante la pandemia de COVID-19: un **aumento de seis veces** en síntomas depresivos y de **tres veces** en ansiedad en comparación con la línea de base.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-light"><i class="fa-solid fa-mobile-screen-button me-3 text-primary fa-lg"></i>**Análisis de Interacción con IA:** Uso de cámaras portátiles y reconocimiento facial con IA para analizar interacciones madre-hijo.</li>
+                            <li class="list-group-item bg-light"><i class="fa-solid fa-water me-3 text-primary fa-lg"></i>**Epidemiología de Desastres:** Evaluación de los efectos de las inundaciones de 2024 en Rio Grande do Sul sobre la salud mental materna e infantil.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <h3 class="h4 fw-bold text-primary mb-3">Colaboradores Internacionales Clave</h3>
+                        <ul class="list-group shadow" id="collaborators-list">
+                            <!-- Collaborator items will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Vision (KPIs) Page Content with Parallax and Gemini Tool -->
+        <section id="impact" class="page-content py-5 bg-white">
+            <div class="container">
+                <h2 class="section-heading text-center">Midiendo el Éxito: Impacto y Visión de Futuro</h2>
+                <p class="lead text-center mb-5">Nuestra propuesta de valor para las organizaciones financiadoras es una investigación innovadora y de alto impacto que se alinea con las prioridades de salud pública global.</p>
+                <div class="row text-center g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-4 bg-white rounded shadow-sm h-100 border border-primary border-3">
+                            <div class="kpi-icon mb-3"><i class="fa-solid fa-book-open"></i></div>
+                            <h3 class="h5 fw-bold text-primary">Publicaciones de Calidad</h3>
+                            <p class="mb-0">El éxito se mide por la **calidad sobre la cantidad**, enfatizando las publicaciones en revistas de alto factor de impacto.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-4 bg-white rounded shadow-sm h-100 border border-primary border-3">
+                            <div class="kpi-icon mb-3"><i class="fa-solid fa-sack-dollar"></i></div>
+                            <h3 class="h5 fw-bold text-primary">Financiamiento Estratégico</h3>
+                            <p class="mb-0">Búsqueda de fondos nacionales (**CNPq**) e internacionales (**Wellcome**) para sostener la investigación como actividad principal del equipo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-4 bg-white rounded shadow-sm h-100">
+                            <div class="kpi-icon mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h3 class="h5 fw-bold text-primary">Métrica Futura: Mentoría</h3>
+                            <p class="mb-0">Implementaremos un sistema formal para rastrear el crecimiento profesional de investigadores en etapa inicial (presentaciones, tesis completadas).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-4 bg-white rounded shadow-sm h-100">
+                            <div class="kpi-icon mb-3"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <h3 class="h5 fw-bold text-primary">Métrica Futura: Alcance Social</h3>
+                            <p class="mb-0">Desarrollaremos un sistema para medir la aparición en medios y presentaciones comunitarias, traduciendo la ciencia al público general.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SECCIÓN PARALLAX (Visión a Largo Plazo) -->
+                <div class="parallax-section my-5 rounded-3 shadow-lg">
+                    <div class="parallax-overlay"></div>
+                    <div class="container parallax-content text-center">
+                        <h4 class="h2 fw-bold mb-3 text-warning">Nuestra Visión a Largo Plazo</h4>
+                        <p class="fs-4 fw-light">Aspiramos a ser un grupo de investigación líder, bien financiado, donde cada miembro pueda perseguir sus intereses de investigación como su foco profesional principal.</p>
+                    </div>
+                </div>
+                <!-- FIN SECCIÓN PARALLAX -->
+
+
+                <!-- GEMINI API FEATURE: Community Translation Tool -->
+                <div class="row mt-5 pt-5 border-top border-2">
+                    <div class="col-12 text-center">
+                        <h3 class="section-heading text-center">Herramienta de Traducción Comunitaria ✨</h3>
+                        <p class="lead text-muted">Utiliza la IA Gemini para traducir hallazgos complejos en publicaciones sencillas y de alto impacto para redes sociales, impulsando nuestro KPI de **Impacto Social**.</p>
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card p-4 shadow-lg border-0 bg-light">
+                            <label for="researchInput" class="form-label fw-bold">Hallazgo Académico a Traducir:</label>
+                            <textarea id="researchInput" class="form-control mb-3" rows="3" placeholder="Pega aquí el texto científico...">The study found that maternal depression and anxiety surged during the pandemic, increasing health risks for both mothers and their children.</textarea>
+
+                            <button id="generateSummaryBtn" class="btn btn-primary-custom btn-lg fw-bold mb-3 w-100">
+                                <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
+                                ✨ Generar Resumen Comunitario
+                            </button>
+
+                            <div id="summaryOutput" class="alert alert-secondary d-none text-start" role="alert">
+                                <!-- Summary output goes here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END GEMINI API FEATURE -->
+
+            </div>
+        </section>
+
+        <!-- Team Members Page Content -->
+        <section id="team" class="page-content py-5 bg-light">
+            <div class="container">
+                <h2 class="section-heading text-center">Conoce a Nuestro Equipo Dedicado</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center" id="team-members-list">
+                    <!-- Team member cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Content -->
+        <section id="contact" class="page-content py-5 bg-white">
+            <div class="container text-center">
+                <h2 class="section-heading">Contáctanos</h2>
+                <p class="lead mb-4">Para colaboraciones, consultas de financiación o preguntas generales, comunícate con nuestro líder de grupo.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 p-4 border rounded shadow-sm">
+                        <ul class="list-unstyled text-center">
+                            <li class="mb-2"><i class="fa-solid fa-user-tie me-2 text-primary"></i> <span class="fw-bold">Christian Loret de Mola Zanatti</span></li>
+                            <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-primary"></i> <a href="mailto:chlmz@yahoo.com" class="text-decoration-none">chlmz@yahoo.com</a></li>
+                            <li class="mb-2"><i class="fa-solid fa-phone me-2 text-primary"></i> +55 53 981150471</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-2 mb-md-0">&copy; <span id="currentYear"></span> GPIS Research Group. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/coorterg2019" target="_blank" class="text-white mx-2" aria-label="Instagram"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="https://facebook.com/coorte de rg 2019" target="_blank" class="text-white mx-2" aria-label="Facebook"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+                    <a href="mailto:chlmz@yahoo.com" class="text-white mx-2" aria-label="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card kpi-card p-4 text-center">
-          <h3>Funding</h3>
-          <p>Grants from CNPq and Wellcome to sustain research as a profession.</p>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card kpi-card p-4 text-center">
-          <h3>Capacity & Impact</h3>
-          <p>Tracking student growth & community impact as future KPIs.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- Team -->
-<section id="team" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-5" data-aos="fade-up">Meet the Team</h2>
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="card h-100 text-center p-3">
-          <h5>Christian Loret de Mola</h5>
-          <p>Founder & Leader</p>
-          <p><a href="mailto:chlmz@yahoo.com">chlmz@yahoo.com</a></p>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 text-center p-3">
-          <h5>Rafaela Costa Martins</h5>
-          <p>Researcher</p>
-          <p><a href="mailto:rafamartins1@gmail.com">rafamartins1@gmail.com</a></p>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="card h-100 text-center p-3">
-          <h5>Francine dos Santos Costa</h5>
-          <p>Researcher</p>
-          <p><a href="mailto:francinesct@gmail.com">francinesct@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-    <!-- You can continue cards for all other members -->
-  </div>
-</section>
+    <!-- Bootstrap JS (Required for carousel and navbar toggler functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // --- DATA MODELS (Para facilitar el mantenimiento) ---
 
-<!-- Contact -->
-<section id="contact" class="py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <p class="text-center">Email: <a href="mailto:chlmz@yahoo.com">chlmz@yahoo.com</a> | Phone: +55 53 981150471</p>
-  </div>
-</section>
+        const teamMembers = [
+            { name: "Christian Loret de Mola Zanatti", role: "Fundador, Líder y Coordinador PPGSP", affiliations: "FURG, PPGSP, CHANGE Research Working Group at Universidad Científica del Sur.", email: "chlmz@yahoo.com", phone: "55 53 981150471", orcid: "" },
+            { name: "Rafaela Costa Martins", role: "Investigadora", affiliations: "FURG, Human Development and Violence Research Centre (DOVE), and causale consultoria.", email: "rafamartins1@gmail.com", orcid: "https://orcid.org/0000-0003-3538-7228" },
+            { name: "Francine dos Santos Costa", role: "Investigadora", affiliations: "FURG and Universidade Federal de Pelotas, Centro de Equidade.", email: "francinesct@gmail.com", orcid: "https://orcid.org/0000-0001-9558-937X" },
+            { name: "Cauane Blumenberg", role: "Investigadora", affiliations: "FURG, Human Development and Violence Research Centre (DOVE), and causale consultoria.", email: "cauane.epi@gmail.com", orcid: "https://orcid.org/0000-0002-4580-3849" },
+            { name: "Thais Martins Silva", role: "Investigadora", affiliations: "FURG and Human Development and Violence Research Centre (DOVE).", email: "thaismartins88@hotmail.com", orcid: "https://orcid.org/0000-0001-5049-2435" },
+            { name: "Romina Buffarini", role: "Investigadora", affiliations: "FURG and Post-graduate Program in Health Sciences.", email: "romibuffarini@gmail.com", orcid: "https://orcid.org/0000-0002-6905-8767" },
+            { name: "Lorena Goulart Vieira", role: "Investigadora", affiliations: "No listado.", email: "logoulartvieira@gmail.com", orcid: "https://orcid.org/0009-0009-9179-3942" }
+        ];
 
-<!-- Footer -->
-<footer class="text-center">
-  <p>&copy; 2025 GPIS Research Group | Designed for academic excellence</p>
-</footer>
+        const collaborators = [
+            { name: "Rebecca Pearson", affiliation: "Manchester Metropolitan University (MMU). Experta en métodos observacionales y computacionales." },
+            { name: "Ana Luiza Goncalves Soares", affiliation: "University of Bristol. Experta en epidemiología del curso de vida y análisis longitudinales avanzados." },
+            { name: "Marc Bornstein", affiliation: "National Institute of Child Health and Human Development. Experto en desarrollo infantil y estudios familiares." }
+        ];
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.hero-slider').slick({
-      autoplay: true,
-      autoplaySpeed: 4000,
-      arrows: true,
-      dots: true,
-      fade: true,
-      cssEase: 'linear'
-    });
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  });
-</script>
+
+        // --- DYNAMIC RENDERING FUNCTIONS ---
+
+        function renderTeamMembers() {
+            const container = document.getElementById('team-members-list');
+            if (!container) return; // Guard clause
+
+            container.innerHTML = teamMembers.map(member => {
+                const phoneHtml = member.phone ? `<p class="small mb-0"><i class="fa-solid fa-phone me-1"></i> ${member.phone}</p>` : '';
+                const orcidHtml = member.orcid ? `<a href="${member.orcid}" target="_blank" class="small"><i class="fa-brands fa-orcid me-1"></i> ORCID</a>` : '';
+                const roleHtml = member.role ? `<p class="mb-1"><small class="text-muted">${member.role}</small></p>` : '';
+                
+                return `
+                    <div class="col">
+                        <div class="card team-member-card p-3 h-100">
+                            <h4 class="h5 fw-bold">${member.name}</h4>
+                            ${roleHtml}
+                            <p class="small mb-2">Afiliaciones: ${member.affiliations}</p>
+                            <a href="mailto:${member.email}" class="small"><i class="fa-solid fa-envelope me-1"></i> ${member.email}</a>
+                            ${orcidHtml}
+                            ${phoneHtml}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderCollaborators() {
+            const container = document.getElementById('collaborators-list');
+            if (!container) return; // Guard clause
+
+            container.innerHTML = collaborators.map(collaborator => `
+                <li class="list-group-item">
+                    <span class="fw-bold">${collaborator.name}</span>
+                    <br><small>${collaborator.affiliation}</small>
+                </li>
+            `).join('');
+        }
+
+
+        // --- CLIENT-SIDE ROUTER ---
+
+        function navigate() {
+            // Determinar qué página mostrar según el hash de la URL
+            let hash = window.location.hash || '#home';
+            const pageId = hash.substring(1); // Eliminar el '#'
+
+            // 1. Ocultar todo el contenido de la página
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // 2. Mostrar la página solicitada
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.style.display = 'block';
+            } else {
+                // Por defecto a inicio si el hash no es válido
+                document.getElementById('home').style.display = 'block';
+                hash = '#home';
+            }
+
+            // 3. Actualizar el estilo del enlace de navegación activo
+            document.querySelectorAll('#nav-links .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Asegurar que la página se desplace hacia arriba al navegar
+            window.scrollTo(0, 0);
+        }
+
+        // --- GEMINI API INTEGRATION (Community Translation) ---
+
+        const API_KEY = ""; // Clave de API proporcionada por el entorno
+        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
+
+        /**
+         * Llama a la API de Gemini con retroceso exponencial.
+         * @param {string} prompt - La consulta del usuario.
+         * @param {number} retries - Número máximo de reintentos.
+         * @returns {Promise<string>} - La respuesta de texto generada.
+         */
+        async function callGeminiApi(prompt, retries = 3) {
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: {
+                    parts: [{ text: "Eres un experto en comunicación de salud pública. Tu objetivo es traducir hallazgos académicos complejos y llenos de jerga a un resumen conciso, fácil de entender y no académico, adecuado para una audiencia comunitaria o redes sociales (como Instagram/Facebook). Concéntrate en el impacto y la urgencia en el mundo real." }]
+                }
+            };
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 429 && i < retries - 1) {
+                            const delay = Math.pow(2, i) * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            continue;
+                        }
+                        throw new Error(`La solicitud a la API falló con estado ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                    if (!text) {
+                        throw new Error("No se encontró contenido de texto en la respuesta de la API.");
+                    }
+
+                    return text;
+
+                } catch (error) {
+                    console.error(`El intento ${i + 1} falló:`, error.message);
+                    if (i === retries - 1) {
+                        throw new Error("Fallo al contactar con la API de Gemini después de varios reintentos.");
+                    }
+                }
+            }
+        }
+
+        async function handleGenerateSummary() {
+            const inputElement = document.getElementById('researchInput');
+            const outputElement = document.getElementById('summaryOutput');
+            const button = document.getElementById('generateSummaryBtn');
+            const spinner = document.getElementById('loadingSpinner');
+
+            const academicText = inputElement.value.trim();
+
+            if (!academicText) {
+                outputElement.textContent = "Por favor, pega el hallazgo académico que deseas traducir.";
+                outputElement.classList.remove('d-none', 'alert-success', 'alert-secondary');
+                outputElement.classList.add('alert-danger');
+                return;
+            }
+
+            // Estado de la UI: Cargando
+            button.disabled = true;
+            spinner.classList.remove('d-none');
+            outputElement.classList.add('d-none');
+            outputElement.classList.remove('alert-danger', 'alert-success');
+            outputElement.textContent = '';
+
+
+            const prompt = `Translate the following academic finding into a simple, high-impact message suitable for a local community audience and social media: "${academicText}"`;
+
+            try {
+                const summary = await callGeminiApi(prompt);
+
+                // Estado de la UI: Éxito
+                outputElement.textContent = summary;
+                outputElement.classList.remove('d-none', 'alert-secondary');
+                outputElement.classList.add('alert-success');
+
+            } catch (error) {
+                // Estado de la UI: Error
+                outputElement.textContent = `Error al generar el resumen: ${error.message}. Por favor, inténtalo de nuevo más tarde.`;
+                outputElement.classList.remove('d-none', 'alert-secondary');
+                outputElement.classList.add('alert-danger');
+
+            } finally {
+                // Estado de la UI: Completo
+                button.disabled = false;
+                spinner.classList.add('d-none');
+            }
+        }
+
+        // --- INICIALIZACIÓN ---
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Establecer el año actual dinámicamente
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // 2. Renderizar contenido dinámico
+            renderTeamMembers();
+            renderCollaborators();
+
+            // 3. Configurar el enrutador de cliente
+            window.addEventListener('hashchange', navigate);
+            navigate(); // Llamada de navegación inicial
+            
+            // 4. Adjuntar detector de eventos para la función Gemini
+            const generateBtn = document.getElementById('generateSummaryBtn');
+            if (generateBtn) {
+                generateBtn.addEventListener('click', handleGenerateSummary);
+            }
+        });
+    </script>
 </body>
 </html>
+

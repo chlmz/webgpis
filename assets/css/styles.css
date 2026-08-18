@@ -532,6 +532,44 @@ body {
     color: #fff;
     text-decoration: none;
 }
+/* Duas colunas: texto esquerda, depoimento direita */
+.gpis-impact-teaser__layout {
+    display: grid;
+    grid-template-columns: 53fr 42fr;
+    gap: 6%;
+    align-items: center;
+}
+/* Testemunho editorial — sem card, sem fundo */
+.gpis-impact-teaser__quote {
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    border: none;
+    border-left: 2px solid var(--gpis-terracota-sul);
+}
+.gpis-impact-teaser__quote-text {
+    font-size: clamp(1.15rem, 1.8vw, 1.375rem);
+    color: rgba(255,255,255,0.92);
+    font-style: italic;
+    line-height: 1.65;
+    margin: 0 0 0.875rem;
+}
+.gpis-impact-teaser__quote-attr {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.50);
+    line-height: 1.5;
+}
+@media (max-width: 767px) {
+    .gpis-impact-teaser__layout {
+        grid-template-columns: 1fr;
+    }
+    .gpis-impact-teaser__quote {
+        margin-top: 2.5rem;
+        padding-left: 0;
+        padding-top: 2rem;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.18);
+    }
+}
 
 /* ============================================================
    PESSOAS — COMPACTO (HOME)

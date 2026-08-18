@@ -4,22 +4,23 @@
 :root {
     --gpis-primary:    #004c8c;
     --gpis-primary-dk: #002d5c;
-    --gpis-accent:     #ff6f61;
-    --gpis-text:       #1a2533;
-    --gpis-text-muted: #5a6475;
-    --gpis-bg:         #ffffff;
-    --gpis-bg-soft:    #faf9f6;
-    --gpis-border:     #dde3eb;
+    --gpis-accent:     #D87559;
+    --gpis-text:       #1C2B3A;
+    --gpis-text-muted: #5E6B7C;
+    --gpis-bg:         #FCFAF7;
+    --gpis-bg-soft:    #F2EBE2;
+    --gpis-border:     #E2D8CE;
+    --gpis-radius:     14px;
 }
 
 html { scroll-padding-top: 68px; }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 1rem;
     color: var(--gpis-text);
     background: var(--gpis-bg);
-    line-height: 1.7;
+    line-height: 1.72;
     scroll-behavior: smooth;
 }
 
@@ -56,12 +57,12 @@ body {
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: 0.04em;
 }
 .navbar-brand small {
     display: block;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.14em;
@@ -84,23 +85,23 @@ body {
 ============================================================ */
 .gpis-btn {
     display: inline-block;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.92rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     padding: 0.8rem 1.85rem;
-    border-radius: 3px;
+    border-radius: var(--gpis-radius);
     text-decoration: none;
     transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .gpis-btn--primary {
-    background: var(--gpis-primary);
+    background: var(--gpis-accent);
     color: #fff;
-    border: 2px solid var(--gpis-primary);
+    border: 2px solid var(--gpis-accent);
 }
 .gpis-btn--primary:hover {
-    background: var(--gpis-primary-dk);
-    border-color: var(--gpis-primary-dk);
+    background: #c2634a;
+    border-color: #c2634a;
     color: #fff;
     text-decoration: none;
 }
@@ -116,12 +117,12 @@ body {
 }
 .gpis-btn--white {
     display: inline-block;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.92rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     padding: 0.8rem 1.85rem;
-    border-radius: 3px;
+    border-radius: var(--gpis-radius);
     text-decoration: none;
     background: #fff;
     color: var(--gpis-primary);
@@ -135,12 +136,12 @@ body {
 }
 .gpis-btn--outline-light {
     display: inline-block;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.92rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     padding: 0.8rem 1.85rem;
-    border-radius: 3px;
+    border-radius: var(--gpis-radius);
     text-decoration: none;
     background: transparent;
     color: rgba(255,255,255,0.88);
@@ -158,15 +159,19 @@ body {
    HERO (CLARO)
 ============================================================ */
 .gpis-hero {
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     background: var(--gpis-bg);
     border-bottom: 1px solid var(--gpis-border);
+    overflow: hidden;
 }
-.gpis-hero__inner {
-    padding: 6rem 0 5rem;
-    max-width: 680px;
+.gpis-hero__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 8rem 0 7rem;
 }
 .gpis-hero__kicker {
     display: block;
@@ -180,7 +185,7 @@ body {
 .gpis-hero__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.12;
     color: var(--gpis-primary-dk);
     margin-bottom: 1.5rem;
@@ -191,10 +196,9 @@ body {
     color: var(--gpis-text-muted);
     line-height: 1.75;
     margin-bottom: 1.25rem;
-    max-width: 580px;
 }
 .gpis-hero__disciplines {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     letter-spacing: 0.08em;
     color: var(--gpis-text-muted);
     opacity: 0.75;
@@ -206,6 +210,49 @@ body {
     gap: 0.75rem;
 }
 
+/* Hero — formas decorativas */
+.gpis-hero__deco {
+    position: relative;
+    height: 400px;
+}
+.gpis-hero__deco-blob {
+    position: absolute;
+    display: block;
+}
+.gpis-hero__deco-blob--1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(216, 117, 89, 0.1);
+    top: 45%;
+    left: 50%;
+    transform: translate(-35%, -55%);
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+}
+.gpis-hero__deco-blob--2 {
+    width: 190px;
+    height: 190px;
+    background: rgba(0, 77, 140, 0.07);
+    bottom: 8%;
+    right: 8%;
+    border-radius: 40% 60% 65% 35% / 55% 45% 55% 45%;
+}
+.gpis-hero__deco-blob--3 {
+    width: 110px;
+    height: 110px;
+    background: rgba(216, 117, 89, 0.16);
+    top: 8%;
+    right: 18%;
+    border-radius: 50%;
+}
+
+@media (max-width: 991px) {
+    .gpis-hero__layout {
+        grid-template-columns: 1fr;
+        padding: 6rem 0 5rem;
+    }
+    .gpis-hero__deco { display: none; }
+}
+
 /* ============================================================
    EYEBROW + SECTION LABELS
 ============================================================ */
@@ -215,7 +262,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gpis-primary);
+    color: var(--gpis-accent);
     margin-bottom: 0.75rem;
 }
 .gpis-eyebrow--light {
@@ -224,7 +271,7 @@ body {
 .gpis-section-title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.15;
     color: var(--gpis-primary-dk);
     margin-bottom: 0.85rem;
@@ -241,34 +288,27 @@ body {
    O QUE QUEREMOS ENTENDER (HOME)
 ============================================================ */
 .gpis-research {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-bg-soft);
 }
 .gpis-research__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-top: 2px solid var(--gpis-primary);
+    gap: 1.25rem;
 }
 .gpis-research__item {
-    padding: 2.25rem 2.5rem 2.25rem 0;
-    border-bottom: 1px solid var(--gpis-border);
-}
-.gpis-research__item:nth-child(even) {
-    padding-left: 2.5rem;
-    padding-right: 0;
-    border-left: 1px solid var(--gpis-border);
-}
-.gpis-research__item:nth-last-child(-n+2) {
-    border-bottom: none;
+    background: var(--gpis-bg);
+    border-radius: var(--gpis-radius);
+    padding: 2.5rem;
 }
 .gpis-research__num {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 0.25em;
-    color: var(--gpis-primary);
-    opacity: 0.28;
+    color: var(--gpis-accent);
+    opacity: 0.5;
     margin-bottom: 0.85rem;
 }
 .gpis-research__item-title {
@@ -280,52 +320,46 @@ body {
     line-height: 1.3;
 }
 .gpis-research__item-desc {
-    font-size: 0.95rem;
+    font-size: 0.97rem;
     color: var(--gpis-text-muted);
     line-height: 1.72;
     margin: 0;
 }
 @media (max-width: 767px) {
     .gpis-research__grid { grid-template-columns: 1fr; }
-    .gpis-research__item,
-    .gpis-research__item:nth-child(even) {
-        padding: 2rem 0;
-        border-left: none;
-        border-bottom: 1px solid var(--gpis-border);
-    }
-    .gpis-research__item:last-child { border-bottom: none; }
 }
 
 /* ============================================================
    PROJETOS (HOME)
 ============================================================ */
 .gpis-projects {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-bg);
 }
 .gpis-projects__featured {
-    border-top: 2px solid var(--gpis-primary);
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--gpis-border);
+    background: var(--gpis-bg-soft);
+    border-radius: var(--gpis-radius);
+    padding: 2.75rem;
     display: grid;
-    grid-template-columns: 1fr 180px;
-    gap: 3rem;
+    grid-template-columns: 1fr 160px;
+    gap: 2.5rem;
     align-items: start;
+    margin-bottom: 1.25rem;
 }
 .gpis-projects__featured-tag {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gpis-primary);
-    opacity: 0.55;
+    color: var(--gpis-accent);
+    opacity: 0.8;
     margin-bottom: 0.55rem;
 }
 .gpis-projects__featured-title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-text);
     margin: 0 0 0.75rem;
     line-height: 1.25;
@@ -338,7 +372,7 @@ body {
     max-width: 520px;
 }
 .gpis-projects__featured-link {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--gpis-primary);
     text-decoration: none;
@@ -352,64 +386,70 @@ body {
     text-decoration: none;
 }
 .gpis-projects__stat {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 .gpis-projects__stat:last-child { margin-bottom: 0; }
 .gpis-projects__stat-value {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.75rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-primary);
     line-height: 1.1;
 }
 .gpis-projects__stat-label {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--gpis-text-muted);
     line-height: 1.45;
     margin-top: 0.2rem;
 }
 .gpis-project-list {
-    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
 }
 .gpis-project-item {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--gpis-border);
+    background: var(--gpis-bg-soft);
+    border-radius: var(--gpis-radius);
+    padding: 2rem;
 }
-.gpis-project-item:last-child { border-bottom: none; }
 .gpis-project-item__tag {
     display: block;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gpis-text-muted);
-    margin-bottom: 0.35rem;
+    color: var(--gpis-accent);
+    opacity: 0.8;
+    margin-bottom: 0.45rem;
 }
 .gpis-project-item__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 800;
     color: var(--gpis-text);
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.5rem;
     line-height: 1.3;
 }
 .gpis-project-item__desc {
-    font-size: 0.95rem;
+    font-size: 0.97rem;
     color: var(--gpis-text-muted);
-    line-height: 1.7;
+    line-height: 1.72;
     margin: 0;
 }
 .gpis-project-item__countries {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: var(--gpis-text-muted);
-    margin-top: 0.35rem;
+    margin-top: 0.5rem;
 }
 @media (max-width: 767px) {
     .gpis-projects__featured {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.75rem;
+    }
+    .gpis-project-list {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -417,14 +457,14 @@ body {
    IMPACTO TEASER (HOME)
 ============================================================ */
 .gpis-impact-teaser {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-primary-dk);
     color: #fff;
 }
 .gpis-impact-teaser__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2.1rem);
-    font-weight: 900;
+    font-weight: 800;
     color: #fff;
     line-height: 1.2;
     margin-bottom: 1.25rem;
@@ -456,33 +496,25 @@ body {
    PESSOAS — COMPACTO (HOME)
 ============================================================ */
 .gpis-people-compact {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-bg);
 }
 .gpis-people-compact__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 2px solid var(--gpis-primary);
+    gap: 1.25rem;
 }
 .gpis-person-card {
-    padding: 2rem 1.75rem 2rem 0;
-    border-bottom: 1px solid var(--gpis-border);
-}
-.gpis-person-card:nth-child(3n-1),
-.gpis-person-card:nth-child(3n) {
-    padding-left: 1.75rem;
-    padding-right: 0;
-    border-left: 1px solid var(--gpis-border);
-}
-.gpis-person-card:nth-last-child(-n+3) {
-    border-bottom: none;
+    background: var(--gpis-bg-soft);
+    border-radius: var(--gpis-radius);
+    padding: 1.75rem;
 }
 .gpis-person-card__name {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.96rem;
     font-weight: 800;
     color: var(--gpis-text);
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.3rem;
     line-height: 1.3;
 }
 .gpis-person-card__role {
@@ -502,43 +534,16 @@ body {
 }
 @media (max-width: 991px) {
     .gpis-people-compact__grid { grid-template-columns: repeat(2, 1fr); }
-    .gpis-person-card:nth-child(3n-1),
-    .gpis-person-card:nth-child(3n) {
-        padding-left: 0;
-        padding-right: 1.75rem;
-        border-left: none;
-    }
-    .gpis-person-card:nth-child(even) {
-        padding-left: 1.75rem;
-        padding-right: 0;
-        border-left: 1px solid var(--gpis-border);
-    }
-    .gpis-person-card:nth-last-child(-n+3) {
-        border-bottom: 1px solid var(--gpis-border);
-    }
-    .gpis-person-card:nth-last-child(-n+2) {
-        border-bottom: none;
-    }
 }
 @media (max-width: 575px) {
     .gpis-people-compact__grid { grid-template-columns: 1fr; }
-    .gpis-person-card,
-    .gpis-person-card:nth-child(even),
-    .gpis-person-card:nth-child(3n-1),
-    .gpis-person-card:nth-child(3n) {
-        padding: 1.75rem 0;
-        border-left: none;
-        border-right: none;
-        border-bottom: 1px solid var(--gpis-border);
-    }
-    .gpis-person-card:last-child { border-bottom: none; }
 }
 
 /* ============================================================
    TRABALHAMOS EM REDE (HOME)
 ============================================================ */
 .gpis-network {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-bg-soft);
 }
 .gpis-network__layout {
@@ -591,18 +596,18 @@ body {
    COLABORE (HOME)
 ============================================================ */
 .gpis-contact {
-    padding: 5.5rem 0;
+    padding: 8rem 0;
     background: var(--gpis-bg);
 }
 .gpis-contact__inner {
-    border-top: 2px solid var(--gpis-primary);
+    border-top: 2px solid var(--gpis-accent);
     padding-top: 2.5rem;
     max-width: 600px;
 }
 .gpis-contact__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-primary-dk);
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -688,7 +693,7 @@ body {
 .gpis-proj-hero__inner { max-width: 780px; }
 .gpis-proj-hero__back {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -713,7 +718,7 @@ body {
 .gpis-proj-hero__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.15;
     color: #fff;
     margin-bottom: 1.25rem;
@@ -742,7 +747,7 @@ body {
    PROJETO — NÚMEROS
 ============================================================ */
 .gpis-proj-numbers {
-    background: var(--gpis-bg);
+    background: var(--gpis-bg-soft);
     border-bottom: 1px solid var(--gpis-border);
 }
 .gpis-proj-numbers__grid {
@@ -758,7 +763,7 @@ body {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.75rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-primary);
     line-height: 1.1;
     margin-bottom: 0.35rem;
@@ -781,7 +786,7 @@ body {
    PROJETO — SEÇÕES GENÉRICAS
 ============================================================ */
 .gpis-proj-section {
-    padding: 5rem 0;
+    padding: 7rem 0;
     background: var(--gpis-bg);
 }
 .gpis-proj-section--soft { background: var(--gpis-bg-soft); }
@@ -818,24 +823,22 @@ body {
 }
 
 /* ============================================================
-   PROJETO — TEMAS (4 ITENS, 2 COL)
+   PROJETO — TEMAS (2 COL)
 ============================================================ */
 .gpis-proj-themes__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-top: 2px solid var(--gpis-primary);
+    gap: 1.25rem;
     margin-top: 2.5rem;
 }
 .gpis-proj-theme {
-    padding: 2.25rem 2.5rem 2.25rem 0;
-    border-bottom: 1px solid var(--gpis-border);
+    background: var(--gpis-bg-soft);
+    border-radius: var(--gpis-radius);
+    padding: 2rem;
 }
-.gpis-proj-theme:nth-child(even) {
-    padding-left: 2.5rem;
-    padding-right: 0;
-    border-left: 1px solid var(--gpis-border);
+.gpis-proj-section--soft .gpis-proj-theme {
+    background: var(--gpis-bg);
 }
-.gpis-proj-theme:nth-last-child(-n+2) { border-bottom: none; }
 .gpis-proj-theme__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -845,20 +848,13 @@ body {
     line-height: 1.3;
 }
 .gpis-proj-theme__desc {
-    font-size: 0.95rem;
+    font-size: 0.97rem;
     color: var(--gpis-text-muted);
     line-height: 1.72;
     margin: 0;
 }
 @media (max-width: 767px) {
     .gpis-proj-themes__grid { grid-template-columns: 1fr; }
-    .gpis-proj-theme,
-    .gpis-proj-theme:nth-child(even) {
-        padding: 2rem 0;
-        border-left: none;
-        border-bottom: 1px solid var(--gpis-border);
-    }
-    .gpis-proj-theme:last-child { border-bottom: none; }
 }
 
 /* ============================================================
@@ -895,7 +891,7 @@ body {
     line-height: 1.3;
 }
 .gpis-proj-tl-content__text {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--gpis-text-muted);
     line-height: 1.72;
     margin: 0;
@@ -911,7 +907,7 @@ body {
    PROJETO — PUBLICAÇÕES
 ============================================================ */
 .gpis-proj-pubs {
-    padding: 5rem 0;
+    padding: 7rem 0;
     background: var(--gpis-bg);
 }
 .gpis-proj-pubs__inner {
@@ -931,9 +927,9 @@ body {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gpis-accent);
-    background: rgba(255,111,97,0.1);
+    background: rgba(216, 117, 89, 0.12);
     padding: 0.25rem 0.55rem;
-    border-radius: 2px;
+    border-radius: var(--gpis-radius);
     margin-bottom: 0.65rem;
 }
 .gpis-proj-pub__title {
@@ -979,7 +975,7 @@ body {
    PROJETO — COLABORAÇÃO
 ============================================================ */
 .gpis-proj-collab {
-    padding: 5rem 0;
+    padding: 7rem 0;
     background: var(--gpis-bg-soft);
 }
 .gpis-proj-collab__inner {
@@ -1022,18 +1018,18 @@ body {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.85rem 2rem;
-    background: var(--gpis-primary);
+    background: var(--gpis-accent);
     color: #fff;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.92rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: var(--gpis-radius);
     transition: background 0.2s;
 }
 .gpis-proj-collab__cta:hover {
-    background: var(--gpis-primary-dk);
+    background: #c2634a;
     color: #fff;
     text-decoration: none;
 }
@@ -1058,7 +1054,7 @@ body {
 .gpis-impact-hero__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.7rem, 4vw, 2.8rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.12;
     color: #fff;
     margin-bottom: 1.25rem;
@@ -1076,7 +1072,7 @@ body {
    PÁGINA IMPACTO — BLOCOS NARRATIVOS
 ============================================================ */
 .gpis-impact-block {
-    padding: 5rem 0;
+    padding: 7rem 0;
     background: var(--gpis-bg);
 }
 .gpis-impact-block--soft { background: var(--gpis-bg-soft); }
@@ -1091,7 +1087,7 @@ body {
 .gpis-impact-block__num {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-primary);
     opacity: 0.18;
     line-height: 1;
@@ -1100,7 +1096,7 @@ body {
 .gpis-impact-block__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gpis-primary-dk);
     margin: 0 0 0.85rem;
     line-height: 1.25;
@@ -1132,7 +1128,7 @@ body {
    PÁGINA IMPACTO — CTA FINAL
 ============================================================ */
 .gpis-impact-cta {
-    padding: 5rem 0;
+    padding: 7rem 0;
     background: var(--gpis-primary-dk);
     color: #fff;
 }
@@ -1142,7 +1138,7 @@ body {
 .gpis-impact-cta__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-    font-weight: 900;
+    font-weight: 800;
     color: #fff;
     margin-bottom: 0.85rem;
     line-height: 1.2;

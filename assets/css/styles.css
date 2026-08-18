@@ -326,43 +326,46 @@ body {
 .gpis-research__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    column-gap: 4rem;
+    row-gap: 0;
 }
 .gpis-research__item {
-    background: var(--gpis-papel);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-1);
-    padding: 2.5rem;
-    transition: box-shadow 200ms;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--border-default);
+    box-shadow: none;
+    padding: 2.75rem 0;
 }
-.gpis-research__item:hover { box-shadow: var(--shadow-3); }
+.gpis-research__item:hover { box-shadow: none; }
 .gpis-research__num {
     display: block;
     font-family: var(--font-body);
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--gpis-azul-ciencia);
-    opacity: 0.55;
-    margin-bottom: 0.85rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--gpis-cinza-100);
+    margin-bottom: 1rem;
 }
 .gpis-research__item-title {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--gpis-grafite);
-    margin: 0 0 0.55rem;
+    margin: 0 0 0.6rem;
     line-height: 1.3;
 }
 .gpis-research__item-desc {
     font-size: 1.0625rem;
     color: var(--gpis-cinza-200);
-    line-height: 1.65;
+    line-height: 1.68;
     margin: 0;
 }
 @media (max-width: 767px) {
-    .gpis-research__grid { grid-template-columns: 1fr; }
+    .gpis-research__grid {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
 }
 
 /* ============================================================
@@ -385,7 +388,7 @@ body {
     margin-bottom: 1.25rem;
     transition: box-shadow 200ms;
 }
-.gpis-projects__featured:hover { box-shadow: var(--shadow-3); }
+.gpis-projects__featured:hover { box-shadow: var(--shadow-2); }
 .gpis-projects__featured-tag {
     display: block;
     font-family: var(--font-body);
@@ -455,7 +458,7 @@ body {
     padding: 2rem;
     transition: box-shadow 200ms;
 }
-.gpis-project-item:hover { box-shadow: var(--shadow-3); }
+.gpis-project-item:hover { box-shadow: var(--shadow-2); }
 .gpis-project-item__tag {
     display: block;
     font-family: var(--font-body);
@@ -542,27 +545,28 @@ body {
 .gpis-people-compact__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+    gap: 0;
 }
 .gpis-person-card {
-    background: var(--gpis-papel);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-1);
-    padding: 1.75rem;
-    transition: box-shadow 200ms;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--border-subtle);
+    box-shadow: none;
+    padding: 1.75rem 1rem 1.75rem 0;
+    transition: none;
 }
-.gpis-person-card:hover { box-shadow: var(--shadow-3); }
+.gpis-person-card:hover { box-shadow: none; }
 .gpis-person-card__name {
     font-family: var(--font-display);
-    font-size: 0.9375rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--gpis-grafite);
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.25rem;
     line-height: 1.3;
 }
 .gpis-person-card__role {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--gpis-azul-ciencia);
     font-weight: 600;
     line-height: 1.4;
@@ -615,17 +619,24 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
+}
+.gpis-network__partners li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.gpis-network__partners li:first-child {
+    border-top: 1px solid var(--border-subtle);
 }
 .gpis-network__partner-name {
     font-family: var(--font-display);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--gpis-grafite);
     margin: 0 0 0.15rem;
 }
 .gpis-network__partner-inst {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     color: var(--gpis-cinza-200);
     margin: 0;
 }
@@ -650,11 +661,11 @@ body {
 }
 .gpis-contact__title {
     font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(2rem, 3.5vw, 2.625rem);
     font-weight: 700;
     color: var(--gpis-grafite);
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 .gpis-contact__text {
     font-size: 1.0625rem;

@@ -532,10 +532,10 @@ body {
     color: #fff;
     text-decoration: none;
 }
-/* Duas colunas: texto esquerda, depoimento direita */
+/* Duas colunas: depoimento esquerda, texto/CTA direita */
 .gpis-impact-teaser__layout {
     display: grid;
-    grid-template-columns: 53fr 42fr;
+    grid-template-columns: 42fr 53fr;
     gap: 6%;
     align-items: center;
 }
@@ -562,6 +562,9 @@ body {
     .gpis-impact-teaser__layout {
         grid-template-columns: 1fr;
     }
+    /* Em mobile: texto institucional primeiro, testemunho depois */
+    .gpis-impact-teaser__right { order: 2; }
+    .gpis-impact-teaser__left  { order: 1; }
     .gpis-impact-teaser__quote {
         margin-top: 2.5rem;
         padding-left: 0;

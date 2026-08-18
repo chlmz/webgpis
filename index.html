@@ -545,50 +545,122 @@
         }
 
         /* ============================================================
-           COMPONENTES COMPARTILHADOS (mantidos do original)
+           EQUIPE
         ============================================================ */
-        .kpi-icon {
-            color: var(--gpis-highlight);
-            font-size: 3.5rem;
-            transition: color 0.3s;
-        }
-        .parallax-section {
-            background-image: url('https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            padding: 6rem 0;
-            position: relative;
-            background-color: var(--gpis-primary);
-        }
-        .parallax-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 1;
-        }
-        .parallax-content {
-            position: relative;
-            z-index: 2;
-        }
-        .btn-primary-custom {
-            background-color: var(--gpis-primary);
-            border-color: var(--gpis-primary);
-            transition: background-color 0.3s;
-        }
-        .btn-primary-custom:hover {
-            background-color: #003366;
-            border-color: #003366;
-            transform: translateY(-2px);
-        }
         .team-member-card {
             transition: var(--gpis-transition);
         }
         .team-member-card:hover {
             border-left: 5px solid var(--gpis-highlight);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ============================================================
+           IMPACTO
+        ============================================================ */
+        .gpis-impact {
+            padding: 5.5rem 0 5rem;
+        }
+        .gpis-impact__dims {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 2px solid var(--gpis-primary);
+            margin-bottom: 4rem;
+        }
+        .gpis-impact__dim {
+            padding: 2.5rem 2.5rem 2.5rem 0;
+            border-bottom: 1px solid #d8e0e9;
+        }
+        .gpis-impact__dim:nth-child(even) {
+            padding-left: 2.5rem;
+            padding-right: 0;
+            border-left: 1px solid #d8e0e9;
+        }
+        .gpis-impact__dim:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+        .gpis-impact__num {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.25em;
+            color: var(--gpis-primary);
+            opacity: 0.35;
+            margin-bottom: 1rem;
+        }
+        .gpis-impact__dim-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gpis-text-dark);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+        .gpis-impact__dim-desc {
+            font-size: 0.88rem;
+            color: var(--gpis-text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .gpis-impact__flow {
+            border-top: 1px solid #d8e0e9;
+            padding-top: 3rem;
+        }
+        .gpis-impact__flow-steps {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 1.25rem;
+            flex-wrap: nowrap;
+        }
+        .gpis-impact__flow-step {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--gpis-primary);
+            white-space: nowrap;
+            padding: 0.5rem 0;
+        }
+        .gpis-impact__flow-arrow {
+            flex: 1;
+            text-align: center;
+            color: var(--gpis-primary);
+            opacity: 0.3;
+            font-size: 0.9rem;
+            padding: 0 0.5rem;
+            min-width: 1.5rem;
+        }
+        .gpis-impact__flow-caption {
+            font-size: 0.85rem;
+            color: var(--gpis-text-muted);
+            line-height: 1.65;
+            max-width: 640px;
+            margin: 0;
+        }
+        @media (max-width: 767px) {
+            .gpis-impact__dims {
+                grid-template-columns: 1fr;
+            }
+            .gpis-impact__dim,
+            .gpis-impact__dim:nth-child(even) {
+                padding: 2rem 0;
+                border-left: none;
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-impact__dim:last-child {
+                border-bottom: none;
+            }
+            .gpis-impact__flow-steps {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .gpis-impact__flow-arrow {
+                transform: rotate(90deg);
+                padding: 0;
+                min-width: auto;
+            }
         }
 
         /* ============================================================
@@ -832,72 +904,70 @@
         </section>
 
         <!-- ============================================================
-             IMPACTO & VISÃO (inalterado)
+             IMPACTO
         ============================================================ -->
-        <section id="impact" class="page-content">
+        <section id="impact" class="page-content gpis-impact">
             <div class="container">
-                <h2 class="section-heading text-center">Midiendo el Éxito: Impacto y Visión de Futuro</h2>
-                <p class="lead text-center mb-5">Nuestra propuesta de valor para las organizaciones financiadoras es una investigación innovadora y de alto impacto que se alinea con las prioridades de salud pública global.</p>
-                <div class="row text-center g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100 border border-primary border-3">
-                            <div class="kpi-icon mb-3"><i class="fa-solid fa-book-open"></i></div>
-                            <h3 class="h5 fw-bold text-primary">Publicaciones de Calidad</h3>
-                            <p class="mb-0">El éxito se mide por la calidad sobre la cantidad, enfatizando las publicaciones en revistas de alto factor de impacto.</p>
-                        </div>
+                <div class="gpis-themes__header">
+                    <span class="gpis-themes__label">Impacto</span>
+                    <h2 class="gpis-themes__title">Pesquisa que produz conhecimento,<br>capacidade e retorno social</h2>
+                    <p class="gpis-themes__intro">
+                        O impacto do GPIS não se resume a publicações. Transformamos pesquisa em
+                        conhecimento, formação, colaboração científica e comunicação com a sociedade.
+                    </p>
+                </div>
+
+                <div class="gpis-impact__dims">
+                    <div class="gpis-impact__dim">
+                        <span class="gpis-impact__num">01</span>
+                        <h3 class="gpis-impact__dim-title">Produção científica</h3>
+                        <p class="gpis-impact__dim-desc">
+                            Transformamos dados e perguntas de pesquisa em artigos, dissertações,
+                            teses, apresentações e outros produtos científicos.
+                        </p>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100 border border-primary border-3">
-                            <div class="kpi-icon mb-3"><i class="fa-solid fa-sack-dollar"></i></div>
-                            <h3 class="h5 fw-bold text-primary">Financiamiento Estratégico</h3>
-                            <p class="mb-0">Búsqueda de fondos nacionales (CNPq) e internacionales (Wellcome) para sostener la investigación como actividad principal del equipo.</p>
-                        </div>
+                    <div class="gpis-impact__dim">
+                        <span class="gpis-impact__num">02</span>
+                        <h3 class="gpis-impact__dim-title">Formação e mentoria</h3>
+                        <p class="gpis-impact__dim-desc">
+                            Formamos estudantes e pesquisadores em epidemiologia, análise de dados
+                            e métodos emergentes, integrando aprendizagem à pesquisa em andamento.
+                        </p>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <div class="kpi-icon mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <h3 class="h5 fw-bold text-primary">Métrica Futura: Mentoría</h3>
-                            <p class="mb-0">Implementaremos un sistema formal para rastrear el crecimiento profesional de investigadores en etapa inicial (presentaciones, tesis completadas).</p>
-                        </div>
+                    <div class="gpis-impact__dim">
+                        <span class="gpis-impact__num">03</span>
+                        <h3 class="gpis-impact__dim-title">Redes e colaboração</h3>
+                        <p class="gpis-impact__dim-desc">
+                            Construímos colaborações nacionais e internacionais para ampliar
+                            perguntas de pesquisa, métodos e capacidade científica.
+                        </p>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <div class="kpi-icon mb-3"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                            <h3 class="h5 fw-bold text-primary">Métrica Futura: Alcance Social</h3>
-                            <p class="mb-0">Desarrollaremos un sistema para medir la aparición en medios y presentaciones comunitarias, traduciendo la ciencia al público general.</p>
-                        </div>
+                    <div class="gpis-impact__dim">
+                        <span class="gpis-impact__num">04</span>
+                        <h3 class="gpis-impact__dim-title">Retorno à sociedade</h3>
+                        <p class="gpis-impact__dim-desc">
+                            Buscamos comunicar resultados de forma clara para participantes,
+                            comunidades e atores públicos e ampliar a participação social ao
+                            longo do processo de pesquisa.
+                        </p>
                     </div>
                 </div>
 
-                <div class="parallax-section my-5 rounded-3 shadow-lg">
-                    <div class="parallax-overlay"></div>
-                    <div class="container parallax-content text-center">
-                        <h4 class="h2 fw-bold mb-3 text-warning">Nuestra Visión a Largo Plazo</h4>
-                        <p class="fs-4 fw-light">Aspiramos a ser un grupo de investigación líder, bien financiado, donde cada miembro pueda perseguir sus intereses de investigación como su foco profesional principal.</p>
+                <div class="gpis-impact__flow">
+                    <div class="gpis-impact__flow-steps" aria-hidden="true">
+                        <span class="gpis-impact__flow-step">Dados</span>
+                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-step">Evidências</span>
+                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-step">Formação &amp; colaboração</span>
+                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-step">Comunicação &amp; uso</span>
                     </div>
+                    <p class="gpis-impact__flow-caption">
+                        Impacto é um processo: começa com dados de qualidade e ganha valor quando
+                        o conhecimento é compartilhado, discutido e utilizado.
+                    </p>
                 </div>
-
-                <!-- FERRAMENTA GEMINI (inalterada) -->
-                <div class="row mt-5 pt-5 border-top border-2">
-                    <div class="col-12 text-center">
-                        <h3 class="section-heading text-center">Herramienta de Traducción Comunitaria ✨</h3>
-                        <p class="lead text-muted">Utiliza la IA Gemini para traducir hallazgos complejos en publicaciones sencillas y de alto impacto para redes sociales, impulsando nuestro KPI de Impacto Social.</p>
-                    </div>
-                    <div class="col-lg-8 mx-auto">
-                        <div class="card p-4 shadow-lg border-0 bg-light">
-                            <label for="researchInput" class="form-label fw-bold">Hallazgo Académico a Traducir:</label>
-                            <textarea id="researchInput" class="form-control mb-3" rows="3" placeholder="Pega aquí el texto científico...">The study found that maternal depression and anxiety surged during the pandemic, increasing health risks for both mothers and their children.</textarea>
-                            <button id="generateSummaryBtn" class="btn btn-primary-custom btn-lg fw-bold mb-3 w-100">
-                                <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
-                                ✨ Generar Resumen Comunitario
-                            </button>
-                            <div id="summaryOutput" class="alert alert-secondary d-none text-start" role="alert">
-                                <!-- Saída gerada pelo Gemini -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- FIM FERRAMENTA GEMINI -->
             </div>
         </section>
 
@@ -1010,9 +1080,6 @@
             renderTeamMembers();
             renderCollaborators();
 
-            const generateBtn = document.getElementById('generateSummaryBtn');
-            if (generateBtn) generateBtn.addEventListener('click', handleGenerateSummary);
-
             document.querySelectorAll('#nav-links a').forEach(anchor => {
                 anchor.addEventListener('click', function () {
                     const navbarCollapse = document.getElementById('navbarNav');
@@ -1023,76 +1090,6 @@
             });
         });
 
-        // --- GEMINI API (inalterado) ---
-        const API_KEY = "";
-        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
-
-        async function callGeminiApi(prompt, retries = 3) {
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: {
-                    parts: [{ text: "Eres un experto en comunicación de salud pública. Tu objetivo es traducir hallazgos académicos complejos y llenos de jerga a un resumen conciso, fácil de entender y no académico, adecuado para una audiencia comunitaria o redes sociales (como Instagram/Facebook). Concéntrate en el impacto y la urgencia en el mundo real." }]
-                }
-            };
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(`${API_URL}?key=${API_KEY}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (!response.ok) {
-                        if (response.status === 429 && i < retries - 1) {
-                            await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));
-                            continue;
-                        }
-                        throw new Error(`La solicitud a la API falló con estado ${response.status}`);
-                    }
-                    const result = await response.json();
-                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (!text) throw new Error("No se encontró contenido de texto en la respuesta de la API.");
-                    return text;
-                } catch (error) {
-                    console.error(`El intento ${i + 1} falló:`, error.message);
-                    if (i === retries - 1) throw new Error("Fallo al contactar con la API de Gemini después de varios reintentos.");
-                }
-            }
-        }
-
-        async function handleGenerateSummary() {
-            const inputEl  = document.getElementById('researchInput');
-            const outputEl = document.getElementById('summaryOutput');
-            const btn      = document.getElementById('generateSummaryBtn');
-            const spinner  = document.getElementById('loadingSpinner');
-            const text     = inputEl.value.trim();
-
-            if (!text) {
-                outputEl.textContent = "Por favor, pega el hallazgo académico que deseas traducir.";
-                outputEl.classList.remove('d-none', 'alert-success', 'alert-secondary');
-                outputEl.classList.add('alert-danger');
-                return;
-            }
-            btn.disabled = true;
-            spinner.classList.remove('d-none');
-            outputEl.classList.add('d-none');
-            outputEl.classList.remove('alert-danger', 'alert-success');
-            outputEl.textContent = '';
-
-            const prompt = `Translate the following academic finding into a simple, high-impact message suitable for a local community audience and social media: "${text}"`;
-            try {
-                const summary = await callGeminiApi(prompt);
-                outputEl.textContent = summary;
-                outputEl.classList.remove('d-none', 'alert-secondary');
-                outputEl.classList.add('alert-success');
-            } catch (error) {
-                outputEl.textContent = `Error al generar el resumen: ${error.message}. Por favor, inténtalo de nuevo más tarde.`;
-                outputEl.classList.remove('d-none', 'alert-secondary');
-                outputEl.classList.add('alert-danger');
-            } finally {
-                btn.disabled = false;
-                spinner.classList.add('d-none');
-            }
-        }
     </script>
 </body>
 </html>

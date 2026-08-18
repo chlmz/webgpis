@@ -992,3 +992,822 @@ body {
     }
     html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   PÁGINAS DE PROJETO — COMPONENTES
+============================================================ */
+
+/* Link "Conheça a Coorte" no card da Home */
+.gpis-project-featured__link {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gpis-primary);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(0,76,140,0.35);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+}
+.gpis-project-featured__link:hover {
+    color: var(--gpis-primary-dk);
+    border-color: var(--gpis-primary);
+    text-decoration: none;
+}
+
+/* Hero compacto (~50vh) */
+.gpis-project-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        140deg,
+        var(--gpis-primary-dk) 0%,
+        var(--gpis-primary) 60%,
+        #005fa8 100%
+    );
+    overflow: hidden;
+}
+.gpis-project-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 75% 25%, rgba(255,255,255,0.05) 0%, transparent 55%);
+    pointer-events: none;
+}
+.gpis-project-hero__inner {
+    position: relative;
+    z-index: 2;
+    padding: 4.5rem 0 4rem;
+    max-width: 780px;
+}
+.gpis-project-hero__back {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    transition: color 0.2s;
+}
+.gpis-project-hero__back:hover {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+}
+.gpis-project-hero__eyebrow {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1.1rem;
+}
+.gpis-project-hero__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.55rem, 3.5vw, 2.45rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+.gpis-project-hero__lead {
+    font-size: clamp(0.92rem, 1.75vw, 1.08rem);
+    color: rgba(255,255,255,0.82);
+    line-height: 1.72;
+    margin-bottom: 0.75rem;
+    max-width: 660px;
+}
+.gpis-project-hero__meta {
+    font-size: 0.74rem;
+    letter-spacing: 0.09em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2.25rem;
+}
+.gpis-project-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+/* Faixa de síntese */
+.gpis-project-numbers {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dde3eb;
+}
+.gpis-project-numbers__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.gpis-project-numbers__item {
+    padding: 2.25rem 2rem;
+    border-right: 1px solid #dde3eb;
+}
+.gpis-project-numbers__item:last-child {
+    border-right: none;
+}
+.gpis-project-numbers__value {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--gpis-primary);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+.gpis-project-numbers__label {
+    font-size: 0.78rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.45;
+}
+@media (max-width: 767px) {
+    .gpis-project-numbers__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-project-numbers__item {
+        border-right: 1px solid #dde3eb;
+        border-bottom: 1px solid #dde3eb;
+    }
+    .gpis-project-numbers__item:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-numbers__item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-project-numbers__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-numbers__item,
+    .gpis-project-numbers__item:nth-child(even) {
+        border-right: none;
+        border-bottom: 1px solid #dde3eb;
+    }
+    .gpis-project-numbers__item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Por que acompanhar uma geração? */
+.gpis-project-why {
+    padding: 5.5rem 0 5rem;
+    background-color: #f8fafc;
+}
+.gpis-project-why__inner {
+    border-top: 2px solid var(--gpis-primary);
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+.gpis-project-why__quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 800;
+    color: var(--gpis-primary);
+    line-height: 1.5;
+    margin: 0;
+}
+.gpis-project-why__text {
+    font-size: 0.96rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.82;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-why__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* O que investigamos — 6 módulos, 3 colunas */
+.gpis-project-topics {
+    padding: 5.5rem 0 5rem;
+    background-color: #ffffff;
+}
+.gpis-project-topics__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-project-topic {
+    padding: 2.25rem 2rem;
+    border-right: 1px solid #d8e0e9;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-project-topic:nth-child(3n) {
+    border-right: none;
+}
+.gpis-project-topic:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+.gpis-project-topic__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.gpis-project-topic__desc {
+    font-size: 0.84rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.72;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-topics__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-project-topic:nth-child(3n) {
+        border-right: 1px solid #d8e0e9;
+    }
+    .gpis-project-topic:nth-last-child(-n+3) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-topic:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-topic:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-project-topics__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-topic {
+        border-right: none;
+    }
+    .gpis-project-topic:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-topic:nth-last-child(-n+2) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-topic:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Timeline — 8 entradas, 4 colunas desktop */
+.gpis-project-timeline {
+    padding: 5.5rem 0 5rem;
+    background-color: #f8fafc;
+}
+.gpis-project-timeline__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-project-timeline__entry {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid #d8e0e9;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-project-timeline__entry:nth-child(4n) {
+    border-right: none;
+}
+.gpis-project-timeline__entry:nth-last-child(-n+4) {
+    border-bottom: none;
+}
+.gpis-project-timeline__year {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gpis-highlight);
+    margin-bottom: 0.55rem;
+}
+.gpis-project-timeline__wave {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.gpis-project-timeline__detail {
+    font-size: 0.79rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-timeline__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-project-timeline__entry:nth-child(4n) {
+        border-right: 1px solid #d8e0e9;
+    }
+    .gpis-project-timeline__entry:nth-last-child(-n+4) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-timeline__entry:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-timeline__entry:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-project-timeline__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-timeline__entry,
+    .gpis-project-timeline__entry:nth-child(even) {
+        border-right: none;
+        border-bottom: none;
+        padding: 1.25rem 1rem 1.25rem 1.25rem;
+        border-left: 3px solid var(--gpis-highlight);
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-timeline__entry:nth-last-child(-n+2) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-timeline__entry:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Dados que estamos construindo — 8 domínios, 4 colunas */
+.gpis-project-data {
+    padding: 5.5rem 0 5rem;
+    background-color: #ffffff;
+}
+.gpis-project-data__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+    margin-bottom: 2rem;
+}
+.gpis-project-data__domain {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid #d8e0e9;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-project-data__domain:nth-child(4n) {
+    border-right: none;
+}
+.gpis-project-data__domain:nth-last-child(-n+4) {
+    border-bottom: none;
+}
+.gpis-project-data__domain-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+.gpis-project-data__domain-tags {
+    font-size: 0.78rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+.gpis-project-data__note {
+    font-size: 0.78rem;
+    color: var(--gpis-text-muted);
+    font-style: italic;
+    border-top: 1px solid #dde3eb;
+    padding-top: 1.5rem;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-data__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-project-data__domain:nth-child(4n) {
+        border-right: 1px solid #d8e0e9;
+    }
+    .gpis-project-data__domain:nth-last-child(-n+4) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-data__domain:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-data__domain:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-project-data__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-data__domain,
+    .gpis-project-data__domain:nth-child(even) {
+        border-right: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-data__domain:nth-last-child(-n+2) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-data__domain:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Métodos — 6 itens, 3 colunas */
+.gpis-project-methods {
+    padding: 5.5rem 0 5rem;
+    background-color: #f8fafc;
+}
+.gpis-project-methods__intro {
+    font-size: 0.96rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.75;
+    max-width: 560px;
+    margin-bottom: 3rem;
+}
+.gpis-project-methods__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-project-method {
+    padding: 2.25rem 2rem;
+    border-right: 1px solid #d8e0e9;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-project-method:nth-child(3n) {
+    border-right: none;
+}
+.gpis-project-method:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+.gpis-project-method__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+.gpis-project-method__desc {
+    font-size: 0.84rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.72;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-methods__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-project-method:nth-child(3n) {
+        border-right: 1px solid #d8e0e9;
+    }
+    .gpis-project-method:nth-last-child(-n+3) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-method:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-project-method:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-project-methods__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-method,
+    .gpis-project-method:nth-child(even) {
+        border-right: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-method:nth-last-child(-n+2) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-method:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Publicações selecionadas */
+.gpis-project-publications {
+    padding: 5.5rem 0 5rem;
+    background-color: #ffffff;
+}
+.gpis-project-pub-list {
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-project-pub {
+    padding: 2.25rem 0;
+    border-bottom: 1px solid #d8e0e9;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.75rem;
+    align-items: start;
+}
+.gpis-project-pub:last-child {
+    border-bottom: none;
+}
+.gpis-project-pub--plain {
+    grid-template-columns: 1fr;
+}
+.gpis-project-pub__badge {
+    font-size: 0.57rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gpis-highlight);
+    background: rgba(255,111,97,0.1);
+    padding: 0.3rem 0.55rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.12rem;
+}
+.gpis-project-pub__body {
+    min-width: 0;
+}
+.gpis-project-pub__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    line-height: 1.42;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.gpis-project-pub__authors {
+    font-size: 0.8rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 0.2rem;
+}
+.gpis-project-pub__journal {
+    font-size: 0.8rem;
+    color: var(--gpis-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.gpis-project-pub__doi-link {
+    font-size: 0.76rem;
+    color: var(--gpis-primary);
+    text-decoration: none;
+    word-break: break-all;
+}
+.gpis-project-pub__doi-link:hover {
+    text-decoration: underline;
+    color: var(--gpis-primary-dk);
+}
+@media (max-width: 575px) {
+    .gpis-project-pub,
+    .gpis-project-pub--plain {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+    }
+}
+
+/* Colaboração */
+.gpis-project-collab {
+    padding: 5.5rem 0 5rem;
+    background-color: #f0f4f8;
+}
+.gpis-project-collab__paths {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+    margin-bottom: 4rem;
+}
+.gpis-project-collab__path {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid #d8e0e9;
+}
+.gpis-project-collab__path:last-child {
+    border-right: none;
+}
+.gpis-project-collab__path-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+}
+.gpis-project-collab__path-desc {
+    font-size: 0.85rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.72;
+    margin-bottom: 0.6rem;
+}
+.gpis-project-collab__path-note {
+    font-size: 0.8rem;
+    color: var(--gpis-primary);
+    font-weight: 600;
+    margin: 0;
+}
+.gpis-project-collab__contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #d8e0e9;
+    padding-top: 3rem;
+    margin-bottom: 2.5rem;
+}
+.gpis-project-collab__contact {
+    padding-right: 3rem;
+    border-right: 1px solid #d8e0e9;
+}
+.gpis-project-collab__contact:last-child {
+    padding-left: 3rem;
+    padding-right: 0;
+    border-right: none;
+}
+.gpis-project-collab__contact-role {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.7;
+    margin-bottom: 0.45rem;
+}
+.gpis-project-collab__contact-email {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gpis-text-dark);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+.gpis-project-collab__contact-email:hover {
+    color: var(--gpis-primary);
+}
+.gpis-project-collab__cta {
+    display: inline-block;
+    padding: 0.72rem 1.75rem;
+    background: var(--gpis-primary);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.gpis-project-collab__cta:hover {
+    background: var(--gpis-primary-dk);
+    color: #fff;
+    text-decoration: none;
+}
+.gpis-project-collab__policy {
+    background: rgba(255,255,255,0.75);
+    border-left: 3px solid var(--gpis-primary);
+    padding: 1.25rem 1.5rem;
+    font-size: 0.82rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.75;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-project-collab__paths {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-collab__path {
+        border-right: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-collab__path:last-child {
+        border-bottom: none;
+    }
+    .gpis-project-collab__contacts {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+    }
+    .gpis-project-collab__contact {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #d8e0e9;
+        margin-bottom: 2rem;
+    }
+    .gpis-project-collab__contact:last-child {
+        padding-left: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* Ética e governança */
+.gpis-project-ethics {
+    padding: 5rem 0 4.5rem;
+    background-color: #ffffff;
+}
+.gpis-project-ethics__inner {
+    border-top: 2px solid var(--gpis-primary);
+    padding-top: 3rem;
+    max-width: 760px;
+}
+.gpis-project-ethics__text {
+    font-size: 0.9rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+}
+.gpis-project-ethics__text:last-child {
+    margin-bottom: 0;
+}
+
+/* Equipe compacta */
+.gpis-project-team {
+    padding: 5rem 0 4.5rem;
+    background-color: #f8fafc;
+}
+.gpis-project-team__inner {
+    border-top: 2px solid var(--gpis-primary);
+    padding-top: 2.75rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0 4rem;
+}
+.gpis-project-team__coord-label {
+    display: block;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.7;
+    margin-bottom: 0.45rem;
+}
+.gpis-project-team__coord-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    text-decoration: none;
+}
+.gpis-project-team__coord-name:hover {
+    color: var(--gpis-primary);
+}
+.gpis-project-team__equipe {
+    border-left: 1px solid #d8e0e9;
+    padding-left: 4rem;
+}
+.gpis-project-team__list-label {
+    display: block;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.7;
+    margin-bottom: 0.45rem;
+}
+.gpis-project-team__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+.gpis-project-team__list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gpis-text-dark);
+}
+.gpis-project-team__list a {
+    color: inherit;
+    text-decoration: none;
+}
+.gpis-project-team__list a:hover {
+    color: var(--gpis-primary);
+    text-decoration: underline;
+}
+@media (max-width: 767px) {
+    .gpis-project-team__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem 0;
+    }
+    .gpis-project-team__equipe {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #d8e0e9;
+        padding-top: 2rem;
+    }
+}

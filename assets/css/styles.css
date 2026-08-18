@@ -2,15 +2,15 @@
    VARIÁVEIS E BASE
 ============================================================ */
 :root {
-    --gpis-primary:    #004c8c;
-    --gpis-primary-dk: #002d5c;
-    --gpis-accent:     #D87559;
-    --gpis-text:       #1C2B3A;
-    --gpis-text-muted: #5E6B7C;
-    --gpis-bg:         #FCFAF7;
-    --gpis-bg-soft:    #F2EBE2;
-    --gpis-border:     #E2D8CE;
-    --gpis-radius:     14px;
+    --gpis-primary:    #123A5A;
+    --gpis-primary-dk: #0C2338;
+    --gpis-accent:     #A95D45;
+    --gpis-text:       #25313A;
+    --gpis-text-muted: #637079;
+    --gpis-bg:         #F7F4EE;
+    --gpis-bg-soft:    #E8E1D7;
+    --gpis-border:     #CFC7BA;
+    --gpis-radius:     8px;
 }
 
 html { scroll-padding-top: 68px; }
@@ -100,8 +100,8 @@ body {
     border: 2px solid var(--gpis-accent);
 }
 .gpis-btn--primary:hover {
-    background: #c2634a;
-    border-color: #c2634a;
+    background: #8B4A35;
+    border-color: #8B4A35;
     color: #fff;
     text-decoration: none;
 }
@@ -220,28 +220,28 @@ body {
     display: block;
 }
 .gpis-hero__deco-blob--1 {
-    width: 300px;
-    height: 300px;
-    background: rgba(216, 117, 89, 0.1);
+    width: 280px;
+    height: 260px;
+    background: rgba(200, 188, 172, 0.38);
     top: 45%;
     left: 50%;
     transform: translate(-35%, -55%);
-    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    border-radius: 50%;
 }
 .gpis-hero__deco-blob--2 {
-    width: 190px;
-    height: 190px;
-    background: rgba(0, 77, 140, 0.07);
+    width: 155px;
+    height: 155px;
+    background: rgba(18, 58, 90, 0.07);
     bottom: 8%;
     right: 8%;
-    border-radius: 40% 60% 65% 35% / 55% 45% 55% 45%;
+    border-radius: 50%;
 }
 .gpis-hero__deco-blob--3 {
-    width: 110px;
-    height: 110px;
-    background: rgba(216, 117, 89, 0.16);
-    top: 8%;
-    right: 18%;
+    width: 80px;
+    height: 80px;
+    background: rgba(169, 93, 69, 0.1);
+    top: 10%;
+    right: 20%;
     border-radius: 50%;
 }
 
@@ -376,7 +376,7 @@ body {
     font-weight: 700;
     color: var(--gpis-primary);
     text-decoration: none;
-    border-bottom: 1.5px solid rgba(0,76,140,0.3);
+    border-bottom: 1.5px solid rgba(18,58,90,0.3);
     padding-bottom: 1px;
     transition: border-color 0.2s, color 0.2s;
 }
@@ -927,7 +927,7 @@ body {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gpis-accent);
-    background: rgba(216, 117, 89, 0.12);
+    background: rgba(169, 93, 69, 0.12);
     padding: 0.25rem 0.55rem;
     border-radius: var(--gpis-radius);
     margin-bottom: 0.65rem;
@@ -1029,7 +1029,7 @@ body {
     transition: background 0.2s;
 }
 .gpis-proj-collab__cta:hover {
-    background: #c2634a;
+    background: #8B4A35;
     color: #fff;
     text-decoration: none;
 }

@@ -4,995 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GPIS — Grupo de Pesquisa e Inovação em Saúde da FURG. Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida e entre gerações.">
+    <meta property="og:title" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:description" content="GPIS — Grupo de Pesquisa e Inovação em Saúde da FURG. Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida e entre gerações.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
     <title>GPIS — Grupo de Pesquisa e Inovação em Saúde</title>
-    <!-- Roboto Condensed: corpo -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Montserrat: títulos -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <!-- Font Awesome -->
 
-    <style>
-        /* ============================================================
-           VARIÁVEIS E BASE
-        ============================================================ */
-        :root {
-            --gpis-primary:    #004c8c;
-            --gpis-primary-dk: #002d5c;
-            --gpis-secondary:  #f0f4f8;
-            --gpis-highlight:  #ff6f61;
-            --gpis-text-dark:  #212529;
-            --gpis-text-muted: #5a6475;
-            --gpis-bg-white:   #ffffff;
-            --gpis-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        body {
-            font-family: 'Roboto Condensed', sans-serif;
-            color: var(--gpis-text-dark);
-            scroll-behavior: smooth;
-            background-image: url('https://images.pexels.com/photos/1020352/pexels-photo-1020352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            background-color: #f0f4f8;
-        }
-
-        /* ============================================================
-           ACESSIBILIDADE: SKIP LINK
-        ============================================================ */
-        .skip-link {
-            position: absolute;
-            top: -48px;
-            left: 0;
-            background: var(--gpis-primary);
-            color: #fff;
-            padding: 10px 16px;
-            z-index: 9999;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: top 0.2s ease;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* ============================================================
-           NAVBAR
-        ============================================================ */
-        .gpis-navbar {
-            background-color: var(--gpis-primary-dk);
-            transition: background-color 0.3s ease;
-        }
-        .navbar-brand {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 900;
-            letter-spacing: 0.04em;
-        }
-        .navbar-brand small {
-            display: block;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.62rem;
-            font-weight: 400;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            opacity: 0.65;
-            margin-top: -2px;
-        }
-        .nav-link {
-            font-weight: 600;
-            font-size: 0.88rem;
-            letter-spacing: 0.03em;
-            transition: color 0.2s;
-        }
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--gpis-highlight) !important;
-        }
-
-        /* ============================================================
-           PAGE CONTENT (seções existentes abaixo do fold)
-        ============================================================ */
-        .page-content {
-            min-height: auto;
-            padding: 5rem 0;
-            position: relative;
-            background-color: rgba(255, 255, 255, 0.95);
-            margin-top: 0;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-        }
-        #projects { background-color: rgba(255, 255, 255, 0.95); }
-        #impact  { background-color: rgba(240, 244, 248, 0.95); }
-        #team    { background-color: rgba(255, 255, 255, 0.95); }
-        /* ============================================================
-           COLABORE (CONTACT)
-        ============================================================ */
-        .gpis-contact {
-            padding: 5.5rem 0 5rem;
-            background-color: #f0f4f8;
-        }
-        .gpis-contact__layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-top: 2px solid var(--gpis-primary);
-        }
-        .gpis-contact__left {
-            padding: 3rem 3rem 3rem 0;
-            border-right: 1px solid #d8e0e9;
-        }
-        .gpis-contact__right {
-            padding: 3rem 0 3rem 3rem;
-        }
-        .gpis-contact__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 900;
-            color: var(--gpis-text-dark);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-        .gpis-contact__body {
-            font-size: 1rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
-        }
-        .gpis-contact__name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.2rem;
-        }
-        .gpis-contact__role {
-            font-size: 0.82rem;
-            color: var(--gpis-primary);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-        }
-        .gpis-contact__email {
-            font-size: 0.9rem;
-            color: var(--gpis-text-muted);
-            margin-bottom: 2rem;
-        }
-        .gpis-contact__cta {
-            display: inline-block;
-            padding: 0.85rem 2.25rem;
-            background: var(--gpis-primary);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .gpis-contact__cta:hover {
-            background: var(--gpis-primary-dk);
-            color: #fff;
-        }
-        @media (max-width: 767px) {
-            .gpis-contact__layout {
-                grid-template-columns: 1fr;
-            }
-            .gpis-contact__left {
-                padding: 2.5rem 0 2rem 0;
-                border-right: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-contact__right {
-                padding: 2rem 0 0 0;
-            }
-        }
-        /* ============================================================
-           FOOTER
-        ============================================================ */
-        .gpis-footer {
-            background-color: var(--gpis-primary-dk);
-            padding: 2.5rem 0;
-        }
-        .gpis-footer__inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .gpis-footer__name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.25rem;
-        }
-        .gpis-footer__inst {
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 0;
-        }
-        .gpis-footer__right {
-            text-align: right;
-            flex-shrink: 0;
-        }
-        .gpis-footer__email {
-            display: block;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            margin-bottom: 0.35rem;
-        }
-        .gpis-footer__email:hover {
-            color: #fff;
-        }
-        .gpis-footer__copy {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 0;
-        }
-        @media (max-width: 767px) {
-            .gpis-footer__inner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.25rem;
-            }
-            .gpis-footer__right {
-                text-align: left;
-            }
-        }
-
-        /* ============================================================
-           HERO
-           Fundo: azul institucional GPIS.
-           Para substituir por foto autêntica de campo, adicione:
-             background-image: url('caminho/foto-gpis.jpg');
-             background-size: cover;
-             background-position: center 40%;
-           e remova o linear-gradient abaixo.
-        ============================================================ */
-        .gpis-hero {
-            position: relative;
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(
-                140deg,
-                var(--gpis-primary-dk) 0%,
-                var(--gpis-primary)    60%,
-                #005fa8 100%
-            );
-            overflow: hidden;
-        }
-        /* Decoração geométrica discreta — remover quando houver foto autêntica */
-        .gpis-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(
-                ellipse at 78% 18%,
-                rgba(255, 255, 255, 0.05) 0%,
-                transparent 55%
-            );
-            pointer-events: none;
-        }
-        .gpis-hero__inner {
-            position: relative;
-            z-index: 2;
-            padding: 7rem 0 6rem;
-            max-width: 740px;
-        }
-        .gpis-hero__kicker {
-            display: block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 1.75rem;
-        }
-        .gpis-hero__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.9rem, 4.5vw, 3rem);
-            font-weight: 900;
-            line-height: 1.15;
-            color: #ffffff;
-            margin-bottom: 1.75rem;
-            letter-spacing: -0.01em;
-        }
-        .gpis-hero__lead {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-            max-width: 620px;
-        }
-        .gpis-hero__disciplines {
-            font-size: 0.78rem;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.42);
-            margin-bottom: 2.75rem;
-        }
-        .gpis-hero__ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-        }
-        .gpis-btn-primary {
-            display: inline-block;
-            background-color: #ffffff;
-            color: var(--gpis-primary);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            padding: 0.8rem 1.85rem;
-            border-radius: 3px;
-            text-decoration: none;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            border: none;
-        }
-        .gpis-btn-primary:hover {
-            background-color: #dce8f5;
-            color: var(--gpis-primary-dk);
-            text-decoration: none;
-        }
-        .gpis-btn-outline {
-            display: inline-block;
-            background-color: transparent;
-            color: rgba(255, 255, 255, 0.88);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            padding: 0.8rem 1.85rem;
-            border-radius: 3px;
-            border: 1.5px solid rgba(255, 255, 255, 0.38);
-            text-decoration: none;
-            transition: border-color 0.2s ease, background-color 0.2s ease;
-        }
-        .gpis-btn-outline:hover {
-            border-color: rgba(255, 255, 255, 0.75);
-            background-color: rgba(255, 255, 255, 0.07);
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        /* ============================================================
-           FAIXA DE MÉTRICAS / EVIDÊNCIAS
-        ============================================================ */
-        .gpis-metrics {
-            position: relative;
-            background-color: #ffffff;
-            border-bottom: 1px solid #dde3eb;
-        }
-        .gpis-metrics__grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .gpis-metrics__item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2.25rem 2rem;
-            border-right: 1px solid #dde3eb;
-        }
-        .gpis-metrics__item:last-child {
-            border-right: none;
-        }
-        .gpis-metrics__value {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: var(--gpis-primary);
-            line-height: 1.1;
-            margin-bottom: 0.4rem;
-        }
-        .gpis-metrics__label {
-            font-size: 0.78rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.45;
-            font-weight: 400;
-        }
-        @media (max-width: 767px) {
-            .gpis-metrics__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .gpis-metrics__item {
-                padding: 1.5rem 1.25rem;
-                border-bottom: 1px solid #dde3eb;
-            }
-            .gpis-metrics__item:nth-child(odd) {
-                border-right: 1px solid #dde3eb;
-            }
-            .gpis-metrics__item:nth-child(even) {
-                border-right: none;
-            }
-            .gpis-metrics__item:nth-last-child(-n+2) {
-                border-bottom: none;
-            }
-        }
-        @media (max-width: 479px) {
-            .gpis-metrics__grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-metrics__item {
-                border-right: none;
-                border-bottom: 1px solid #dde3eb;
-            }
-            .gpis-metrics__item:last-child {
-                border-bottom: none;
-            }
-        }
-
-        /* ============================================================
-           O QUE INVESTIGAMOS
-        ============================================================ */
-        .gpis-themes {
-            position: relative;
-            background-color: #f8fafc;
-            padding: 5.5rem 0 5rem;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-        }
-        .gpis-themes__label {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            opacity: 0.7;
-            margin-bottom: 0.65rem;
-        }
-        .gpis-themes__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 900;
-            color: var(--gpis-primary);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        .gpis-themes__intro {
-            font-size: 1rem;
-            color: var(--gpis-text-muted);
-            max-width: 560px;
-            line-height: 1.7;
-            margin-bottom: 3.5rem;
-        }
-        .gpis-themes__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            border-top: 2px solid var(--gpis-primary);
-        }
-        .gpis-theme {
-            padding: 2.5rem 2.5rem 2.5rem 0;
-            border-bottom: 1px solid #d8e0e9;
-        }
-        .gpis-theme:nth-child(even) {
-            padding-left: 2.5rem;
-            padding-right: 0;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-theme:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-        .gpis-theme__num {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.25em;
-            color: var(--gpis-primary);
-            opacity: 0.35;
-            margin-bottom: 1rem;
-        }
-        .gpis-theme__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.6rem;
-            line-height: 1.3;
-        }
-        .gpis-theme__desc {
-            font-size: 0.88rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.7;
-            margin: 0;
-        }
-        @media (max-width: 767px) {
-            .gpis-themes__grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-theme,
-            .gpis-theme:nth-child(even) {
-                padding: 2rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-theme:last-child {
-                border-bottom: none;
-            }
-        }
-
-        /* ============================================================
-           PROJETOS & PLATAFORMAS
-        ============================================================ */
-        .gpis-projects {
-            padding: 5.5rem 0 5rem;
-        }
-        .gpis-project-featured {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            border-top: 2px solid var(--gpis-primary);
-            margin-bottom: 3rem;
-        }
-        .gpis-project-featured__body {
-            padding: 3rem 3rem 3rem 0;
-        }
-        .gpis-project-featured__meta {
-            padding: 3rem 0 3rem 3rem;
-            border-left: 1px solid #d8e0e9;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .gpis-project-featured__eyebrow {
-            display: block;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            opacity: 0.5;
-            margin-bottom: 0.85rem;
-        }
-        .gpis-project-featured__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.2rem, 2.5vw, 1.65rem);
-            font-weight: 900;
-            color: var(--gpis-text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.25;
-        }
-        .gpis-project-featured__desc {
-            font-size: 0.92rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.75;
-            margin-bottom: 1.5rem;
-        }
-        .gpis-project-stat {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.5rem;
-        }
-        .gpis-project-stat + .gpis-project-stat {
-            padding-top: 1rem;
-            border-top: 1px solid #dde3eb;
-        }
-        .gpis-project-stat__value {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--gpis-primary);
-            line-height: 1.1;
-        }
-        .gpis-project-stat__label {
-            font-size: 0.75rem;
-            color: var(--gpis-text-muted);
-            margin-top: 0.2rem;
-        }
-        .gpis-project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            border-top: 1px solid #d8e0e9;
-        }
-        .gpis-project-card {
-            padding: 2.25rem 2.25rem 2.25rem 0;
-            border-bottom: 1px solid #d8e0e9;
-        }
-        .gpis-project-card:nth-child(even) {
-            padding-left: 2.25rem;
-            padding-right: 0;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-project-card:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-        .gpis-project-card__eyebrow {
-            display: block;
-            font-size: 0.63rem;
-            font-weight: 800;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            opacity: 0.45;
-            margin-bottom: 0.65rem;
-        }
-        .gpis-project-card__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.98rem;
-            font-weight: 800;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.55rem;
-            line-height: 1.3;
-        }
-        .gpis-project-card__desc {
-            font-size: 0.85rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .gpis-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-top: auto;
-        }
-        .gpis-tag {
-            font-size: 0.63rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            background-color: rgba(0, 76, 140, 0.07);
-            padding: 0.25rem 0.6rem;
-            border-radius: 2px;
-        }
-        @media (max-width: 767px) {
-            .gpis-project-featured {
-                grid-template-columns: 1fr;
-            }
-            .gpis-project-featured__body {
-                padding: 2rem 0 1.5rem;
-            }
-            .gpis-project-featured__meta {
-                padding: 1.5rem 0 2rem;
-                border-left: none;
-                border-top: 1px solid #d8e0e9;
-            }
-            .gpis-project-grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-project-card,
-            .gpis-project-card:nth-child(even) {
-                padding: 2rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-project-card:last-child {
-                border-bottom: none;
-            }
-        }
-
-        /* ============================================================
-           PESSOAS
-        ============================================================ */
-        .gpis-people {
-            padding: 5.5rem 0 5rem;
-        }
-        .gpis-people__group {
-            margin-bottom: 4rem;
-        }
-        .gpis-people__group:last-child {
-            margin-bottom: 0;
-        }
-        .gpis-people__group-label {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            opacity: 0.7;
-            padding-bottom: 0.75rem;
-            margin-bottom: 0;
-            border-bottom: 2px solid var(--gpis-primary);
-        }
-        /* Equipe GPIS — grid 2 colunas */
-        .gpis-team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            border: none;
-        }
-        .gpis-team-member {
-            padding: 2.25rem 2.5rem 2.25rem 0;
-            border-bottom: 1px solid #d8e0e9;
-        }
-        .gpis-team-member:nth-child(even) {
-            padding-left: 2.5rem;
-            padding-right: 0;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-team-member:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-        /* Campos comuns de membros */
-        .gpis-member__name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.2rem;
-            line-height: 1.2;
-        }
-        .gpis-member__role {
-            font-size: 0.76rem;
-            color: var(--gpis-primary);
-            font-weight: 600;
-            line-height: 1.35;
-            margin-bottom: 0.2rem;
-        }
-        .gpis-member__inst {
-            font-size: 0.73rem;
-            color: var(--gpis-text-muted);
-            margin-bottom: 0.9rem;
-        }
-        .gpis-member__expertise {
-            font-size: 0.81rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.6;
-            margin-bottom: 0.35rem;
-        }
-        .gpis-member__projects {
-            font-size: 0.76rem;
-            color: var(--gpis-text-muted);
-            margin-bottom: 0.9rem;
-        }
-        .gpis-member__links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.22rem;
-        }
-        .gpis-member__link {
-            font-size: 0.75rem;
-            color: var(--gpis-primary);
-            text-decoration: none;
-            word-break: break-all;
-        }
-        .gpis-member__link:hover {
-            text-decoration: underline;
-            color: var(--gpis-primary-dk);
-        }
-        .gpis-member__orcid-pending {
-            font-size: 0.72rem;
-            color: var(--gpis-text-muted);
-        }
-        /* Pesquisadores em formação */
-        .gpis-formacao-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-top: 1px solid #d8e0e9;
-        }
-        .gpis-formacao-group {
-            padding: 1.75rem 1.75rem 1.75rem 0;
-        }
-        .gpis-formacao-group:nth-child(even) {
-            padding-left: 1.75rem;
-            padding-right: 0;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-formacao-group__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--gpis-primary);
-            opacity: 0.45;
-            margin-bottom: 1rem;
-        }
-        .gpis-formacao-item {
-            padding: 0.65rem 0;
-            border-bottom: 1px solid #edf0f4;
-        }
-        .gpis-formacao-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .gpis-formacao-item__name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.86rem;
-            font-weight: 700;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.1rem;
-        }
-        .gpis-formacao-item__info {
-            font-size: 0.75rem;
-            color: var(--gpis-text-muted);
-            margin-bottom: 0;
-        }
-        /* Rede científica internacional — grid 3 colunas */
-        .gpis-rede-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid #d8e0e9;
-        }
-        .gpis-rede-member {
-            padding: 2rem 2rem 0 0;
-        }
-        .gpis-rede-member:not(:first-child) {
-            padding-left: 2rem;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-rede-member:last-child {
-            padding-right: 0;
-        }
-        .gpis-rede-member__papel {
-            font-size: 0.76rem;
-            color: var(--gpis-text-muted);
-            font-style: italic;
-            margin-bottom: 0.75rem;
-            line-height: 1.45;
-        }
-        /* Responsividade — Pessoas */
-        @media (max-width: 767px) {
-            .gpis-team-grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-team-member,
-            .gpis-team-member:nth-child(even) {
-                padding: 2rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-team-member:nth-last-child(-n+2) {
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-team-member:last-child {
-                border-bottom: none;
-            }
-            .gpis-formacao-grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-formacao-group,
-            .gpis-formacao-group:nth-child(even) {
-                padding: 1.5rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-formacao-group:last-child {
-                border-bottom: none;
-            }
-            .gpis-rede-grid {
-                grid-template-columns: 1fr;
-            }
-            .gpis-rede-member,
-            .gpis-rede-member:not(:first-child) {
-                padding: 1.75rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-rede-member:last-child {
-                border-bottom: none;
-            }
-        }
-
-        /* ============================================================
-           IMPACTO
-        ============================================================ */
-        .gpis-impact {
-            padding: 5.5rem 0 5rem;
-        }
-        .gpis-impact__dims {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            border-top: 2px solid var(--gpis-primary);
-            margin-bottom: 4rem;
-        }
-        .gpis-impact__dim {
-            padding: 2.5rem 2.5rem 2.5rem 0;
-            border-bottom: 1px solid #d8e0e9;
-        }
-        .gpis-impact__dim:nth-child(even) {
-            padding-left: 2.5rem;
-            padding-right: 0;
-            border-left: 1px solid #d8e0e9;
-        }
-        .gpis-impact__dim:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-        .gpis-impact__num {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.25em;
-            color: var(--gpis-primary);
-            opacity: 0.35;
-            margin-bottom: 1rem;
-        }
-        .gpis-impact__dim-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--gpis-text-dark);
-            margin-bottom: 0.6rem;
-            line-height: 1.3;
-        }
-        .gpis-impact__dim-desc {
-            font-size: 0.88rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.7;
-            margin: 0;
-        }
-        .gpis-impact__flow {
-            border-top: 1px solid #d8e0e9;
-            padding-top: 3rem;
-        }
-        .gpis-impact__flow-steps {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin-bottom: 1.25rem;
-            flex-wrap: nowrap;
-        }
-        .gpis-impact__flow-step {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 800;
-            color: var(--gpis-primary);
-            white-space: nowrap;
-            padding: 0.5rem 0;
-        }
-        .gpis-impact__flow-arrow {
-            flex: 1;
-            text-align: center;
-            color: var(--gpis-primary);
-            opacity: 0.3;
-            font-size: 0.9rem;
-            padding: 0 0.5rem;
-            min-width: 1.5rem;
-        }
-        .gpis-impact__flow-caption {
-            font-size: 0.85rem;
-            color: var(--gpis-text-muted);
-            line-height: 1.65;
-            max-width: 640px;
-            margin: 0;
-        }
-        @media (max-width: 767px) {
-            .gpis-impact__dims {
-                grid-template-columns: 1fr;
-            }
-            .gpis-impact__dim,
-            .gpis-impact__dim:nth-child(even) {
-                padding: 2rem 0;
-                border-left: none;
-                border-bottom: 1px solid #d8e0e9;
-            }
-            .gpis-impact__dim:last-child {
-                border-bottom: none;
-            }
-            .gpis-impact__flow-steps {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.4rem;
-            }
-            .gpis-impact__flow-arrow {
-                transform: rotate(90deg);
-                padding: 0;
-                min-width: auto;
-            }
-        }
-
-        /* ============================================================
-           MOVIMENTO REDUZIDO (acessibilidade)
-        ============================================================ */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            html { scroll-behavior: auto; }
-        }
-    </style>
+    <!-- Estilos customizados -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <!-- Skip link de acessibilidade -->
@@ -1017,8 +44,8 @@
                         <li class="nav-item"><a class="nav-link" href="#home">GPIS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#o-que-investigamos">Pesquisa</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projetos &amp; Dados</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Pessoas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#impact">Impacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Pessoas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Colabore</a></li>
                     </ul>
                 </div>
@@ -1168,13 +195,13 @@
                 <div class="gpis-project-grid">
                     <div class="gpis-project-card">
                         <span class="gpis-project-card__eyebrow">Rede internacional</span>
-                        <h4 class="gpis-project-card__title">Visões do Cuidado</h4>
+                        <h3 class="gpis-project-card__title">Visões do Cuidado</h3>
                         <p class="gpis-project-card__desc">
                             Rede latino-americana que integra epidemiologia, inteligência artificial e
                             observação de interações humanas para estudar saúde mental e relações entre
                             gerações.
                         </p>
-                        <p class="gpis-project-card__desc" style="font-size:0.78rem; color:var(--gpis-text-muted); margin-bottom:0.75rem;">Brasil · Chile · Peru · Reino Unido</p>
+                        <p class="gpis-project-card__countries">Brasil · Chile · Peru · Reino Unido</p>
                         <div class="gpis-tags">
                             <span class="gpis-tag">Eixo 01</span>
                             <span class="gpis-tag">Eixo 02</span>
@@ -1182,7 +209,7 @@
                     </div>
                     <div class="gpis-project-card">
                         <span class="gpis-project-card__eyebrow">Epidemiologia de desastres</span>
-                        <h4 class="gpis-project-card__title">Enchentes e saúde mental</h4>
+                        <h3 class="gpis-project-card__title">Enchentes e saúde mental</h3>
                         <p class="gpis-project-card__desc">
                             Investigamos como as enchentes no Sul do Brasil afetaram a saúde mental e as
                             trajetórias de crianças, mães e famílias.
@@ -1194,7 +221,7 @@
                     </div>
                     <div class="gpis-project-card">
                         <span class="gpis-project-card__eyebrow">Tecnologia &amp; comportamento</span>
-                        <h4 class="gpis-project-card__title">Visão em primeira pessoa &amp; IA</h4>
+                        <h3 class="gpis-project-card__title">Visão em primeira pessoa &amp; IA</h3>
                         <p class="gpis-project-card__desc">
                             Usamos câmeras vestíveis e métodos computacionais para estudar interações
                             familiares em contextos cotidianos e desenvolver novas formas de observar
@@ -1207,7 +234,7 @@
                     </div>
                     <div class="gpis-project-card">
                         <span class="gpis-project-card__eyebrow">Dados populacionais</span>
-                        <h4 class="gpis-project-card__title">Linkage e dados populacionais</h4>
+                        <h3 class="gpis-project-card__title">Linkage e dados populacionais</h3>
                         <p class="gpis-project-card__desc">
                             Integramos dados longitudinais e registros administrativos para ampliar o estudo
                             das trajetórias de saúde mantendo princípios de segurança, governança e
@@ -1272,13 +299,13 @@
                 </div>
 
                 <div class="gpis-impact__flow">
-                    <div class="gpis-impact__flow-steps" aria-hidden="true">
+                    <div class="gpis-impact__flow-steps">
                         <span class="gpis-impact__flow-step">Dados</span>
-                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-arrow" aria-hidden="true">→</span>
                         <span class="gpis-impact__flow-step">Evidências</span>
-                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-arrow" aria-hidden="true">→</span>
                         <span class="gpis-impact__flow-step">Formação &amp; colaboração</span>
-                        <span class="gpis-impact__flow-arrow">→</span>
+                        <span class="gpis-impact__flow-arrow" aria-hidden="true">→</span>
                         <span class="gpis-impact__flow-step">Comunicação &amp; uso</span>
                     </div>
                     <p class="gpis-impact__flow-caption">
@@ -1306,11 +333,11 @@
 
                 <!-- 1 · Equipe GPIS -->
                 <div class="gpis-people__group">
-                    <span class="gpis-people__group-label">Equipe GPIS</span>
+                    <h3 class="gpis-people__group-label">Equipe GPIS</h3>
                     <div class="gpis-team-grid">
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Christian Loret de Mola Zanatti</h3>
+                            <h4 class="gpis-member__name">Christian Loret de Mola Zanatti</h4>
                             <p class="gpis-member__role">Coordenador / Investigador Principal</p>
                             <p class="gpis-member__inst">FURG / Universidad Científica del Sur (Peru)</p>
                             <p class="gpis-member__expertise">Epidemiologia, inferência causal, saúde mental materno-infantil.</p>
@@ -1322,7 +349,7 @@
                         </div>
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Rafaela Costa Martins</h3>
+                            <h4 class="gpis-member__name">Rafaela Costa Martins</h4>
                             <p class="gpis-member__role">Pesquisadora / Gestora de dados e acompanhamento presencial</p>
                             <p class="gpis-member__inst">FURG / Causale Consultoria</p>
                             <p class="gpis-member__expertise">Gestão e curadoria de dados, análise estatística, escrita científica.</p>
@@ -1334,7 +361,7 @@
                         </div>
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Cauane Blumenberg</h3>
+                            <h4 class="gpis-member__name">Cauane Blumenberg</h4>
                             <p class="gpis-member__role">Pesquisador / Análise de dados</p>
                             <p class="gpis-member__inst">FURG / Causale Consultoria</p>
                             <p class="gpis-member__expertise">Métodos epidemiológicos, ciência de dados, análise computacional.</p>
@@ -1346,7 +373,7 @@
                         </div>
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Romina Buffarini</h3>
+                            <h4 class="gpis-member__name">Romina Buffarini</h4>
                             <p class="gpis-member__role">Pesquisadora / Curadoria de dados</p>
                             <p class="gpis-member__inst">FURG</p>
                             <p class="gpis-member__expertise">Curadoria de dados, análise estatística, nutrição materno-infantil.</p>
@@ -1358,10 +385,10 @@
                         </div>
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Andressa Cardoso</h3>
+                            <h4 class="gpis-member__name">Andressa Cardoso</h4>
                             <p class="gpis-member__role">Pesquisadora / Responsável subprojeto câmeras</p>
                             <p class="gpis-member__inst">FURG</p>
-                            <p class="gpis-member__expertise">Nutrição, desenvolvimento infantil, ACEs, interação mãe-filho.</p>
+                            <p class="gpis-member__expertise">Nutrição, desenvolvimento infantil, experiências adversas na infância (ACEs), interação mãe-filho.</p>
                             <p class="gpis-member__projects">Subprojetos: Câmeras/IA; Coorte principal</p>
                             <div class="gpis-member__links">
                                 <a href="https://orcid.org/0000-0003-0595-9889" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-0595-9889</a>
@@ -1370,7 +397,7 @@
                         </div>
 
                         <div class="gpis-team-member">
-                            <h3 class="gpis-member__name">Júlia Freire Danigno</h3>
+                            <h4 class="gpis-member__name">Júlia Freire Danigno</h4>
                             <p class="gpis-member__role">Pesquisadora / Professora colaboradora</p>
                             <p class="gpis-member__inst">FAMED-FURG</p>
                             <p class="gpis-member__expertise">Saúde bucal, saúde mental, Senso de Coerência, Stata/R/Epidata.</p>
@@ -1386,11 +413,11 @@
 
                 <!-- 2 · Pesquisadores em formação -->
                 <div class="gpis-people__group">
-                    <span class="gpis-people__group-label">Pesquisadores em formação</span>
+                    <h3 class="gpis-people__group-label">Pesquisadores em formação</h3>
                     <div class="gpis-formacao-grid">
 
                         <div class="gpis-formacao-group">
-                            <p class="gpis-formacao-group__title">Mestrandos</p>
+                            <h4 class="gpis-formacao-group__title">Mestrandos</h4>
                             <div class="gpis-formacao-item">
                                 <p class="gpis-formacao-item__name">Gabriel Chaplin da Silva</p>
                                 <p class="gpis-formacao-item__info">Mestrando · FURG</p>
@@ -1402,7 +429,7 @@
                         </div>
 
                         <div class="gpis-formacao-group">
-                            <p class="gpis-formacao-group__title">Iniciação Científica</p>
+                            <h4 class="gpis-formacao-group__title">Iniciação Científica</h4>
                             <div class="gpis-formacao-item">
                                 <p class="gpis-formacao-item__name">Lorena Goulart Vieira</p>
                                 <p class="gpis-formacao-item__info">IC · FURG · Medicina, 10º semestre</p>
@@ -1426,13 +453,13 @@
 
                 <!-- 3 · Rede científica internacional -->
                 <div class="gpis-people__group">
-                    <span class="gpis-people__group-label">Rede científica internacional</span>
+                    <h3 class="gpis-people__group-label">Rede científica internacional</h3>
                     <div class="gpis-rede-grid">
 
                         <div class="gpis-rede-member">
-                            <h3 class="gpis-member__name">Rebecca Pearson</h3>
+                            <h4 class="gpis-member__name">Rebecca Pearson</h4>
                             <p class="gpis-member__inst">Manchester Metropolitan University · Reino Unido</p>
-                            <p class="gpis-rede-member__papel">Colaboradora principal câmeras/IA; co-applicant Wellcome</p>
+                            <p class="gpis-rede-member__papel">Colaboradora principal câmeras/IA; co-applicant em proposta Wellcome</p>
                             <p class="gpis-member__expertise">Métodos computacionais e observacionais, transmissão intergeracional de saúde mental.</p>
                             <div class="gpis-member__links">
                                 <a href="https://orcid.org/0000-0001-8527-3400" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0001-8527-3400</a>
@@ -1441,9 +468,9 @@
                         </div>
 
                         <div class="gpis-rede-member">
-                            <h3 class="gpis-member__name">Miguel Cordero Vega</h3>
+                            <h4 class="gpis-member__name">Miguel Cordero Vega</h4>
                             <p class="gpis-member__inst">Universidad del Desarrollo · Chile</p>
-                            <p class="gpis-rede-member__papel">Colaborador câmeras/IA; co-applicant Wellcome</p>
+                            <p class="gpis-rede-member__papel">Colaborador câmeras/IA; co-applicant em proposta Wellcome</p>
                             <p class="gpis-member__expertise">Epidemiologia do desenvolvimento, saúde mental perinatal, calibração cultural.</p>
                             <div class="gpis-member__links">
                                 <a href="https://orcid.org/0000-0003-4414-4447" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-4414-4447</a>
@@ -1452,9 +479,9 @@
                         </div>
 
                         <div class="gpis-rede-member">
-                            <h3 class="gpis-member__name">Fernando Runzer Colmenares</h3>
+                            <h4 class="gpis-member__name">Fernando Runzer Colmenares</h4>
                             <p class="gpis-member__inst">Universidad Científica del Sur · Peru</p>
-                            <p class="gpis-rede-member__papel">Colaborador pipeline IA; CHANGE Research Working Group</p>
+                            <p class="gpis-rede-member__papel">Colaborador pipeline de IA; CHANGE Research Working Group</p>
                             <p class="gpis-member__expertise">Epidemiologia clínica, IA e reconhecimento facial, metodologia computacional.</p>
                             <div class="gpis-member__links">
                                 <a href="https://orcid.org/0000-0003-4045-0260" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-4045-0260</a>
@@ -1518,22 +545,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-        // --- INIT ---
-        document.addEventListener('DOMContentLoaded', function () {
-            const yearEl = document.getElementById('currentYear');
-            if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-            document.querySelectorAll('#nav-links a').forEach(anchor => {
-                anchor.addEventListener('click', function () {
-                    const navbarCollapse = document.getElementById('navbarNav');
-                    if (navbarCollapse.classList.contains('show')) {
-                        new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-                    }
-                });
-            });
-        });
-
-    </script>
+    <!-- JS customizado -->
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,994 @@
+/* ============================================================
+   VARIÁVEIS E BASE
+============================================================ */
+:root {
+    --gpis-primary:    #004c8c;
+    --gpis-primary-dk: #002d5c;
+    --gpis-secondary:  #f0f4f8;
+    --gpis-highlight:  #ff6f61;
+    --gpis-text-dark:  #212529;
+    --gpis-text-muted: #5a6475;
+    --gpis-bg-white:   #ffffff;
+    --gpis-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+    scroll-padding-top: 72px;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--gpis-text-dark);
+    scroll-behavior: smooth;
+    background-color: #f0f4f8;
+}
+
+/* ============================================================
+   ACESSIBILIDADE: SKIP LINK
+============================================================ */
+.skip-link {
+    position: absolute;
+    top: -48px;
+    left: 0;
+    background: var(--gpis-primary);
+    color: #fff;
+    padding: 10px 16px;
+    z-index: 9999;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================================
+   ACESSIBILIDADE: FOCUS VISIBLE
+============================================================ */
+:focus-visible {
+    outline: 3px solid var(--gpis-highlight);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.gpis-navbar {
+    background-color: var(--gpis-primary-dk);
+    transition: background-color 0.3s ease;
+}
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+.navbar-brand small {
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-top: -2px;
+}
+.nav-link {
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gpis-highlight) !important;
+}
+
+/* ============================================================
+   PAGE CONTENT (seções abaixo do fold)
+============================================================ */
+.page-content {
+    min-height: auto;
+    padding: 5rem 0;
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 0;
+}
+#projects { background-color: #ffffff; }
+#impact   { background-color: #f0f4f8; }
+#team     { background-color: #ffffff; }
+
+/* ============================================================
+   COLABORE (CONTACT)
+============================================================ */
+.gpis-contact {
+    padding: 5.5rem 0 5rem;
+    background-color: #f0f4f8;
+}
+.gpis-contact__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-contact__left {
+    padding: 3rem 3rem 3rem 0;
+    border-right: 1px solid #d8e0e9;
+}
+.gpis-contact__right {
+    padding: 3rem 0 3rem 3rem;
+}
+.gpis-contact__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--gpis-text-dark);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+.gpis-contact__body {
+    font-size: 1rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+.gpis-contact__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-bottom: 0.2rem;
+}
+.gpis-contact__role {
+    font-size: 0.82rem;
+    color: var(--gpis-primary);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+.gpis-contact__email {
+    font-size: 0.9rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 2rem;
+}
+.gpis-contact__cta {
+    display: inline-block;
+    padding: 0.85rem 2.25rem;
+    background: var(--gpis-primary);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.gpis-contact__cta:hover {
+    background: var(--gpis-primary-dk);
+    color: #fff;
+}
+@media (max-width: 767px) {
+    .gpis-contact__layout {
+        grid-template-columns: 1fr;
+    }
+    .gpis-contact__left {
+        padding: 2.5rem 0 2rem 0;
+        border-right: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-contact__right {
+        padding: 2rem 0 0 0;
+    }
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.gpis-footer {
+    background-color: var(--gpis-primary-dk);
+    padding: 2.5rem 0;
+}
+.gpis-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.gpis-footer__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+.gpis-footer__inst {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+}
+.gpis-footer__right {
+    text-align: right;
+    flex-shrink: 0;
+}
+.gpis-footer__email {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    margin-bottom: 0.35rem;
+}
+.gpis-footer__email:hover {
+    color: #fff;
+}
+.gpis-footer__copy {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 0;
+}
+@media (max-width: 767px) {
+    .gpis-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .gpis-footer__right {
+        text-align: left;
+    }
+}
+
+/* ============================================================
+   HERO
+   Para substituir por foto autêntica de campo, adicione:
+     background-image: url('caminho/foto-gpis.jpg');
+     background-size: cover;
+     background-position: center 40%;
+   e remova o linear-gradient abaixo.
+============================================================ */
+.gpis-hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        140deg,
+        var(--gpis-primary-dk) 0%,
+        var(--gpis-primary)    60%,
+        #005fa8 100%
+    );
+    overflow: hidden;
+}
+/* Decoração geométrica discreta — remover quando houver foto autêntica */
+.gpis-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 78% 18%,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 55%
+    );
+    pointer-events: none;
+}
+.gpis-hero__inner {
+    position: relative;
+    z-index: 2;
+    padding: 7rem 0 6rem;
+    max-width: 740px;
+}
+.gpis-hero__kicker {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1.75rem;
+}
+.gpis-hero__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.9rem, 4.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.01em;
+}
+.gpis-hero__lead {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 620px;
+}
+.gpis-hero__disciplines {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 2.75rem;
+}
+.gpis-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+.gpis-btn-primary {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--gpis-primary);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.8rem 1.85rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: none;
+}
+.gpis-btn-primary:hover {
+    background-color: #dce8f5;
+    color: var(--gpis-primary-dk);
+    text-decoration: none;
+}
+.gpis-btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.8rem 1.85rem;
+    border-radius: 3px;
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.gpis-btn-outline:hover {
+    border-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ============================================================
+   FAIXA DE MÉTRICAS / EVIDÊNCIAS
+============================================================ */
+.gpis-metrics {
+    position: relative;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dde3eb;
+}
+.gpis-metrics__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.gpis-metrics__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.25rem 2rem;
+    border-right: 1px solid #dde3eb;
+}
+.gpis-metrics__item:last-child {
+    border-right: none;
+}
+.gpis-metrics__value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--gpis-primary);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+.gpis-metrics__label {
+    font-size: 0.78rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.45;
+    font-weight: 400;
+}
+@media (max-width: 767px) {
+    .gpis-metrics__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gpis-metrics__item {
+        padding: 1.5rem 1.25rem;
+        border-bottom: 1px solid #dde3eb;
+    }
+    .gpis-metrics__item:nth-child(odd) {
+        border-right: 1px solid #dde3eb;
+    }
+    .gpis-metrics__item:nth-child(even) {
+        border-right: none;
+    }
+    .gpis-metrics__item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+@media (max-width: 479px) {
+    .gpis-metrics__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-metrics__item {
+        border-right: none;
+        border-bottom: 1px solid #dde3eb;
+    }
+    .gpis-metrics__item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================================
+   O QUE INVESTIGAMOS
+============================================================ */
+.gpis-themes {
+    position: relative;
+    background-color: #f8fafc;
+    padding: 5.5rem 0 5rem;
+}
+.gpis-themes__label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.8;
+    margin-bottom: 0.65rem;
+}
+.gpis-themes__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    color: var(--gpis-primary);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.gpis-themes__intro {
+    font-size: 1rem;
+    color: var(--gpis-text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+}
+.gpis-themes__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+}
+.gpis-theme {
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-theme:nth-child(even) {
+    padding-left: 2.5rem;
+    padding-right: 0;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-theme:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+.gpis-theme__num {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    color: var(--gpis-primary);
+    opacity: 0.35;
+    margin-bottom: 1rem;
+}
+.gpis-theme__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+}
+.gpis-theme__desc {
+    font-size: 0.88rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-themes__grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-theme,
+    .gpis-theme:nth-child(even) {
+        padding: 2rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-theme:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================================
+   PROJETOS & PLATAFORMAS
+============================================================ */
+.gpis-projects {
+    padding: 5.5rem 0 5rem;
+}
+.gpis-project-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 2px solid var(--gpis-primary);
+    margin-bottom: 3rem;
+}
+.gpis-project-featured__body {
+    padding: 3rem 3rem 3rem 0;
+}
+.gpis-project-featured__meta {
+    padding: 3rem 0 3rem 3rem;
+    border-left: 1px solid #d8e0e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.gpis-project-featured__eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.5;
+    margin-bottom: 0.85rem;
+}
+.gpis-project-featured__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+    font-weight: 900;
+    color: var(--gpis-text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+.gpis-project-featured__desc {
+    font-size: 0.92rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+.gpis-project-stat {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.gpis-project-stat + .gpis-project-stat {
+    padding-top: 1rem;
+    border-top: 1px solid #dde3eb;
+}
+.gpis-project-stat__value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--gpis-primary);
+    line-height: 1.1;
+}
+.gpis-project-stat__label {
+    font-size: 0.75rem;
+    color: var(--gpis-text-muted);
+    margin-top: 0.2rem;
+}
+.gpis-project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #d8e0e9;
+}
+.gpis-project-card {
+    padding: 2.25rem 2.25rem 2.25rem 0;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-project-card:nth-child(even) {
+    padding-left: 2.25rem;
+    padding-right: 0;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-project-card:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+.gpis-project-card__eyebrow {
+    display: block;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.45;
+    margin-bottom: 0.65rem;
+}
+.gpis-project-card__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+}
+.gpis-project-card__desc {
+    font-size: 0.85rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.gpis-project-card__countries {
+    font-size: 0.78rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 0.75rem;
+}
+.gpis-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: auto;
+}
+.gpis-tag {
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    background-color: rgba(0, 76, 140, 0.07);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+}
+@media (max-width: 767px) {
+    .gpis-project-featured {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-featured__body {
+        padding: 2rem 0 1.5rem;
+    }
+    .gpis-project-featured__meta {
+        padding: 1.5rem 0 2rem;
+        border-left: none;
+        border-top: 1px solid #d8e0e9;
+    }
+    .gpis-project-grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-project-card,
+    .gpis-project-card:nth-child(even) {
+        padding: 2rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-project-card:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================================
+   PESSOAS
+============================================================ */
+.gpis-people {
+    padding: 5.5rem 0 5rem;
+}
+.gpis-people__group {
+    margin-bottom: 4rem;
+}
+.gpis-people__group:last-child {
+    margin-bottom: 0;
+}
+.gpis-people__group-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.7;
+    padding-bottom: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--gpis-primary);
+}
+/* Equipe GPIS — grid 2 colunas */
+.gpis-team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.gpis-team-member {
+    padding: 2.25rem 2.5rem 2.25rem 0;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-team-member:nth-child(even) {
+    padding-left: 2.5rem;
+    padding-right: 0;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-team-member:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+/* Campos comuns de membros */
+.gpis-member__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+.gpis-member__role {
+    font-size: 0.76rem;
+    color: var(--gpis-primary);
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+}
+.gpis-member__inst {
+    font-size: 0.73rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 0.9rem;
+}
+.gpis-member__expertise {
+    font-size: 0.81rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.35rem;
+}
+.gpis-member__projects {
+    font-size: 0.76rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 0.9rem;
+}
+.gpis-member__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+}
+.gpis-member__link {
+    font-size: 0.75rem;
+    color: var(--gpis-primary);
+    text-decoration: none;
+    word-break: break-all;
+}
+.gpis-member__link:hover {
+    text-decoration: underline;
+    color: var(--gpis-primary-dk);
+}
+.gpis-member__orcid-pending {
+    font-size: 0.72rem;
+    color: var(--gpis-text-muted);
+}
+/* Pesquisadores em formação */
+.gpis-formacao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #d8e0e9;
+}
+.gpis-formacao-group {
+    padding: 1.75rem 1.75rem 1.75rem 0;
+}
+.gpis-formacao-group:nth-child(even) {
+    padding-left: 1.75rem;
+    padding-right: 0;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-formacao-group__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gpis-primary);
+    opacity: 0.45;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.gpis-formacao-item {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid #edf0f4;
+}
+.gpis-formacao-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.gpis-formacao-item__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--gpis-text-dark);
+    margin-bottom: 0.1rem;
+}
+.gpis-formacao-item__info {
+    font-size: 0.75rem;
+    color: var(--gpis-text-muted);
+    margin-bottom: 0;
+}
+/* Rede científica internacional — grid 3 colunas */
+.gpis-rede-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #d8e0e9;
+}
+.gpis-rede-member {
+    padding: 2rem 2rem 0 0;
+}
+.gpis-rede-member:not(:first-child) {
+    padding-left: 2rem;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-rede-member:last-child {
+    padding-right: 0;
+}
+.gpis-rede-member__papel {
+    font-size: 0.76rem;
+    color: var(--gpis-text-muted);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    line-height: 1.45;
+}
+/* Responsividade — Pessoas */
+@media (max-width: 767px) {
+    .gpis-team-grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-team-member,
+    .gpis-team-member:nth-child(even) {
+        padding: 2rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-team-member:nth-last-child(-n+2) {
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-team-member:last-child {
+        border-bottom: none;
+    }
+    .gpis-formacao-grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-formacao-group,
+    .gpis-formacao-group:nth-child(even) {
+        padding: 1.5rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-formacao-group:last-child {
+        border-bottom: none;
+    }
+    .gpis-rede-grid {
+        grid-template-columns: 1fr;
+    }
+    .gpis-rede-member,
+    .gpis-rede-member:not(:first-child) {
+        padding: 1.75rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-rede-member:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================================
+   IMPACTO
+============================================================ */
+.gpis-impact {
+    padding: 5.5rem 0 5rem;
+}
+.gpis-impact__dims {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 2px solid var(--gpis-primary);
+    margin-bottom: 4rem;
+}
+.gpis-impact__dim {
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    border-bottom: 1px solid #d8e0e9;
+}
+.gpis-impact__dim:nth-child(even) {
+    padding-left: 2.5rem;
+    padding-right: 0;
+    border-left: 1px solid #d8e0e9;
+}
+.gpis-impact__dim:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+.gpis-impact__num {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    color: var(--gpis-primary);
+    opacity: 0.35;
+    margin-bottom: 1rem;
+}
+.gpis-impact__dim-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gpis-text-dark);
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+}
+.gpis-impact__dim-desc {
+    font-size: 0.88rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+.gpis-impact__flow {
+    border-top: 1px solid #d8e0e9;
+    padding-top: 3rem;
+}
+.gpis-impact__flow-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1.25rem;
+    flex-wrap: nowrap;
+}
+.gpis-impact__flow-step {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--gpis-primary);
+    white-space: nowrap;
+    padding: 0.5rem 0;
+}
+.gpis-impact__flow-arrow {
+    flex: 1;
+    text-align: center;
+    color: var(--gpis-primary);
+    opacity: 0.3;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    min-width: 1.5rem;
+}
+.gpis-impact__flow-caption {
+    font-size: 0.85rem;
+    color: var(--gpis-text-muted);
+    line-height: 1.65;
+    max-width: 640px;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-impact__dims {
+        grid-template-columns: 1fr;
+    }
+    .gpis-impact__dim,
+    .gpis-impact__dim:nth-child(even) {
+        padding: 2rem 0;
+        border-left: none;
+        border-bottom: 1px solid #d8e0e9;
+    }
+    .gpis-impact__dim:last-child {
+        border-bottom: none;
+    }
+    .gpis-impact__flow-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+    .gpis-impact__flow-arrow {
+        transform: rotate(90deg);
+        padding: 0;
+        min-width: auto;
+    }
+}
+
+/* ============================================================
+   MOVIMENTO REDUZIDO (acessibilidade)
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}

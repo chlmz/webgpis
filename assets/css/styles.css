@@ -570,19 +570,74 @@ body {
     line-height: 1.4;
     margin: 0;
 }
-.gpis-people-compact__note {
-    font-size: 0.9375rem;
+.gpis-people-compact__sublabel {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     color: var(--gpis-cinza-200);
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-subtle);
-    line-height: 1.7;
+    margin: 0 0 1rem;
 }
 @media (max-width: 991px) {
     .gpis-people-compact__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 575px) {
     .gpis-people-compact__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FORMAÇÃO NO GPIS (HOME — dentro de Pessoas)
+============================================================ */
+.gpis-formacao {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+.gpis-formacao__label {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    margin: 0 0 1.75rem;
+}
+.gpis-formacao__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 4rem;
+}
+.gpis-formacao__category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gpis-azul-ciencia);
+    margin: 0 0 0.75rem;
+}
+.gpis-formacao__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+}
+.gpis-formacao__list li {
+    font-size: 1.0625rem;
+    color: var(--gpis-grafite);
+    line-height: 1.6;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--border-subtle);
+}
+.gpis-formacao__list li:last-child {
+    border-bottom: 1px solid var(--border-subtle);
+}
+.gpis-formacao__institution {
+    font-size: 0.875rem;
+    color: var(--gpis-cinza-200);
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-formacao__cols {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 /* ============================================================
@@ -1092,13 +1147,41 @@ body {
 }
 
 /* ============================================================
-   PÁGINA IMPACTO — HERO
+   PÁGINA IMPACTO — HERO (banner fotográfico full-bleed)
 ============================================================ */
 .gpis-impact-hero {
-    background: var(--gpis-azul-ciencia);
-    padding: 5rem 0 4.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    padding: 5rem 0;
+    background: rgb(16, 32, 50);
 }
-.gpis-impact-hero__inner { max-width: 680px; }
+.gpis-impact-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    z-index: 0;
+}
+.gpis-impact-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        100deg,
+        rgba(20, 38, 56, 0.80) 0%,
+        rgba(20, 38, 56, 0.80) 42%,
+        rgba(20, 38, 56, 0.50) 100%
+    );
+    z-index: 1;
+}
+.gpis-impact-hero__content {
+    position: relative;
+    z-index: 2;
+}
+.gpis-impact-hero__text { max-width: 580px; }
 .gpis-impact-hero__eyebrow {
     display: block;
     font-size: 0.72rem;
@@ -1122,7 +1205,10 @@ body {
     color: rgba(255,255,255,0.82);
     line-height: 1.7;
     margin: 0;
-    max-width: 580px;
+}
+@media (max-width: 767px) {
+    .gpis-impact-hero { min-height: 420px; }
+    .gpis-impact-hero__overlay { background: rgba(20, 38, 56, 0.74); }
 }
 
 /* ============================================================
@@ -1211,95 +1297,35 @@ body {
 }
 
 /* ============================================================
-   IMPACTO — FOTOGRAFIA (hero 2-col + bloco 04)
+   IMPACTO — BLOCO 04 FOTOGRAFIA
 ============================================================ */
 
-/* Hero — grid 2 colunas em desktop, painel de mídia integrado */
-.gpis-impact-hero__layout {
-    display: grid;
-    grid-template-columns: 57fr 43fr;
-    gap: 3rem;
-    align-items: stretch;
-}
-/* Painel direito: foto como plano de fundo do painel com overlay azul */
-.gpis-impact-hero__photo {
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-    border-radius: 6px;
-}
-/* Overlay azul suave para integrar a foto ao fundo do hero */
-.gpis-impact-hero__photo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(44, 95, 138, 0.38);
-    pointer-events: none;
-    z-index: 1;
-}
-.gpis-impact-hero__photo img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-@media (max-width: 991px) {
-    .gpis-impact-hero__layout {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    .gpis-impact-hero__photo {
-        min-height: 260px;
-    }
-}
-
-/* Bloco 04 — remove max-width para acomodar fotografia */
-.gpis-impact-block__inner--wide {
-    max-width: none;
-}
-/* Composição 2 colunas: texto esquerda, fotos direita */
+.gpis-impact-block__inner--wide { max-width: none; }
 .gpis-impact-b04__content {
     display: grid;
-    grid-template-columns: 46fr 54fr;
+    grid-template-columns: 45fr 55fr;
     gap: 3.5rem;
-    align-items: start;
+    align-items: center;
 }
-/* Stack vertical de fotos, espaçamento compacto */
-.gpis-impact-b04__photos {
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-}
-.gpis-impact-b04__primary,
-.gpis-impact-b04__secondary {
+/* Foto única com crop editorial 4:3 */
+.gpis-impact-b04__primary {
     margin: 0;
     padding: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .gpis-impact-b04__primary img {
     width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-}
-/* Foto secundária menor, levemente indentada à esquerda */
-.gpis-impact-b04__secondary img {
-    width: 60%;
-    height: auto;
-    border-radius: 10px;
-    margin-left: 1rem;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
     display: block;
 }
 @media (max-width: 991px) {
     .gpis-impact-b04__content {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    .gpis-impact-b04__secondary img {
-        width: 100%;
-        margin-left: 0;
     }
 }
 

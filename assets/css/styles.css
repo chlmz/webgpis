@@ -1211,6 +1211,83 @@ body {
 }
 
 /* ============================================================
+   IMPACTO — FOTOGRAFIA (hero 2-col + bloco 04)
+============================================================ */
+
+/* Hero — grid 2 colunas em desktop */
+.gpis-impact-hero__layout {
+    display: grid;
+    grid-template-columns: 57fr 43fr;
+    gap: 3rem;
+    align-items: center;
+}
+.gpis-impact-hero__photo img {
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-1);
+    display: block;
+}
+@media (max-width: 991px) {
+    .gpis-impact-hero__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .gpis-impact-hero__photo img {
+        max-height: 380px;
+    }
+}
+
+/* Bloco 04 — remove max-width para acomodar fotografia */
+.gpis-impact-block__inner--wide {
+    max-width: none;
+}
+/* Composição 2 colunas: texto esquerda, fotos direita */
+.gpis-impact-b04__content {
+    display: grid;
+    grid-template-columns: 46fr 54fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+/* Stack vertical de fotos */
+.gpis-impact-b04__photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+}
+.gpis-impact-b04__primary,
+.gpis-impact-b04__secondary {
+    margin: 0;
+    padding: 0;
+}
+.gpis-impact-b04__primary img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+.gpis-impact-b04__secondary img {
+    width: 66%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: auto;
+    display: block;
+}
+@media (max-width: 991px) {
+    .gpis-impact-b04__content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .gpis-impact-b04__secondary img {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* ============================================================
    ACESSIBILIDADE — MOVIMENTO REDUZIDO
 ============================================================ */
 @media (prefers-reduced-motion: reduce) {

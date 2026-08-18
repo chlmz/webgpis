@@ -545,14 +545,207 @@
         }
 
         /* ============================================================
-           EQUIPE
+           PESSOAS
         ============================================================ */
-        .team-member-card {
-            transition: var(--gpis-transition);
+        .gpis-people {
+            padding: 5.5rem 0 5rem;
         }
-        .team-member-card:hover {
-            border-left: 5px solid var(--gpis-highlight);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .gpis-people__group {
+            margin-bottom: 4rem;
+        }
+        .gpis-people__group:last-child {
+            margin-bottom: 0;
+        }
+        .gpis-people__group-label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gpis-primary);
+            opacity: 0.7;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0;
+            border-bottom: 2px solid var(--gpis-primary);
+        }
+        /* Equipe GPIS — grid 2 colunas */
+        .gpis-team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border: none;
+        }
+        .gpis-team-member {
+            padding: 2.25rem 2.5rem 2.25rem 0;
+            border-bottom: 1px solid #d8e0e9;
+        }
+        .gpis-team-member:nth-child(even) {
+            padding-left: 2.5rem;
+            padding-right: 0;
+            border-left: 1px solid #d8e0e9;
+        }
+        .gpis-team-member:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+        /* Campos comuns de membros */
+        .gpis-member__name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gpis-text-dark);
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
+        }
+        .gpis-member__role {
+            font-size: 0.76rem;
+            color: var(--gpis-primary);
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.2rem;
+        }
+        .gpis-member__inst {
+            font-size: 0.73rem;
+            color: var(--gpis-text-muted);
+            margin-bottom: 0.9rem;
+        }
+        .gpis-member__expertise {
+            font-size: 0.81rem;
+            color: var(--gpis-text-muted);
+            line-height: 1.6;
+            margin-bottom: 0.35rem;
+        }
+        .gpis-member__projects {
+            font-size: 0.76rem;
+            color: var(--gpis-text-muted);
+            margin-bottom: 0.9rem;
+        }
+        .gpis-member__links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.22rem;
+        }
+        .gpis-member__link {
+            font-size: 0.75rem;
+            color: var(--gpis-primary);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .gpis-member__link:hover {
+            text-decoration: underline;
+            color: var(--gpis-primary-dk);
+        }
+        .gpis-member__orcid-pending {
+            font-size: 0.72rem;
+            color: var(--gpis-text-muted);
+        }
+        /* Pesquisadores em formação */
+        .gpis-formacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid #d8e0e9;
+        }
+        .gpis-formacao-group {
+            padding: 1.75rem 1.75rem 1.75rem 0;
+        }
+        .gpis-formacao-group:nth-child(even) {
+            padding-left: 1.75rem;
+            padding-right: 0;
+            border-left: 1px solid #d8e0e9;
+        }
+        .gpis-formacao-group__title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gpis-primary);
+            opacity: 0.45;
+            margin-bottom: 1rem;
+        }
+        .gpis-formacao-item {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid #edf0f4;
+        }
+        .gpis-formacao-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .gpis-formacao-item__name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--gpis-text-dark);
+            margin-bottom: 0.1rem;
+        }
+        .gpis-formacao-item__info {
+            font-size: 0.75rem;
+            color: var(--gpis-text-muted);
+            margin-bottom: 0;
+        }
+        /* Rede científica internacional — grid 3 colunas */
+        .gpis-rede-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #d8e0e9;
+        }
+        .gpis-rede-member {
+            padding: 2rem 2rem 0 0;
+        }
+        .gpis-rede-member:not(:first-child) {
+            padding-left: 2rem;
+            border-left: 1px solid #d8e0e9;
+        }
+        .gpis-rede-member:last-child {
+            padding-right: 0;
+        }
+        .gpis-rede-member__papel {
+            font-size: 0.76rem;
+            color: var(--gpis-text-muted);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            line-height: 1.45;
+        }
+        /* Responsividade — Pessoas */
+        @media (max-width: 767px) {
+            .gpis-team-grid {
+                grid-template-columns: 1fr;
+            }
+            .gpis-team-member,
+            .gpis-team-member:nth-child(even) {
+                padding: 2rem 0;
+                border-left: none;
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-team-member:nth-last-child(-n+2) {
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-team-member:last-child {
+                border-bottom: none;
+            }
+            .gpis-formacao-grid {
+                grid-template-columns: 1fr;
+            }
+            .gpis-formacao-group,
+            .gpis-formacao-group:nth-child(even) {
+                padding: 1.5rem 0;
+                border-left: none;
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-formacao-group:last-child {
+                border-bottom: none;
+            }
+            .gpis-rede-grid {
+                grid-template-columns: 1fr;
+            }
+            .gpis-rede-member,
+            .gpis-rede-member:not(:first-child) {
+                padding: 1.75rem 0;
+                border-left: none;
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-rede-member:last-child {
+                border-bottom: none;
+            }
         }
 
         /* ============================================================
@@ -972,14 +1165,181 @@
         </section>
 
         <!-- ============================================================
-             EQUIPE (inalterado)
+             PESSOAS
         ============================================================ -->
-        <section id="team" class="page-content">
+        <section id="team" class="page-content gpis-people">
             <div class="container">
-                <h2 class="section-heading text-center">Conoce a Nuestro Equipo Dedicado</h2>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center" id="team-members-list">
-                    <!-- Preenchido dinamicamente pelo JS -->
+                <div class="gpis-themes__header">
+                    <span class="gpis-themes__label">Pessoas</span>
+                    <h2 class="gpis-themes__title">Quem faz a pesquisa acontecer</h2>
+                    <p class="gpis-themes__intro">
+                        O GPIS reúne pesquisadores, estudantes e colaboradores internacionais
+                        que combinam diferentes formações e perspectivas em torno de uma agenda
+                        comum de pesquisa em saúde materno-infantil e inovação metodológica.
+                    </p>
                 </div>
+
+                <!-- 1 · Equipe GPIS -->
+                <div class="gpis-people__group">
+                    <span class="gpis-people__group-label">Equipe GPIS</span>
+                    <div class="gpis-team-grid">
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Christian Loret de Mola Zanatti</h3>
+                            <p class="gpis-member__role">Coordenador / Investigador Principal</p>
+                            <p class="gpis-member__inst">FURG / Universidad Científica del Sur (Peru)</p>
+                            <p class="gpis-member__expertise">Epidemiologia, inferência causal, saúde mental materno-infantil.</p>
+                            <p class="gpis-member__projects">Subprojetos: todos</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0002-5264-5914" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0002-5264-5914</a>
+                                <a href="mailto:chlmz@yahoo.com" class="gpis-member__link">chlmz@yahoo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Rafaela Costa Martins</h3>
+                            <p class="gpis-member__role">Pesquisadora / Gestora de dados e acompanhamento presencial</p>
+                            <p class="gpis-member__inst">FURG / Causale Consultoria</p>
+                            <p class="gpis-member__expertise">Gestão e curadoria de dados, análise estatística, escrita científica.</p>
+                            <p class="gpis-member__projects">Subprojetos: Coorte principal; Enchentes</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0003-3538-7228" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-3538-7228</a>
+                                <a href="mailto:rafamartins1@gmail.com" class="gpis-member__link">rafamartins1@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Cauane Blumenberg</h3>
+                            <p class="gpis-member__role">Pesquisador / Análise de dados</p>
+                            <p class="gpis-member__inst">FURG / Causale Consultoria</p>
+                            <p class="gpis-member__expertise">Métodos epidemiológicos, ciência de dados, análise computacional.</p>
+                            <p class="gpis-member__projects">Subprojetos: Coorte principal</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0002-4580-3849" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0002-4580-3849</a>
+                                <a href="mailto:cauane.epi@gmail.com" class="gpis-member__link">cauane.epi@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Romina Buffarini</h3>
+                            <p class="gpis-member__role">Pesquisadora / Curadoria de dados</p>
+                            <p class="gpis-member__inst">FURG</p>
+                            <p class="gpis-member__expertise">Curadoria de dados, análise estatística, nutrição materno-infantil.</p>
+                            <p class="gpis-member__projects">Subprojetos: Coorte principal</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0002-6905-8767" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0002-6905-8767</a>
+                                <a href="mailto:romibuffarini@gmail.com" class="gpis-member__link">romibuffarini@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Andressa Cardoso</h3>
+                            <p class="gpis-member__role">Pesquisadora / Responsável subprojeto câmeras</p>
+                            <p class="gpis-member__inst">FURG</p>
+                            <p class="gpis-member__expertise">Nutrição, desenvolvimento infantil, ACEs, interação mãe-filho.</p>
+                            <p class="gpis-member__projects">Subprojetos: Câmeras/IA; Coorte principal</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0003-0595-9889" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-0595-9889</a>
+                                <a href="mailto:andressacardoso.nutri@outlook.com" class="gpis-member__link">andressacardoso.nutri@outlook.com</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-team-member">
+                            <h3 class="gpis-member__name">Júlia Freire Danigno</h3>
+                            <p class="gpis-member__role">Pesquisadora / Professora colaboradora</p>
+                            <p class="gpis-member__inst">FAMED-FURG</p>
+                            <p class="gpis-member__expertise">Saúde bucal, saúde mental, Senso de Coerência, Stata/R/Epidata.</p>
+                            <p class="gpis-member__projects">Subprojetos: Coorte principal</p>
+                            <div class="gpis-member__links">
+                                <span class="gpis-member__orcid-pending">ORCID pendente</span>
+                                <a href="mailto:juliadanigno@yahoo.com.br" class="gpis-member__link">juliadanigno@yahoo.com.br</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 2 · Pesquisadores em formação -->
+                <div class="gpis-people__group">
+                    <span class="gpis-people__group-label">Pesquisadores em formação</span>
+                    <div class="gpis-formacao-grid">
+
+                        <div class="gpis-formacao-group">
+                            <p class="gpis-formacao-group__title">Mestrandos</p>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Gabriel Chaplin da Silva</p>
+                                <p class="gpis-formacao-item__info">Mestrando · FURG</p>
+                            </div>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Aline Barenho Pereira</p>
+                                <p class="gpis-formacao-item__info">Mestranda · FURG</p>
+                            </div>
+                        </div>
+
+                        <div class="gpis-formacao-group">
+                            <p class="gpis-formacao-group__title">Iniciação Científica</p>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Lorena Goulart Vieira</p>
+                                <p class="gpis-formacao-item__info">IC · FURG · Medicina, 10º semestre</p>
+                            </div>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Leonardo Nunes da Costa</p>
+                                <p class="gpis-formacao-item__info">IC · FURG</p>
+                            </div>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Camile Glanert Tecchio</p>
+                                <p class="gpis-formacao-item__info">IC · FURG · Medicina, 7º semestre</p>
+                            </div>
+                            <div class="gpis-formacao-item">
+                                <p class="gpis-formacao-item__name">Brenno Lopes Cavalcante</p>
+                                <p class="gpis-formacao-item__info">IC · FURG</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3 · Rede científica internacional -->
+                <div class="gpis-people__group">
+                    <span class="gpis-people__group-label">Rede científica internacional</span>
+                    <div class="gpis-rede-grid">
+
+                        <div class="gpis-rede-member">
+                            <h3 class="gpis-member__name">Rebecca Pearson</h3>
+                            <p class="gpis-member__inst">Manchester Metropolitan University · Reino Unido</p>
+                            <p class="gpis-rede-member__papel">Colaboradora principal câmeras/IA; co-applicant Wellcome</p>
+                            <p class="gpis-member__expertise">Métodos computacionais e observacionais, transmissão intergeracional de saúde mental.</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0001-8527-3400" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0001-8527-3400</a>
+                                <a href="mailto:R.Pearson@mmu.ac.uk" class="gpis-member__link">R.Pearson@mmu.ac.uk</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-rede-member">
+                            <h3 class="gpis-member__name">Miguel Cordero Vega</h3>
+                            <p class="gpis-member__inst">Universidad del Desarrollo · Chile</p>
+                            <p class="gpis-rede-member__papel">Colaborador câmeras/IA; co-applicant Wellcome</p>
+                            <p class="gpis-member__expertise">Epidemiologia do desenvolvimento, saúde mental perinatal, calibração cultural.</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0003-4414-4447" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-4414-4447</a>
+                                <a href="mailto:miguelcordero@udd.cl" class="gpis-member__link">miguelcordero@udd.cl</a>
+                            </div>
+                        </div>
+
+                        <div class="gpis-rede-member">
+                            <h3 class="gpis-member__name">Fernando Runzer Colmenares</h3>
+                            <p class="gpis-member__inst">Universidad Científica del Sur · Peru</p>
+                            <p class="gpis-rede-member__papel">Colaborador pipeline IA; CHANGE Research Working Group</p>
+                            <p class="gpis-member__expertise">Epidemiologia clínica, IA e reconhecimento facial, metodologia computacional.</p>
+                            <div class="gpis-member__links">
+                                <a href="https://orcid.org/0000-0003-4045-0260" target="_blank" rel="noopener" class="gpis-member__link">ORCID 0000-0003-4045-0260</a>
+                                <a href="mailto:frunzer@cientifica.edu.pe" class="gpis-member__link">frunzer@cientifica.edu.pe</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1023,62 +1383,10 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
-        // --- DATA MODELS ---
-        const teamMembers = [
-            { name: "Christian Loret de Mola Zanatti", role: "Fundador, Líder y Coordinador PPGSP", affiliations: "FURG, PPGSP, CHANGE Research Working Group at Universidad Científica del Sur.", email: "chlmz@yahoo.com", phone: "55 53 981150471", orcid: "" },
-            { name: "Rafaela Costa Martins", role: "Investigadora", affiliations: "FURG, Human Development and Violence Research Centre (DOVE), and causale consultoria.", email: "rafamartins1@gmail.com", orcid: "https://orcid.org/0000-0003-3538-7228" },
-            { name: "Francine dos Santos Costa", role: "Investigadora", affiliations: "FURG and Universidade Federal de Pelotas, Centro de Equidade.", email: "francinesct@gmail.com", orcid: "https://orcid.org/0000-0001-9558-937X" },
-            { name: "Cauane Blumenberg", role: "Investigadora", affiliations: "FURG, Human Development and Violence Research Centre (DOVE), and causale consultoria.", email: "cauane.epi@gmail.com", orcid: "https://orcid.org/0000-0002-4580-3849" },
-            { name: "Thais Martins Silva", role: "Investigadora", affiliations: "FURG and Human Development and Violence Research Centre (DOVE).", email: "thaismartins88@hotmail.com", orcid: "https://orcid.org/0000-0001-5049-2435" },
-            { name: "Romina Buffarini", role: "Investigadora", affiliations: "FURG and Post-graduate Program in Health Sciences.", email: "romibuffarini@gmail.com", orcid: "https://orcid.org/0000-0002-6905-8767" },
-            { name: "Lorena Goulart Vieira", role: "Investigadora", affiliations: "No listado.", email: "logoulartvieira@gmail.com", orcid: "https://orcid.org/0009-0009-9179-3942" }
-        ];
-
-        const collaborators = [
-            { name: "Rebecca Pearson", affiliation: "Manchester Metropolitan University (MMU). Experta en métodos observacionales y computacionales." },
-            { name: "Ana Luiza Goncalves Soares", affiliation: "University of Bristol. Experta en epidemiología del curso de vida y análisis longitudinales avanzados." },
-            { name: "Marc Bornstein", affiliation: "National Institute of Child Health and Human Development. Experto en desarrollo infantil y estudios familiares." }
-        ];
-
-        // --- DYNAMIC RENDERING ---
-        function renderTeamMembers() {
-            const container = document.getElementById('team-members-list');
-            if (!container) return;
-            container.innerHTML = teamMembers.map(member => {
-                const phoneHtml = member.phone ? `<p class="small mb-0"><i class="fa-solid fa-phone me-1"></i> ${member.phone}</p>` : '';
-                const orcidHtml = member.orcid ? `<a href="${member.orcid}" target="_blank" class="small"><i class="fa-brands fa-orcid me-1"></i> ORCID</a>` : '';
-                const roleHtml = member.role ? `<p class="mb-1"><small class="text-muted">${member.role}</small></p>` : '';
-                return `
-                    <div class="col">
-                        <div class="card team-member-card p-3 h-100">
-                            <h4 class="h5 fw-bold">${member.name}</h4>
-                            ${roleHtml}
-                            <p class="small mb-2">Afiliaciones: ${member.affiliations}</p>
-                            <a href="mailto:${member.email}" class="small"><i class="fa-solid fa-envelope me-1"></i> ${member.email}</a>
-                            ${orcidHtml}
-                            ${phoneHtml}
-                        </div>
-                    </div>`;
-            }).join('');
-        }
-
-        function renderCollaborators() {
-            const container = document.getElementById('collaborators-list');
-            if (!container) return;
-            container.innerHTML = collaborators.map(c => `
-                <li class="list-group-item">
-                    <span class="fw-bold">${c.name}</span>
-                    <br><small>${c.affiliation}</small>
-                </li>`).join('');
-        }
-
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', function () {
             const yearEl = document.getElementById('currentYear');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-            renderTeamMembers();
-            renderCollaborators();
 
             document.querySelectorAll('#nav-links a').forEach(anchor => {
                 anchor.addEventListener('click', function () {

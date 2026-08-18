@@ -13,7 +13,6 @@
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         /* ============================================================
@@ -109,14 +108,140 @@
         #projects { background-color: rgba(255, 255, 255, 0.95); }
         #impact  { background-color: rgba(240, 244, 248, 0.95); }
         #team    { background-color: rgba(255, 255, 255, 0.95); }
-        #contact { background-color: rgba(240, 244, 248, 0.95); }
-
-        .section-heading {
+        /* ============================================================
+           COLABORE (CONTACT)
+        ============================================================ */
+        .gpis-contact {
+            padding: 5.5rem 0 5rem;
+            background-color: #f0f4f8;
+        }
+        .gpis-contact__layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 2px solid var(--gpis-primary);
+        }
+        .gpis-contact__left {
+            padding: 3rem 3rem 3rem 0;
+            border-right: 1px solid #d8e0e9;
+        }
+        .gpis-contact__right {
+            padding: 3rem 0 3rem 3rem;
+        }
+        .gpis-contact__title {
             font-family: 'Montserrat', sans-serif;
-            color: var(--gpis-primary);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 900;
-            margin-bottom: 3.5rem;
-            font-size: 2.8rem;
+            color: var(--gpis-text-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .gpis-contact__body {
+            font-size: 1rem;
+            color: var(--gpis-text-muted);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .gpis-contact__name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--gpis-text-dark);
+            margin-bottom: 0.2rem;
+        }
+        .gpis-contact__role {
+            font-size: 0.82rem;
+            color: var(--gpis-primary);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        .gpis-contact__email {
+            font-size: 0.9rem;
+            color: var(--gpis-text-muted);
+            margin-bottom: 2rem;
+        }
+        .gpis-contact__cta {
+            display: inline-block;
+            padding: 0.85rem 2.25rem;
+            background: var(--gpis-primary);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .gpis-contact__cta:hover {
+            background: var(--gpis-primary-dk);
+            color: #fff;
+        }
+        @media (max-width: 767px) {
+            .gpis-contact__layout {
+                grid-template-columns: 1fr;
+            }
+            .gpis-contact__left {
+                padding: 2.5rem 0 2rem 0;
+                border-right: none;
+                border-bottom: 1px solid #d8e0e9;
+            }
+            .gpis-contact__right {
+                padding: 2rem 0 0 0;
+            }
+        }
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .gpis-footer {
+            background-color: var(--gpis-primary-dk);
+            padding: 2.5rem 0;
+        }
+        .gpis-footer__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .gpis-footer__name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        .gpis-footer__inst {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0;
+        }
+        .gpis-footer__right {
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .gpis-footer__email {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin-bottom: 0.35rem;
+        }
+        .gpis-footer__email:hover {
+            color: #fff;
+        }
+        .gpis-footer__copy {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0;
+        }
+        @media (max-width: 767px) {
+            .gpis-footer__inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+            }
+            .gpis-footer__right {
+                text-align: left;
+            }
         }
 
         /* ============================================================
@@ -1175,7 +1300,7 @@
                     <p class="gpis-themes__intro">
                         O GPIS reúne pesquisadores, estudantes e colaboradores internacionais
                         que combinam diferentes formações e perspectivas em torno de uma agenda
-                        comum de pesquisa em saúde materno-infantil e inovação metodológica.
+                        comum de pesquisa.
                     </p>
                 </div>
 
@@ -1344,19 +1469,28 @@
         </section>
 
         <!-- ============================================================
-             CONTATO (inalterado)
+             COLABORE (CONTACT)
         ============================================================ -->
-        <section id="contact" class="page-content">
-            <div class="container text-center">
-                <h2 class="section-heading">Contáctanos</h2>
-                <p class="lead mb-4">Para colaboraciones, consultas de financiación o preguntas generales, comunícate con nuestro líder de grupo.</p>
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 p-4 border rounded shadow-sm">
-                        <ul class="list-unstyled text-center">
-                            <li class="mb-2"><i class="fa-solid fa-user-tie me-2 text-primary"></i> <span class="fw-bold">Christian Loret de Mola Zanatti</span></li>
-                            <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-primary"></i> <a href="mailto:chlmz@yahoo.com" class="text-decoration-none">chlmz@yahoo.com</a></li>
-                            <li class="mb-2"><i class="fa-solid fa-phone me-2 text-primary"></i> +55 53 981150471</li>
-                        </ul>
+        <section id="contact" class="gpis-contact">
+            <div class="container">
+                <div class="gpis-contact__layout">
+                    <div class="gpis-contact__left">
+                        <span class="gpis-themes__label">Colabore</span>
+                        <h2 class="gpis-contact__title">Vamos conversar</h2>
+                        <p class="gpis-contact__body">
+                            O GPIS está aberto a colaborações científicas, projetos conjuntos,
+                            intercâmbio metodológico e oportunidades de formação.
+                        </p>
+                        <p class="gpis-contact__body">
+                            Se você é pesquisador, estudante, profissional ou representa uma instituição
+                            interessada em trabalhar conosco, entre em contato.
+                        </p>
+                    </div>
+                    <div class="gpis-contact__right">
+                        <p class="gpis-contact__name">Christian Loret de Mola Zanatti</p>
+                        <p class="gpis-contact__role">Coordenador do GPIS</p>
+                        <p class="gpis-contact__email">chlmz@yahoo.com</p>
+                        <a href="mailto:chlmz@yahoo.com" class="gpis-contact__cta">Enviar email</a>
                     </div>
                 </div>
             </div>
@@ -1365,16 +1499,18 @@
     </main>
 
     <!-- ============================================================
-         FOOTER (inalterado)
+         FOOTER
     ============================================================ -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="gpis-footer">
         <div class="container">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <p class="mb-2 mb-md-0">&copy; <span id="currentYear"></span> GPIS Research Group. Todos los derechos reservados.</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/coorterg2019" target="_blank" class="text-white mx-2" aria-label="Instagram"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                    <a href="https://facebook.com/coorterg2019" target="_blank" class="text-white mx-2" aria-label="Facebook"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
-                    <a href="mailto:chlmz@yahoo.com" class="text-white mx-2" aria-label="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
+            <div class="gpis-footer__inner">
+                <div class="gpis-footer__brand">
+                    <p class="gpis-footer__name">GPIS — Grupo de Pesquisa e Inovação em Saúde</p>
+                    <p class="gpis-footer__inst">FURG · Rio Grande, Brasil</p>
+                </div>
+                <div class="gpis-footer__right">
+                    <a href="mailto:chlmz@yahoo.com" class="gpis-footer__email">chlmz@yahoo.com</a>
+                    <p class="gpis-footer__copy">&copy; <span id="currentYear"></span> GPIS</p>
                 </div>
             </div>
         </div>

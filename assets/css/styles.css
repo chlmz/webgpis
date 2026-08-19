@@ -1278,10 +1278,8 @@ body {
     margin-top: 2rem;
 }
 .gpis-proj-next__item {
-    padding: 1.5rem;
-    background: var(--gpis-nevoa);
-    border-radius: var(--radius-lg);
-    border-top: 3px solid var(--gpis-azul-ciencia);
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--gpis-azul-ciencia);
 }
 .gpis-proj-next__title {
     font-family: var(--font-display);

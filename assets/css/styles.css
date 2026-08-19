@@ -1485,6 +1485,59 @@ body {
 }
 
 /* ============================================================
+   PROJETO — MEDIA LAYOUT (imagem + texto)
+============================================================ */
+.gpis-proj-media {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 4rem;
+    align-items: start;
+}
+.gpis-proj-media__figure {
+    margin: 0;
+}
+.gpis-proj-media__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+}
+.gpis-proj-media__caption {
+    margin-top: 0.6rem;
+    font-size: 0.8125rem;
+    color: var(--gpis-cinza-200);
+    line-height: 1.5;
+}
+.gpis-proj-media-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.gpis-proj-media-pair__item {
+    margin: 0;
+}
+.gpis-proj-media-pair__label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gpis-cinza-200);
+}
+@media (max-width: 767px) {
+    .gpis-proj-media {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .gpis-proj-media-pair {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
    ACESSIBILIDADE — MOVIMENTO REDUZIDO
 ============================================================ */
 @media (prefers-reduced-motion: reduce) {

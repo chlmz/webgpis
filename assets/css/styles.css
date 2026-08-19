@@ -964,6 +964,9 @@ body {
     line-height: 1.55;
     margin: 0;
 }
+.gpis-proj-section__quote--spaced {
+    margin-bottom: 1.5rem;
+}
 @media (max-width: 767px) {
     .gpis-proj-section__two-col {
         grid-template-columns: 1fr;
@@ -1527,11 +1530,21 @@ body {
     text-transform: uppercase;
     color: var(--gpis-cinza-200);
 }
-@media (max-width: 767px) {
+.gpis-proj-next__items--four {
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 575px) {
+    .gpis-proj-next__items--four {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 991px) {
     .gpis-proj-media {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+}
+@media (max-width: 767px) {
     .gpis-proj-media-pair {
         grid-template-columns: 1fr;
     }

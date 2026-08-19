@@ -1188,6 +1188,122 @@ body {
 }
 
 /* ============================================================
+   PROJETOS — LINK NO CARD DA LISTA
+============================================================ */
+.gpis-project-item__link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gpis-azul-ciencia);
+    text-decoration: none;
+    transition: color 150ms;
+}
+.gpis-project-item__link:hover {
+    color: var(--gpis-azul-profundo);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   VISÕES DO CUIDADO — REDE DE PARCEIROS
+============================================================ */
+.gpis-proj-network {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 4rem;
+    margin-top: 2rem;
+}
+.gpis-proj-network__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.gpis-proj-network__country {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gpis-azul-ciencia);
+}
+.gpis-proj-network__inst {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    line-height: 1.35;
+}
+.gpis-proj-network__role {
+    font-size: 0.9rem;
+    color: var(--gpis-cinza-200);
+}
+@media (max-width: 767px) {
+    .gpis-proj-network { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   VISÕES DO CUIDADO — DUAS ESCALAS (abordagem 2 colunas)
+============================================================ */
+.gpis-proj-approach__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 5rem;
+    margin-top: 2rem;
+}
+.gpis-proj-approach__title {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    margin: 0 0 0.75rem;
+}
+.gpis-proj-approach__body {
+    font-size: 1.0625rem;
+    color: var(--gpis-cinza-200);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+@media (max-width: 767px) {
+    .gpis-proj-approach__cols { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ============================================================
+   VISÕES DO CUIDADO — O QUE A REDE BUSCA CONSTRUIR
+============================================================ */
+.gpis-proj-next__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.gpis-proj-next__item {
+    padding: 1.5rem;
+    background: var(--gpis-nevoa);
+    border-radius: var(--radius-lg);
+    border-top: 3px solid var(--gpis-azul-ciencia);
+}
+.gpis-proj-next__title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    margin: 0 0 0.65rem;
+}
+.gpis-proj-next__body {
+    font-size: 0.9375rem;
+    color: var(--gpis-cinza-200);
+    line-height: 1.7;
+    margin: 0;
+}
+@media (max-width: 991px) {
+    .gpis-proj-next__items { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 575px) {
+    .gpis-proj-next__items { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    PÁGINA IMPACTO — HERO (banner fotográfico full-bleed)
 ============================================================ */
 .gpis-impact-hero {

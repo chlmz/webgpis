@@ -663,19 +663,24 @@ body {
     margin: 0 0 0.75rem;
 }
 .gpis-formacao__list li {
-    font-size: 1.0625rem;
-    color: var(--gpis-grafite);
-    line-height: 1.6;
-    padding: 0.4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem 0;
     border-top: 1px solid var(--border-subtle);
 }
 .gpis-formacao__list li:last-child {
     border-bottom: 1px solid var(--border-subtle);
 }
-.gpis-formacao__institution {
-    font-size: 0.875rem;
+.gpis-formacao__name {
+    font-size: 1.0625rem;
+    color: var(--gpis-grafite);
+    line-height: 1.5;
+}
+.gpis-formacao__affiliation {
+    font-size: 0.8rem;
     color: var(--gpis-cinza-200);
-    margin: 0;
+    line-height: 1.4;
 }
 @media (max-width: 767px) {
     .gpis-formacao__cols {

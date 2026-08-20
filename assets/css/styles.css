@@ -573,6 +573,38 @@ body {
         border-top: 1px solid rgba(255,255,255,0.18);
     }
 }
+/* Três dimensões editoriais de impacto — texto discreto, sem cards */
+.gpis-impact-teaser__dimensions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.18);
+}
+.gpis-impact-teaser__dimension-label {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 0.6rem;
+}
+.gpis-impact-teaser__dimension-text {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .gpis-impact-teaser__dimensions {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+    }
+}
 
 /* ============================================================
    PESSOAS — COMPACTO (HOME)
@@ -790,6 +822,44 @@ body {
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 2rem;
+}
+
+/* Home — contato institucional (nameplate tradicional, sem CTA) */
+.gpis-contact--institutional .gpis-contact__inner {
+    max-width: 780px;
+}
+.gpis-contact__title--institutional {
+    font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+    max-width: 620px;
+}
+.gpis-contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1.75rem;
+}
+.gpis-contact__detail-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gpis-cinza-200);
+    margin-bottom: 0.3rem;
+}
+.gpis-contact__emails .gpis-contact__detail {
+    margin-bottom: 1.25rem;
+}
+.gpis-contact__emails .gpis-contact__detail:last-child { margin-bottom: 0; }
+.gpis-contact__emails .gpis-contact__email-link {
+    font-size: 1rem;
+    font-weight: 600;
+}
+@media (max-width: 767px) {
+    .gpis-contact__grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
 }
 
 /* ============================================================

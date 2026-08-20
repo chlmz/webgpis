@@ -893,6 +893,46 @@ body {
 }
 
 /* ============================================================
+   PROJETO — COORTE: WATERMARK DO LOGO
+============================================================ */
+.gpis-proj-hero--coorte {
+    position: relative;
+    overflow: hidden;
+}
+.gpis-proj-hero--coorte .gpis-proj-hero__inner {
+    position: relative;
+    z-index: 1;
+}
+.gpis-proj-hero--coorte::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -4%;
+    transform: translateY(-42%);
+    width: clamp(350px, 30vw, 520px);
+    height: clamp(525px, 45vw, 780px);
+    background-image: url("../images/coorte/logo-coorte-rg2019-watermark.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+@media (max-width: 991px) {
+    .gpis-proj-hero--coorte::after {
+        width: clamp(220px, 28vw, 320px);
+        height: clamp(330px, 42vw, 480px);
+        right: -6%;
+    }
+}
+@media (max-width: 576px) {
+    .gpis-proj-hero--coorte::after {
+        display: none;
+    }
+}
+
+/* ============================================================
    PROJETO — NÚMEROS
 ============================================================ */
 .gpis-proj-numbers {

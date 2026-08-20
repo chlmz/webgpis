@@ -1591,6 +1591,154 @@ body {
 }
 
 /* ============================================================
+   PESSOAS — PÁGINA
+============================================================ */
+
+/* Sections */
+.gpis-people-section {
+    padding: 7rem 0;
+    background: var(--gpis-nevoa);
+}
+.gpis-people-section--alt {
+    background: var(--gpis-papel);
+}
+
+/* Researcher profiles: editorial 2-column rows */
+.gpis-profiles {
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+.gpis-profile {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem 4rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.gpis-profile__name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    margin: 0 0 0.2rem;
+    line-height: 1.3;
+}
+.gpis-profile__role {
+    font-size: 0.9375rem;
+    color: var(--gpis-azul-ciencia);
+    font-weight: 600;
+    margin: 0 0 0.2rem;
+    line-height: 1.4;
+}
+.gpis-profile__institution {
+    font-size: 0.875rem;
+    color: var(--gpis-cinza-200);
+    margin: 0 0 1.25rem;
+    line-height: 1.5;
+}
+.gpis-profile__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+.gpis-profile__link-item {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--gpis-azul-ciencia);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(44,95,138,0.28);
+    padding-bottom: 1px;
+    transition: border-color 150ms, color 150ms;
+}
+.gpis-profile__link-item:hover {
+    color: var(--gpis-azul-profundo);
+    border-bottom-color: var(--gpis-azul-ciencia);
+    text-decoration: none;
+}
+.gpis-profile__bio {
+    font-size: 1.0625rem;
+    color: var(--gpis-grafite);
+    line-height: 1.75;
+    margin: 0;
+    align-self: center;
+}
+
+/* International network: editorial list with separators */
+.gpis-people-network {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0;
+    border-top: 1px solid var(--border-subtle);
+}
+.gpis-people-network__item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem 4rem;
+    padding: 2.25rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.gpis-people-network__name {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    margin: 0 0 0.2rem;
+}
+.gpis-people-network__inst {
+    font-size: 0.875rem;
+    color: var(--gpis-cinza-200);
+    margin: 0;
+    line-height: 1.5;
+}
+.gpis-people-network__bio {
+    font-size: 1.0625rem;
+    color: var(--gpis-grafite);
+    line-height: 1.75;
+    margin: 0;
+    align-self: center;
+}
+
+/* Home People: text-link CTA to pessoas/ */
+.gpis-people-compact__cta {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--gpis-azul-ciencia);
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(44,95,138,0.28);
+    padding-bottom: 1px;
+    transition: border-color 150ms, color 150ms;
+}
+.gpis-people-compact__cta:hover {
+    color: var(--gpis-azul-profundo);
+    border-bottom-color: var(--gpis-azul-ciencia);
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .gpis-profile,
+    .gpis-people-network__item {
+        grid-template-columns: 220px 1fr;
+        gap: 1.25rem 3rem;
+    }
+}
+@media (max-width: 767px) {
+    .gpis-people-section { padding: 5rem 0; }
+    .gpis-profile,
+    .gpis-people-network__item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+    .gpis-profile__bio,
+    .gpis-people-network__bio { align-self: auto; }
+    .gpis-profile__institution { margin-bottom: 1rem; }
+}
+
+/* ============================================================
    ACESSIBILIDADE — MOVIMENTO REDUZIDO
 ============================================================ */
 @media (prefers-reduced-motion: reduce) {

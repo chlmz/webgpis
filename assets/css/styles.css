@@ -1179,6 +1179,28 @@ body {
     text-decoration: none;
 }
 
+/* PROJETO — PUBLICAÇÕES: títulos editoriais em PT + título científico */
+.gpis-proj-pub__public-title {
+    font-family: var(--font-display);
+    font-size: 1.075rem;
+    font-weight: 700;
+    color: var(--gpis-grafite);
+    line-height: 1.38;
+    margin: 0 0 0.3rem;
+}
+.gpis-proj-pub__scientific-title {
+    font-size: 0.9rem;
+    color: var(--gpis-cinza-200);
+    line-height: 1.55;
+    margin: 0 0 0.45rem;
+}
+.gpis-proj-pubs__reference .gpis-proj-pub__public-title {
+    font-size: 1.15rem;
+}
+.gpis-proj-pubs__reference .gpis-proj-pub__scientific-title {
+    font-size: 0.9375rem;
+}
+
 /* Artigo de referência: entry point, thin blue top rule */
 .gpis-proj-pubs__reference {
     margin: 2.5rem 0 4.5rem;

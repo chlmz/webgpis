@@ -1232,19 +1232,26 @@ body {
 .gpis-proj-pubs__theme + .gpis-proj-pubs__theme {
     margin-top: 5rem;
 }
+.gpis-proj-pubs__theme-header {
+    background: var(--gpis-nevoa);
+    border-left: 3px solid var(--gpis-azul-ciencia);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1.1rem 1.4rem;
+    margin: 0.4rem 0 2.25rem;
+}
 .gpis-proj-pubs__theme-title {
     font-family: var(--font-display);
     font-size: 1.375rem;
     font-weight: 700;
     color: var(--gpis-grafite);
-    margin: 0.4rem 0 0.85rem;
+    margin: 0 0 0.5rem;
 }
 .gpis-proj-pubs__theme-intro {
     font-size: 1rem;
     color: var(--gpis-cinza-200);
     line-height: 1.7;
     max-width: 620px;
-    margin: 0 0 2.25rem;
+    margin: 0;
 }
 .gpis-proj-pubs__grid {
     display: grid;

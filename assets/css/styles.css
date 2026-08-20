@@ -1595,6 +1595,15 @@ body {
     flex-wrap: wrap;
     gap: 0.75rem;
 }
+.gpis-impact-cta__email {
+    margin: 0.9rem 0 0;
+}
+.gpis-impact-cta__email a {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: underline;
+}
+.gpis-impact-cta__email a:hover { color: #fff; }
 
 /* ============================================================
    IMPACTO — BLOCO 04 FOTOGRAFIA

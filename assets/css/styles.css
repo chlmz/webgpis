@@ -192,7 +192,7 @@ body {
     text-decoration: none;
     background: transparent;
     color: rgba(255,255,255,0.88);
-    border: 2px solid rgba(255,255,255,0.42);
+    border: 2px solid rgba(255,255,255,0.55);
     transition: border-color 200ms, background 200ms, color 200ms;
 }
 .gpis-btn--outline-light:hover {
@@ -297,7 +297,7 @@ body {
     margin-bottom: 0.75rem;
 }
 .gpis-eyebrow--light {
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.8);
 }
 .gpis-section-title {
     font-family: var(--font-display);
@@ -646,6 +646,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem 4rem;
 }
+.gpis-formacao__cols--top-spaced {
+    margin-top: 2.5rem;
+}
 .gpis-formacao__category {
     font-size: 0.72rem;
     font-weight: 700;
@@ -806,21 +809,21 @@ body {
 }
 .gpis-footer__inst {
     font-size: 0.78rem;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 0;
 }
 .gpis-footer__right { text-align: right; flex-shrink: 0; }
 .gpis-footer__email {
     display: block;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.78);
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
     margin-bottom: 0.35rem;
 }
 .gpis-footer__email:hover { color: #fff; }
 .gpis-footer__copy {
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 0;
 }
 @media (max-width: 767px) {
@@ -846,7 +849,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
     margin-bottom: 1.75rem;
     transition: color 200ms;
@@ -861,7 +864,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 1rem;
 }
 .gpis-proj-hero__title {
@@ -883,7 +886,7 @@ body {
 .gpis-proj-hero__meta {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 2.25rem;
 }
 .gpis-proj-hero__ctas {
@@ -907,7 +910,7 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    right: -4%;
+    right: clamp(3rem, 5vw, 6rem);
     transform: translateY(-42%);
     width: clamp(350px, 30vw, 520px);
     height: clamp(525px, 45vw, 780px);
@@ -923,7 +926,7 @@ body {
     .gpis-proj-hero--coorte::after {
         width: clamp(220px, 28vw, 320px);
         height: clamp(330px, 42vw, 480px);
-        right: -6%;
+        right: clamp(1.5rem, 4vw, 3rem);
     }
 }
 @media (max-width: 576px) {

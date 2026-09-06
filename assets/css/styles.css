@@ -304,9 +304,9 @@ body {
 }
 .gpis-section-title {
     font-family: var(--font-display);
-    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    font-size: clamp(1.65rem, 3vw, 2.5rem);
     font-weight: 700;
-    line-height: 1.18;
+    line-height: 1.15;
     color: var(--gpis-grafite);
     margin-bottom: 0.85rem;
     letter-spacing: -0.01em;
@@ -314,8 +314,8 @@ body {
 .gpis-section-lead {
     font-size: 1.125rem;
     color: var(--gpis-cinza-200);
-    line-height: 1.7;
-    max-width: 580px;
+    line-height: 1.65;
+    max-width: 62ch;
     margin-bottom: 3rem;
 }
 
@@ -1080,8 +1080,8 @@ body {
 .gpis-proj-section__body {
     font-size: 1.0625rem;
     color: var(--gpis-cinza-200);
-    line-height: 1.8;
-    max-width: 680px;
+    line-height: 1.65;
+    max-width: 64ch;
     margin-bottom: 1.25rem;
 }
 .gpis-proj-section__body:last-child { margin-bottom: 0; }
@@ -1200,6 +1200,15 @@ body {
 .gpis-proj-pubs {
     padding: 7rem 0;
     background: var(--gpis-papel);
+}
+/* Preserve the approved publication introduction independently of generic prose. */
+.gpis-proj-pubs .gpis-section-title {
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    line-height: 1.18;
+}
+.gpis-proj-pubs .gpis-proj-section__body {
+    line-height: 1.8;
+    max-width: 680px;
 }
 .gpis-proj-pubs__inner {
     border-top: 2px solid var(--gpis-azul-ciencia);
@@ -2017,19 +2026,4 @@ body {
         transition-duration: 0.01ms !important;
     }
     html { scroll-behavior: auto; }
-}
-
-/* Preserve approved publication typography while strengthening section hierarchy. */
-.gpis-section-title:not(.gpis-proj-pubs .gpis-section-title) {
-    font-size: clamp(1.65rem, 3vw, 2.5rem);
-    line-height: 1.15;
-}
-.gpis-section-lead:not(.gpis-proj-pubs .gpis-section-lead) {
-    max-width: 62ch;
-    line-height: 1.65;
-}
-
-.gpis-proj-section__body:not(.gpis-proj-pubs .gpis-proj-section__body) {
-    line-height: 1.65;
-    max-width: 64ch;
 }

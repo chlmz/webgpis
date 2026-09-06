@@ -248,7 +248,7 @@ body {
 .gpis-hero__disciplines {
     font-size: 0.8125rem;
     letter-spacing: 0.08em;
-    color: var(--gpis-cinza-100);
+    color: var(--gpis-cinza-200);
     margin-bottom: 2.5rem;
 }
 .gpis-hero__ctas {
@@ -483,7 +483,7 @@ body {
 }
 .gpis-project-item__countries {
     font-size: 0.875rem;
-    color: var(--gpis-cinza-100);
+    color: var(--gpis-cinza-200);
     margin-top: 0.5rem;
 }
 @media (max-width: 767px) {
@@ -588,7 +588,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 0.6rem;
 }
 .gpis-impact-teaser__dimension-text {
@@ -1165,7 +1165,7 @@ body {
     font-family: var(--font-body);
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--gpis-terracota-sul);
+    color: var(--gpis-cinza-200);
     padding-top: 0.15rem;
     line-height: 1.3;
 }

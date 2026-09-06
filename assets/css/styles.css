@@ -1801,16 +1801,16 @@ body {
 .gpis-people-team { background: var(--gpis-papel); }
 .gpis-people-team__intro { padding-top: 6rem; }
 .gpis-people-band {
-    padding: 5rem 0;
+    padding: 7rem 0 6rem;
     background: var(--gpis-papel);
 }
 .gpis-people-band--mist { background: var(--gpis-nevoa); }
 .gpis-people-subgroup {
-    margin: 0 0 2.5rem;
+    margin: 0 0 4rem;
     padding-top: 1.5rem;
     border-top: 2px solid var(--gpis-azul-ciencia);
     font-family: var(--font-display);
-    font-size: 1.875rem;
+    font-size: 1.75rem;
     line-height: 1.25;
     font-weight: 700;
     color: var(--gpis-azul-profundo);
@@ -1844,7 +1844,7 @@ body {
 }
 .gpis-profile__name {
     font-family: var(--font-display);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--gpis-grafite);
     margin: 0 0 0.2rem;
@@ -1886,7 +1886,8 @@ body {
 .gpis-profile__bio {
     font-size: 1.0625rem;
     color: var(--gpis-grafite);
-    line-height: 1.75;
+    line-height: 1.65;
+    max-width: 64ch;
     margin: 0;
     align-self: center;
 }
@@ -1958,7 +1959,7 @@ body {
 }
 @media (max-width: 767px) {
     .gpis-people-team__intro { padding-top: 4rem; }
-    .gpis-people-band { padding: 3.5rem 0; }
+    .gpis-people-band { padding: 5rem 0 4rem; }
     .gpis-people-subgroup { font-size: 1.625rem; }
     .gpis-profile,
     .gpis-profile:has(> .gpis-profile__portrait) {

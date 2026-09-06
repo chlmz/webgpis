@@ -1834,6 +1834,9 @@ body {
     margin-top: 0;
     border-top: 1px solid var(--border-subtle);
 }
+.gpis-people-subgroup + .gpis-profiles {
+    border-top: 0;
+}
 .gpis-profile {
     display: grid;
     grid-template-columns: 280px minmax(0, 1fr);

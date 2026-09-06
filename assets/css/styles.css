@@ -985,10 +985,10 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    right: clamp(-4rem, -3vw, -1.5rem);
+    right: clamp(-3rem, -2vw, -1rem);
     transform: translateY(-46%);
-    width: clamp(480px, 46vw, 760px);
-    height: clamp(720px, 69vw, 1140px);
+    width: clamp(420px, 40vw, 660px);
+    height: clamp(630px, 60vw, 990px);
     background-image: url("../images/coorte/logo-coorte-rg2019-watermark.png");
     /* The supplied PNG has wide transparent margins; scale the visible mark. */
     background-size: 180% auto;
@@ -1000,22 +1000,22 @@ body {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     /* Keep the visible left edge beyond the lead on narrower desktops. */
-    .gpis-proj-hero--coorte::after { right: -6rem; }
+    .gpis-proj-hero--coorte::after { right: -3rem; }
 }
 @media (max-width: 991px) {
     .gpis-proj-hero--coorte::after {
-        width: clamp(360px, 44vw, 460px);
-        height: clamp(540px, 66vw, 690px);
-        right: -3rem;
+        width: clamp(315px, 38.5vw, 400px);
+        height: clamp(472.5px, 57.75vw, 600px);
+        right: -2rem;
     }
 }
 @media (max-width: 576px) {
     .gpis-proj-hero--coorte::after {
-        width: 300px;
-        height: 450px;
+        width: 262px;
+        height: 393px;
         top: auto;
-        bottom: -3rem;
-        right: -5rem;
+        bottom: -2.5rem;
+        right: -4rem;
         transform: none;
         opacity: 0.06;
     }

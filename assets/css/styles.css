@@ -15,6 +15,9 @@
     --gpis-cinza-50:        #C8D2DA;
     --gpis-cinza-100:       #94A2AD;
     --gpis-cinza-200:       #5E6B74;
+    /* Small metadata: AA on both Papel (5.01:1) and Névoa (4.53:1).
+       The proposed #77848E falls below AA on both backgrounds. */
+    --gpis-cinza-meta:      #64717B;
     --gpis-grafite:         #2E2E2E;
 
     /* ALIASES — usados ao longo do CSS */
@@ -330,7 +333,7 @@ body {
 }
 .gpis-research__item {
     background: var(--gpis-papel);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-1);
     padding: 2.5rem 2.5rem 2.75rem;
@@ -341,7 +344,7 @@ body {
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.18em;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin-bottom: 0.75rem;
 }
 .gpis-research__item-title {
@@ -394,7 +397,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin-bottom: 0.75rem;
 }
 .gpis-projects__featured-title {
@@ -439,7 +442,7 @@ body {
 .gpis-projects__stat-label {
     display: block;
     font-size: 0.8125rem;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     line-height: 1.45;
     margin-top: 0.2rem;
 }
@@ -463,7 +466,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin-bottom: 0.75rem;
 }
 .gpis-project-item__title {
@@ -483,7 +486,7 @@ body {
 }
 .gpis-project-item__countries {
     font-size: 0.875rem;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin-top: 0.5rem;
 }
 @media (max-width: 767px) {
@@ -708,7 +711,7 @@ body {
 
 .gpis-formacao__affiliation {
     font-size: 0.8rem;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     line-height: 1.4;
 }
 @media (max-width: 767px) {
@@ -1165,7 +1168,7 @@ body {
     font-family: var(--font-body);
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     padding-top: 0.15rem;
     line-height: 1.3;
 }
@@ -1823,7 +1826,7 @@ body {
     display: grid;
     grid-template-columns: 280px minmax(0, 1fr);
     min-height: 260px;
-    align-items: center;
+    align-items: start;
     gap: 1.5rem 4rem;
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border-subtle);
@@ -1875,7 +1878,7 @@ body {
 }
 .gpis-profile__institution {
     font-size: 0.875rem;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin: 0 0 1.25rem;
     line-height: 1.5;
 }
@@ -1905,7 +1908,7 @@ body {
     line-height: 1.65;
     max-width: 64ch;
     margin: 0;
-    align-self: center;
+    align-self: start;
 }
 
 /* International network: editorial list with separators */
@@ -1931,7 +1934,7 @@ body {
 }
 .gpis-people-network__inst {
     font-size: 0.875rem;
-    color: var(--gpis-cinza-200);
+    color: var(--gpis-cinza-meta);
     margin: 0;
     line-height: 1.5;
 }

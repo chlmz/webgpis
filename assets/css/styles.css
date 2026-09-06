@@ -1785,12 +1785,22 @@ body {
 }
 
 /* One editorial component for every active team member, regardless of role. */
+.gpis-people-team { background: var(--gpis-papel); }
+.gpis-people-team__intro { padding-top: 6rem; }
+.gpis-people-band {
+    padding: 5rem 0;
+    background: var(--gpis-papel);
+}
+.gpis-people-band--mist { background: var(--gpis-nevoa); }
 .gpis-people-subgroup {
-    margin: 3.5rem 0 1rem;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--gpis-cinza-200);
+    margin: 0 0 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gpis-azul-ciencia);
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--gpis-azul-profundo);
 }
 .gpis-profiles {
     margin-top: 0;
@@ -1934,6 +1944,9 @@ body {
     }
 }
 @media (max-width: 767px) {
+    .gpis-people-team__intro { padding-top: 4rem; }
+    .gpis-people-band { padding: 3.5rem 0; }
+    .gpis-people-subgroup { font-size: 1.625rem; }
     .gpis-profile,
     .gpis-profile:has(> .gpis-profile__portrait) {
         grid-template-columns: minmax(0, 1fr);

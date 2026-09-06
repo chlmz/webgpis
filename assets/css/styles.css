@@ -956,7 +956,7 @@ body {
     color: rgba(255,255,255,0.82);
     line-height: 1.7;
     margin-bottom: 0.75rem;
-    max-width: 640px;
+    max-width: 54ch;
 }
 .gpis-proj-hero__meta {
     font-size: 0.8rem;
@@ -1019,6 +1019,9 @@ body {
         transform: none;
         opacity: 0.06;
     }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .gpis-proj-hero--coorte::after { right: -8rem; }
 }
 
 /* ============================================================

@@ -1828,17 +1828,33 @@ body {
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border-subtle);
 }
-/* Add a real img.gpis-profile__portrait as the last child when supplied.
-   No image element or placeholder is rendered until a portrait is available. */
+/* Future portraits: add real img.gpis-profile__portrait between identity and bio,
+   by complete personnel band. Use the same 4:5 head-and-shoulders crop, size
+   and top alignment for everyone. No placeholders or empty photo slots.
+   Desktop columns are identity | bio | portrait; mobile follows DOM order.
+   Home keeps its compact text roster, without individual portraits. */
 .gpis-profile:has(> .gpis-profile__portrait) {
-    grid-template-columns: 280px minmax(0, 1fr) 144px;
+    grid-template-columns: 260px minmax(0, 1fr) 200px;
+}
+.gpis-profile:has(> .gpis-profile__portrait) > .gpis-profile__identity {
+    grid-column: 1;
+    grid-row: 1;
+}
+.gpis-profile:has(> .gpis-profile__portrait) > .gpis-profile__bio {
+    grid-column: 2;
+    grid-row: 1;
 }
 .gpis-profile__identity { min-width: 0; }
 .gpis-profile__portrait {
     grid-column: 3;
-    width: 144px;
-    height: 180px;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    width: 200px;
+    height: 250px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
+    object-position: center top;
     border-radius: var(--radius-md);
     display: block;
 }
@@ -1948,9 +1964,10 @@ body {
 /* Responsive */
 @media (max-width: 991px) {
     .gpis-profile:has(> .gpis-profile__portrait) {
-        grid-template-columns: 220px minmax(0, 1fr) 144px;
+        grid-template-columns: 220px minmax(0, 1fr) 176px;
         column-gap: 1.5rem;
     }
+    .gpis-profile__portrait { width: 176px; height: 220px; }
     .gpis-profile,
     .gpis-people-network__item {
         grid-template-columns: 220px 1fr;
@@ -1966,7 +1983,16 @@ body {
         grid-template-columns: minmax(0, 1fr);
         min-height: 240px;
     }
-    .gpis-profile__portrait { grid-column: 1; }
+    .gpis-profile__portrait {
+        grid-column: 1;
+        grid-row: 2;
+        width: 168px;
+        height: 210px;
+    }
+    .gpis-profile:has(> .gpis-profile__portrait) > .gpis-profile__bio {
+        grid-column: 1;
+        grid-row: 3;
+    }
     .gpis-people-section { padding: 5rem 0; }
     .gpis-profile,
     .gpis-people-network__item {

@@ -1784,17 +1784,40 @@ body {
     background: var(--gpis-papel);
 }
 
-/* Researcher profiles: editorial 2-column rows */
+/* One editorial component for every active team member, regardless of role. */
+.gpis-people-subgroup {
+    margin: 3.5rem 0 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gpis-cinza-200);
+}
 .gpis-profiles {
-    margin-top: 3.5rem;
+    margin-top: 0;
     border-top: 1px solid var(--border-subtle);
 }
 .gpis-profile {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 280px minmax(0, 1fr);
+    min-height: 260px;
+    align-items: center;
     gap: 1.5rem 4rem;
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border-subtle);
+}
+/* Add a real img.gpis-profile__portrait as the last child when supplied.
+   No image element or placeholder is rendered until a portrait is available. */
+.gpis-profile:has(> .gpis-profile__portrait) {
+    grid-template-columns: 280px minmax(0, 1fr) 144px;
+}
+.gpis-profile__identity { min-width: 0; }
+.gpis-profile__portrait {
+    grid-column: 3;
+    width: 144px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
 }
 .gpis-profile__name {
     font-family: var(--font-display);
@@ -1900,6 +1923,10 @@ body {
 
 /* Responsive */
 @media (max-width: 991px) {
+    .gpis-profile:has(> .gpis-profile__portrait) {
+        grid-template-columns: 220px minmax(0, 1fr) 144px;
+        column-gap: 1.5rem;
+    }
     .gpis-profile,
     .gpis-people-network__item {
         grid-template-columns: 220px 1fr;
@@ -1907,6 +1934,12 @@ body {
     }
 }
 @media (max-width: 767px) {
+    .gpis-profile,
+    .gpis-profile:has(> .gpis-profile__portrait) {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 240px;
+    }
+    .gpis-profile__portrait { grid-column: 1; }
     .gpis-people-section { padding: 5rem 0; }
     .gpis-profile,
     .gpis-people-network__item {

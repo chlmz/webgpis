@@ -1053,9 +1053,9 @@ body {
 @media (max-width: 767px) {
     .gpis-home-page .gpis-projects { padding: 5rem 0; }
     .gpis-home-page .gpis-impact-teaser { padding: 4.5rem 0; }
-    .gpis-home-page .gpis-people-compact { padding: 4.5rem 0; }
+    .gpis-home-page .gpis-people-compact { padding: 5.5rem 0; }
     .gpis-home-page .gpis-network { padding: 3rem 0; }
-    .gpis-home-page .gpis-contact { padding: 3rem 0; }
+    .gpis-home-page .gpis-contact { padding: 2.5rem 0; }
 }
 
 /* ============================================================

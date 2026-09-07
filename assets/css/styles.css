@@ -359,6 +359,12 @@ body {
     color: var(--gpis-terracota-escuro);
     margin-bottom: 0.75rem;
 }
+/* El eyebrow también sirve como encabezado real de sección cuando no hay
+   título aparte, para que la sección conserve su nivel en el outline. */
+h2.gpis-eyebrow, h3.gpis-eyebrow {
+    margin-top: 0;
+    line-height: 1.3;
+}
 .gpis-eyebrow--light {
     color: rgba(255,255,255,0.8);
 }
@@ -383,7 +389,7 @@ body {
    O QUE QUEREMOS ENTENDER (HOME)
 ============================================================ */
 .gpis-home-page .gpis-research {
-    padding: 7rem 0;
+    padding: 7rem 0 4rem;
     background: var(--gpis-nevoa);
 }
 .gpis-home-page .gpis-research__header {
@@ -418,6 +424,7 @@ body {
     letter-spacing: 0;
     color: var(--gpis-azul-ciencia);
 }
+.gpis-home-page .gpis-research__item:last-child { border-bottom: 0; }
 .gpis-home-page .gpis-research__item-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
@@ -427,6 +434,9 @@ body {
     line-height: 1.22;
     letter-spacing: -0.01em;
 }
+.gpis-home-page .gpis-research__item:nth-child(2) .gpis-research__num { color: var(--gpis-terracota-escuro); }
+.gpis-home-page .gpis-research__item:nth-child(3) .gpis-research__num { color: var(--gpis-verde-escuro); }
+.gpis-home-page .gpis-research__item:nth-child(4) .gpis-research__num { color: var(--gpis-azul-profundo); }
 .gpis-home-page .gpis-research__item-desc {
     font-size: 1rem;
     color: var(--gpis-cinza-200);
@@ -485,7 +495,7 @@ body {
     font-weight: 700;
     font-size: clamp(2.5rem, 4.5vw, 3.75rem);
     line-height: 1;
-    color: var(--gpis-terracota-escuro);
+    color: var(--gpis-azul-ciencia);
 }
 .gpis-home-page .gpis-figures__label {
     display: block;
@@ -496,10 +506,10 @@ body {
 }
 /* Large figure values keep a restrained three-color editorial sequence. */
 .gpis-home-page .gpis-figures__list li:nth-child(2) .gpis-figures__value {
-    color: var(--gpis-verde-pampa);
+    color: var(--gpis-terracota-escuro);
 }
 .gpis-home-page .gpis-figures__list li:nth-child(3) .gpis-figures__value {
-    color: var(--gpis-azul-profundo);
+    color: var(--gpis-verde-escuro);
 }
 @media (max-width: 991px) {
     .gpis-home-page .gpis-figures__list li { padding: 0 1.25rem; }
@@ -524,7 +534,7 @@ body {
    PROJETOS (HOME)
 ============================================================ */
 .gpis-projects {
-    padding: 8rem 0;
+    padding: 5.5rem 0 7rem;
     background: var(--gpis-papel);
 }
 .gpis-projects__featured {
@@ -536,9 +546,19 @@ body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 200px;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch;
     margin-bottom: 2rem;
 }
+/* Rail de cifras: hairline propio en vez de flotar en el vacío de la tarjeta. */
+.gpis-projects__featured > div:last-child {
+    border-left: 1px solid var(--border-subtle);
+    padding-left: 2rem;
+}
+.gpis-projects__featured > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+.gpis-projects__featured-link { margin-top: auto; align-self: flex-start; }
 .gpis-home-page .gpis-projects__featured {
     color: var(--gpis-grafite);
     text-decoration: none;
@@ -556,7 +576,7 @@ body {
     color: var(--gpis-azul-profundo);
     border-color: var(--gpis-azul-ciencia);
 }
-.gpis-home-page .gpis-projects .gpis-section-title { margin-bottom: 3rem; }
+.gpis-home-page .gpis-projects .gpis-section-title { margin-bottom: 2.25rem; }
 .gpis-projects__featured-tag {
     display: block;
     font-family: var(--font-body);
@@ -625,12 +645,24 @@ body {
     box-shadow: var(--shadow-1);
     padding: 2.25rem;
 }
-/* Home cards each have one destination and one keyboard stop. */
+/* Con descripciones de largo desigual, el enlace se ancla al fondo y
+   los CTAs de una misma fila quedan a la misma altura. Va scoped a la Home
+   para ganar al bloque .gpis-project-item__link que aparece más abajo en el
+   archivo (misma especificidad, orden posterior) y para no alterar las
+   páginas internas que reusan estas clases. */
 .gpis-home-page .gpis-project-item {
+    display: flex;
+    flex-direction: column;
     color: var(--gpis-grafite);
     text-decoration: none;
     transition: box-shadow 200ms;
 }
+.gpis-home-page .gpis-project-item__link {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    align-self: flex-start;
+}
+.gpis-home-page .gpis-project-item__countries { margin-bottom: 0; }
 .gpis-home-page .gpis-project-item:is(:hover, :focus-visible) {
     box-shadow: var(--shadow-2);
 }

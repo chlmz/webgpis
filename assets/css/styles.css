@@ -41,7 +41,11 @@
     --font-body:    'Source Sans 3', system-ui, sans-serif;
 }
 
-html { scroll-padding-top: 120px; }
+html { scroll-padding-top: 78px; }
+
+@media (max-width: 400px) {
+    html { scroll-padding-top: 118px; }
+}
 
 body {
     font-family: var(--font-body);
@@ -1838,7 +1842,6 @@ body {
 .gpis-profile {
     display: grid;
     grid-template-columns: 280px minmax(0, 1fr);
-    min-height: 260px;
     align-items: start;
     gap: 1.5rem 4rem;
     padding: 2.5rem 0;
@@ -1997,7 +2000,6 @@ body {
     .gpis-profile,
     .gpis-profile:has(> .gpis-profile__portrait) {
         grid-template-columns: minmax(0, 1fr);
-        min-height: 240px;
     }
     .gpis-profile__portrait {
         grid-column: 1;

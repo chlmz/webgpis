@@ -390,7 +390,6 @@ body {
     gap: 3rem;
     align-items: start;
     margin-bottom: 2rem;
-    transition: box-shadow 200ms;
 }
 .gpis-projects__featured-tag {
     display: block;
@@ -459,7 +458,6 @@ body {
     border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-1);
     padding: 2.25rem;
-    transition: box-shadow 200ms;
 }
 .gpis-project-item__tag {
     display: block;
@@ -632,7 +630,6 @@ body {
     padding: 1.75rem 1rem 1.75rem 0;
     transition: none;
 }
-.gpis-person-card:hover { box-shadow: none; }
 .gpis-person-card__name,
 .gpis-formacao__name {
     font-family: var(--font-display);
@@ -1128,7 +1125,6 @@ body {
     border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-1);
     padding: 2rem;
-    transition: box-shadow 200ms;
 }
 .gpis-proj-section--soft .gpis-proj-theme {
     background: var(--gpis-nevoa);

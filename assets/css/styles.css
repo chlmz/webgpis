@@ -212,6 +212,34 @@ body {
 }
 
 /* ============================================================
+   HOME — COR EDITORIAL (não se propaga às páginas internas)
+============================================================ */
+.gpis-home-page {
+    /* Small text needs AA on both light surfaces. Raw Terracota Sul and
+       Verde Pampa miss 4.5:1 on Névoa; keep them for large numerals/nodes.
+       Dark terracotta: Papel 5.28:1, Névoa 4.78:1.
+       Dark green: Papel 6.00:1, Névoa 5.43:1. */
+    --gpis-terracota-escuro: #A85340;
+    --gpis-verde-escuro: #4A6B4C;
+}
+.gpis-home-page .gpis-eyebrow:not(.gpis-eyebrow--light) {
+    color: var(--gpis-terracota-escuro);
+}
+.gpis-home-page .gpis-network__countries { color: var(--gpis-verde-escuro); }
+.gpis-home-page .gpis-hero .gpis-btn--outline {
+    color: var(--gpis-terracota-escuro);
+    border-color: var(--gpis-terracota-escuro);
+}
+.gpis-home-page .gpis-hero .gpis-btn--outline:is(:hover, :focus-visible) {
+    color: var(--gpis-papel);
+    background: var(--gpis-terracota-escuro);
+}
+.gpis-home-page .gpis-hero .gpis-btn--outline:focus-visible {
+    outline: 3px solid var(--gpis-terracota-escuro);
+    outline-offset: 4px;
+}
+
+/* ============================================================
    HOME — HERO EDITORIAL (escopo restrito à Home)
 ============================================================ */
 .gpis-home-page .gpis-hero {
@@ -283,6 +311,12 @@ body {
     flex: 1;
     height: 1px;
     background: var(--border-default);
+}
+.gpis-home-page .gpis-network-divider__node:nth-child(3) {
+    background: var(--gpis-terracota-sul);
+}
+.gpis-home-page .gpis-network-divider__node:nth-child(5) {
+    background: var(--gpis-verde-pampa);
 }
 
 @media (max-width: 991px) {
@@ -475,6 +509,19 @@ body {
     color: var(--gpis-cinza-meta);
     line-height: 1.45;
     margin-top: 0.4rem;
+}
+/* Large, bold numerals: all four brand colors exceed 3:1 on their surface. */
+.gpis-home-page .gpis-research__item:nth-child(2) .gpis-research__num,
+.gpis-home-page .gpis-figures__list li:nth-child(2) .gpis-figures__value {
+    color: var(--gpis-terracota-sul);
+}
+.gpis-home-page .gpis-research__item:nth-child(3) .gpis-research__num,
+.gpis-home-page .gpis-figures__list li:nth-child(3) .gpis-figures__value {
+    color: var(--gpis-verde-pampa);
+}
+.gpis-home-page .gpis-research__item:nth-child(4) .gpis-research__num,
+.gpis-home-page .gpis-figures__list li:nth-child(4) .gpis-figures__value {
+    color: var(--gpis-azul-profundo);
 }
 @media (max-width: 991px) {
     .gpis-home-page .gpis-figures__list li { padding: 0 1.25rem; }

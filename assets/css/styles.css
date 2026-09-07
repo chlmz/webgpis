@@ -482,7 +482,7 @@ body {
 }
 .gpis-home-page .gpis-figures__list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     list-style: none;
     margin: 0;
     padding: 0;
@@ -495,6 +495,7 @@ body {
     padding-left: 0;
     border-left: 0;
 }
+.gpis-home-page .gpis-figures__list li:last-child { padding-right: 0; }
 .gpis-home-page .gpis-figures__value {
     display: block;
     font-family: var(--font-display);
@@ -511,29 +512,33 @@ body {
     margin-top: 0.4rem;
 }
 /* Large, bold numerals: all four brand colors exceed 3:1 on their surface. */
-.gpis-home-page .gpis-research__item:nth-child(2) .gpis-research__num,
-.gpis-home-page .gpis-figures__list li:nth-child(2) .gpis-figures__value {
+.gpis-home-page .gpis-research__item:nth-child(2) .gpis-research__num {
     color: var(--gpis-terracota-sul);
 }
 .gpis-home-page .gpis-research__item:nth-child(3) .gpis-research__num,
-.gpis-home-page .gpis-figures__list li:nth-child(3) .gpis-figures__value {
+.gpis-home-page .gpis-figures__list li:nth-child(2) .gpis-figures__value {
     color: var(--gpis-verde-pampa);
 }
 .gpis-home-page .gpis-research__item:nth-child(4) .gpis-research__num,
-.gpis-home-page .gpis-figures__list li:nth-child(4) .gpis-figures__value {
+.gpis-home-page .gpis-figures__list li:nth-child(3) .gpis-figures__value {
     color: var(--gpis-azul-profundo);
 }
 @media (max-width: 991px) {
     .gpis-home-page .gpis-figures__list li { padding: 0 1.25rem; }
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
     .gpis-home-page .gpis-figures__list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 2rem;
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 0;
     }
-    .gpis-home-page .gpis-figures__list li:nth-child(odd) {
-        padding-left: 0;
+    .gpis-home-page .gpis-figures__list li {
+        padding: 1.5rem 0;
         border-left: 0;
+    }
+    .gpis-home-page .gpis-figures__list li:first-child { padding-top: 0; }
+    .gpis-home-page .gpis-figures__list li:last-child { padding-bottom: 0; }
+    .gpis-home-page .gpis-figures__list li + li {
+        border-top: 1px solid var(--border-subtle);
     }
 }
 

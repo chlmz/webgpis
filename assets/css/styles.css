@@ -578,6 +578,24 @@ body {
     box-shadow: var(--shadow-1);
     padding: 2.25rem;
 }
+/* Home cards each have one destination and one keyboard stop. */
+.gpis-home-page .gpis-project-item {
+    color: var(--gpis-grafite);
+    text-decoration: none;
+    transition: box-shadow 200ms;
+}
+.gpis-home-page .gpis-project-item:is(:hover, :focus-visible) {
+    box-shadow: var(--shadow-2);
+}
+.gpis-home-page .gpis-project-item:focus-visible {
+    outline: 3px solid var(--gpis-azul-ciencia);
+    outline-offset: 4px;
+    border-radius: var(--radius-lg);
+}
+.gpis-home-page .gpis-project-item:is(:hover, :focus-visible) .gpis-project-item__link {
+    color: var(--gpis-azul-profundo);
+    text-decoration: underline;
+}
 .gpis-project-item__tag {
     display: block;
     font-family: var(--font-body);

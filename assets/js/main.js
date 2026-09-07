@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         anchor.addEventListener('click', function () {
             var navbarCollapse = document.getElementById('navbarNav');
             if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+                bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
             }
         });
     });

@@ -43,6 +43,12 @@ function normalizePagePath(relPath) {
   return path.posix.normalize(normalized);
 }
 
+function canonicalPagePath(relPath) {
+  const normalized = normalizePagePath(relPath);
+  if (normalized === 'index.html') return '/';
+  return `/${normalized.replace(/\/index\.html$/, '/')}`;
+}
+
 function resolveInternalHref(fromPage, href) {
   if (!href || href.startsWith('#')) {
     return {
@@ -112,8 +118,12 @@ for (const page of pages) {
       fail(`${page}: broken fragment "${attrs.href}"`);
     }
 
-    if (attrs['aria-current'] === 'page' && resolved.page !== page) {
-      fail(`${page}: aria-current="page" points to ${resolved.page} via "${attrs.href}"`);
+    if (attrs['aria-current'] === 'page') {
+      const currentPage = canonicalPagePath(page);
+      const destinationPage = canonicalPagePath(resolved.page);
+      if (destinationPage !== currentPage) {
+        fail(`${page}: aria-current="page" href "${attrs.href}" resolves to ${destinationPage}, expected current page ${currentPage}`);
+      }
     }
   }
 }

@@ -9,6 +9,10 @@
     --gpis-azul-claro:      #5A8BB5;
     --gpis-terracota-sul:   #B5614A;
     --gpis-verde-pampa:     #5C7A5E;
+    /* Accessible small-text accents: Terracota Escuro reaches 5.28:1 on
+       Papel and 4.78:1 on Névoa; Verde Escuro reaches 6.00:1 and 5.43:1. */
+    --gpis-terracota-escuro: #A85340;
+    --gpis-verde-escuro:     #4A6B4C;
     --gpis-nevoa:           #F0F4F7;
     --gpis-papel:           #FFFFFF;
     --gpis-cinza-25:        #E4EAEF;
@@ -163,13 +167,17 @@ body {
 }
 .gpis-btn--outline {
     background: transparent;
-    color: var(--gpis-azul-ciencia);
-    border: 2px solid var(--gpis-azul-ciencia);
+    color: var(--gpis-terracota-escuro);
+    border: 2px solid var(--gpis-terracota-escuro);
 }
-.gpis-btn--outline:hover {
-    background: var(--gpis-azul-ciencia);
+.gpis-btn--outline:is(:hover, :focus-visible) {
+    background: var(--gpis-terracota-escuro);
     color: #fff;
     text-decoration: none;
+}
+.gpis-btn--outline:focus-visible {
+    outline: 3px solid var(--gpis-terracota-escuro);
+    outline-offset: 4px;
 }
 .gpis-btn--white {
     display: inline-block;
@@ -211,33 +219,8 @@ body {
     text-decoration: none;
 }
 
-/* ============================================================
-   HOME — COR EDITORIAL (não se propaga às páginas internas)
-============================================================ */
-.gpis-home-page {
-    /* Small text needs AA on both light surfaces. Raw Terracota Sul and
-       Verde Pampa miss 4.5:1 on Névoa; keep them for large numerals/nodes.
-       Dark terracotta: Papel 5.28:1, Névoa 4.78:1.
-       Dark green: Papel 6.00:1, Névoa 5.43:1. */
-    --gpis-terracota-escuro: #A85340;
-    --gpis-verde-escuro: #4A6B4C;
-}
-.gpis-home-page .gpis-eyebrow:not(.gpis-eyebrow--light) {
-    color: var(--gpis-terracota-escuro);
-}
+/* HOME — the network country line is a data/category accent. */
 .gpis-home-page .gpis-network__countries { color: var(--gpis-verde-escuro); }
-.gpis-home-page .gpis-hero .gpis-btn--outline {
-    color: var(--gpis-terracota-escuro);
-    border-color: var(--gpis-terracota-escuro);
-}
-.gpis-home-page .gpis-hero .gpis-btn--outline:is(:hover, :focus-visible) {
-    color: var(--gpis-papel);
-    background: var(--gpis-terracota-escuro);
-}
-.gpis-home-page .gpis-hero .gpis-btn--outline:focus-visible {
-    outline: 3px solid var(--gpis-terracota-escuro);
-    outline-offset: 4px;
-}
 
 /* ============================================================
    HOME — HERO EDITORIAL (escopo restrito à Home)
@@ -373,7 +356,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gpis-azul-ciencia);
+    color: var(--gpis-terracota-escuro);
     margin-bottom: 0.75rem;
 }
 .gpis-eyebrow--light {
@@ -502,7 +485,7 @@ body {
     font-weight: 700;
     font-size: clamp(2.5rem, 4.5vw, 3.75rem);
     line-height: 1;
-    color: var(--gpis-azul-ciencia);
+    color: var(--gpis-terracota-escuro);
 }
 .gpis-home-page .gpis-figures__label {
     display: block;
@@ -511,15 +494,10 @@ body {
     line-height: 1.45;
     margin-top: 0.4rem;
 }
-/* Large, bold numerals: all four brand colors exceed 3:1 on their surface. */
-.gpis-home-page .gpis-research__item:nth-child(2) .gpis-research__num {
-    color: var(--gpis-terracota-sul);
-}
-.gpis-home-page .gpis-research__item:nth-child(3) .gpis-research__num,
+/* Large figure values keep a restrained three-color editorial sequence. */
 .gpis-home-page .gpis-figures__list li:nth-child(2) .gpis-figures__value {
     color: var(--gpis-verde-pampa);
 }
-.gpis-home-page .gpis-research__item:nth-child(4) .gpis-research__num,
 .gpis-home-page .gpis-figures__list li:nth-child(3) .gpis-figures__value {
     color: var(--gpis-azul-profundo);
 }
@@ -1417,6 +1395,9 @@ body {
     border-top: 2px solid var(--gpis-azul-ciencia);
     padding-top: 2.5rem;
 }
+/* Keep the frozen publication badge as the sole terracotta text treatment
+   inside this component; its section eyebrow remains structural blue. */
+.gpis-proj-pubs .gpis-eyebrow { color: var(--gpis-azul-ciencia); }
 .gpis-proj-pub__badge {
     display: inline-block;
     font-size: 0.65rem;

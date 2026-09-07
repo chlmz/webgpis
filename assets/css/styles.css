@@ -539,6 +539,23 @@ body {
     align-items: start;
     margin-bottom: 2rem;
 }
+.gpis-home-page .gpis-projects__featured {
+    color: var(--gpis-grafite);
+    text-decoration: none;
+    transition: box-shadow 200ms;
+}
+.gpis-home-page .gpis-projects__featured:is(:hover, :focus-visible) {
+    box-shadow: var(--shadow-2);
+}
+.gpis-home-page .gpis-projects__featured:focus-visible {
+    outline: 3px solid var(--gpis-azul-ciencia);
+    outline-offset: 4px;
+    border-radius: var(--radius-xl);
+}
+.gpis-home-page .gpis-projects__featured:is(:hover, :focus-visible) .gpis-projects__featured-link {
+    color: var(--gpis-azul-profundo);
+    border-color: var(--gpis-azul-ciencia);
+}
 .gpis-home-page .gpis-projects .gpis-section-title { margin-bottom: 3rem; }
 .gpis-projects__featured-tag {
     display: block;

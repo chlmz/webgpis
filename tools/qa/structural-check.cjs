@@ -12,6 +12,10 @@ const pages = [
   'projetos/linkage-dados-populacionais/index.html',
   'projetos/visao-primeira-pessoa-ia/index.html',
   'projetos/visoes-do-cuidado/index.html',
+  'pesquisa/saude-mental-curso-de-vida/index.html',
+  'pesquisa/saude-entre-geracoes/index.html',
+  'pesquisa/crises-e-desigualdades/index.html',
+  'pesquisa/metodos-e-inovacao/index.html',
 ];
 
 const failures = [];

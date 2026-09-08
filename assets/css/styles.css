@@ -941,9 +941,9 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
     background: var(--gpis-azul-ciencia);
     transform: translateY(-0.15rem);
 }
-.gpis-home-page .gpis-network__list li:nth-child(2) .gpis-network__dot { background: var(--gpis-verde-escuro); }
-.gpis-home-page .gpis-network__list li:nth-child(3) .gpis-network__dot { background: var(--gpis-terracota-sul); }
-.gpis-home-page .gpis-network__list li:nth-child(4) .gpis-network__dot { background: var(--gpis-azul-profundo); }
+.gpis-home-page .gpis-network__list li:nth-child(2) .gpis-network__dot { background: var(--gpis-azul-profundo); }
+.gpis-home-page .gpis-network__list li:nth-child(3) .gpis-network__dot { background: var(--gpis-verde-escuro); }
+.gpis-home-page .gpis-network__list li:nth-child(4) .gpis-network__dot { background: var(--gpis-terracota-sul); }
 .gpis-home-page .gpis-network__map {
     margin: 0;
     background: var(--gpis-papel);
@@ -1016,8 +1016,7 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
     padding: 1.75rem 1rem 1.75rem 0;
     transition: none;
 }
-.gpis-person-card__name,
-.gpis-formacao__name {
+.gpis-person-card__name {
     font-family: var(--font-display);
     font-size: 1.125rem;
     font-weight: 700;
@@ -1045,65 +1044,6 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
 }
 @media (max-width: 575px) {
     .gpis-people-compact__grid { grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   FORMAÇÃO NO GPIS (HOME — dentro de Pessoas)
-============================================================ */
-.gpis-formacao {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-subtle);
-}
-.gpis-formacao__label {
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--gpis-grafite);
-    margin: 0 0 1.75rem;
-}
-.gpis-formacao__cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem 4rem;
-}
-.gpis-formacao__cols--top-spaced {
-    margin-top: 2.5rem;
-}
-.gpis-formacao__category {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gpis-azul-ciencia);
-    margin: 0 0 0.75rem;
-}
-.gpis-formacao__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0.75rem;
-}
-.gpis-formacao__list li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.5rem 0;
-    border-top: 1px solid var(--border-subtle);
-}
-.gpis-formacao__list li:last-child {
-    border-bottom: 1px solid var(--border-subtle);
-}
-
-.gpis-formacao__affiliation {
-    font-size: 0.8rem;
-    color: var(--gpis-cinza-meta);
-    line-height: 1.4;
-}
-@media (max-width: 767px) {
-    .gpis-formacao__cols {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 }
 
 /* ============================================================
@@ -1623,7 +1563,7 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gpis-terracota-sul);
+    color: var(--gpis-terracota-escuro);
     background: rgba(201,139,46,0.12);
     padding: 0.25rem 0.55rem;
     border-radius: var(--radius-md);

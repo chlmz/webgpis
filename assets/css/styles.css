@@ -243,7 +243,7 @@ body {
 .gpis-home-page .gpis-hero .container { position: relative; z-index: 1; }
 .gpis-home-page .gpis-hero__motif {
     position: absolute;
-    top: -26%;
+    top: -46%;
     right: -5%;
     width: min(36%, 440px);
     height: auto;
@@ -262,10 +262,19 @@ body {
 .gpis-home-page .gpis-hero .gpis-network-divider__node { background: var(--gpis-papel); }
 .gpis-home-page .gpis-hero .gpis-network-divider__node:nth-child(3) { background: var(--gpis-terracota-sul); }
 .gpis-home-page .gpis-hero .gpis-network-divider__node:nth-child(5) { background: #9FC49F; }
+@media (min-width: 992px) and (max-width: 1199px) {
+    .gpis-home-page .gpis-hero__motif { top: -26%; }
+}
 @media (max-width: 991px) {
     /* Abaixo de 992px o texto ocupa a largura toda: a marca-d'água sobe e sai
        de quadro para nunca ficar atrás de texto pequeno. */
-    .gpis-home-page .gpis-hero__motif { width: 40%; right: -15%; top: -20%; opacity: 0.1; }
+    .gpis-home-page .gpis-hero__motif { width: 40%; right: -15%; top: -46%; opacity: 0.1; }
+}
+@media (min-width: 576px) and (max-width: 800px) {
+    .gpis-home-page .gpis-hero__motif { top: -38%; }
+}
+@media (max-width: 575px) {
+    .gpis-home-page .gpis-hero__motif { top: -20%; }
 }
 .gpis-hero__kicker {
     display: block;

@@ -6,6 +6,7 @@ const pages = [
   'index.html',
   'pessoas/index.html',
   'impacto/index.html',
+  'publicacoes/index.html',
   '404.html',
   'projetos/coorte-rio-grande-2019/index.html',
   'projetos/enchentes-saude-mental/index.html',
@@ -130,6 +131,20 @@ for (const page of pages) {
       }
     }
   }
+}
+
+const sitemapPath = path.join(root, 'sitemap.xml');
+if (!fs.existsSync(sitemapPath)) {
+  fail('Missing sitemap.xml');
+} else {
+  const sitemap = fs.readFileSync(sitemapPath, 'utf8');
+  for (const page of pages.filter((item) => item !== '404.html')) {
+    const expectedUrl = `https://chlmz.github.io/webgpis${canonicalPagePath(page)}`;
+    if (!sitemap.includes(`<loc>${expectedUrl}</loc>`)) {
+      fail(`sitemap.xml: missing ${expectedUrl}`);
+    }
+  }
+  if (sitemap.includes('/404')) fail('sitemap.xml: 404 page must not be indexed');
 }
 
 if (failures.length) {

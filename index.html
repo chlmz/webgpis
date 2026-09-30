@@ -376,17 +376,27 @@
                 .attr('d', path)
                 .attr('fill', function (d) { return HIGHLIGHT[d.properties.name] || '#E4EAEF'; })
                 .attr('stroke', '#FFFFFF').attr('stroke-width', 0.6);
-            var links = [['Brazil', 'United Kingdom'], ['Brazil', 'Peru'], ['Brazil', 'Chile'], ['Peru', 'United Kingdom']];
+            var nodes = [
+                { country: 'Brazil', institution: 'FURG', coordinates: [-52.0986, -32.0350] },
+                { country: 'United Kingdom', institution: 'Manchester Metropolitan University', coordinates: [-2.2426, 53.4808] },
+                { country: 'Chile', institution: 'Universidad del Desarrollo', coordinates: [-70.6693, -33.4489] },
+                { country: 'Peru', institution: 'Universidad Científica del Sur', coordinates: [-77.0428, -12.0464] }
+            ];
+            var links = [
+                ['Brazil', 'United Kingdom'],
+                ['Brazil', 'Chile'],
+                ['Brazil', 'Peru']
+            ];
             var byName = {};
-            countries.forEach(function (d) { if (HIGHLIGHT[d.properties.name]) byName[d.properties.name] = d3.geoCentroid(d); });
+            nodes.forEach(function (node) { byName[node.country] = node.coordinates; });
             svg.append('g').attr('fill', 'none').attr('stroke', '#2C5F8A')
                 .attr('stroke-width', 1.2).attr('stroke-dasharray', '4 4').attr('opacity', 0.55)
                 .selectAll('path').data(links).join('path')
-                .attr('d', function (p) { return byName[p[0]] && byName[p[1]] ? path({ type: 'LineString', coordinates: [byName[p[0]], byName[p[1]]] }) : null; });
-            svg.append('g').selectAll('circle').data(Object.keys(byName)).join('circle')
-                .attr('cx', function (n) { return projection(byName[n])[0]; })
-                .attr('cy', function (n) { return projection(byName[n])[1]; })
-                .attr('r', 5).attr('fill', function (n) { return HIGHLIGHT[n]; })
+                .attr('d', function (p) { return path({ type: 'LineString', coordinates: [byName[p[0]], byName[p[1]]] }); });
+            svg.append('g').selectAll('circle').data(nodes).join('circle')
+                .attr('cx', function (d) { return projection(d.coordinates)[0]; })
+                .attr('cy', function (d) { return projection(d.coordinates)[1]; })
+                .attr('r', 5).attr('fill', function (d) { return HIGHLIGHT[d.country]; })
                 .attr('stroke', '#FFFFFF').attr('stroke-width', 1.5);
         }).catch(function () { el.innerHTML = ''; });
     })();

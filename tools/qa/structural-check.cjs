@@ -7,6 +7,7 @@ const pages = [
   'pessoas/index.html',
   'impacto/index.html',
   'publicacoes/index.html',
+  'dados/index.html',
   '404.html',
   'projetos/coorte-rio-grande-2019/index.html',
   'projetos/enchentes-saude-mental/index.html',

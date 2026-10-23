@@ -49,6 +49,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { passive: true });
     }
 
+    // Páginas internas: as mesmas entradas suaves da home, aplicadas aos blocos de conteúdo.
+    if (!document.body.classList.contains('gpis-home-page')) {
+        document.querySelectorAll([
+            '.gpis-proj-section__inner', '.gpis-proj-pubs__inner', '.gpis-proj-collab__inner',
+            '.gpis-impact-block__inner', '.gpis-impact-cta__inner', '.gpis-proj-numbers__item',
+            '.gpis-proj-theme', '.gpis-proj-next__item', '.gpis-linha-body__aside', '.gpis-linha-project',
+            '.gpis-profile', '.gpis-people-network__item', '.gpis-people-team__intro', '.gpis-contact__inner'
+        ].join(',')).forEach(function (el) { el.setAttribute('data-reveal', ''); });
+    }
+
+    // Parallax leve no cabeçalho das páginas internas (marca d'água ou foto).
+    var parallaxHero = document.querySelector('.gpis-proj-hero, .gpis-impact-hero');
+    if (parallaxHero && !reduceMotion) {
+        var ticking = false;
+        var updateParallax = function () {
+            ticking = false;
+            var rect = parallaxHero.getBoundingClientRect();
+            if (rect.bottom < 0) return;
+            parallaxHero.style.setProperty('--py', Math.round(-rect.top * 0.25) + 'px');
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; window.requestAnimationFrame(updateParallax); }
+        }, { passive: true });
+        updateParallax();
+    }
+
     // Entrada discreta: o conteúdo já é visível sem JS; só animamos quando
     // o elemento ainda está abaixo da dobra.
     var revealEls = document.querySelectorAll('[data-reveal]');

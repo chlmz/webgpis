@@ -2290,24 +2290,6 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
     align-self: center;
 }
 
-/* Home People: text-link CTA to pessoas/ */
-.gpis-people-compact__cta {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--gpis-azul-ciencia);
-    text-decoration: none;
-    border-bottom: 1.5px solid rgba(44,95,138,0.28);
-    padding-bottom: 1px;
-    transition: border-color 150ms, color 150ms;
-}
-.gpis-people-compact__cta:hover {
-    color: var(--gpis-azul-profundo);
-    border-bottom-color: var(--gpis-azul-ciencia);
-    text-decoration: none;
-}
-
 /* Responsive */
 @media (max-width: 991px) {
     .gpis-profile:has(> .gpis-profile__portrait) {
@@ -2354,13 +2336,13 @@ h2.gpis-eyebrow, h3.gpis-eyebrow {
 /* ============================================================
    ACESSIBILIDADE — MOVIMENTO REDUZIDO
 ============================================================ */
-/* Sem deslocamentos nem animações contínuas; cor, opacidade e sombra
-   continuam sinalizando hover e foco. */
+/* Sem deslocamentos nem animações; hover e foco seguem visíveis
+   por cor e sombra, aplicados de imediato. */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        transition-property: color, background-color, border-color, box-shadow, opacity, text-decoration-color !important;
+        transition-duration: 0.01ms !important;
     }
     :is(.gpis-project-item, .gpis-projects__featured, .gpis-linha-project):is(:hover, :focus-visible),
     :is(a, .gpis-research__item, .gpis-project-item, .gpis-projects__featured):is(:hover, :focus-visible) .gpis-arrow {

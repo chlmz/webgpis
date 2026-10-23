@@ -39,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { rootMargin: '-45% 0px -50% 0px' });
         // Observa todas as seções: as que não estão no menu limpam o destaque.
         document.querySelectorAll('main section[id]').forEach(function (section) { spy.observe(section); });
+        // No fim da página a última seção pode nunca cruzar a faixa central.
+        var lastLink = spyLinks[spyLinks.length - 1];
+        window.addEventListener('scroll', function () {
+            var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+            if (!atBottom) return;
+            spyLinks.forEach(function (a) { a.classList.remove('is-current'); });
+            lastLink.classList.add('is-current');
+        }, { passive: true });
     }
 
     // Entrada discreta: o conteúdo já é visível sem JS; só animamos quando
@@ -51,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 entry.target.classList.add('is-revealed');
                 revealer.unobserve(entry.target);
             });
-        }, { rootMargin: '0px 0px -8% 0px' });
+        });
         revealEls.forEach(function (el) {
             if (el.getBoundingClientRect().top > window.innerHeight) {
                 el.classList.add('is-pending');
@@ -122,7 +130,7 @@ function initNetworkMap(reduceMotion) {
                     .on('end', function () { d3.select(this).attr('stroke-dasharray', '4 4'); });
             });
             dots.attr('r', 0)
-                .transition().delay(function (d, i) { return i === 0 ? 0 : 900 + i * 220; })
+                .transition().delay(function (d, i) { return i === 0 ? 0 : 1250 + (i - 1) * 220; })
                 .duration(500).ease(d3.easeCubicOut)
                 .attr('r', 5);
         }).catch(function () { el.innerHTML = ''; });

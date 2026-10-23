@@ -76,7 +76,7 @@ function initNetworkMap(reduceMotion) {
     if (!el || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
 
     var draw = function () {
-        var HIGHLIGHT = { 'Brazil': '#2C5F8A', 'Chile': '#4A6B4C', 'Peru': '#C98B2E', 'United Kingdom': '#1E456A' };
+        var HIGHLIGHT = { 'Brazil': '#1E456A', 'Chile': '#5A8BB5', 'Peru': '#5A8BB5', 'United Kingdom': '#5A8BB5' };
         d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(function (topo) {
             var countries = topojson.feature(topo, topo.objects.countries).features;
             var W = 760, H = 430;

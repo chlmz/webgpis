@@ -52,6 +52,8 @@ sleep 2 && open "http://localhost:8000"
 
 - Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
 - DEBH-CPEDCS (Rede nacional): logo listo; falta nombre completo y descripción (el contenedor no resuelve dominios `.br`).
+- Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
+- Para as famílias: falta un teléfono o WhatsApp de la equipe, si existe.
 - Fotos con niños de frente (`impacto-atividade-familias.jpg`): confirmar permiso antes de usarla.
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
@@ -61,6 +63,15 @@ sleep 2 && open "http://localhost:8000"
 `.claude/recursos.md` es el catálogo vivo de skills, herramientas e ideas evaluadas: qué hay instalado, qué se descartó y por qué, y qué podría servir más adelante. Consultarlo antes de proponer herramientas nuevas, y agregar ahí todo lo que se evalúe.
 
 ## Notas técnicas
+
+- **Sitio bilingüe.** El portugués es la fuente; el inglés en `/en/` se genera con `tools/i18n/`. Nunca editar `/en/` a mano. Después de cambiar texto en portugués:
+  ```bash
+  cd ~/webgpis-redesign
+  python3 tools/i18n/extract.py   # lista textos nuevos en tools/i18n/en.json (valor vacío = sin traducir)
+  # completar las traducciones vacías en en.json
+  python3 tools/i18n/build.py     # regenera /en/, el selector PT/EN y los hreflang
+  ```
+  Los títulos oficiales (disertaciones, artículos) y los nombres propios quedan sin traducir a propósito.
 
 - Al cambiar CSS o JS, subir el `?v=` en **todos** los HTML para evitar caché.
 - En el contenedor en la nube los CDN (jsdelivr, unpkg) están bloqueados: para capturas con Playwright, servir copias locales de Bootstrap/d3/topojson con `page.route`.

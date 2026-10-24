@@ -3262,3 +3262,13 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 @media (max-width: 575px) { .gpis-footer__grid { grid-template-columns: minmax(0, 1fr); } }
 /* Contraste AA sobre o azul mais claro da Infância (branco pleno = 4.65:1). */
 .gpis-lifeband__desc, .gpis-lifeband__leader { color: #fff; }
+
+/* ============================================================
+   SELETOR DE IDIOMA (PT / EN)
+============================================================ */
+.gpis-lang { display: flex; align-items: center; gap: 0.35rem; margin-left: 0.75rem; padding-left: 0.75rem; border-left: 1px solid var(--border-subtle); font-size: 0.875rem; font-weight: 700; }
+.gpis-lang span { color: var(--gpis-cinza-100); }
+.gpis-lang__a { color: var(--gpis-cinza-meta); text-decoration: none; padding: 0.35rem 0.2rem; letter-spacing: 0.04em; }
+.gpis-lang__a:is(:hover, :focus-visible) { color: var(--gpis-azul-ciencia); }
+.gpis-lang__a[aria-current="true"] { color: var(--gpis-azul-noite); text-decoration: underline; text-decoration-color: var(--gpis-terracota-sul); text-decoration-thickness: 2px; text-underline-offset: 0.35em; }
+@media (max-width: 991px) { .gpis-lang { margin: 0.5rem 0 0; padding: 0.5rem 0 0; border-left: 0; } }

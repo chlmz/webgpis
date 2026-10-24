@@ -184,6 +184,9 @@ function initBand(reduceMotion) {
     update();
 }
 
+// Idioma da página (o site tem versão em inglês em /en/).
+var EN = document.documentElement.lang === 'en';
+
 function initNetworkMap(reduceMotion) {
     var el = document.getElementById('gpis-map');
     if (!el || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
@@ -207,8 +210,8 @@ function initNetworkMap(reduceMotion) {
                 .attr('fill', function (d) { return COLOR[d.properties.name] || '#D6DFE7'; })
                 .attr('stroke', '#F0F4F7').attr('stroke-width', 0.6);
             var nodes = [
-                { country: 'Brazil', name: 'FURG', sub: 'Rio Grande, Brasil', at: [-52.0986, -32.0350], dx: 54, dy: 34, anchor: 'start' },
-                { country: 'United Kingdom', name: 'Manchester Metropolitan University', sub: 'Reino Unido', at: [-2.2426, 53.4808], dx: 40, dy: -40, anchor: 'start' },
+                { country: 'Brazil', name: 'FURG', sub: EN ? 'Rio Grande, Brazil' : 'Rio Grande, Brasil', at: [-52.0986, -32.0350], dx: 54, dy: 34, anchor: 'start' },
+                { country: 'United Kingdom', name: 'Manchester Metropolitan University', sub: EN ? 'United Kingdom' : 'Reino Unido', at: [-2.2426, 53.4808], dx: 40, dy: -40, anchor: 'start' },
                 { country: 'Chile', name: 'Universidad del Desarrollo', sub: 'Chile', at: [-70.6693, -33.4489], dx: -34, dy: 26, anchor: 'end' },
                 { country: 'Peru', name: 'Universidad Científica del Sur', sub: 'Peru', at: [-77.0428, -12.0464], dx: -34, dy: -16, anchor: 'end' }
             ];
@@ -354,7 +357,7 @@ function initMark(reduceMotion) {
 function initCounters(reduceMotion) {
     var els = document.querySelectorAll('[data-count]');
     if (!els.length || reduceMotion || !('IntersectionObserver' in window)) return;
-    var fmt = new Intl.NumberFormat('pt-BR');
+    var fmt = new Intl.NumberFormat(document.documentElement.lang === 'en' ? 'en-US' : 'pt-BR');
     var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (!entry.isIntersecting) return;

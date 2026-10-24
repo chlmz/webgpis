@@ -3241,3 +3241,24 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-diss__y { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--gpis-azul-ciencia); font-variant-numeric: tabular-nums; line-height: 1.35; }
 .gpis-diss__t { margin: 0 0 0.25rem; color: var(--gpis-grafite); font-size: 1.0625rem; line-height: 1.5; max-width: 70ch; }
 .gpis-diss__n { margin: 0; color: var(--gpis-cinza-meta); font-size: 0.9375rem; font-weight: 600; }
+
+/* ============================================================
+   RODAPÉ COMPLETO
+============================================================ */
+.gpis-footer { padding: clamp(3rem, 6vw, 4.5rem) 0 0; }
+.gpis-footer__grid { display: grid; grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 3fr)); gap: 2.5rem clamp(1.5rem, 3vw, 3rem); }
+.gpis-footer__logos { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.5rem; }
+.gpis-footer__logos img { height: 64px; width: auto; display: block; }
+.gpis-footer__logos .gpis-footer__logo--small { height: 40px; }
+.gpis-footer__logos a { opacity: 0.9; transition: opacity var(--dur-2) var(--ease-out); }
+.gpis-footer__logos a:is(:hover, :focus-visible) { opacity: 1; }
+.gpis-footer__h { margin: 0 0 0.9rem; font-size: 0.875rem; font-weight: 700; color: #9DBDD9; }
+.gpis-footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.gpis-footer__col a { color: var(--on-dark-soft); text-decoration: none; font-size: 0.9375rem; overflow-wrap: anywhere; }
+.gpis-footer__col a:is(:hover, :focus-visible) { color: #fff; text-decoration: underline; text-underline-offset: 0.2em; }
+.gpis-footer__bottom { margin-top: clamp(2.5rem, 5vw, 3.5rem); padding-block: 1.25rem; border-top: 1px solid var(--on-dark-line); }
+.gpis-footer__bottom .gpis-footer__copy { margin: 0; }
+@media (max-width: 991px) { .gpis-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .gpis-footer__brand { grid-column: 1 / -1; } }
+@media (max-width: 575px) { .gpis-footer__grid { grid-template-columns: minmax(0, 1fr); } }
+/* Contraste AA sobre o azul mais claro da Infância (branco pleno = 4.65:1). */
+.gpis-lifeband__desc, .gpis-lifeband__leader { color: #fff; }

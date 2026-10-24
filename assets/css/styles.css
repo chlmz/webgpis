@@ -2324,6 +2324,98 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 }
 .gpis-network__more { margin-top: 1.5rem; }
 .gpis-network__list a:hover .gpis-network__country { color: var(--gpis-azul-ciencia); }
+/* --- Rede: status badges --- */
+.gpis-status {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.2rem 0.6rem; border-radius: 3px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.5;
+}
+.gpis-status--andamento  { background: rgba(44,95,138,0.12); color: var(--gpis-azul-ciencia); }
+.gpis-status--proposta   { background: rgba(143,99,24,0.12);  color: var(--gpis-terracota-escuro); }
+.gpis-status--confirmado { background: rgba(44,95,138,0.08);  color: var(--gpis-azul-profundo); }
+.gpis-status::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor; flex-shrink: 0;
+}
+
+/* --- Rede: lifecycle timeline --- */
+.gpis-lifecycle { padding: var(--s5) 0; }
+.gpis-lifecycle__track {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    position: relative;
+}
+.gpis-lifecycle__track::before {
+    content: ''; position: absolute; top: 1.125rem;
+    left: calc(100% / 6); right: calc(100% / 6);
+    height: 2px; background: var(--gpis-cinza-25);
+}
+.gpis-lifecycle__phase {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    position: relative; text-align: center;
+}
+.gpis-lifecycle__dot {
+    width: 2.25rem; height: 2.25rem; border-radius: 50%;
+    background: var(--gpis-azul-ciencia); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto; position: relative; z-index: 1;
+    font-size: 0.875rem; font-weight: 700;
+}
+.gpis-lifecycle__phase:nth-child(2) .gpis-lifecycle__dot { background: var(--gpis-azul-profundo); }
+.gpis-lifecycle__phase:nth-child(3) .gpis-lifecycle__dot { background: var(--gpis-azul-noite); }
+.gpis-lifecycle__label {
+    font-family: var(--font-display); font-size: 1.25rem; font-weight: 600;
+    color: var(--gpis-grafite); letter-spacing: -0.02em;
+}
+.gpis-lifecycle__study {
+    font-size: 0.9375rem; font-weight: 600; color: var(--gpis-azul-ciencia);
+}
+.gpis-lifecycle__desc {
+    margin: 0; font-size: 0.9375rem; line-height: 1.55; color: var(--gpis-cinza-200);
+    text-align: left; max-width: 36ch; margin-inline: auto;
+}
+.gpis-lifecycle__leader {
+    margin: 0; font-size: 0.8125rem; color: var(--gpis-cinza-meta); font-style: italic;
+}
+@media (max-width: 767px) {
+    .gpis-lifecycle__track { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gpis-lifecycle__track::before {
+        top: 0; bottom: 0; left: 1.125rem; right: auto;
+        width: 2px; height: auto;
+    }
+    .gpis-lifecycle__phase { text-align: left; flex-direction: row; gap: 1rem; align-items: flex-start; }
+    .gpis-lifecycle__dot { margin: 0; flex-shrink: 0; }
+    .gpis-lifecycle__phase-body { display: flex; flex-direction: column; gap: 0.5rem; }
+    .gpis-lifecycle__desc { max-width: none; }
+}
+
+/* --- Rede: como colaboramos --- */
+.gpis-collab { padding: var(--s5) 0; }
+.gpis-collab__grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: 2rem;
+}
+.gpis-collab__item {
+    display: flex; gap: 1rem; align-items: flex-start;
+}
+.gpis-collab__num {
+    flex-shrink: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%;
+    background: var(--gpis-nevoa); color: var(--gpis-azul-ciencia);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+}
+.gpis-collab__title {
+    margin: 0; font-family: var(--font-display); font-size: 1.0625rem;
+    font-weight: 600; color: var(--gpis-grafite); letter-spacing: -0.01em;
+}
+.gpis-collab__text {
+    margin: 0.25rem 0 0; font-size: 0.9375rem; line-height: 1.55; color: var(--gpis-cinza-200);
+}
+@media (max-width: 767px) {
+    .gpis-collab__grid { grid-template-columns: 1fr; }
+}
+
+/* --- Rede: partner cards (redesigned) --- */
 .gpis-rede-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2331,66 +2423,114 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     margin-top: 2.5rem;
 }
 .gpis-rede-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--gpis-azul-ciencia);
+    display: flex; flex-direction: column; gap: 0.75rem;
+    padding: 1.75rem 1.5rem; border-radius: var(--radius-lg);
+    background: var(--gpis-papel); border: 1px solid var(--gpis-cinza-25);
     scroll-margin-top: calc(var(--header-h) + 1.5rem);
 }
+.gpis-rede-card__header {
+    display: flex; align-items: center; gap: 1rem;
+    padding-bottom: 1rem; border-bottom: 1px solid var(--gpis-cinza-25);
+}
+.gpis-rede-card__logo {
+    width: 56px; height: 56px; border-radius: var(--radius-md);
+    background: var(--gpis-nevoa); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+}
+.gpis-rede-card__logo img {
+    max-width: 48px; max-height: 48px; object-fit: contain;
+}
+.gpis-rede-card__logo-text {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.8125rem;
+    color: var(--gpis-azul-ciencia); text-align: center; line-height: 1.15;
+}
+.gpis-rede-card__header-text { display: flex; flex-direction: column; gap: 0.15rem; }
+.gpis-rede-card__inst {
+    margin: 0; font-family: var(--font-display); font-weight: 600;
+    font-size: 1.0625rem; color: var(--gpis-grafite); letter-spacing: -0.01em; line-height: 1.25;
+}
 .gpis-rede-card__country {
-    color: var(--gpis-cinza-meta);
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: var(--gpis-cinza-meta); font-size: 0.8125rem;
+    font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
 }
-.gpis-rede-card__name {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 1.375rem;
-    font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    color: var(--gpis-grafite);
+.gpis-rede-card__pi {
+    margin: 0; font-size: 0.9375rem; color: var(--gpis-azul-ciencia); font-weight: 600;
 }
-.gpis-rede-card__inst { margin: 0; color: var(--gpis-cinza-200); font-size: 0.9375rem; line-height: 1.45; }
-.gpis-rede-card__role { margin: 0.5rem 0 0; color: var(--gpis-grafite); font-size: 1rem; line-height: 1.6; }
-.gpis-rede-card__label {
-    margin: 0.75rem 0 0;
-    color: var(--gpis-cinza-meta);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.gpis-rede-card__collab-title {
+    margin: 0.5rem 0 0; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gpis-cinza-meta);
 }
-.gpis-rede-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
-.gpis-rede-card__tags li {
-    padding: 0.2rem 0.55rem;
-    border-radius: 3px;
-    background: var(--gpis-nevoa);
-    color: var(--gpis-azul-profundo);
-    font-size: 0.875rem;
-    line-height: 1.4;
+.gpis-rede-card__collab-list {
+    margin: 0.25rem 0 0; padding: 0 0 0 1.1rem; font-size: 0.9375rem;
+    line-height: 1.55; color: var(--gpis-cinza-200);
 }
-.gpis-rede-card__links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: auto; padding-top: 1rem; }
-.gpis-rede-group {
-    display: grid;
-    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-    gap: 1rem clamp(1.5rem, 4vw, 4rem);
-    margin-top: 3.5rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid var(--border-default);
+.gpis-rede-card__collab-list li + li { margin-top: 0.3rem; }
+.gpis-rede-card__links {
+    display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem;
+    margin-top: auto; padding-top: 0.75rem;
 }
-.gpis-rede-group__title { margin: 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--gpis-grafite); }
-.gpis-rede-group__text { margin: 0; color: var(--gpis-cinza-200); font-size: 1.0625rem; line-height: 1.65; max-width: 60ch; }
-.gpis-rede-pending { margin: 0; color: var(--gpis-cinza-meta); font-size: 1.0625rem; font-style: italic; }
 @media (max-width: 991px) {
     .gpis-rede-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
-    .gpis-rede-cards, .gpis-rede-group { grid-template-columns: minmax(0, 1fr); }
+    .gpis-rede-cards { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* --- Rede: national network / groups --- */
+.gpis-rede-group {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-default);
+}
+.gpis-rede-group__title {
+    margin: 0; font-family: var(--font-display); font-size: 1.25rem;
+    font-weight: 600; letter-spacing: -0.02em; color: var(--gpis-grafite);
+}
+.gpis-rede-group__text {
+    margin: 0; color: var(--gpis-cinza-200); font-size: 1.0625rem;
+    line-height: 1.65; max-width: 60ch;
+}
+.gpis-rede-pending {
+    margin: 0; color: var(--gpis-cinza-meta); font-size: 1.0625rem; font-style: italic;
+}
+@media (max-width: 767px) {
+    .gpis-rede-group { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* --- Rede: institution logo bar --- */
+.gpis-rede-logos {
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: center; gap: 2rem 3rem;
+    padding: 2.5rem 0; margin-top: 2rem;
+    border-top: 1px solid var(--gpis-cinza-25);
+}
+.gpis-rede-logos__item {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: var(--gpis-cinza-200); transition: color 200ms;
+}
+.gpis-rede-logos__item:hover { color: var(--gpis-azul-ciencia); }
+.gpis-rede-logos__icon {
+    width: 64px; height: 64px; border-radius: var(--radius-lg);
+    background: var(--gpis-nevoa); display: flex; align-items: center; justify-content: center;
+    transition: background 200ms;
+}
+.gpis-rede-logos__item:hover .gpis-rede-logos__icon { background: rgba(44,95,138,0.08); }
+.gpis-rede-logos__icon img { max-width: 52px; max-height: 52px; object-fit: contain; }
+.gpis-rede-logos__icon-text {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.875rem;
+    color: var(--gpis-azul-ciencia); line-height: 1.15; text-align: center;
+}
+.gpis-rede-logos__name { font-size: 0.8125rem; font-weight: 600; text-align: center; max-width: 10ch; line-height: 1.25; }
+
+/* --- Rede: reference --- */
+.gpis-rede-ref {
+    margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--gpis-cinza-25);
+    font-size: 0.875rem; line-height: 1.55; color: var(--gpis-cinza-meta);
+}
+.gpis-rede-ref cite { font-style: normal; }
 
 /* ============================================================
    ACESSIBILIDADE — MOVIMENTO REDUZIDO

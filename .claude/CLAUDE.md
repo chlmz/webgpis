@@ -32,6 +32,10 @@ sleep 2 && open "http://localhost:8000"
 - **Ancho:** contenedor ancho (hasta 1680px), poco blanco en los costados.
 - **Menú:** GPIS, Pesquisa, Projetos, Impacto, Equipe, Rede y Contato llevan a su sección en la home; desde cada sección se pasa a la página propia.
 - **Home (tomado de la referencia profesional, oct/2026):** franja de la Coorte 2019→2025 bajo el hero en azul claro `#3679B0` (crisis en `#2C5F8A`); frase central con las 4 líneas de pesquisa a la derecha (lista numerada 01–04) que entran con el scroll; Proyectos con título fijo a la izquierda y filas a la derecha; mapa con un azul por país, marcadores cuadrados y nombres con línea guía; Impacto con foto azulada a la izquierda y azul noche a la derecha.
+- **Títulos de sección:** grandes (hasta 3.5rem), azul noche, con una línea terracota corta encima (eco del hero).
+- **Links a otras páginas:** subrayado discreto y flecha dentro de un círculo que se rellena al pasar el mouse. Nada de botones cuadrados para esto.
+- **Rede:** sin etiquetas de estado ("em andamento", "proposta"); lo que aún no está aprobado se redacta con prudencia en el texto (nunca "financiado" ni "aprovado").
+- **Impacto:** abre con la oficina con las familias (fotos y palavras de los post-its), luego hallazgos en lenguaje simple con su artículo, formación con la composición real del equipo, red con logos y cierre.
 - **Patrón general:** título fijo a la izquierda y contenido que corre a la derecha (`.gpis-split`, y `.gpis-proj-section__inner` en páginas internas). Filas sin cajas en vez de tarjetas.
 - **Movimiento:** le gustan los movimientos leves (el mapa que se dibuja, el parallax suave en las cabeceras internas, las entradas al hacer scroll). Siempre respetar `prefers-reduced-motion`.
 
@@ -43,7 +47,9 @@ sleep 2 && open "http://localhost:8000"
 
 ## Pendiente
 
-- Logos: MMU y UCSUR en `assets/logos/` (UCSUR en versión positiva para fondo claro). Faltan los archivos de FURG y UDD.
+- Logos: MMU y UCSUR en `assets/logos/` (UCSUR en versión positiva para fondo claro). Faltan los archivos de FURG, PPGSP y UDD (logo completo, azul).
+- DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción; el contenedor no resuelve dominios `.br`, así que no se pudo leer el sitio.
+- Fotos con niños de frente (`impacto-atividade-familias.jpg`): confirmar permiso antes de usarla.
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
 

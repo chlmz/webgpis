@@ -38,6 +38,8 @@ sleep 2 && open "http://localhost:8000"
 - **Impacto:** abre con la oficina con las familias (fotos y palavras de los post-its), luego hallazgos en lenguaje simple con su artículo, formación con la composición real del equipo, red con logos y cierre.
 - **Patrón general:** título fijo a la izquierda y contenido que corre a la derecha (`.gpis-split`, y `.gpis-proj-section__inner` en páginas internas). Filas sin cajas en vez de tarjetas.
 - **Símbolo en cabeceras internas:** el símbolo del GPIS en vectores (`initMark` en `main.js`), intensidad sutil; gesto por página vía `<body data-mark>`: Rede se conecta, Impacto se expande (ondas sobre la foto), Equipe se enciende por personas y responde al mouse; el resto, quieto. Demo aprobada: https://claude.ai/artifact/5btoLQ5KXmhLZJJxMCFEuZ
+- **Coorte (y páginas de proyecto):** cifras que cuentan al aparecer, marca de la Coorte que entra de lado, temas y publicaciones en filas sin cajas, trayectoria con años grandes y una línea que avanza con el scroll, colaboración en franja azul.
+- **Equipe:** los colegas internacionales van como franja breve (logo, nombre, institución) con enlace a su ficha en la Rede; las descripciones viven solo en la Rede.
 - **Movimiento:** le gustan los movimientos leves (el mapa que se dibuja, el parallax suave en las cabeceras internas, las entradas al hacer scroll). Siempre respetar `prefers-reduced-motion`.
 
 ## Rechazado (no volver a proponer igual)
@@ -49,7 +51,7 @@ sleep 2 && open "http://localhost:8000"
 ## Pendiente
 
 - Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
-- DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción; el contenedor no resuelve dominios `.br`, así que no se pudo leer el sitio.
+- DEBH-CPEDCS (Rede nacional): logo listo; falta nombre completo y descripción (el contenedor no resuelve dominios `.br`).
 - Fotos con niños de frente (`impacto-atividade-familias.jpg`): confirmar permiso antes de usarla.
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.

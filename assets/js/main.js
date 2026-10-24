@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initBand(reduceMotion);
     initClaim(reduceMotion);
     initMark(reduceMotion);
+    initCounters(reduceMotion);
+    initTimeline(reduceMotion);
+    initTyping(reduceMotion);
+    initLifeband(reduceMotion);
 });
 
 // Frase central da home: fica fixa e cada palavra acende com o scroll.
@@ -344,4 +348,127 @@ function initMark(reduceMotion) {
         }
     };
     if (play[mode]) setTimeout(play[mode], 250);
+}
+
+// Números que contam até o valor quando aparecem (o HTML já traz o valor final).
+function initCounters(reduceMotion) {
+    var els = document.querySelectorAll('[data-count]');
+    if (!els.length || reduceMotion || !('IntersectionObserver' in window)) return;
+    var fmt = new Intl.NumberFormat('pt-BR');
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            io.unobserve(entry.target);
+            var el = entry.target, end = parseInt(el.getAttribute('data-count'), 10), t0 = null;
+            var dur = end > 100 ? 1600 : 900;
+            function step(t) {
+                if (t0 === null) t0 = t;
+                var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+                el.textContent = fmt.format(Math.round(end * e));
+                if (k < 1) requestAnimationFrame(step);
+            }
+            el.textContent = '0';
+            requestAnimationFrame(step);
+        });
+    }, { threshold: 0.6 });
+    els.forEach(function (el) { io.observe(el); });
+}
+
+// Trajetória da Coorte: a linha avança e cada etapa acende quando chega ao meio da tela.
+function initTimeline(reduceMotion) {
+    var tl = document.querySelector('.gpis-proj-timeline');
+    if (!tl) return;
+    var fill = document.createElement('span');
+    fill.className = 'gpis-proj-timeline__fill';
+    fill.setAttribute('aria-hidden', 'true');
+    tl.appendChild(fill);
+    var entries = Array.prototype.slice.call(tl.querySelectorAll('.gpis-proj-tl-entry'));
+    if (reduceMotion) { entries.forEach(function (e) { e.classList.add('is-past'); }); return; }
+    tl.classList.add('is-live');
+    var ticking = false;
+    function update() {
+        ticking = false;
+        var mid = window.innerHeight * 0.55, r = tl.getBoundingClientRect();
+        tl.style.setProperty('--tl', Math.max(0, Math.min(1, (mid - r.top) / Math.max(1, r.height))).toFixed(3));
+        entries.forEach(function (e) { e.classList.toggle('is-past', e.getBoundingClientRect().top < mid); });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+}
+
+// Mensagem que se escreve letra por letra quando entra na tela (Impacto).
+function initTyping(reduceMotion) {
+    var els = document.querySelectorAll('[data-type]');
+    if (!els.length || reduceMotion || !('IntersectionObserver' in window)) return;
+    els.forEach(function (el) {
+        var text = el.textContent.trim(), chars = [];
+        var sr = document.createElement('span');
+        sr.className = 'visually-hidden';
+        sr.textContent = text;
+        var vis = document.createElement('span');
+        vis.setAttribute('aria-hidden', 'true');
+        text.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { vis.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span');
+            w.className = 'gpis-type__w';
+            part.split('').forEach(function (ch) {
+                var c = document.createElement('span');
+                c.className = 'gpis-type__c';
+                c.textContent = ch;
+                chars.push(c);
+                w.appendChild(c);
+            });
+            vis.appendChild(w);
+        });
+        el.textContent = '';
+        el.appendChild(sr);
+        el.appendChild(vis);
+        el.classList.add('gpis-type', 'is-typing');
+        var section = el.closest('section');
+        if (section) section.classList.add('is-typing-pending');
+        var io = new IntersectionObserver(function (entries) {
+            if (!entries[0].isIntersecting) return;
+            io.disconnect();
+            var i = 0;
+            (function next() {
+                if (i > 0) chars[i - 1].classList.remove('is-caret');
+                if (i >= chars.length) {
+                    var last = chars[chars.length - 1];
+                    last.classList.add('is-caret');
+                    if (section) section.classList.remove('is-typing-pending');
+                    setTimeout(function () { last.classList.remove('is-caret'); el.classList.remove('is-typing'); }, 2700);
+                    return;
+                }
+                chars[i].classList.add('is-on', 'is-caret');
+                var ch = chars[i].textContent;
+                i++;
+                setTimeout(next, /[,.:]/.test(ch) ? 260 : 42);
+            })();
+        }, { threshold: 0.5 });
+        io.observe(el);
+    });
+}
+
+// Rede: infância, adolescência e envelhecimento aparecem em ordem conforme o scroll.
+function initLifeband(reduceMotion) {
+    var band = document.querySelector('.gpis-lifeband');
+    if (!band || reduceMotion) return;
+    var track = band.querySelector('.gpis-lifeband__track');
+    var phases = Array.prototype.slice.call(band.querySelectorAll('.gpis-lifeband__phase'));
+    // Se a faixa já está bem visível ao abrir, mostra tudo sem esperar.
+    if (track.getBoundingClientRect().bottom < window.innerHeight * 0.9) return;
+    band.classList.add('is-live');
+    var ticking = false;
+    function update() {
+        ticking = false;
+        var r = track.getBoundingClientRect(), vh = window.innerHeight;
+        var p = Math.max(0, Math.min(1, (vh * 0.95 - r.top) / (vh * 0.55)));
+        track.style.setProperty('--lb', p.toFixed(3));
+        phases.forEach(function (ph, i) { ph.classList.toggle('is-on', p > 0.08 + i * 0.3); });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
 }

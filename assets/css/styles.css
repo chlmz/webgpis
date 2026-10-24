@@ -799,11 +799,11 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 /* ============================================================
    HOME — REDE INTERNACIONAL (mapa de dados reais)
 ============================================================ */
-.gpis-home-page .gpis-network {
+.gpis-network {
     background: var(--gpis-nevoa);
     padding: var(--section-y) 0;
 }
-.gpis-home-page .gpis-network__layout {
+.gpis-network__layout {
     display: grid;
     grid-template-columns: minmax(0, 40fr) minmax(0, 56fr);
     gap: 4%;
@@ -816,13 +816,13 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     margin-bottom: 1.25rem;
     max-width: 44ch;
 }
-.gpis-home-page .gpis-network__list {
+.gpis-network__list {
     list-style: none;
     margin: 2rem 0 0;
     padding: 0;
     border-top: 1px solid var(--border-default);
 }
-.gpis-home-page .gpis-network__list li {
+.gpis-network__list li {
     display: grid;
     grid-template-columns: 0.75rem minmax(0, 1fr);
     gap: 0.9rem;
@@ -833,8 +833,8 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     padding: 0.95rem 0;
     border-bottom: 1px solid var(--border-default);
 }
-.gpis-home-page .gpis-network__country { display: block; min-width: 0; }
-.gpis-home-page .gpis-network__list em {
+.gpis-network__country { display: block; min-width: 0; }
+.gpis-network__list em {
     display: block;
     font-family: var(--font-body);
     font-style: normal;
@@ -843,15 +843,15 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     color: var(--gpis-cinza-200);
     margin-top: 0.1rem;
 }
-.gpis-home-page .gpis-network__dot {
+.gpis-network__dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: var(--gpis-azul-claro);
     transform: translateY(-0.1rem);
 }
-.gpis-home-page .gpis-network__list li:first-child .gpis-network__dot { background: var(--gpis-azul-profundo); }
-.gpis-home-page .gpis-network__map {
+.gpis-network__list li:first-child .gpis-network__dot { background: var(--gpis-azul-profundo); }
+.gpis-network__map {
     margin: 0;
     background: var(--gpis-papel);
     border-radius: var(--radius-xl);
@@ -859,14 +859,14 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.5vw, 1.75rem) 1rem;
 }
 /* Reserva a proporção do mapa (760×430) para evitar salto de layout. */
-.gpis-home-page .gpis-network__map #gpis-map { aspect-ratio: 760 / 430; }
-.gpis-home-page .gpis-network__map figcaption {
+.gpis-network__map #gpis-map { aspect-ratio: 760 / 430; }
+.gpis-network__map figcaption {
     font-size: 0.875rem;
     color: var(--gpis-cinza-200);
     margin-top: 0.75rem;
 }
 @media (max-width: 991px) {
-    .gpis-home-page .gpis-network__layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+    .gpis-network__layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
 }
 
 /* ============================================================
@@ -2308,6 +2308,88 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     .gpis-profile__bio,
     .gpis-people-network__bio { align-self: auto; }
     .gpis-profile__institution { margin-bottom: 1rem; }
+}
+
+/* ============================================================
+   PÁGINA REDE
+============================================================ */
+.gpis-network__list li:has(> a) { display: block; }
+.gpis-network__list li > a {
+    display: grid;
+    grid-template-columns: 0.75rem minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: baseline;
+    color: inherit;
+    text-decoration: none;
+}
+.gpis-network__more { margin-top: 1.5rem; }
+.gpis-network__list a:hover .gpis-network__country { color: var(--gpis-azul-ciencia); }
+.gpis-rede-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: 2.5rem;
+}
+.gpis-rede-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gpis-azul-ciencia);
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+}
+.gpis-rede-card__country {
+    color: var(--gpis-cinza-meta);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.gpis-rede-card__name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--gpis-grafite);
+}
+.gpis-rede-card__inst { margin: 0; color: var(--gpis-cinza-200); font-size: 0.9375rem; line-height: 1.45; }
+.gpis-rede-card__role { margin: 0.5rem 0 0; color: var(--gpis-grafite); font-size: 1rem; line-height: 1.6; }
+.gpis-rede-card__label {
+    margin: 0.75rem 0 0;
+    color: var(--gpis-cinza-meta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.gpis-rede-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.gpis-rede-card__tags li {
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    background: var(--gpis-nevoa);
+    color: var(--gpis-azul-profundo);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+.gpis-rede-card__links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: auto; padding-top: 1rem; }
+.gpis-rede-group {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-default);
+}
+.gpis-rede-group__title { margin: 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--gpis-grafite); }
+.gpis-rede-group__text { margin: 0; color: var(--gpis-cinza-200); font-size: 1.0625rem; line-height: 1.65; max-width: 60ch; }
+.gpis-rede-pending { margin: 0; color: var(--gpis-cinza-meta); font-size: 1.0625rem; font-style: italic; }
+@media (max-width: 991px) {
+    .gpis-rede-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+    .gpis-rede-cards, .gpis-rede-group { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ============================================================

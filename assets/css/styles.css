@@ -2998,3 +2998,15 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-next__body p { margin: 0; color: var(--on-dark-soft); font-size: 1.125rem; line-height: 1.65; max-width: 56ch; }
 .gpis-next__body p + p { margin-top: 1rem; }
 @media (max-width: 991px) { .gpis-next__inner { grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem; } }
+
+/* --- Logos institucionais (FURG, PPGSP, UDD) --- */
+.gpis-inst__logos img { height: 64px; width: auto; }
+.gpis-inst__logos .gpis-inst__logo--small { height: 44px; }
+.gpis-partner__logo-pair { display: flex; align-items: center; gap: 1.25rem; }
+.gpis-partner__logo-pair img { height: 72px; width: auto; }
+.gpis-partner__logo-pair .gpis-partner__logo--small { height: 44px; }
+.gpis-logos__row img { height: 48px; }
+.gpis-logos__row img.gpis-logos__tall { height: 72px; }
+.gpis-logos__row img.gpis-logos__small { height: 44px; }
+.gpis-defrows dt a { color: inherit; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; text-decoration-color: rgba(30,69,106,0.3); }
+.gpis-defrows dt a:is(:hover, :focus-visible) { color: var(--gpis-azul-ciencia); text-decoration-color: currentColor; }

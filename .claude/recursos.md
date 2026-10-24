@@ -32,7 +32,9 @@ Usar la estructura de `diagram-design` como modelo: un `SKILL.md` corto, con ref
 
 ## Ideas de diseño para el sitio
 
-- 🟡 **Frase central de la home.** Tres propuestas con scroll en https://claude.ai/artifact/A7bWFwAorKdZJz155AnTMq: A, la frase se escribe palabra por palabra; B, 2.313 puntos, uno por entrevista de la Coorte; C, las 12 preguntas reales que se resuelven en la frase. Pendiente de elegir.
+- ✅ **Frase central de la home:** versión A aplicada (la frase se escribe con el scroll). Las tres propuestas siguen en https://claude.ai/artifact/A7bWFwAorKdZJz155AnTMq.
+- 🟡 **B · 2.313 puntos (gustó mucho).** Usarla en otra sección donde el dato sea el protagonista y el texto no quede arrinconado, por ejemplo la apertura de la página de la Coorte.
+- 🟡 **C · las 12 preguntas reales (gustó).** Usarla para otra cosa, por ejemplo la sección de Linhas de pesquisa, donde las preguntas se agrupen en las cuatro líneas.
 - 🟡 **Patrones de "scrollytelling"** para otras secciones: sección fija con revelado por scroll, datos que cuentan una historia. Referencias: [maglr](https://www.maglr.com/blog/best-scrollytelling-examples), [reallygooddesigns](https://reallygooddesigns.com/scrollytelling-website-examples/).
 - 🟡 **Más fotos reales** (hay 9 en `assets/images`, casi todas sin usar). Antes de usar las que muestran niños, confirmar el permiso de uso.
 - ⛔ **Página "Explorar" con buscador y filtros:** probada y rechazada. Está guardada en el commit `1d655a2` por si algún día sirve como base para otra idea.

@@ -441,25 +441,60 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     .gpis-home-page .gpis-hero__meta { flex-direction: column; }
 }
 
-/* HOME — frase-síntese entre o hero e as linhas de pesquisa. */
+/* HOME — frase-síntese entre o hero e as linhas de pesquisa.
+   Com JS e movimento permitido, a seção fica fixa e as palavras acendem
+   conforme o scroll (.is-scrolly). Sem isso, a frase aparece completa. */
 .gpis-home-page .gpis-claim {
     background: var(--gpis-papel);
     color: var(--gpis-grafite);
-    padding: clamp(3.5rem, 7vw, 6rem) 0;
+    padding: clamp(4rem, 8vw, 7rem) 0;
 }
 .gpis-home-page .gpis-claim__text {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(1.625rem, 3.3vw, 2.625rem);
-    line-height: 1.22;
-    letter-spacing: -0.02em;
-    max-width: 30ch;
+    font-size: clamp(1.875rem, 4.6vw, 3.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--gpis-azul-noite);
+    max-width: 22ch;
     margin: 0;
 }
-.gpis-home-page .gpis-claim__text span {
-    color: var(--gpis-azul-ciencia);
-    font-weight: 600;
+.gpis-home-page .gpis-claim__text > span:not(.gpis-claim__w),
+.gpis-home-page .gpis-claim__w.is-key { font-weight: 600; color: var(--gpis-azul-ciencia); }
+.gpis-home-page .gpis-claim__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+    margin: 2.25rem 0 0;
+    color: var(--gpis-cinza-200);
+    font-size: 1.0625rem;
 }
+.gpis-home-page .gpis-claim__facts span { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+.gpis-home-page .gpis-claim__facts strong {
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: var(--gpis-azul-profundo);
+}
+
+.gpis-home-page .gpis-claim.is-scrolly { height: 230vh; padding: 0; }
+.gpis-claim.is-scrolly .gpis-claim__stage {
+    position: sticky;
+    top: var(--header-h);
+    height: calc(100svh - var(--header-h));
+    display: flex;
+    align-items: center;
+}
+.gpis-claim.is-scrolly .gpis-claim__stage > .container { width: 100%; }
+.gpis-claim.is-scrolly .gpis-claim__w { opacity: 0.14; transition: opacity 120ms linear, color 400ms var(--ease-out); }
+.gpis-home-page .gpis-claim.is-scrolly .gpis-claim__w.is-key { color: var(--gpis-azul-noite); }
+.gpis-home-page .gpis-claim.is-scrolly .gpis-claim__w.is-key.is-lit { color: var(--gpis-azul-ciencia); }
+.gpis-claim.is-scrolly .gpis-claim__facts {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
+}
+.gpis-claim.is-scrolly .gpis-claim__facts.is-on { opacity: 1; transform: none; }
 
 /* ============================================================
    HOME — LINHAS DE PESQUISA

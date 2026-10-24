@@ -95,7 +95,57 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initNetworkMap(reduceMotion);
+    initClaim(reduceMotion);
 });
+
+// Frase central da home: fica fixa e cada palavra acende com o scroll.
+function initClaim(reduceMotion) {
+    var section = document.querySelector('.gpis-home-page .gpis-claim');
+    if (!section || reduceMotion) return;
+    var text = section.querySelector('.gpis-claim__text');
+    var facts = section.querySelector('.gpis-claim__facts');
+    var words = [];
+
+    Array.prototype.slice.call(text.childNodes).forEach(function (node) {
+        var isKey = node.nodeType === 1;
+        var frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var w = document.createElement('span');
+            w.className = 'gpis-claim__w' + (isKey ? ' is-key' : '');
+            w.textContent = part;
+            words.push(w);
+            frag.appendChild(w);
+        });
+        text.replaceChild(frag, node);
+    });
+
+    section.classList.add('is-scrolly');
+    var header = document.querySelector('.gpis-site-header');
+    var ticking = false;
+
+    function update() {
+        ticking = false;
+        var rect = section.getBoundingClientRect();
+        var top = header ? header.offsetHeight : 0;
+        var travel = rect.height - (window.innerHeight - top);
+        var p = Math.max(0, Math.min(1, (top - rect.top) / Math.max(1, travel)));
+        var lit = Math.min(1, p / 0.8) * words.length;
+        words.forEach(function (w, i) {
+            var o = Math.max(0, Math.min(1, lit - i));
+            w.style.opacity = (0.14 + 0.86 * o).toFixed(3);
+            w.classList.toggle('is-lit', o > 0.6);
+        });
+        facts.classList.toggle('is-on', p > 0.86);
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+}
 
 function initNetworkMap(reduceMotion) {
     var el = document.getElementById('gpis-map');

@@ -39,7 +39,7 @@ Start-Process "http://localhost:8000"
 
 ## Pendiente
 
-- La frase central de la home ("Perguntas diferentes, uma mesma ideia…") debe ser el punto que atrae la atención. Hay tres propuestas con scroll: A, la frase se escribe; B, 2.313 puntos de la Coorte; C, las 12 preguntas reales. Falta que elija.
+- La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
 
 ## Recursos e ideas
 

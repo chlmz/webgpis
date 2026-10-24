@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão em primeira pessoa & IA | GPIS — Grupo de Pesquisa e Inovação em Saúde</title>
+    <meta name="description" content="Visão em primeira pessoa & IA: câmeras vestíveis e métodos computacionais para estudar interações familiares em contextos cotidianos.">
+    <meta name="theme-color" content="#0E2347">
+    <link rel="canonical" href="https://chlmz.github.io/webgpis/projetos/visao-primeira-pessoa-ia/">
+    <meta property="og:title" content="Visão em primeira pessoa & IA | GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:description" content="Visão em primeira pessoa & IA: câmeras vestíveis e métodos computacionais para estudar interações familiares em contextos cotidianos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chlmz.github.io/webgpis/projetos/visao-primeira-pessoa-ia/">
+    <meta property="og:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta property="og:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="GPIS">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Visão em primeira pessoa & IA | GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta name="twitter:description" content="Visão em primeira pessoa & IA: câmeras vestíveis e métodos computacionais para estudar interações familiares em contextos cotidianos.">
+    <meta name="twitter:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta name="twitter:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/gpis.css?v=20261023">
+    <script>
+        (function (d) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+            d.classList.add('has-motion');
+            setTimeout(function () { if (!window.__gpis) d.classList.remove('has-motion'); }, 3000);
+        })(document.documentElement);
+    </script>
+</head><body>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+
+    <header class="site-header">
+        <div class="wrap site-header__bar">
+            <a class="brand" href="../../index.html">
+                <img src="../../assets/logo.png" alt="GPIS" width="614" height="312">
+                <span>Grupo de Pesquisa e Inovação em Saúde</span>
+            </a>
+            <nav class="nav" aria-label="Navegação principal">
+                <a href="../../index.html#o-que-investigamos">Pesquisa</a>
+                <a href="../../index.html#projects">Projetos</a>
+                <a href="../../publicacoes/">Publicações</a>
+                <a href="../../dados/">Dados</a>
+                <a href="../../impacto/">Impacto</a>
+                <a href="../../pessoas/">Equipe</a>
+                <a href="../../index.html#contact">Contato</a>
+            </nav>
+            <a class="btn btn--green btn--small site-header__cta" href="mailto:chlmz@furg.br?subject=Proposta%20de%20colabora%C3%A7%C3%A3o%20%E2%80%94%20GPIS">Propor colaboração<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="menu-toggle__bars" aria-hidden="true"></span>
+                <span class="menu-toggle__label">Menu</span>
+            </button>
+        </div>
+        <span class="progress" aria-hidden="true"></span>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <ul>
+            <li><a href="../../index.html#o-que-investigamos">Pesquisa<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../index.html#projects">Projetos<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../publicacoes/">Publicações<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../dados/">Dados<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../impacto/">Impacto<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../pessoas/">Equipe<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="../../index.html#contact">Contato<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+        </ul>
+        <a class="btn btn--green" href="mailto:chlmz@furg.br?subject=Proposta%20de%20colabora%C3%A7%C3%A3o%20%E2%80%94%20GPIS">Propor uma colaboração<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+        <p class="mobile-nav__meta">Universidade Federal do Rio Grande — FURG<br>Rio Grande, RS, Brasil · <a href="mailto:chlmz@furg.br">chlmz@furg.br</a></p>
+    </div>
+
+    <main id="main-content">
+
+        <section class="phero on-navy" aria-label="Apresentação do projeto" data-parallax-box>
+            <div class="gridlines " aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <img class="phero__mark" src="../../assets/logo-mark-white.png" alt="" width="319" height="312" data-parallax="0.18">
+            <div class="wrap grid">
+                <a class="phero__back" href="../../index.html#projects"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg>Voltar para Projetos</a>
+                <div class="phero__main">
+                    <h1 class="phero__title"><span class="load-line"><span>Visão em primeira pessoa &amp; IA</span></span></h1>
+                    <p class="phero__lead load-fade">Usamos câmeras vestíveis e métodos computacionais para estudar interações familiares em contextos cotidianos e desenvolver novas formas de observar comportamento e saúde.</p>
+                    <p class="phero__meta load-fade"><span>Tecnologia &amp; comportamento</span><span>Rio Grande</span><span>interações familiares</span></p>
+                    <div class="actions load-fade load-fade--late"><a class="btn btn--green" href="#abordagem">Entenda a abordagem<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a><a class="btn btn--line-light" href="#conexoes">Veja onde aplicamos<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+                </div>
+                <dl class="phero__facts credits-table load-fade load-fade--late"><div class="credit"><dt>1ª pessoa</dt><dd>perspectiva de quem participa</dd></div><div class="credit"><dt>Contexto cotidiano</dt><dd>interações em ambiente familiar</dd></div><div class="credit"><dt>IA como apoio</dt><dd>transformar registros em dados de pesquisa</dd></div></dl>
+            </div>
+        </section>
+        <section class="sec " id="abordagem" aria-labelledby="abordagem-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="abordagem-title" data-reveal="mask">O que significa observar em primeira pessoa?</h2>
+
+                </div>
+                <div class="sec__body">
+                    <p class="lede lede--rule" data-reveal="rise">Em vez de observar uma interação apenas de fora, a câmera acompanha a perspectiva de quem participa dela.</p>
+                    <div class="split" style="margin-top:var(--space-m)">
+                        <div class="prose" data-reveal="rise">
+                        <p>Câmeras vestíveis permitem registrar partes de uma interação a partir do ponto de vista de mães, crianças ou outros cuidadores. Isso ajuda a observar aspectos do cotidiano que podem ser difíceis de recuperar depois apenas por questionários ou entrevistas.</p>
+                        <p>A proposta não é substituir o que as pessoas relatam. É combinar diferentes formas de observar a mesma experiência.</p>
+
+                    </div>
+                        <figure class="media" data-reveal="wipe">
+                            <div class="media__frame media__frame--fixed" data-parallax-box>
+                                <img src="../../assets/images/ia/interacao-primeira-pessoa.jpg" alt="Câmera vestível registrando uma interação entre mãe e criança" width="1672" height="942" loading="lazy" decoding="async" data-parallax="0.08">
+                            </div>
+                            <figcaption>Ilustração conceitual da abordagem. As imagens não representam participantes nem resultados individuais reais.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec on-mist" id="observamos" aria-labelledby="observamos-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="observamos-title" data-reveal="mask">O que queremos entender nas interações</h2>
+
+                </div>
+                <div class="sec__body">
+                    <div class="facets" data-reveal="stagger">
+                        <div class="facet"><h3>Atenção e envolvimento</h3><p>Como mães, crianças e cuidadores direcionam atenção uns aos outros e ao ambiente durante uma interação.</p></div>
+                        <div class="facet"><h3>Responsividade e sincronia</h3><p>Como respostas entre duas pessoas se organizam ao longo do tempo e como momentos de maior ou menor sintonia aparecem na interação.</p></div>
+                        <div class="facet"><h3>Práticas parentais</h3><p>Como diferentes formas de responder, orientar, acolher ou lidar com situações difíceis aparecem nas relações entre cuidadores e crianças.</p></div>
+                        <div class="facet"><h3>Contexto e saúde mental</h3><p>Como padrões de interação podem se relacionar às trajetórias de saúde mental, às condições familiares e a experiências de desastres climáticos.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec " id="ia" aria-labelledby="ia-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="ia-title" data-reveal="mask">Onde entra a inteligência artificial?</h2>
+
+                </div>
+                <div class="sec__body">
+                    <p class="lede lede--rule" data-reveal="rise">A IA é uma ferramenta de análise — não a resposta da pesquisa.</p>
+                    <div style="margin-top:var(--space-m)"><div class="prose" data-reveal="rise">
+                        <p>Registros audiovisuais produzem uma grande quantidade de informação. Métodos computacionais podem ajudar a organizar sinais presentes nesses vídeos e transformar padrões observáveis em medidas que possam ser analisadas de forma sistemática.</p>
+                        <p>Essas medidas podem então ser combinadas com questionários, informações sobre saúde mental e dados longitudinais para estudar relações que seriam difíceis de observar usando uma única fonte de informação.</p>
+                        <p>O objetivo não é diagnosticar pessoas a partir de um vídeo, mas produzir dados de pesquisa sobre interações.</p>
+
+                    </div></div>
+                    <div class="media-pair" data-reveal="stagger">
+                        <figure class="media">
+                            <div class="media__frame media__frame--fixed" data-parallax-box><img src="../../assets/images/ia/analise-rosto-mae.jpg" alt="Análise computacional do rosto de uma mãe durante interação com a criança" width="742" height="448" loading="lazy" decoding="async" data-parallax="0.06"></div>
+                            <figcaption><span class="media__label">Perspectiva da criança</span>Ilustração conceitual; não representa participantes reais.</figcaption>
+                        </figure>
+                        <figure class="media">
+                            <div class="media__frame media__frame--fixed" data-parallax-box><img src="../../assets/images/ia/analise-rosto-crianca.jpg" alt="Análise computacional do rosto de uma criança durante interação com a mãe" width="742" height="448" loading="lazy" decoding="async" data-parallax="0.06"></div>
+                            <figcaption><span class="media__label">Perspectiva da mãe</span>Ilustração conceitual; não representa participantes reais.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec on-mist" id="registro" aria-labelledby="registro-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="registro-title" data-reveal="mask">Como um vídeo se transforma em dado?</h2>
+
+                </div>
+                <div class="sec__body">
+                    <ol class="steps" data-progress data-start="0.9" data-span="0.2">
+                        <li><h3>Registrar</h3><p>Câmeras vestíveis registram interações em situações definidas pelo protocolo de pesquisa.</p></li>
+                        <li><h3>Organizar</h3><p>Os registros são preparados e sincronizados para permitir uma análise sistemática das interações.</p></li>
+                        <li><h3>Codificar</h3><p>Equipes treinadas e métodos computacionais transformam aspectos observáveis dos vídeos em variáveis de pesquisa.</p></li>
+                        <li><h3>Integrar</h3><p>Essas informações podem ser relacionadas a dados de saúde mental, parentalidade, contexto social e trajetória longitudinal.</p></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="sec on-navy" id="protecao" aria-labelledby="protecao-title">
+            <div class="gridlines " aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="protecao-title" data-reveal="mask">Vídeos exigem proteção especial</h2>
+
+                </div>
+                <div class="sec__body">
+                    <div class="prose" data-reveal="rise">
+                        <p class="lead">Registros audiovisuais são dados sensíveis. A participação depende de consentimento específico, e os arquivos são transferidos para armazenamento protegido, com acesso restrito à equipe autorizada.</p>
+                        <p>O processamento dos vídeos segue procedimentos institucionais de segurança e proteção dos participantes.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec " id="conexoes" aria-labelledby="conexoes-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="conexoes-title" data-reveal="mask">Uma abordagem conectada a diferentes projetos</h2>
+
+                </div>
+                <div class="sec__body">
+                    <div class="facets facets--3" data-reveal="stagger">
+                        <div class="facet"><h3>Coorte Rio Grande 2019</h3><p>A Coorte fornece a história longitudinal que permite relacionar padrões de interação a saúde mental, desenvolvimento e contexto ao longo do tempo.</p><a class="go" href="../coorte-rio-grande-2019/">Conheça a Coorte<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+                        <div class="facet"><h3>Enchentes e saúde mental</h3><p>Esse projeto permite investigar como experiências de desastres climáticos, adversidade e deslocamento se relacionam a interações entre mães e crianças.</p><a class="go" href="../enchentes-saude-mental/">Conheça o projeto<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+                        <div class="facet"><h3>Visões do Cuidado</h3><p>A rede internacional amplia essa abordagem para diferentes países, etapas da vida e contextos de cuidado.</p><a class="go" href="../visoes-do-cuidado/">Conheça a rede<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="close on-navy" id="colabore" aria-labelledby="colabore-title">
+            <div class="gridlines " aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid close__grid" style="position:relative;z-index:1">
+                <div class="close__lead">
+                    <h2 class="close__title" id="colabore-title" data-reveal="mask">Possibilidades de colaboração</h2>
+                    <p class="close__text">Estamos abertos ao diálogo com pesquisadores e instituições interessados em métodos observacionais, estudos longitudinais, interações familiares, saúde mental e análise computacional de dados audiovisuais.</p>
+
+                </div>
+                <ul class="exits" data-reveal="stagger">
+                    <li><a href="mailto:chlmz@furg.br?subject=Proposta%20de%20colabora%C3%A7%C3%A3o%20%E2%80%94%20Vis%C3%A3o%20em%20primeira%20pessoa%20e%20IA"><span><span class="exits__l">Propor uma colaboração</span><span class="exits__v">chlmz@furg.br</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="../visoes-do-cuidado/"><span><span class="exits__l">Rede internacional</span><span class="exits__v">Visões do Cuidado</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="../../dados/"><span><span class="exits__l">Como propor uma análise</span><span class="exits__v">Dados e colaboração</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="site-footer__top">
+                <div class="site-footer__brand">
+                    <img src="../../assets/logo-mark-white.png" alt="" width="319" height="312">
+                    <div>
+                        <b>GPIS — Grupo de Pesquisa e Inovação em Saúde</b>
+                        <span>FURG · Rio Grande, Brasil</span>
+                    </div>
+                </div>
+                <nav aria-label="Rodapé">
+                    <a href="../../index.html#o-que-investigamos">Linhas de pesquisa</a>
+                    <a href="../../index.html#projects">Projetos</a>
+                    <a href="../../projetos/coorte-rio-grande-2019/">Coorte Rio Grande 2019</a>
+                    <a href="../../publicacoes/">Publicações</a>
+                    <a href="../../dados/">Dados e colaboração</a>
+                    <a href="../../impacto/">Impacto</a>
+                    <a href="../../pessoas/">Equipe</a>
+                    <a href="../../index.html#network">Rede científica</a>
+                    <a href="../../index.html#contact">Contato</a>
+                </nav>
+            </div>
+            <div class="site-footer__bottom">
+                <span>&copy; <span id="currentYear">2026</span> GPIS · Universidade Federal do Rio Grande</span>
+                <a href="mailto:chlmz@furg.br">chlmz@furg.br</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/gpis.js?v=20261023" defer></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+{
+  "title": "Elige la dirección visual del nuevo GPIS",
+  "question": "Tres caminos para la portada y todo el sitio. Quédate con la propuesta principal, toma otra, o pide más opciones.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Programa de identidad suizo",
+      "kicker": "THE ROLL",
+      "lineage": "Estilo Tipográfico Internacional: manuales de identidad institucional de los años 60–70",
+      "thesis": "El GPIS como un programa de identidad: retícula estricta, tipografía grotesca enorme y los colores del logo ocupando regiones enteras.",
+      "palette": ["#0E2347", "#3489C0", "#5FAA4E", "#FFFFFF", "#EEF3F7"],
+      "materials": ["retícula de 12 columnas visible", "campos de color planos", "secciones numeradas"],
+      "viewport": "Campo azul marino con el titular a escala de cartel, columna de líneas de investigación numeradas y una franja de línea de tiempo 2019→2025 que cruza pandemia y enchentes.",
+      "risk": "Si la tipografía se pone tímida, se vuelve una web institucional más.",
+      "raised": [
+        {"from": "challenger-bbs", "raise": "Salidas numeradas: cada página termina con rutas explícitas y numeradas para colaborar."},
+        {"from": "challenger-darkroom", "raise": "Revelado por tiras: cada hallazgo aparece primero en una línea; el detalle se despliega al pedirlo."},
+        {"from": "challenger-jacquard", "raise": "Trazabilidad: cada cifra lleva su artículo (DOI) a un clic."},
+        {"from": "challenger-tensegrity", "raise": "Mapa de la red anotado con líneas guía clavadas a cada nodo, sin leyenda."},
+        {"from": "challenger-hue", "raise": "Compromiso total de color: el azul marino inunda regiones de borde a borde, no tiñe tarjetas."},
+        {"from": "challenger-obi", "raise": "Colisión de densidad: un campo casi vacío frente a una banda densa de créditos reales (socios, cifras)."}
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Diagrama de Lexis",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Diagramas de Lexis de la demografía: tiempo calendario contra edad",
+      "thesis": "La portada es el método: la cohorte como una banda diagonal de vidas que atraviesa la pandemia y las enchentes.",
+      "palette": ["#F4F7FA", "#0E2347", "#3489C0", "#5FAA4E"],
+      "materials": ["trazo de diagrama técnico", "bandas translúcidas", "ejes rotulados"],
+      "viewport": "Un diagrama de Lexis a pantalla completa; el titular vive en el triángulo vacío y la cohorte sube en diagonal de 2019 a los 6 años.",
+      "risk": "Puede leerse como un gráfico y no como una institución si la retícula alrededor es débil.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-bbs",
+      "label": "BBS de madrugada",
+      "verdict": "declined",
+      "lineage": "pantallas ANSI de bulletin boards",
+      "thesis": "Todo es una pantalla de texto con salidas numeradas.",
+      "palette": ["#000000", "#00C0C0", "#C000C0", "#FFFFFF"],
+      "materials": ["bloques CP437", "retícula 80×25"],
+      "viewport": "Pantalla de título en bloques con menú numerado.",
+      "case": "Los investigadores no se reconocen en una estética retro de terminal.",
+      "risk": "Novedad retro ajena al público académico.",
+      "kept": "Salidas numeradas y explícitas al final de cada página."
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Cuarto oscuro",
+      "verdict": "declined",
+      "lineage": "laboratorio fotográfico con luz ámbar",
+      "thesis": "Las imágenes se revelan lentamente por estaciones.",
+      "palette": ["#C8781E", "#2A2A2A", "#9A9A9A", "#F2F2F2"],
+      "materials": ["luz ámbar", "tiras de prueba"],
+      "viewport": "Bandeja de revelado con tiras de exposición.",
+      "case": "El ámbar choca con los colores fijos del logo y no aclara el producto.",
+      "risk": "Atmósfera sin relación con la epidemiología.",
+      "kept": "Revelado progresivo: resumen primero, detalle al pedirlo."
+    },
+    {
+      "id": "challenger-jacquard",
+      "label": "Brocado jacquard",
+      "verdict": "declined",
+      "lineage": "telares de tarjetas perforadas",
+      "thesis": "Miles de decisiones binarias forman un motivo dorado.",
+      "palette": ["#141B3C", "#C9A43A", "#EFE6CF", "#0A0A0A"],
+      "materials": ["seda medianoche", "tarjetas perforadas"],
+      "viewport": "Motivo tejido sobre filas de instrucciones.",
+      "case": "Hermoso pero opaco para quien evalúa colaborar.",
+      "risk": "Decorativo; oculta la oferta.",
+      "kept": "Trazabilidad completa del dato a su fuente."
+    },
+    {
+      "id": "challenger-tensegrity",
+      "label": "Columna de tensegridad",
+      "verdict": "declined",
+      "lineage": "escultura cinética",
+      "thesis": "Fuerzas opuestas hacen respirar una estructura rígida.",
+      "palette": ["#1A1A1A", "#D9D6CF", "#C8302B", "#8A8A8A"],
+      "materials": ["varillas de carbono", "cuerda roja"],
+      "viewport": "Columna flotante con anotaciones de fuerza.",
+      "case": "Metáfora de red interesante pero ajena al lector.",
+      "risk": "Ingeniería en vez de salud.",
+      "kept": "Anotaciones con líneas guía clavadas a los nodos."
+    },
+    {
+      "id": "challenger-hue",
+      "label": "Programa de un solo tono",
+      "verdict": "declined",
+      "lineage": "identidades de juguete de un color licenciado",
+      "thesis": "Un único color usado a plena fuerza en todo.",
+      "palette": ["#E0218A", "#FFFFFF"],
+      "materials": ["brillo", "logotipo script"],
+      "viewport": "Todo el marco inundado de un solo tono.",
+      "case": "El brillo y el script restan seriedad científica.",
+      "risk": "Tono comercial frívolo.",
+      "kept": "Compromiso total con el color propio, de borde a borde."
+    },
+    {
+      "id": "challenger-obi",
+      "label": "Funda con obi",
+      "verdict": "declined",
+      "lineage": "fundas de discos de Shibuya con banda obi",
+      "thesis": "Una cara casi vacía contra una banda saturada de créditos.",
+      "palette": ["#F2EFE8", "#E8452C", "#111111"],
+      "materials": ["papel impreso", "créditos verticales"],
+      "viewport": "Una marca geométrica y una banda densa abajo.",
+      "case": "Composición potente, pero el lector no la asocia a un grupo de investigación.",
+      "risk": "Lectura de diseño de moda.",
+      "kept": "Contraste entre un campo vacío y una banda densa de datos reales."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "La web de grupo universitario que todos esperan, hecha con mucho oficio.",
+    "palette": ["#FFFFFF", "#14233F", "#3489C0"],
+    "materials": ["retícula limpia", "foto de cabecera", "tarjetas"],
+    "viewport": "Cabecera con titular sobre azul y una fila de tarjetas de líneas de investigación.",
+    "risk": "Indistinguible de cualquier otro grupo de investigación.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}

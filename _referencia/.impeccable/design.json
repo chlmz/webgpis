@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T12:00:00Z",
+  "title": "Design System: GPIS — Grupo de Pesquisa e Inovação em Saúde",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "primary", "displayName": "Logo Navy", "canonical": "#0E2347", "tonalRamp": ["#060F20", "#091832", "#0E2347", "#16305B", "#2A4A7E", "#5A73A0", "#A3B3CF", "#E4E9F2"] },
+      "navy-deep": { "role": "primary", "displayName": "Deep Navy", "canonical": "#091832", "tonalRamp": ["#040B18", "#091832", "#0E2347", "#16305B", "#2A4A7E", "#5A73A0", "#A3B3CF", "#E4E9F2"] },
+      "navy-raise": { "role": "primary", "displayName": "Raised Navy", "canonical": "#16305B", "tonalRamp": ["#091832", "#0E2347", "#16305B", "#22416F", "#3A5A8C", "#6A84AE", "#AEBDD7", "#E6EBF4"] },
+      "blue": { "role": "secondary", "displayName": "Science Blue", "canonical": "#3489C0", "tonalRamp": ["#0C2A40", "#154A6E", "#1F6AA0", "#3489C0", "#5FA6D3", "#8FC3E6", "#C3DFF2", "#EAF4FB"] },
+      "blue-ink": { "role": "secondary", "displayName": "Blue Ink", "canonical": "#1F6AA0", "tonalRamp": ["#0C2A40", "#154A6E", "#1F6AA0", "#3489C0", "#5FA6D3", "#8FC3E6", "#C3DFF2", "#EAF4FB"] },
+      "blue-light": { "role": "secondary", "displayName": "Light Blue", "canonical": "#8FC3E6", "tonalRamp": ["#0C2A40", "#154A6E", "#1F6AA0", "#3489C0", "#5FA6D3", "#8FC3E6", "#C3DFF2", "#EAF4FB"] },
+      "blue-soft": { "role": "secondary", "displayName": "Blue Mist Selection", "canonical": "#DCEBF6", "tonalRamp": ["#0C2A40", "#154A6E", "#1F6AA0", "#3489C0", "#5FA6D3", "#8FC3E6", "#DCEBF6", "#F2F8FC"] },
+      "green": { "role": "tertiary", "displayName": "Logo Green", "canonical": "#5FAA4E", "tonalRamp": ["#14280F", "#24461C", "#3B7A2E", "#5FAA4E", "#80C070", "#A6D59A", "#CFE9C8", "#EEF7EB"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#FFFFFF", "tonalRamp": ["#0E2347", "#3D4E68", "#5A6A82", "#8A97AA", "#B8C2D0", "#DDE3EB", "#EEF3F8", "#FFFFFF"] },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#EEF3F8", "tonalRamp": ["#0E2347", "#3D4E68", "#5A6A82", "#8A97AA", "#B8C2D0", "#DDE3EB", "#EEF3F8", "#FFFFFF"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0E2347", "tonalRamp": ["#0E2347", "#3D4E68", "#5A6A82", "#8A97AA", "#B8C2D0", "#DDE3EB", "#EEF3F8", "#FFFFFF"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink 2", "canonical": "#3D4E68", "tonalRamp": ["#0E2347", "#3D4E68", "#5A6A82", "#8A97AA", "#B8C2D0", "#DDE3EB", "#EEF3F8", "#FFFFFF"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink 3", "canonical": "#5A6A82", "tonalRamp": ["#0E2347", "#3D4E68", "#5A6A82", "#8A97AA", "#B8C2D0", "#DDE3EB", "#EEF3F8", "#FFFFFF"] },
+      "on-navy-2": { "role": "neutral", "displayName": "On-Navy Secondary", "canonical": "#B8CCE3", "tonalRamp": ["#1E2F45", "#3A5170", "#5E7899", "#86A0BF", "#B8CCE3", "#CFDDEC", "#E3ECF6", "#F4F8FC"] },
+      "rule": { "role": "neutral", "displayName": "Rule", "canonical": "rgba(14, 35, 71, 0.16)" },
+      "on-navy-rule": { "role": "neutral", "displayName": "On-Navy Rule", "canonical": "rgba(184, 204, 227, 0.22)" },
+      "gridline-ink": { "role": "neutral", "displayName": "Gridline Ink", "canonical": "rgba(14, 35, 71, 0.07)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "One per page: home, inner and impact heroes and the closing headline. Capped at 6rem, tracking -0.038em, never tighter than -0.04em." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, impact block headings, the word-by-word ink-in claim." },
+      "headline-sm": { "displayName": "Headline Small", "purpose": "Group and theme heads, feature and reference titles, timeline years, 600-weight ledes." },
+      "title": { "displayName": "Title", "purpose": "Ruled-list row titles, facets, steps, profile names, exit values." },
+      "lead": { "displayName": "Lead", "purpose": "Section intros (34ch) and prose leads." },
+      "body": { "displayName": "Body", "purpose": "Prose at 66ch; tabular figures on globally." },
+      "label": { "displayName": "Label", "purpose": "Meta, captions, dd lines, source lines. Sentence case, never uppercase-tracked." },
+      "numeral": { "displayName": "Numeral", "purpose": "Credit dt values, band years, block numbers; Archivo at 82% width." }
+    },
+    "shadows": [
+      { "name": "knockout-ring", "value": "0 0 0 8px var(--paper)", "purpose": "Cuts step markers out of their progress rule (use var(--mist) on mist). Not elevation; content never carries shadows." }
+    ],
+    "focus": [
+      { "name": "focus-ring", "value": "outline: 3px solid var(--green); outline-offset: 3px", "purpose": "Global focus-visible ring; one of the two permitted uses of green." }
+    ],
+    "effects": [
+      { "name": "header-glass", "value": "background: rgba(255,255,255,0.94); backdrop-filter: saturate(1.4) blur(14px)", "purpose": "Sticky header so content passes beneath." },
+      { "name": "duotone-feature", "value": "img { filter: grayscale(1) contrast(1.06-1.08) } + overlay { background: var(--blue); mix-blend-mode: multiply; opacity: 0.55-0.62 } over var(--navy-deep)", "purpose": "Hero and feature photographs only; in-body activity photos stay in colour." },
+      { "name": "gridlines", "value": "12 spans, border-left 1px var(--on-navy-rule) on navy; rgba(14,35,71,0.07) on white/mist", "purpose": "Visible grid on every section, beneath content, pointer-events none." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default for reveals, hovers, fills and menu (0.35-1s)." },
+      { "name": "ease-io", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Drawn map arcs (1.6s)." },
+      { "name": "reveal-rise", "value": "opacity 0 + translateY(28px) -> none, 0.9s", "purpose": "[data-reveal=rise] default block entry." },
+      { "name": "reveal-mask", "value": "clip-path inset(0 0 100% 0) + translateY(18px) -> open, 1s", "purpose": "[data-reveal=mask] headline and figure entry." },
+      { "name": "reveal-wipe", "value": "clip-path inset(0 100% 0 0) -> inset(0), 1s", "purpose": "[data-reveal=wipe] left-to-right reveal of fields and images." },
+      { "name": "reveal-stagger", "value": "children translateY(22px), 0.8s, 70ms steps up to 420ms", "purpose": "[data-reveal=stagger] lists and grids." },
+      { "name": "parallax", "value": "translateY(center * -speed), speed 0.06-0.2", "purpose": "[data-parallax] logo mark and photographs inside fixed frames." },
+      { "name": "scroll-progress", "value": "--p 0..1 drives scaleX/scaleY", "purpose": "[data-progress] timeline band cohort line, steps rule, vertical timeline." },
+      { "name": "ink-in", "value": "words rgba(14,35,71,0.16) -> navy (highlight -> blue-ink), 0.5s", "purpose": "[data-ink] word-by-word claim." },
+      { "name": "count-up", "value": "1400ms, ease-out quart, pt-BR formatting", "purpose": "[data-count] credit values, once on entry." },
+      { "name": "reduced-motion", "value": "all durations 0.01ms; no-motion and no-ink classes show final state", "purpose": "Every effect resolves to its finished composition." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-sm", "value": "520px" },
+      { "name": "stack", "value": "760px" },
+      { "name": "split", "value": "960px" },
+      { "name": "nav", "value": "1240px" },
+      { "name": "max", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Navy square button; hover fill rises from the bottom in raised navy.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Conheça o projeto<svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg></a>",
+      "css": ".ds-btn { --bg: var(--navy, #0E2347); --fg: #fff; --bd: var(--navy, #0E2347); --hv: var(--navy-raise, #16305B); --hvfg: #fff; display: inline-flex; align-items: center; gap: 0.75rem; min-height: 52px; padding: 0 1.375rem; background: var(--bg); color: var(--fg); border: 1.5px solid var(--bd); border-radius: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.005em; text-decoration: none; white-space: nowrap; position: relative; overflow: hidden; isolation: isolate; transition: color 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-btn::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--hv); transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover::before { transform: scaleY(1); } .ds-btn:hover { color: var(--hvfg); } .ds-btn:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-i { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: square; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover .ds-i { transform: translateX(4px); }"
+    },
+    {
+      "name": "Action Button",
+      "kind": "button",
+      "refersTo": "button-action",
+      "description": "The only green element besides the focus ring: collaboration and contact actions, including the header CTA.",
+      "html": "<a class=\"ds-btn-go\" href=\"#\">Propor colaboração<svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg></a>",
+      "css": ".ds-btn-go { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 52px; padding: 0 1.375rem; background: var(--green, #5FAA4E); color: var(--navy, #0E2347); border: 1.5px solid var(--green, #5FAA4E); border-radius: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; position: relative; overflow: hidden; isolation: isolate; } .ds-btn-go::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #fff; transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn-go:hover::before { transform: scaleY(1); } .ds-btn-go:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-i { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: square; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn-go:hover .ds-i { transform: translateX(4px); }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Transparent navy-bordered button for secondary routes on white; fills navy on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Ver publicações</a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; min-height: 52px; padding: 0 1.375rem; background: transparent; color: var(--navy, #0E2347); border: 1.5px solid var(--navy, #0E2347); border-radius: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; position: relative; overflow: hidden; isolation: isolate; transition: color 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--navy, #0E2347); transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover::before { transform: scaleY(1); } .ds-btn-line:hover { color: #fff; } .ds-btn-line:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Go Link",
+      "kind": "custom",
+      "refersTo": "go-link",
+      "description": "Blue-ink text link with arrow; underline draws in from the left.",
+      "html": "<a class=\"ds-go\" href=\"#\">Ver o perfil da coorte<svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg></a>",
+      "css": ".ds-go { display: inline-flex; align-items: center; gap: 0.6rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--blue-ink, #1F6AA0); text-decoration: none; padding-block: 0.35rem; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-go:hover { background-size: 100% 2px; } .ds-go:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-i { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: square; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-go:hover .ds-i { transform: translateX(4px); }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Square navy-bordered toggle for publication themes; pressed is navy fill.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-chip\" aria-pressed=\"true\">Todas<span class=\"ds-chip-n\">11</span></button><button class=\"ds-chip\" aria-pressed=\"false\">Saúde mental<span class=\"ds-chip-n\">4</span></button></div>",
+      "css": ".ds-filters { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.9375rem; font-weight: 700; cursor: pointer; min-height: 44px; padding: 0 16px; border: 1.5px solid var(--navy, #0E2347); border-radius: 0; background: transparent; color: var(--navy, #0E2347); transition: background 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-chip:hover { background: var(--mist, #EEF3F8); } .ds-chip[aria-pressed='true'] { background: var(--navy, #0E2347); color: #fff; } .ds-chip:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-chip-n { margin-left: 6px; font-weight: 500; opacity: 0.7; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky white bar with navy hairline, blue draw-in underline on links, green small CTA, blue reading-progress bar.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-bar\"><strong class=\"ds-brand\">GPIS</strong><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Pesquisa</a><a href=\"#\">Projetos</a><a href=\"#\">Publicações</a><a href=\"#\">Pessoas</a></nav><a class=\"ds-cta\" href=\"#\">Propor colaboração</a></div><span class=\"ds-progress\"></span></header>",
+      "css": ".ds-header { position: relative; background: rgba(255,255,255,0.94); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--navy, #0E2347); font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: var(--navy, #0E2347); } .ds-bar { height: 72px; display: flex; align-items: center; gap: 24px; padding: 0 24px; } .ds-brand { margin-right: auto; font-weight: 700; } .ds-nav { display: flex; gap: 24px; } .ds-nav a { font-size: 0.9375rem; font-weight: 600; text-decoration: none; color: inherit; padding-block: 6px; background: linear-gradient(#3489C0, #3489C0) 0 100% / 0 2px no-repeat; transition: background-size 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover, .ds-nav a[aria-current='page'] { background-size: 100% 2px; } .ds-nav a:focus-visible, .ds-cta:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; background: #5FAA4E; color: #0E2347; font-weight: 700; font-size: 0.9375rem; text-decoration: none; } .ds-cta:hover { background: #fff; outline: 1.5px solid #5FAA4E; } .ds-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: #3489C0; transform-origin: left; transform: scaleX(0.35); }"
+    },
+    {
+      "name": "Credits Table",
+      "kind": "custom",
+      "refersTo": "credit-row",
+      "description": "Facts as dt/dd rows inset 16px from hairlines; replaces any hero-metric column.",
+      "html": "<dl class=\"ds-credits\"><div class=\"ds-credit\"><dt>2.313</dt><dd>entrevistas perinatais em 2019</dd></div><div class=\"ds-credit\"><dt>6 anos</dt><dd>idade das crianças no acompanhamento atual</dd></div></dl>",
+      "css": ".ds-credits { display: grid; margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; color: var(--ink, #0E2347); } .ds-credit { display: grid; gap: 4px; padding: 14px 0 16px 16px; border-top: 1px solid var(--rule-strong, #0E2347); } .ds-credit:last-child { border-bottom: 1px solid var(--rule-strong, #0E2347); } .ds-credit dt { font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.75rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; font-stretch: 82%; } .ds-credit dd { margin: 0; font-size: 0.875rem; font-weight: 600; color: var(--ink-2, #3D4E68); line-height: 1.4; }"
+    },
+    {
+      "name": "Ruled Index Row",
+      "kind": "custom",
+      "refersTo": "index-list",
+      "description": "Numbered ruled row with arrow; mist wash scales in from the left on hover. Used instead of cards.",
+      "html": "<ul class=\"ds-index\"><li><a href=\"#\"><span class=\"ds-n\">01</span><span class=\"ds-t\">Saúde entre gerações<span class=\"ds-k\">Mães, pais e filhos ao longo do tempo</span></span><svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg></a></li><li><a href=\"#\"><span class=\"ds-n\">02</span><span class=\"ds-t\">Crises e desigualdades<span class=\"ds-k\">Pandemia e enchentes de 2024</span></span><svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg></a></li></ul>",
+      "css": ".ds-index { list-style: none; padding: 0; margin: 0; border-bottom: 1px solid #0E2347; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #0E2347; } .ds-index a { display: grid; grid-template-columns: 3.25rem 1fr auto; gap: 8px; align-items: start; padding: 20px 0 22px; border-top: 1px solid #0E2347; color: inherit; text-decoration: none; position: relative; isolation: isolate; } .ds-index a::before { content: ''; position: absolute; inset: 0 -12px; z-index: -1; background: #EEF3F8; transform: scaleX(0); transform-origin: left; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-index a:hover::before { transform: scaleX(1); } .ds-index a:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-n { font-size: 1.5rem; font-weight: 700; color: #3489C0; line-height: 1.1; } .ds-t { font-size: 1.5rem; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; } .ds-k { display: block; font-size: 0.875rem; font-weight: 500; color: #5A6A82; margin-top: 6px; letter-spacing: 0; } .ds-i { width: 1.1em; height: 1.1em; margin-top: 6px; stroke: #1F6AA0; fill: none; stroke-width: 1.8; stroke-linecap: square; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-index a:hover .ds-i { transform: translateX(5px); }"
+    },
+    {
+      "name": "Numbered Exits on Navy",
+      "kind": "custom",
+      "refersTo": "exits",
+      "description": "Closing contact routes: light-blue leading-zero counters, on-navy hairlines, raised-navy hover wash.",
+      "html": "<div class=\"ds-field\"><ul class=\"ds-exits\"><li><a href=\"#\"><span><span class=\"ds-l\">Colaboração</span><span class=\"ds-v\">chlmz@furg.br</span></span></a></li><li><a href=\"#\"><span><span class=\"ds-l\">Dados da coorte</span><span class=\"ds-v\">coorteriogrande2019@gmail.com</span></span></a></li></ul></div>",
+      "css": ".ds-field { background: #0E2347; padding: 24px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-exits { list-style: none; padding: 0; margin: 0; counter-reset: exit; border-bottom: 1px solid rgba(184,204,227,0.22); } .ds-exits a { display: grid; grid-template-columns: 3rem 1fr; gap: 12px; align-items: center; padding: 22px 0; border-top: 1px solid rgba(184,204,227,0.22); color: #fff; text-decoration: none; position: relative; isolation: isolate; } .ds-exits a::before { counter-increment: exit; content: counter(exit, decimal-leading-zero); font-weight: 700; color: #8FC3E6; font-size: 1.25rem; } .ds-exits a::after { content: ''; position: absolute; inset: 0 -12px; z-index: -1; background: #16305B; transform: scaleX(0); transform-origin: left; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-exits a:hover::after { transform: scaleX(1); } .ds-exits a:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-l { display: block; font-size: 0.875rem; font-weight: 600; color: #B8CCE3; } .ds-v { display: block; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; overflow-wrap: anywhere; }"
+    },
+    {
+      "name": "Related Project Tile",
+      "kind": "card",
+      "refersTo": "related-tile",
+      "description": "Square navy tile; blue-ink fill rises from the bottom on hover.",
+      "html": "<a class=\"ds-tile\" href=\"#\"><b>Enchentes e saúde mental</b><span>Ver projeto</span></a>",
+      "css": ".ds-tile { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: 180px; max-width: 320px; padding: 22px; background: #0E2347; color: #fff; text-decoration: none; border-radius: 0; position: relative; overflow: hidden; isolation: isolate; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-tile::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #1F6AA0; transform: translateY(101%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-tile:hover::before { transform: none; } .ds-tile:focus-visible { outline: 3px solid #5FAA4E; outline-offset: 3px; } .ds-tile b { font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.12; } .ds-tile span { font-weight: 700; font-size: 0.875rem; color: #B8CCE3; } .ds-tile:hover span { color: #fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Swiss Identity Program",
+    "overview": "GPIS is set like an International Typographic Style identity manual printed on white coated stock: a strict 12-column grid that stays visible as hairlines, one grotesque family (Archivo) running flush-left from small credits to poster-scale headlines, and the logo's colours flooding whole regions edge to edge rather than tinting small chips. Navy is the territory; logo blue draws time (the timeline band, progress rules, the cohort line); green appears only where the visitor acts.\n\nDensity is deliberately uneven. Large empty navy fields carrying a single 6rem headline collide with dense, ruled lists: research-line indexes, credits tables, publication strips, numbered exits. Everything is square, flat and ruled; depth comes from colour fields and hairlines, never from shadows. Motion is the second signature: content rises, masks or wipes into place on scroll, the logo mark and photographs drift in layered parallax, the cohort line is drawn by scrolling, and a key claim inks in word by word. Every effect has a reduced-motion state that shows the final composition at once.\n\nThe system refuses the category default of a photo hero over a row of equal rounded cards, and it refuses decorative labels above headings: headlines speak first.",
+    "keyCharacteristics": [
+      "Visible 12-column gridlines over every section field.",
+      "One family, Archivo, variable width: 94% for headings, 82% for numerals, tabular figures throughout.",
+      "Logo colour fields (navy, blue) at full bleed; green held back for actions.",
+      "Square corners, 1px navy hairlines, 3px blue or navy rules for emphasis.",
+      "Facts as credits tables, never hero-metric columns.",
+      "Scroll-driven motion with a complete reduced-motion fallback."
+    ],
+    "rules": [
+      { "name": "The Green Means Go Rule", "body": "Green is reserved for actions (green buttons, the header CTA, the white button's hover) and the focus ring. It never colours tags, labels, icons, rules or decoration.", "section": "colors" },
+      { "name": "The Light Blue On Navy Rule", "body": "On navy, every secondary accent (numerals, separators, meta, labels) is light blue. Science blue and green are not used as text accents on navy.", "section": "colors" },
+      { "name": "The Full-Bleed Field Rule", "body": "Logo colours fill whole regions edge to edge (hero field, band, close, feature). They are not shrunk into tinted cards or badges.", "section": "colors" },
+      { "name": "The Poster Ceiling Rule", "body": "Display type is capped at 6rem, and no tracking goes tighter than -0.04em. Scale comes from the field around the headline, not from pushing the headline further.", "section": "typography" },
+      { "name": "The Headline Speaks First Rule", "body": "No eyebrow or kicker sits above a heading. Context lives in meta lines below the title or in the ruled list it introduces.", "section": "typography" },
+      { "name": "The Visible Grid Rule", "body": "Every section carries its 12-column gridlines: white-ink hairlines at 22% (on-navy-rule) on navy, navy at 7% (gridline-ink) on white and mist. Gridlines sit beneath content and never take pointer events. Project pages carry them throughout; on the home, impacto, pessoas, publicações and research-line pages most white and mist sections do not carry them yet, which is drift, not an exception.", "section": "layout" },
+      { "name": "The No Shadow Rule", "body": "Surfaces never lift. If something needs separation, give it a field colour or a rule.", "section": "elevation" },
+      { "name": "The Duotone Feature Rule", "body": "Hero and feature photographs are duotoned: grayscale with a slight contrast boost, then a logo-blue multiply layer (55–62%) over a navy backing. In-body activity photographs stay in full colour on purpose, so people and their materials read as real.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do flood whole regions with navy or science blue and set one display headline in the empty field.",
+      "Do keep green on actions and the focus ring only; use light blue for every secondary accent on navy.",
+      "Do draw the 12-column gridlines on every section: on-navy-rule on navy, navy at 7% on white and mist.",
+      "Do present facts as a credits table (dt value, dd meaning, rows inset 16px from hairlines).",
+      "Do cap display type at 6rem and keep tracking at or above -0.04em.",
+      "Do duotone hero and feature photographs (grayscale plus logo-blue multiply) and leave in-body activity photos in colour.",
+      "Do use ruled lists with arrows and numbered exits where another site would use cards.",
+      "Do give every motion effect a reduced-motion state that shows the final composition."
+    ],
+    "donts": [
+      "Don't put an eyebrow or kicker above a heading.",
+      "Don't show facts as a big-number hero-metric column.",
+      "Don't use green for tags, labels, rules, icons or decoration.",
+      "Don't round corners or add shadows to content.",
+      "Don't add a second typeface; vary Archivo's width and weight instead.",
+      "Don't fall back to a photo hero over a row of equal rounded cards."
+    ]
+  }
+}

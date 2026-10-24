@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPIS — Grupo de Pesquisa e Inovação em Saúde</title>
+    <meta name="description" content="GPIS — Grupo de Pesquisa e Inovação em Saúde da FURG. Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida e entre gerações.">
+    <meta name="theme-color" content="#0E2347">
+    <link rel="canonical" href="https://chlmz.github.io/webgpis/">
+    <meta property="og:title" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:description" content="GPIS — Grupo de Pesquisa e Inovação em Saúde da FURG. Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida e entre gerações.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chlmz.github.io/webgpis/">
+    <meta property="og:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta property="og:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="GPIS">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta name="twitter:description" content="GPIS — Grupo de Pesquisa e Inovação em Saúde da FURG. Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida e entre gerações.">
+    <meta name="twitter:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta name="twitter:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/gpis.css?v=20261023">
+    <script>
+        (function (d) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+            d.classList.add('has-motion');
+            setTimeout(function () { if (!window.__gpis) d.classList.remove('has-motion'); }, 3000);
+        })(document.documentElement);
+    </script>
+    <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous" defer></script>
+</head><body>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+
+    <header class="site-header">
+        <div class="wrap site-header__bar">
+            <a class="brand" href="#home">
+                <img src="assets/logo.png" alt="GPIS" width="614" height="312">
+                <span>Grupo de Pesquisa e Inovação em Saúde</span>
+            </a>
+            <nav class="nav" aria-label="Navegação principal">
+                <a href="#o-que-investigamos">Pesquisa</a>
+                <a href="#projects">Projetos</a>
+                <a href="publicacoes/">Publicações</a>
+                <a href="dados/">Dados</a>
+                <a href="impacto/">Impacto</a>
+                <a href="pessoas/">Equipe</a>
+                <a href="#contact">Contato</a>
+            </nav>
+            <a class="btn btn--green btn--small site-header__cta" href="mailto:chlmz@furg.br?subject=Proposta%20de%20colabora%C3%A7%C3%A3o%20%E2%80%94%20GPIS">Propor colaboração<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="menu-toggle__bars" aria-hidden="true"></span>
+                <span class="menu-toggle__label">Menu</span>
+            </button>
+        </div>
+        <span class="progress" aria-hidden="true"></span>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <ul>
+            <li><a href="#o-que-investigamos">Pesquisa<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="#projects">Projetos<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="publicacoes/">Publicações<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="dados/">Dados<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="impacto/">Impacto<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="pessoas/">Equipe<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+            <li><a href="#contact">Contato<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+        </ul>
+        <a class="btn btn--green" href="mailto:chlmz@furg.br?subject=Proposta%20de%20colabora%C3%A7%C3%A3o%20%E2%80%94%20GPIS">Propor uma colaboração<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+        <p class="mobile-nav__meta">Universidade Federal do Rio Grande — FURG<br>Rio Grande, RS, Brasil · <a href="mailto:chlmz@furg.br">chlmz@furg.br</a></p>
+    </div>
+
+    <main id="main-content">
+
+        <section id="home" class="hero" aria-label="Apresentação do grupo">
+            <div class="hero__field" data-parallax-box>
+                <div class="gridlines " aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+                <img class="hero__mark" src="assets/logo-mark-white.png" alt="" width="319" height="312" data-parallax="0.22">
+                <div>
+                    <h1 class="hero__title"><span class="load-line"><span>Pesquisa que</span></span> <span class="load-line"><span>começa nas</span></span> <span class="load-line"><span>pessoas.</span></span></h1>
+                    <p class="hero__lead load-fade">Investigamos como experiências sociais, familiares e ambientais moldam <strong>a saúde ao longo da vida.</strong></p>
+                </div>
+                <div class="hero__foot load-fade load-fade--late">
+                    <div class="actions">
+                        <a href="#projects" class="btn btn--green">Conheça nossos projetos<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+                        <a href="#o-que-investigamos" class="btn btn--line-light">Linhas de pesquisa<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+                    </div>
+                    <p class="hero__credits"><span>GPIS · FURG · Rio Grande, Brasil</span><span>Epidemiologia · Saúde mental · Curso de vida · Inteligência artificial</span></p>
+                </div>
+            </div>
+            <nav class="hero__index" id="o-que-investigamos" aria-labelledby="lines-title">
+                <h2 class="hero__index-title" id="lines-title">Linhas de pesquisa</h2>
+                <ul class="index-list" data-reveal="stagger">
+                    <li><a href="pesquisa/saude-mental-curso-de-vida/"><span class="index-list__n">01</span><span><span class="index-list__t">Saúde mental ao longo da vida</span><span class="index-list__k">Perinatal · Infância · Adolescência · Envelhecimento</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="pesquisa/saude-entre-geracoes/"><span class="index-list__n">02</span><span><span class="index-list__t">Saúde entre gerações</span><span class="index-list__k">Parentalidade · Mães e filhos · Coortes de nascimento</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="pesquisa/crises-e-desigualdades/"><span class="index-list__n">03</span><span><span class="index-list__t">Crises, desastres climáticos e desigualdades</span><span class="index-list__k">Enchentes · Pandemia · Desigualdade social</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="pesquisa/metodos-e-inovacao/"><span class="index-list__n">04</span><span><span class="index-list__t">Métodos observacionais e inovação em saúde</span><span class="index-list__k">Linkage de dados · Câmeras vestíveis · Inteligência artificial</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="band" aria-labelledby="band-title" data-progress data-start="1" data-span="0.55">
+            <h2 class="sr-only" id="band-title">Linha do tempo da Coorte de Nascimentos Rio Grande 2019</h2>
+            <div class="band__track">
+                <span class="band__crisis band__crisis--pandemia" aria-hidden="true"></span>
+                <span class="band__crisis band__crisis--enchentes" aria-hidden="true"></span>
+                <span class="band__line" aria-hidden="true"></span>
+                <span class="band__dot" aria-hidden="true"></span>
+                <div class="band__year"><span class="band__y">2019</span><span class="band__e">Nascimento</span></div>
+                <div class="band__year is-crisis"><span class="band__y">2020</span><span class="band__e">Pandemia</span></div>
+                <div class="band__year band__year--wide"><span class="band__y">2021</span><span class="band__e">Novos acompanhamentos</span></div>
+                <div class="band__year"><span class="band__y">2022</span></div>
+                <div class="band__year"><span class="band__y">2023</span><span class="band__e">Pós-COVID</span></div>
+                <div class="band__year is-crisis"><span class="band__y">2024</span><span class="band__e">Enchentes</span></div>
+                <div class="band__year"><span class="band__y">2025</span><span class="band__e">6 anos</span></div>
+            </div>
+            <div class="wrap band__legend">
+                <span>2.313 mães entrevistadas em 2019. Acompanhamos as mesmas famílias antes e depois da pandemia e das enchentes.</span>
+                <a href="projetos/coorte-rio-grande-2019/#trajetoria">Ver a trajetória da Coorte</a>
+            </div>
+        </section>
+
+        <section class="claim has-grid" aria-labelledby="claim-label">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <h2 id="claim-label" class="sr-only">O que conecta nossos projetos</h2>
+                <p class="claim__text" data-ink>Perguntas diferentes, <span class="hl">uma mesma ideia:</span> acompanhar vidas reais e produzir conhecimento que faça diferença para elas.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="sec on-mist has-grid" aria-labelledby="projects-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="projects-title" data-reveal="mask">Projetos</h2>
+                    <p class="sec__intro">Pesquisa em andamento, construída sobre uma coorte que acompanha famílias desde o nascimento.</p>
+                    <div class="links-inline">
+                        <a class="go" href="publicacoes/">Ver publicações<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+                        <a class="go" href="dados/">Dados e colaboração<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a>
+                    </div>
+                </div>
+                <div class="sec__body">
+                    <a class="feature" href="projetos/coorte-rio-grande-2019/" aria-labelledby="featured-coorte-title" data-reveal="wipe">
+                        <div class="feature__main">
+                            <h3 id="featured-coorte-title" class="feature__title">Coorte de Nascimentos Rio Grande 2019</h3>
+                            <p class="feature__desc">Acompanhamos mães, crianças e famílias desde o nascimento.</p>
+                            <p class="feature__meta">Plataforma principal · desde 2019</p>
+                            <span class="feature__go">Conheça a Coorte<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></span>
+                        </div>
+                        <dl class="feature__facts credits-table">
+                            <div class="credit"><dt data-count="2313">2.313</dt><dd>entrevistas perinatais em 2019</dd></div>
+                            <div class="credit"><dt><span data-count="6">6</span> anos</dt><dd>no acompanhamento atual</dd></div>
+                        </dl>
+                    </a>
+                    <ul class="rows" data-reveal="stagger">
+                        <li><a class="row-link" href="projetos/visoes-do-cuidado/" aria-labelledby="project-visoes-title"><h3 class="row-link__title" id="project-visoes-title">Visões do Cuidado</h3><span class="row-link__desc">Epidemiologia e IA para estudar saúde mental entre gerações.<span class="row-link__meta">Rede internacional · Brasil · Chile · Peru · Reino Unido</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                        <li><a class="row-link" href="projetos/enchentes-saude-mental/" aria-labelledby="project-enchentes-title"><h3 class="row-link__title" id="project-enchentes-title">Enchentes e saúde mental</h3><span class="row-link__desc">Como as enchentes de 2024 se relacionaram com a saúde mental de famílias que já acompanhávamos.<span class="row-link__meta">Epidemiologia de desastres</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                        <li><a class="row-link" href="projetos/visao-primeira-pessoa-ia/" aria-labelledby="project-visao-title"><h3 class="row-link__title" id="project-visao-title">Visão em primeira pessoa &amp; IA</h3><span class="row-link__desc">Câmeras vestíveis para observar interações familiares no cotidiano.<span class="row-link__meta">Tecnologia &amp; comportamento</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                        <li><a class="row-link" href="projetos/linkage-dados-populacionais/" aria-labelledby="project-linkage-title"><h3 class="row-link__title" id="project-linkage-title">Linkage e dados populacionais</h3><span class="row-link__desc">Registros administrativos ligados a dados longitudinais, com governança.<span class="row-link__meta">Dados populacionais</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="network" class="sec has-grid" aria-labelledby="network-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap network">
+                <div>
+                    <h2 id="network-title" class="sec__title" data-reveal="mask">Rede científica em quatro países</h2>
+                    <p class="sec__intro">A pesquisa cresce quando diferentes perspectivas se encontram. Construímos projetos com parceiros no Brasil e em outros países.</p>
+                    <ul class="partners" data-reveal="stagger">
+                        <li><span class="partners__sq" style="--c:#0E2347"></span><span><b>Brasil</b><span>FURG</span></span></li>
+                        <li><span class="partners__sq" style="--c:#3489C0"></span><span><b>Reino Unido</b><span>Manchester Metropolitan University</span></span></li>
+                        <li><span class="partners__sq" style="--c:#8FC3E6"></span><span><b>Chile</b><span>Universidad del Desarrollo</span></span></li>
+                        <li><span class="partners__sq" style="--c:#1F6AA0"></span><span><b>Peru</b><span>Universidad Científica del Sur</span></span></li>
+                    </ul>
+                </div>
+                <figure class="map">
+                    <div id="gpis-map" class="map__canvas" role="img" aria-label="Mapa-múndi destacando Brasil, Chile, Peru e Reino Unido, países da rede científica do GPIS, com conexões partindo da FURG"></div>
+                    <figcaption>Instituições parceiras ativas · GPIS/FURG</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="impacto" class="impact on-navy" aria-labelledby="impact-title">
+            <div class="impact__photo">
+                <img src="assets/images/impacto/impacto-pesquisa-com-pessoas.jpg" alt="Participantes e equipe do GPIS em atividade coletiva em torno de uma mesa." width="1573" height="1800" loading="lazy" decoding="async" data-parallax="0.12">
+            </div>
+            <div class="impact__body">
+                <p class="impact__quote" data-reveal="rise">Queremos fazer cada vez mais pesquisa com as pessoas, e não apenas sobre elas.</p>
+                <h2 class="impact__title" id="impact-title">Pesquisa que não termina na publicação.</h2>
+                <p class="muted" style="max-width:52ch">Queremos que o conhecimento circule — e volte a quem torna a pesquisa possível.</p>
+                <div class="dims" data-reveal="stagger">
+                    <div><b>Formação</b><p>Formação de estudantes dentro de projetos reais.</p></div>
+                    <div><b>Pesquisa em rede</b><p>Perguntas e métodos construídos com parceiros de quatro países.</p></div>
+                    <div><b>Retorno à sociedade</b><p>Compromisso com resultados que circulem além da publicação científica.</p></div>
+                </div>
+                <div><a href="impacto/" class="btn btn--white">Conheça nosso impacto<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+            </div>
+        </section>
+
+        <section id="team" class="sec has-grid" aria-labelledby="team-title">
+            <div class="gridlines gridlines--ink" aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid">
+                <div class="sec__head sec__head--sticky">
+                    <h2 class="sec__title" id="team-title" data-reveal="mask">Quem faz a pesquisa acontecer</h2>
+                    <p class="sec__intro">Pesquisadores, pós-graduandos e estudantes de iniciação científica.</p>
+                    <div class="links-inline"><a href="pessoas/" class="btn btn--line">Conheça a equipe<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></div>
+                </div>
+                <div class="sec__body">
+                    <div class="credits" aria-label="Integrantes ativos do GPIS" data-reveal="stagger">
+                        <div><b>Christian Loret de Mola Zanatti</b><span>Coordenador / Investigador Principal</span></div>
+                        <div><b>Rafaela Costa Martins</b><span>Pesquisadora / Gestão de dados</span></div>
+                        <div><b>Cauane Blumenberg</b><span>Pesquisador / Cientista de dados</span></div>
+                        <div><b>Romina Buffarini</b><span>Pesquisadora / Curadoria de dados</span></div>
+                        <div><b>Andressa Cardoso</b><span>Pós-doutoranda / Interações e desenvolvimento infantil</span></div>
+                        <div><b>Júlia Freire Danigno</b><span>Pesquisadora / Professora colaboradora</span></div>
+                        <div><b>Gabriel Chaplin da Silva</b><span>Mestrando</span></div>
+                        <div><b>Aline Barenho Pereira</b><span>Mestranda</span></div>
+                        <div><b>Leonardo Nunes da Costa</b><span>Iniciação científica</span></div>
+                        <div><b>Camile Glanert Tecchio</b><span>Iniciação científica</span></div>
+                        <div><b>Brenno Lopes Cavalcante</b><span>Iniciação científica</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="close on-navy" id="contact" aria-labelledby="contact-title">
+            <div class="gridlines " aria-hidden="true"><div class="wrap"><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+            <div class="wrap grid close__grid" style="position:relative;z-index:1">
+                <div class="close__lead">
+                    <h2 class="close__title" id="contact-title" data-reveal="mask">Contato</h2>
+                    <p class="close__text">Estamos abertos a colaborações científicas, projetos conjuntos e parcerias com pesquisadores, estudantes e instituições.</p>
+                    <p class="close__addr">Universidade Federal do Rio Grande — FURG<br>Rio Grande, RS, Brasil</p>
+                </div>
+                <ul class="exits" data-reveal="stagger">
+                    <li><a href="mailto:chlmz@furg.br"><span><span class="exits__l">Coordenação</span><span class="exits__v">chlmz@furg.br</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="mailto:coorteriogrande2019@gmail.com"><span><span class="exits__l">Coorte Rio Grande 2019</span><span class="exits__v">coorteriogrande2019@gmail.com</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                    <li><a href="dados/"><span><span class="exits__l">Propor uma análise</span><span class="exits__v">Dados e colaboração</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg></a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="site-footer__top">
+                <div class="site-footer__brand">
+                    <img src="assets/logo-mark-white.png" alt="" width="319" height="312">
+                    <div>
+                        <b>GPIS — Grupo de Pesquisa e Inovação em Saúde</b>
+                        <span>FURG · Rio Grande, Brasil</span>
+                    </div>
+                </div>
+                <nav aria-label="Rodapé">
+                    <a href="#o-que-investigamos">Linhas de pesquisa</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="projetos/coorte-rio-grande-2019/">Coorte Rio Grande 2019</a>
+                    <a href="publicacoes/">Publicações</a>
+                    <a href="dados/">Dados e colaboração</a>
+                    <a href="impacto/">Impacto</a>
+                    <a href="pessoas/">Equipe</a>
+                    <a href="#network">Rede científica</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+            </div>
+            <div class="site-footer__bottom">
+                <span>&copy; <span id="currentYear">2026</span> GPIS · Universidade Federal do Rio Grande</span>
+                <a href="mailto:chlmz@furg.br">chlmz@furg.br</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/gpis.js?v=20261023" defer></script>
+    <script>
+    window.addEventListener('load', function () {
+        var el = document.getElementById('gpis-map');
+        if (!el || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
+        var C = { 'Brazil': '#0E2347', 'United Kingdom': '#3489C0', 'Chile': '#8FC3E6', 'Peru': '#1F6AA0' };
+        d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(function (topo) {
+            var countries = topojson.feature(topo, topo.objects.countries).features
+                .filter(function (d) { return d.properties.name !== 'Antarctica'; });
+            var W = 760, H = 430;
+            var svg = d3.select(el).append('svg').attr('viewBox', '0 0 ' + W + ' ' + H).attr('aria-hidden', 'true');
+            var projection = d3.geoNaturalEarth1().fitExtent([[4, 4], [W - 4, H + 40]], { type: 'Sphere' });
+            var path = d3.geoPath(projection);
+            svg.append('g').selectAll('path').data(countries).join('path')
+                .attr('d', path)
+                .attr('fill', function (d) { return C[d.properties.name] || '#D3DDE8'; })
+                .attr('stroke', '#EEF3F8').attr('stroke-width', 0.6);
+            var nodes = [
+                { c: 'Brazil', name: 'FURG', sub: 'Rio Grande, Brasil', at: [-52.0986, -32.0350], dx: 54, dy: 34, anchor: 'start' },
+                { c: 'United Kingdom', name: 'Manchester Metropolitan University', sub: 'Reino Unido', at: [-2.2426, 53.4808], dx: 40, dy: -40, anchor: 'start' },
+                { c: 'Chile', name: 'Universidad del Desarrollo', sub: 'Chile', at: [-70.6693, -33.4489], dx: -34, dy: 26, anchor: 'end' },
+                { c: 'Peru', name: 'Universidad Científica del Sur', sub: 'Peru', at: [-77.0428, -12.0464], dx: -34, dy: -16, anchor: 'end' }
+            ];
+            var by = {}; nodes.forEach(function (n) { by[n.c] = n.at; });
+            var arcs = svg.append('g').attr('fill', 'none').attr('stroke', '#0E2347').attr('stroke-width', 1.6);
+            [['Brazil', 'United Kingdom'], ['Brazil', 'Chile'], ['Brazil', 'Peru']].forEach(function (p) {
+                var a = arcs.append('path').attr('class', 'arc')
+                    .attr('d', path({ type: 'LineString', coordinates: [by[p[0]], by[p[1]]] }));
+                var len = a.node().getTotalLength();
+                a.style('--len', len.toFixed(1));
+            });
+            var g = svg.append('g');
+            nodes.forEach(function (n) {
+                var pt = projection(n.at);
+                var lx = pt[0] + n.dx, ly = pt[1] + n.dy;
+                var lbl = g.append('g').attr('class', 'lbl');
+                lbl.append('path').attr('d', 'M' + pt[0] + ',' + pt[1] + 'L' + lx + ',' + ly + 'h' + (n.anchor === 'start' ? 8 : -8))
+                    .attr('stroke', '#0E2347').attr('stroke-width', 1).attr('fill', 'none');
+                var tx = lx + (n.anchor === 'start' ? 12 : -12);
+                lbl.append('text').attr('x', tx).attr('y', ly - 2).attr('text-anchor', n.anchor)
+                    .attr('font-size', 13).attr('font-weight', 700).attr('fill', '#0E2347').text(n.name);
+                lbl.append('text').attr('x', tx).attr('y', ly + 14).attr('text-anchor', n.anchor)
+                    .attr('font-size', 11.5).attr('font-weight', 500).attr('fill', '#3D4E68').text(n.sub);
+                g.append('rect').attr('x', pt[0] - 5).attr('y', pt[1] - 5).attr('width', 10).attr('height', 10)
+                    .attr('fill', '#FFFFFF').attr('stroke', '#0E2347').attr('stroke-width', 2);
+            });
+        }).catch(function () { el.textContent = ''; });
+    });
+    </script>
+</body>
+</html>

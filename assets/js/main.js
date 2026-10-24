@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initNetworkMap(reduceMotion);
     initBand(reduceMotion);
     initClaim(reduceMotion);
+    initMark(reduceMotion);
 });
 
 // Frase central da home: fica fixa e cada palavra acende com o scroll.
@@ -255,4 +256,92 @@ function initNetworkMap(reduceMotion) {
         draw();
     }, { rootMargin: '200px 0px' });
     io.observe(el);
+}
+
+// Símbolo do GPIS nas cabeceiras internas: o mesmo desenho, com um gesto por página
+// (Rede se conecta, Impacto se expande, Equipe acende por pessoas). Fica discreto em repouso.
+function initMark(reduceMotion) {
+    var hero = document.querySelector('.gpis-proj-hero:not(.gpis-proj-hero--coorte), .gpis-impact-hero');
+    if (!hero) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var N = [[103.5,48.5,25],[181,35,24],[233,102.5,32.5],[59,165,34],[134,131,27.5],[192,186,24],[282.5,170,21],[255,231,26],[124,252.5,28.5]];
+    var E = [[0,1],[1,2],[0,3],[0,4],[2,4],[3,4],[4,5],[2,5],[2,6],[3,8],[5,8],[5,7],[6,7],[7,8]];
+    var mode = document.body.getAttribute('data-mark') || 'static';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(NS, name);
+        for (var k in attrs) e.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(e);
+        return e;
+    }
+    var svg = el('svg', { viewBox: '0 0 319 312', class: 'gpis-mark', 'aria-hidden': 'true', focusable: 'false' });
+    var ringsG = el('g', {}, svg);
+    var grp = el('g', { class: 'gpis-mark__grp' }, svg);
+    var edges = E.map(function (p) {
+        var a = N[p[0]], b = N[p[1]];
+        return el('line', { class: 'gpis-mark__edge', x1: a[0], y1: a[1], x2: b[0], y2: b[1] }, grp);
+    });
+    var nodes = N.map(function (n) {
+        var g = el('g', { class: 'gpis-mark__person' }, grp);
+        var c = el('circle', { class: 'gpis-mark__node', cx: n[0], cy: n[1], r: n[2] }, g);
+        el('circle', { class: 'gpis-mark__hole', cx: n[0], cy: n[1] - n[2] * 0.22, r: n[2] * 0.24 }, g);
+        el('path', { class: 'gpis-mark__hole', d: 'M' + (n[0] - n[2] * 0.5) + ' ' + (n[1] + n[2] * 0.55) + 'a' + (n[2] * 0.5) + ' ' + (n[2] * 0.4) + ' 0 0 1 ' + n[2] + ' 0z' }, g);
+        return c;
+    });
+    var rings = [0, 1, 2].map(function () { return el('circle', { class: 'gpis-mark__ring', cx: N[4][0], cy: N[4][1], r: 20 }, ringsG); });
+    hero.appendChild(svg);
+    hero.classList.add('has-mark');
+
+    if (reduceMotion || mode === 'static' || !svg.animate) return;
+    var ease = 'cubic-bezier(.2,.7,.2,1)';
+    function anim(t, frames, opts) { return t.animate(frames, Object.assign({ fill: 'both' }, opts)); }
+    function dist(i, j) { return Math.hypot(N[i][0] - N[j][0], N[i][1] - N[j][1]); }
+    var play = {
+        rede: function () {
+            var seen = { 3: 1, 0: 1 };
+            nodes.forEach(function (n) { anim(n.parentNode, [{ opacity: 0 }, { opacity: 0 }], { duration: 1 }); });
+            edges.forEach(function (e, k) {
+                var len = e.getTotalLength();
+                e.style.strokeDasharray = len;
+                anim(e, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 500, delay: 200 + k * 230, easing: ease });
+            });
+            [[3, 100], [0, 200]].forEach(function (d) {
+                anim(nodes[d[0]].parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 380, delay: d[1], easing: ease });
+            });
+            E.forEach(function (p, k) {
+                if (seen[p[1]]) return;
+                seen[p[1]] = 1;
+                anim(nodes[p[1]].parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 380, delay: 500 + k * 230, easing: ease });
+            });
+        },
+        impacto: function () {
+            rings.forEach(function (r, i) {
+                anim(r, [{ opacity: 0.6, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(11)' }], { duration: 2400, delay: i * 700, easing: 'cubic-bezier(.2,.6,.3,1)' });
+            });
+            nodes.forEach(function (n, i) {
+                var delay = (i === 4 ? 0 : dist(4, i)) * 8 + 150;
+                anim(n.parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.18)', offset: 0.4 }, { transform: 'scale(1)' }], { duration: 900, delay: delay, easing: 'ease-out' });
+            });
+        },
+        equipe: function () {
+            [3, 0, 1, 4, 2, 5, 6, 7, 8].forEach(function (ni, k) {
+                anim(nodes[ni].parentNode, [{ opacity: 0.25, transform: 'scale(.9)' }, { opacity: 1, transform: 'scale(1.12)', offset: 0.35 }, { opacity: 1, transform: 'scale(1)' }], { duration: 800, delay: 150 + k * 260, easing: 'ease-out' });
+                anim(nodes[ni], [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-warm)', offset: 0.35 }, { fill: 'var(--mark-ink)' }], { duration: 1100, delay: 150 + k * 260 });
+            });
+            if (!window.matchMedia('(hover: hover)').matches) return;
+            hero.addEventListener('pointermove', function (ev) {
+                var r = svg.getBoundingClientRect();
+                if (!r.width) return;
+                var s = 319 / r.width, x = (ev.clientX - r.left) * s, y = (ev.clientY - r.top) * s;
+                nodes.forEach(function (n, i) {
+                    var k = Math.max(0, 1 - Math.hypot(N[i][0] - x, N[i][1] - y) / 90);
+                    n.style.fill = k > 0.05 ? 'color-mix(in srgb, var(--mark-warm) ' + Math.round(k * 100) + '%, var(--mark-ink))' : '';
+                    n.style.transform = k > 0.05 ? 'scale(' + (1 + 0.15 * k).toFixed(3) + ')' : '';
+                });
+            });
+            hero.addEventListener('pointerleave', function () {
+                nodes.forEach(function (n) { n.style.fill = ''; n.style.transform = ''; });
+            });
+        }
+    };
+    if (play[mode]) setTimeout(play[mode], 250);
 }

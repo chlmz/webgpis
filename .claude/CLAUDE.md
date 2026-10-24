@@ -37,6 +37,7 @@ sleep 2 && open "http://localhost:8000"
 - **Rede:** sin etiquetas de estado ("em andamento", "proposta"); lo que aún no está aprobado se redacta con prudencia en el texto (nunca "financiado" ni "aprovado").
 - **Impacto:** abre con la oficina con las familias (fotos y palavras de los post-its), luego hallazgos en lenguaje simple con su artículo, formación con la composición real del equipo, red con logos y cierre.
 - **Patrón general:** título fijo a la izquierda y contenido que corre a la derecha (`.gpis-split`, y `.gpis-proj-section__inner` en páginas internas). Filas sin cajas en vez de tarjetas.
+- **Símbolo en cabeceras internas:** el símbolo del GPIS en vectores (`initMark` en `main.js`), intensidad sutil; gesto por página vía `<body data-mark>`: Rede se conecta, Impacto se expande (ondas sobre la foto), Equipe se enciende por personas y responde al mouse; el resto, quieto. Demo aprobada: https://claude.ai/artifact/5btoLQ5KXmhLZJJxMCFEuZ
 - **Movimiento:** le gustan los movimientos leves (el mapa que se dibuja, el parallax suave en las cabeceras internas, las entradas al hacer scroll). Siempre respetar `prefers-reduced-motion`.
 
 ## Rechazado (no volver a proponer igual)
@@ -47,7 +48,7 @@ sleep 2 && open "http://localhost:8000"
 
 ## Pendiente
 
-- Logos: MMU y UCSUR en `assets/logos/` (UCSUR en versión positiva para fondo claro). Faltan los archivos de FURG, PPGSP y UDD (logo completo, azul).
+- Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción; el contenedor no resuelve dominios `.br`, así que no se pudo leer el sitio.
 - Fotos con niños de frente (`impacto-atividade-familias.jpg`): confirmar permiso antes de usarla.
 

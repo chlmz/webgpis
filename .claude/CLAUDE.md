@@ -41,6 +41,10 @@ Start-Process "http://localhost:8000"
 
 - La frase central de la home ("Perguntas diferentes, uma mesma ideia…") debe ser el punto que atrae la atención. Hay tres propuestas con scroll: A, la frase se escribe; B, 2.313 puntos de la Coorte; C, las 12 preguntas reales. Falta que elija.
 
+## Recursos e ideas
+
+`.claude/recursos.md` es el catálogo vivo de skills, herramientas e ideas evaluadas: qué hay instalado, qué se descartó y por qué, y qué podría servir más adelante. Consultarlo antes de proponer herramientas nuevas, y agregar ahí todo lo que se evalúe.
+
 ## Notas técnicas
 
 - Al cambiar CSS o JS, subir el `?v=` en **todos** los HTML para evitar caché.

@@ -1,6 +1,6 @@
 # GPIS — sitio web
 
-Sitio estático del GPIS (Grupo de Pesquisa e Inovação em Saúde, FURG), publicado con GitHub Pages en `chlmz.github.io/webgpis`. HTML por página, Bootstrap 5.3.3 desde CDN, un solo `assets/css/styles.css` y un solo `assets/js/main.js`. El rediseño se trabaja en la rama `redesign-moderno`.
+Sitio estático del GPIS (Grupo de Pesquisa e Inovação em Saúde, FURG), publicado con GitHub Pages en `chlmz.github.io/webgpis`. HTML por página, Bootstrap 5.3.3 desde CDN, un solo `assets/css/styles.css` y un solo `assets/js/main.js`. Desde oct/2026 el rediseño es la versión publicada en `main`; la versión anterior quedó en la rama `legacy` (commit `54e3537`). `redesign-moderno` sigue siendo la rama de trabajo y se lleva a `main` con avance limpio (sin reescribir historia).
 
 ## Cómo trabajar con el responsable del sitio
 

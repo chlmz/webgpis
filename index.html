@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <link rel="stylesheet" href="assets/css/styles.css?v=11">
 </head>
 <body class="gpis-home-page">
     <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
@@ -108,49 +108,28 @@
             </div>
         </section>
 
-        <!-- O QUE CONECTA NOSSOS PROJETOS -->
-        <section class="gpis-claim" aria-label="O que conecta nossos projetos">
+        <!-- FRASE + LINHAS DE PESQUISA -->
+        <section id="o-que-investigamos" class="gpis-claim" aria-labelledby="lines-title">
             <div class="gpis-claim__stage">
                 <div class="container">
-                    <p class="gpis-claim__text">Perguntas diferentes, uma mesma ideia: <span>acompanhar vidas reais</span> e produzir conhecimento que faça diferença para elas.</p>
-                    <p class="gpis-claim__facts">
-                        <span><strong>4</strong> linhas de pesquisa</span>
-                        <span><strong>5</strong> projetos</span>
-                        <span><strong>1</strong> coorte desde 2019</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- LINHAS DE PESQUISA -->
-        <section id="o-que-investigamos" class="gpis-research" aria-labelledby="research-title">
-            <div class="container">
-                <div class="gpis-split">
-                    <div class="gpis-split__head">
-                        <h2 id="research-title" class="gpis-section-title">Linhas de pesquisa</h2>
-                        <p class="gpis-split__note">Quatro perguntas que atravessam todos os nossos projetos.</p>
-                    </div>
-                    <div class="gpis-research__grid">
-                        <a class="gpis-research__item" data-reveal data-tone="azul" href="pesquisa/saude-mental-curso-de-vida/">
-                            <h3 class="gpis-research__item-title">Saúde mental ao longo da vida</h3>
-                            <p class="gpis-research__item-keys">Perinatal · Infância · Adolescência · Envelhecimento</p>
-                            <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-                        </a>
-                        <a class="gpis-research__item" data-reveal data-tone="ambar" href="pesquisa/saude-entre-geracoes/">
-                            <h3 class="gpis-research__item-title">Saúde entre gerações</h3>
-                            <p class="gpis-research__item-keys">Parentalidade · Mães e filhos · Coortes de nascimento</p>
-                            <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-                        </a>
-                        <a class="gpis-research__item" data-reveal data-tone="verde" href="pesquisa/crises-e-desigualdades/">
-                            <h3 class="gpis-research__item-title">Crises, desastres climáticos e desigualdades</h3>
-                            <p class="gpis-research__item-keys">Enchentes · Pandemia · Desigualdade social</p>
-                            <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-                        </a>
-                        <a class="gpis-research__item" data-reveal data-tone="profundo" href="pesquisa/metodos-e-inovacao/">
-                            <h3 class="gpis-research__item-title">Métodos observacionais e inovação em saúde</h3>
-                            <p class="gpis-research__item-keys">Linkage de dados · Câmeras vestíveis · Inteligência artificial</p>
-                            <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-                        </a>
+                    <div class="gpis-claim__grid">
+                        <div class="gpis-claim__lead">
+                            <p class="gpis-claim__text">Perguntas diferentes, uma mesma ideia: <span>acompanhar vidas reais</span> e produzir conhecimento que faça diferença para elas.</p>
+                            <p class="gpis-claim__facts">
+                                <span><strong>4</strong> linhas de pesquisa</span>
+                                <span><strong>5</strong> projetos</span>
+                                <span><strong>1</strong> coorte desde 2019</span>
+                            </p>
+                        </div>
+                        <nav class="gpis-lines" aria-labelledby="lines-title">
+                            <h2 id="lines-title" class="gpis-lines__title">Linhas de pesquisa</h2>
+                            <ol class="gpis-lines__list">
+                                <li class="gpis-lines__item" data-reveal><a href="pesquisa/saude-mental-curso-de-vida/"><span class="gpis-lines__n">01</span><span class="gpis-lines__body"><span class="gpis-lines__t">Saúde mental ao longo da vida</span><span class="gpis-lines__k">Perinatal · Infância · Adolescência · Envelhecimento</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                                <li class="gpis-lines__item" data-reveal><a href="pesquisa/saude-entre-geracoes/"><span class="gpis-lines__n">02</span><span class="gpis-lines__body"><span class="gpis-lines__t">Saúde entre gerações</span><span class="gpis-lines__k">Parentalidade · Mães e filhos · Coortes de nascimento</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                                <li class="gpis-lines__item" data-reveal><a href="pesquisa/crises-e-desigualdades/"><span class="gpis-lines__n">03</span><span class="gpis-lines__body"><span class="gpis-lines__t">Crises, desastres climáticos e desigualdades</span><span class="gpis-lines__k">Enchentes · Pandemia · Desigualdade social</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                                <li class="gpis-lines__item" data-reveal><a href="pesquisa/metodos-e-inovacao/"><span class="gpis-lines__n">04</span><span class="gpis-lines__body"><span class="gpis-lines__t">Métodos observacionais e inovação em saúde</span><span class="gpis-lines__k">Linkage de dados · Câmeras vestíveis · Inteligência artificial</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -159,66 +138,44 @@
         <!-- PROJETOS -->
         <section id="projects" class="gpis-projects" aria-labelledby="projects-title">
             <div class="container">
-                <div class="gpis-projects__head">
-                    <div>
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
                         <h2 id="projects-title" class="gpis-section-title">Projetos</h2>
-                        <p class="gpis-projects__sub">Pesquisa em andamento</p>
-                    </div>
-                    <div class="gpis-projects__more">
-                        <a href="publicacoes/" class="gpis-textlink">Ver publicações <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
-                        <a href="dados/" class="gpis-textlink">Dados e colaboração <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
-                    </div>
-                </div>
-
-                <!-- Projeto destaque: Coorte -->
-                <a class="gpis-projects__featured" data-reveal href="projetos/coorte-rio-grande-2019/" aria-labelledby="featured-coorte-title">
-                    <div>
-                        <span class="gpis-projects__featured-tag">Plataforma principal · desde 2019</span>
-                        <h3 id="featured-coorte-title" class="gpis-projects__featured-title">Coorte de Nascimentos Rio Grande 2019</h3>
-                        <p class="gpis-projects__featured-desc">
-                            Acompanhamos mães, crianças e famílias desde o nascimento.
-                        </p>
-                        <span class="gpis-projects__featured-link">Conheça a Coorte <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-                    </div>
-                    <dl class="gpis-projects__stats">
-                        <div class="gpis-projects__stat">
-                            <dt class="gpis-projects__stat-label">entrevistas perinatais em 2019</dt>
-                            <dd class="gpis-projects__stat-value">2.313</dd>
+                        <p class="gpis-split__note">Pesquisa em andamento, construída sobre uma coorte que acompanha famílias desde o nascimento.</p>
+                        <div class="gpis-projects__more">
+                            <a href="publicacoes/" class="gpis-textlink">Ver publicações <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+                            <a href="dados/" class="gpis-textlink">Dados e colaboração <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
                         </div>
-                        <div class="gpis-projects__stat">
-                            <dt class="gpis-projects__stat-label">no acompanhamento atual</dt>
-                            <dd class="gpis-projects__stat-value">6 anos</dd>
-                        </div>
-                    </dl>
-                </a>
-
-                <!-- Outros projetos -->
-                <div class="gpis-project-list">
-                    <a class="gpis-project-item" data-reveal data-tone="azul" href="projetos/visoes-do-cuidado/" aria-labelledby="project-visoes-title">
-                        <span class="gpis-project-item__tag">Rede internacional</span>
-                        <h3 id="project-visoes-title" class="gpis-project-item__title">Visões do Cuidado</h3>
-                        <p class="gpis-project-item__desc">Epidemiologia e IA para estudar saúde mental entre gerações.</p>
-                        <p class="gpis-project-item__countries">Brasil · Chile · Peru · Reino Unido</p>
-                        <span class="gpis-project-item__link">Conheça o projeto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-                    </a>
-                    <a class="gpis-project-item" data-reveal data-tone="verde" href="projetos/enchentes-saude-mental/" aria-labelledby="project-enchentes-title">
-                        <span class="gpis-project-item__tag">Epidemiologia de desastres</span>
-                        <h3 id="project-enchentes-title" class="gpis-project-item__title">Enchentes e saúde mental</h3>
-                        <p class="gpis-project-item__desc">Como as enchentes de 2024 se relacionaram com a saúde mental de famílias que já acompanhávamos.</p>
-                        <span class="gpis-project-item__link">Conheça o projeto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-                    </a>
-                    <a class="gpis-project-item" data-reveal data-tone="ambar" href="projetos/visao-primeira-pessoa-ia/" aria-labelledby="project-visao-title">
-                        <span class="gpis-project-item__tag">Tecnologia &amp; comportamento</span>
-                        <h3 id="project-visao-title" class="gpis-project-item__title">Visão em primeira pessoa &amp; IA</h3>
-                        <p class="gpis-project-item__desc">Câmeras vestíveis para observar interações familiares no cotidiano.</p>
-                        <span class="gpis-project-item__link">Conheça o projeto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-                    </a>
-                    <a class="gpis-project-item" data-reveal data-tone="profundo" href="projetos/linkage-dados-populacionais/" aria-labelledby="project-linkage-title">
-                        <span class="gpis-project-item__tag">Dados populacionais</span>
-                        <h3 id="project-linkage-title" class="gpis-project-item__title">Linkage e dados populacionais</h3>
-                        <p class="gpis-project-item__desc">Registros administrativos ligados a dados longitudinais, com governança.</p>
-                        <span class="gpis-project-item__link">Conheça o projeto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-                    </a>
+                    </div>
+                    <div class="gpis-projects__body">
+                        <!-- Projeto destaque: Coorte -->
+                        <a class="gpis-projects__featured" data-reveal href="projetos/coorte-rio-grande-2019/" aria-labelledby="featured-coorte-title">
+                            <div>
+                                <span class="gpis-projects__featured-tag">Plataforma principal · desde 2019</span>
+                                <h3 id="featured-coorte-title" class="gpis-projects__featured-title">Coorte de Nascimentos Rio Grande 2019</h3>
+                                <p class="gpis-projects__featured-desc">
+                                    Acompanhamos mães, crianças e famílias desde o nascimento.
+                                </p>
+                                <span class="gpis-projects__featured-link">Conheça a Coorte <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+                            </div>
+                            <dl class="gpis-projects__stats">
+                                <div class="gpis-projects__stat">
+                                    <dt class="gpis-projects__stat-label">entrevistas perinatais em 2019</dt>
+                                    <dd class="gpis-projects__stat-value">2.313</dd>
+                                </div>
+                                <div class="gpis-projects__stat">
+                                    <dt class="gpis-projects__stat-label">no acompanhamento atual</dt>
+                                    <dd class="gpis-projects__stat-value">6 anos</dd>
+                                </div>
+                            </dl>
+                        </a>
+                        <ul class="gpis-rows">
+                            <li data-reveal><a class="gpis-row" href="projetos/visoes-do-cuidado/" aria-labelledby="project-visoes-title"><h3 class="gpis-row__title" id="project-visoes-title">Visões do Cuidado</h3><span class="gpis-row__desc">Epidemiologia e IA para estudar saúde mental entre gerações.<span class="gpis-row__meta">Rede internacional · Brasil · Chile · Peru · Reino Unido</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                            <li data-reveal><a class="gpis-row" href="projetos/enchentes-saude-mental/" aria-labelledby="project-enchentes-title"><h3 class="gpis-row__title" id="project-enchentes-title">Enchentes e saúde mental</h3><span class="gpis-row__desc">Como as enchentes de 2024 se relacionaram com a saúde mental de famílias que já acompanhávamos.<span class="gpis-row__meta">Epidemiologia de desastres</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                            <li data-reveal><a class="gpis-row" href="projetos/visao-primeira-pessoa-ia/" aria-labelledby="project-visao-title"><h3 class="gpis-row__title" id="project-visao-title">Visão em primeira pessoa &amp; IA</h3><span class="gpis-row__desc">Câmeras vestíveis para observar interações familiares no cotidiano.<span class="gpis-row__meta">Tecnologia &amp; comportamento</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                            <li data-reveal><a class="gpis-row" href="projetos/linkage-dados-populacionais/" aria-labelledby="project-linkage-title"><h3 class="gpis-row__title" id="project-linkage-title">Linkage e dados populacionais</h3><span class="gpis-row__desc">Registros administrativos ligados a dados longitudinais, com governança.<span class="gpis-row__meta">Dados populacionais</span></span><svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -249,39 +206,24 @@
             </div>
         </section>
 
-        <!-- NOSSO IMPACTO — TEASER -->
-        <section id="impacto" class="gpis-impact-teaser" aria-labelledby="impact-title">
-            <div class="container">
-                <div class="gpis-impact-teaser__layout">
-                    <div class="gpis-impact-teaser__left">
-                        <h2 id="impact-title" class="gpis-impact-teaser__title">Pesquisa que não termina na publicação.</h2>
-                        <p class="gpis-impact-teaser__text">
-                            Queremos que o conhecimento circule — e volte a quem torna a pesquisa possível.
-                        </p>
-                        <a href="impacto/" class="gpis-impact-teaser__link">Conheça nosso impacto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
-                    </div>
-                    <figure class="gpis-impact-teaser__quote">
-                        <svg class="gpis-impact-teaser__mark" viewBox="0 0 48 36" aria-hidden="true" focusable="false"><path d="M0 36V21C0 9 6 2 18 0l2 5c-7 2-10 6-10 12h9v19H0Zm28 0V21C28 9 34 2 46 0l2 5c-7 2-10 6-10 12h9v19H28Z"/></svg>
-                        <blockquote class="gpis-impact-teaser__quote-text">
-                            Queremos fazer cada vez mais pesquisa com as pessoas,
-                            e não apenas sobre elas.
-                        </blockquote>
-                    </figure>
-                </div>
-                <ul class="gpis-impact-teaser__dimensions">
-                    <li class="gpis-impact-teaser__dimension">
-                        <h3 class="gpis-impact-teaser__dimension-label">Formação</h3>
-                        <p class="gpis-impact-teaser__dimension-text">Formação de estudantes dentro de projetos reais.</p>
-                    </li>
-                    <li class="gpis-impact-teaser__dimension">
-                        <h3 class="gpis-impact-teaser__dimension-label">Pesquisa em rede</h3>
-                        <p class="gpis-impact-teaser__dimension-text">Perguntas e métodos construídos com parceiros de quatro países.</p>
-                    </li>
-                    <li class="gpis-impact-teaser__dimension">
-                        <h3 class="gpis-impact-teaser__dimension-label">Retorno à sociedade</h3>
-                        <p class="gpis-impact-teaser__dimension-text">Compromisso com resultados que circulem além da publicação científica.</p>
-                    </li>
+        <!-- NOSSO IMPACTO -->
+        <section id="impacto" class="gpis-impact-split" aria-labelledby="impact-title">
+            <div class="gpis-impact-split__photo">
+                <img src="assets/images/impacto/impacto-pesquisa-com-pessoas.jpg" alt="Participantes e equipe do GPIS em atividade coletiva em torno de uma mesa." width="1573" height="1800" loading="lazy" decoding="async">
+            </div>
+            <div class="gpis-impact-split__body">
+                <figure class="gpis-impact-split__quote" data-reveal>
+                    <svg class="gpis-impact-split__mark" viewBox="0 0 48 36" aria-hidden="true" focusable="false"><path d="M0 36V21C0 9 6 2 18 0l2 5c-7 2-10 6-10 12h9v19H0Zm28 0V21C28 9 34 2 46 0l2 5c-7 2-10 6-10 12h9v19H28Z"/></svg>
+                    <blockquote>Queremos fazer cada vez mais pesquisa com as pessoas, e não apenas sobre elas.</blockquote>
+                </figure>
+                <h2 id="impact-title" class="gpis-impact-split__title">Pesquisa que não termina na publicação.</h2>
+                <p class="gpis-impact-split__text">Queremos que o conhecimento circule — e volte a quem torna a pesquisa possível.</p>
+                <ul class="gpis-impact-split__dims">
+                    <li data-reveal><h3>Formação</h3><p>Formação de estudantes dentro de projetos reais.</p></li>
+                    <li data-reveal><h3>Pesquisa em rede</h3><p>Perguntas e métodos construídos com parceiros de quatro países.</p></li>
+                    <li data-reveal><h3>Retorno à sociedade</h3><p>Compromisso com resultados que circulem além da publicação científica.</p></li>
                 </ul>
+                <a href="impacto/" class="gpis-btn gpis-btn--white gpis-impact-split__cta">Conheça nosso impacto <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
             </div>
         </section>
 
@@ -390,6 +332,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous" defer></script>
-    <script src="assets/js/main.js?v=8" defer></script>
+    <script src="assets/js/main.js?v=10" defer></script>
 </body>
 </html>

@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=9">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=11">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
@@ -82,234 +82,154 @@
         </section>
 
         <!-- CICLO DE VIDA -->
-        <section class="gpis-lifecycle" aria-labelledby="lifecycle-title">
-            <div class="container">
-                <h2 id="lifecycle-title" class="gpis-section-title">Pesquisa encadeada pelo ciclo de vida</h2>
-                <p style="max-width:60ch; color:var(--gpis-cinza-200); font-size:1.0625rem; line-height:1.65; margin-bottom:2.5rem;">
-                    Três fases da vida, três estudos conectados pela mesma rede e pelos mesmos métodos de observação e análise.
-                </p>
-
-                <div class="gpis-lifecycle__track" role="list">
-                    <!-- 1 · Infância -->
-                    <div class="gpis-lifecycle__phase" role="listitem">
-                        <div class="gpis-lifecycle__dot" aria-hidden="true">1</div>
-                        <div class="gpis-lifecycle__phase-body">
-                            <span class="gpis-lifecycle__label">Infância</span>
-                            <span class="gpis-lifecycle__study">Coorte Rio Grande 2019</span>
-                            <span class="gpis-status gpis-status--andamento">Em andamento</span>
-                            <p class="gpis-lifecycle__desc">
-                                Piloto e coleta com câmeras vestíveis em díades mãe-criança,
-                                combinando epidemiologia longitudinal e observação em primeira pessoa.
-                            </p>
-                            <p class="gpis-lifecycle__leader">Lidera: Christian Loret de Mola · FURG/GPIS</p>
-                        </div>
-                    </div>
-
-                    <!-- 2 · Adolescência -->
-                    <div class="gpis-lifecycle__phase" role="listitem">
-                        <div class="gpis-lifecycle__dot" aria-hidden="true">2</div>
-                        <div class="gpis-lifecycle__phase-body">
-                            <span class="gpis-lifecycle__label">Adolescência</span>
-                            <span class="gpis-lifecycle__study">SMARTEENS</span>
-                            <span class="gpis-status gpis-status--proposta">Proposta</span>
-                            <p class="gpis-lifecycle__desc">
-                                Uso de smartphones, regulação emocional e interações familiares em adolescentes.
-                            </p>
-                            <p class="gpis-lifecycle__leader">Lidera: Michael Pereira da Silva · FURG</p>
-                        </div>
-                    </div>
-
-                    <!-- 3 · Envelhecimento -->
-                    <div class="gpis-lifecycle__phase" role="listitem">
-                        <div class="gpis-lifecycle__dot" aria-hidden="true">3</div>
-                        <div class="gpis-lifecycle__phase-body">
-                            <span class="gpis-lifecycle__label">Envelhecimento</span>
-                            <span class="gpis-lifecycle__study">Eco SARC</span>
-                            <span class="gpis-status gpis-status--proposta">Proposta</span>
-                            <p class="gpis-lifecycle__desc">
-                                Interações entre idosos e cuidadores, e entre avós e netos — tema
-                                inédito que espelha os métodos da infância no contexto geriátrico.
-                            </p>
-                            <p class="gpis-lifecycle__leader">Lidera no Peru: Fernando Runzer · UCSUR<br>Espelhamento no Brasil: Rodrigo Meucci · FURG</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gpis-rede-ref">
-                    <cite>Martins RC et al. The 2019 Rio Grande birth cohort profile. <em>Epidemiol Health</em> 2025;47:e2025039.</cite>
-                </div>
+        <section class="gpis-lifeband" aria-labelledby="lifecycle-title">
+            <div class="container gpis-lifeband__head">
+                <h2 id="lifecycle-title" class="gpis-lifeband__title">Pesquisa encadeada pelo ciclo de vida</h2>
+                <p class="gpis-lifeband__note">Três fases da vida, três estudos conectados pela mesma rede e pelos mesmos métodos de observação e análise.</p>
             </div>
+            <ol class="gpis-lifeband__track">
+                <li class="gpis-lifeband__phase">
+                    <span class="gpis-lifeband__n">01</span>
+                    <h3 class="gpis-lifeband__label">Infância</h3>
+                    <p class="gpis-lifeband__study">Coorte Rio Grande 2019 <span class="gpis-status gpis-status--andamento">Em andamento</span></p>
+                    <p class="gpis-lifeband__desc">Piloto e coleta com câmeras vestíveis em díades mãe-criança, combinando epidemiologia longitudinal e observação em primeira pessoa.</p>
+                    <p class="gpis-lifeband__leader">Lidera: Christian Loret de Mola · FURG/GPIS</p>
+                </li>
+                <li class="gpis-lifeband__phase">
+                    <span class="gpis-lifeband__n">02</span>
+                    <h3 class="gpis-lifeband__label">Adolescência</h3>
+                    <p class="gpis-lifeband__study">SMARTEENS <span class="gpis-status gpis-status--proposta">Proposta</span></p>
+                    <p class="gpis-lifeband__desc">Uso de smartphones, regulação emocional e interações familiares em adolescentes.</p>
+                    <p class="gpis-lifeband__leader">Lidera: Michael Pereira da Silva · FURG</p>
+                </li>
+                <li class="gpis-lifeband__phase">
+                    <span class="gpis-lifeband__n">03</span>
+                    <h3 class="gpis-lifeband__label">Envelhecimento</h3>
+                    <p class="gpis-lifeband__study">Eco SARC <span class="gpis-status gpis-status--proposta">Proposta</span></p>
+                    <p class="gpis-lifeband__desc">Interações entre idosos e cuidadores, e entre avós e netos: um tema inédito, que leva os métodos da infância ao contexto geriátrico.</p>
+                    <p class="gpis-lifeband__leader">Lidera no Peru: Fernando Runzer · UCSUR. Espelhamento no Brasil: Rodrigo Meucci · FURG</p>
+                </li>
+            </ol>
+            <p class="container gpis-lifeband__ref"><cite>Martins RC et al. The 2019 Rio Grande birth cohort profile. <em>Epidemiol Health</em> 2025;47:e2025039.</cite></p>
         </section>
 
         <!-- COMO COLABORAMOS -->
-        <section class="gpis-collab gpis-proj-section--soft" aria-labelledby="collab-title">
+        <section class="gpis-proj-section" aria-labelledby="collab-title">
             <div class="container">
-                <h2 id="collab-title" class="gpis-section-title">Como colaboramos</h2>
-                <p style="max-width:60ch; color:var(--gpis-cinza-200); font-size:1.0625rem; line-height:1.65;">
-                    A rede se sustenta em quatro mecanismos concretos de trabalho conjunto.
-                </p>
-
-                <div class="gpis-collab__grid">
-                    <div class="gpis-collab__item" data-reveal>
-                        <span class="gpis-collab__num" aria-hidden="true">1</span>
-                        <div>
-                            <h3 class="gpis-collab__title">Treinamento e transferência de tecnologia</h3>
-                            <p class="gpis-collab__text">Métodos de microcodificação, câmeras vestíveis e análise por IA transferidos entre Norte e Sul e entre países do Sul.</p>
-                        </div>
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
+                        <h2 id="collab-title" class="gpis-section-title">Como colaboramos</h2>
+                        <p class="gpis-split__note">A rede se sustenta em quatro mecanismos concretos de trabalho conjunto.</p>
                     </div>
-                    <div class="gpis-collab__item" data-reveal>
-                        <span class="gpis-collab__num" aria-hidden="true">2</span>
-                        <div>
-                            <h3 class="gpis-collab__title">Adaptação cultural dos instrumentos</h3>
-                            <p class="gpis-collab__text">Protocolos de filmagem, tarefas de interação e escalas adaptadas à realidade de cada país latino-americano.</p>
-                        </div>
-                    </div>
-                    <div class="gpis-collab__item" data-reveal>
-                        <span class="gpis-collab__num" aria-hidden="true">3</span>
-                        <div>
-                            <h3 class="gpis-collab__title">Harmonização e análise de dados entre coortes</h3>
-                            <p class="gpis-collab__text">Dados longitudinais de diferentes coortes analisados com métodos comparáveis para responder perguntas que um único estudo não alcança.</p>
-                        </div>
-                    </div>
-                    <div class="gpis-collab__item" data-reveal>
-                        <span class="gpis-collab__num" aria-hidden="true">4</span>
-                        <div>
-                            <h3 class="gpis-collab__title">Formação de pesquisadores</h3>
-                            <p class="gpis-collab__text">A rede funciona como plataforma para teses e dissertações dos programas de pós-graduação envolvidos, com mobilidade de alunos e pesquisadores.</p>
-                        </div>
-                    </div>
+                    <ol class="gpis-numrows">
+                        <li data-reveal><span class="gpis-numrows__n">01</span><div><h3 class="gpis-numrows__t">Treinamento e transferência de tecnologia</h3><p class="gpis-numrows__d">Métodos de microcodificação, câmeras vestíveis e análise por IA transferidos entre Norte e Sul e entre países do Sul.</p></div></li>
+                        <li data-reveal><span class="gpis-numrows__n">02</span><div><h3 class="gpis-numrows__t">Adaptação cultural dos instrumentos</h3><p class="gpis-numrows__d">Protocolos de filmagem, tarefas de interação e escalas adaptadas à realidade de cada país latino-americano.</p></div></li>
+                        <li data-reveal><span class="gpis-numrows__n">03</span><div><h3 class="gpis-numrows__t">Harmonização e análise de dados entre coortes</h3><p class="gpis-numrows__d">Dados longitudinais de diferentes coortes analisados com métodos comparáveis, para responder perguntas que um único estudo não alcança.</p></div></li>
+                        <li data-reveal><span class="gpis-numrows__n">04</span><div><h3 class="gpis-numrows__t">Formação de pesquisadores</h3><p class="gpis-numrows__d">A rede funciona como plataforma para teses e dissertações dos programas de pós-graduação envolvidos, com mobilidade de alunos e pesquisadores.</p></div></li>
+                    </ol>
                 </div>
             </div>
         </section>
 
         <!-- PARCEIROS INTERNACIONAIS -->
-        <section class="gpis-proj-section" aria-labelledby="parceiros-title">
+        <section class="gpis-proj-section gpis-proj-section--soft" aria-labelledby="parceiros-title">
             <div class="container">
-                <div class="gpis-proj-section__inner">
-                    <h2 id="parceiros-title" class="gpis-section-title">Parceiros internacionais</h2>
-                    <p style="max-width:60ch; color:var(--gpis-cinza-200); font-size:1.0625rem; line-height:1.65; margin-bottom:0.5rem;">
-                        O que fazemos com cada instituição parceira.
-                    </p>
-
-                    <div class="gpis-rede-cards">
-
-                        <!-- MMU -->
-                        <article class="gpis-rede-card" id="rebecca-pearson">
-                            <div class="gpis-rede-card__header">
-                                <div class="gpis-rede-card__logo">
-                                    <!-- PENDENTE: substituir por logo oficial da MMU -->
-                                    <span class="gpis-rede-card__logo-text">MMU</span>
-                                </div>
-                                <div class="gpis-rede-card__header-text">
-                                    <p class="gpis-rede-card__inst">Manchester Metropolitan University</p>
-                                    <span class="gpis-rede-card__country">Reino Unido</span>
-                                </div>
-                            </div>
-                            <p class="gpis-rede-card__pi">Rebecca Pearson · Grupo MHINT</p>
-                            <span class="gpis-status gpis-status--andamento">Piloto em andamento</span>
-                            <p class="gpis-rede-card__collab-title">O que fazemos juntos</p>
-                            <ul class="gpis-rede-card__collab-list">
-                                <li>Transferência de tecnologia Norte→Sul: método de microcodificação do MHINT e treinamento das equipes do Brasil, Chile e Peru</li>
-                                <li>Co-desenho das câmeras vestíveis com oficinas com mães brasileiras</li>
-                                <li>Análise de vídeo por inteligência artificial</li>
-                                <li>Harmonização e análise de dados longitudinais com coortes do Reino Unido</li>
-                            </ul>
-                            <div class="gpis-rede-card__links">
-                                <a class="gpis-textlink" href="https://orcid.org/0000-0001-8527-3400" target="_blank" rel="noopener">ORCID ↗</a>
-                                <!-- PENDENTE: link do perfil institucional individual -->
-                                <a class="gpis-textlink" href="https://www.mmu.ac.uk/" target="_blank" rel="noopener">MMU ↗</a>
-                            </div>
-                        </article>
-
-                        <!-- UDD -->
-                        <article class="gpis-rede-card" id="miguel-cordero-vega">
-                            <div class="gpis-rede-card__header">
-                                <div class="gpis-rede-card__logo">
-                                    <!-- PENDENTE: substituir por logo oficial da UDD -->
-                                    <span class="gpis-rede-card__logo-text">UDD</span>
-                                </div>
-                                <div class="gpis-rede-card__header-text">
-                                    <p class="gpis-rede-card__inst">Universidad del Desarrollo</p>
-                                    <span class="gpis-rede-card__country">Chile</span>
-                                </div>
-                            </div>
-                            <p class="gpis-rede-card__pi">Miguel Cordero Vega</p>
-                            <span class="gpis-status gpis-status--andamento">Colaboração ativa</span>
-                            <p class="gpis-rede-card__collab-title">O que fazemos juntos</p>
-                            <ul class="gpis-rede-card__collab-list">
-                                <li>Adaptação cultural e clínica dos protocolos de filmagem e tarefas de interação</li>
-                                <li>Apoio clínico e antropológico nos pilotos</li>
-                                <li>Tradução de resultados em recomendações para políticas públicas</li>
-                                <li>Comparação com coorte chilena (harmonização de dados)</li>
-                            </ul>
-                            <div class="gpis-rede-card__links">
-                                <a class="gpis-textlink" href="https://orcid.org/0000-0003-4414-4447" target="_blank" rel="noopener">ORCID ↗</a>
-                                <!-- PENDENTE: link do perfil institucional individual -->
-                                <a class="gpis-textlink" href="https://www.udd.cl/" target="_blank" rel="noopener">UDD ↗</a>
-                            </div>
-                        </article>
-
-                        <!-- UCSUR -->
-                        <article class="gpis-rede-card" id="fernando-runzer-colmenares">
-                            <div class="gpis-rede-card__header">
-                                <div class="gpis-rede-card__logo">
-                                    <!-- PENDENTE: substituir por logo oficial da UCSUR -->
-                                    <span class="gpis-rede-card__logo-text">UCSUR</span>
-                                </div>
-                                <div class="gpis-rede-card__header-text">
-                                    <p class="gpis-rede-card__inst">Universidad Científica del Sur</p>
-                                    <span class="gpis-rede-card__country">Peru</span>
-                                </div>
-                            </div>
-                            <p class="gpis-rede-card__pi">Fernando Runzer Colmenares · CHANGE Research Working Group</p>
-                            <span class="gpis-status gpis-status--confirmado">Convênio confirmado</span>
-                            <p class="gpis-rede-card__collab-title">O que fazemos juntos</p>
-                            <ul class="gpis-rede-card__collab-list">
-                                <li>Receber e adaptar a tecnologia de observação (câmeras + IA) para o contexto geriátrico (estudo Eco SARC)</li>
-                                <li>Treinamento Sul-Sul (Brasil/Chile → Peru) e mobilidade de pesquisadores e alunos</li>
-                                <li>Convênio institucional FURG–UCSUR<!-- PENDENTE: ano/número do convênio --></li>
-                            </ul>
-                            <div class="gpis-rede-card__links">
-                                <a class="gpis-textlink" href="https://orcid.org/0000-0003-4045-0260" target="_blank" rel="noopener">ORCID ↗</a>
-                                <!-- PENDENTE: link do perfil institucional individual -->
-                                <a class="gpis-textlink" href="https://www.cientifica.edu.pe/" target="_blank" rel="noopener">UCSUR ↗</a>
-                            </div>
-                        </article>
-
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
+                        <h2 id="parceiros-title" class="gpis-section-title">Parceiros internacionais</h2>
+                        <p class="gpis-split__note">O que fazemos com cada instituição parceira.</p>
                     </div>
+                    <div class="gpis-partners">
+                        <article class="gpis-partner" id="rebecca-pearson" data-reveal>
+                            <div class="gpis-partner__id">
+                                <img class="gpis-partner__logo" src="../assets/logos/mmu.svg" alt="Manchester Metropolitan University" width="424" height="151">
+                                <p class="gpis-partner__country">Reino Unido</p>
+                            </div>
+                            <div class="gpis-partner__body">
+                                <h3 class="gpis-partner__pi">Rebecca Pearson <span>· Grupo MHINT</span></h3>
+                                <p class="gpis-partner__status"><span class="gpis-status gpis-status--andamento">Piloto em andamento</span></p>
+                                <ul class="gpis-partner__list">
+                                    <li>Transferência de tecnologia Norte→Sul: método de microcodificação do MHINT e treinamento das equipes do Brasil, Chile e Peru.</li>
+                                    <li>Co-desenho das câmeras vestíveis, com oficinas com mães brasileiras.</li>
+                                    <li>Análise de vídeo por inteligência artificial.</li>
+                                    <li>Harmonização e análise de dados longitudinais com coortes do Reino Unido.</li>
+                                </ul>
+                                <p class="gpis-partner__links">
+                                    <a class="gpis-textlink" href="https://orcid.org/0000-0001-8527-3400" target="_blank" rel="noopener">ORCID ↗</a>
+                                    <!-- PENDENTE: link do perfil institucional individual -->
+                                    <a class="gpis-textlink" href="https://www.mmu.ac.uk/" target="_blank" rel="noopener">MMU ↗</a>
+                                </p>
+                            </div>
+                        </article>
+                        <article class="gpis-partner" id="miguel-cordero-vega" data-reveal>
+                            <div class="gpis-partner__id">
+                                <!-- PENDENTE: logo oficial da UDD (recebido só como imagem na conversa; falta o arquivo) -->
+                                <span class="gpis-partner__logo-text">Universidad del Desarrollo</span>
+                                <p class="gpis-partner__country">Chile</p>
+                            </div>
+                            <div class="gpis-partner__body">
+                                <h3 class="gpis-partner__pi">Miguel Cordero Vega</h3>
+                                <p class="gpis-partner__status"><span class="gpis-status gpis-status--andamento">Colaboração ativa</span></p>
+                                <ul class="gpis-partner__list">
+                                    <li>Adaptação cultural e clínica dos protocolos de filmagem e das tarefas de interação.</li>
+                                    <li>Apoio clínico e antropológico nos pilotos.</li>
+                                    <li>Tradução de resultados em recomendações para políticas públicas.</li>
+                                    <li>Comparação com a coorte chilena (harmonização de dados).</li>
+                                </ul>
+                                <p class="gpis-partner__links">
+                                    <a class="gpis-textlink" href="https://orcid.org/0000-0003-4414-4447" target="_blank" rel="noopener">ORCID ↗</a>
+                                    <!-- PENDENTE: link do perfil institucional individual -->
+                                    <a class="gpis-textlink" href="https://www.udd.cl/" target="_blank" rel="noopener">UDD ↗</a>
+                                </p>
+                            </div>
+                        </article>
+                        <article class="gpis-partner" id="fernando-runzer-colmenares" data-reveal>
+                            <div class="gpis-partner__id">
+                                <img class="gpis-partner__logo" src="../assets/logos/ucsur-positivo.svg" alt="Universidad Científica del Sur" width="350" height="98">
+                                <p class="gpis-partner__country">Peru</p>
+                            </div>
+                            <div class="gpis-partner__body">
+                                <h3 class="gpis-partner__pi">Fernando Runzer Colmenares <span>· CHANGE Research Working Group</span></h3>
+                                <p class="gpis-partner__status"><span class="gpis-status gpis-status--confirmado">Convênio confirmado</span></p>
+                                <ul class="gpis-partner__list">
+                                    <li>Receber e adaptar a tecnologia de observação (câmeras e IA) para o contexto geriátrico, no estudo Eco SARC.</li>
+                                    <li>Treinamento Sul-Sul (Brasil e Chile → Peru) e mobilidade de pesquisadores e alunos.</li>
+                                    <li>Convênio institucional FURG–UCSUR.<!-- PENDENTE: ano/número do convênio --></li>
+                                </ul>
+                                <p class="gpis-partner__links">
+                                    <a class="gpis-textlink" href="https://orcid.org/0000-0003-4045-0260" target="_blank" rel="noopener">ORCID ↗</a>
+                                    <!-- PENDENTE: link do perfil institucional individual -->
+                                    <a class="gpis-textlink" href="https://www.cientifica.edu.pe/" target="_blank" rel="noopener">UCSUR ↗</a>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- CHAMPS -->
-                    <div class="gpis-rede-group" style="margin-top:2.5rem;">
-                        <h3 class="gpis-rede-group__title">CHAMPS</h3>
-                        <div>
+        <!-- TAMBÉM NA REDE -->
+        <section class="gpis-proj-section" aria-labelledby="grupos-title">
+            <div class="container">
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
+                        <h2 id="grupos-title" class="gpis-section-title">Grupos e projetos da rede</h2>
+                    </div>
+                    <dl class="gpis-defrows">
+                        <div data-reveal>
+                            <dt>Visões do Cuidado</dt>
+                            <dd>Projeto multilateral que articula a rede em torno das câmeras vestíveis e da análise por IA, conectando Brasil, Chile, Peru e Reino Unido. <span class="gpis-status gpis-status--proposta">Proposta submetida</span></dd>
+                        </div>
+                        <div data-reveal>
+                            <dt>CHANGE Research Working Group</dt>
+                            <dd>Grupo de pesquisa sediado na Universidad Científica del Sur, Peru. Christian Loret de Mola também é afiliado ao CHANGE.<!-- PENDENTE: link e descrição mais completa do CHANGE --></dd>
+                        </div>
+                        <div data-reveal>
+                            <dt>CHAMPS</dt>
                             <!-- PENDENTE: Christian precisa definir o que é CHAMPS e o que fazemos. Não escrever nada. -->
-                            <p class="gpis-rede-pending">Informação pendente.</p>
+                            <dd class="gpis-rede-pending">Informação pendente.</dd>
                         </div>
-                    </div>
-
-                    <!-- CHANGE -->
-                    <div class="gpis-rede-group">
-                        <h3 class="gpis-rede-group__title">CHANGE Research Working Group</h3>
-                        <div>
-                            <p class="gpis-rede-group__text">
-                                Grupo de pesquisa sediado na Universidad Científica del Sur, Peru.
-                                Christian Loret de Mola também é afiliado ao CHANGE.
-                            </p>
-                            <!-- PENDENTE: link e descrição mais completa do CHANGE -->
-                        </div>
-                    </div>
-
-                    <!-- Visões do Cuidado (PROSUL) -->
-                    <div class="gpis-rede-group">
-                        <h3 class="gpis-rede-group__title">Visões do Cuidado</h3>
-                        <div>
-                            <p class="gpis-rede-group__text">
-                                Projeto multilateral que articula a rede em torno das câmeras vestíveis e da
-                                análise por IA, conectando Brasil, Chile, Peru e Reino Unido.
-                            </p>
-                            <span class="gpis-status gpis-status--proposta">Proposta submetida</span>
-                        </div>
-                    </div>
+                    </dl>
                 </div>
             </div>
         </section>
@@ -317,65 +237,33 @@
         <!-- REDE NACIONAL -->
         <section class="gpis-proj-section gpis-proj-section--soft" aria-labelledby="nac-title">
             <div class="container">
-                <div class="gpis-proj-section__inner">
-                    <h2 id="nac-title" class="gpis-section-title">Rede nacional</h2>
-
-                    <div class="gpis-rede-group" style="border-top:none; padding-top:0; margin-top:1rem;">
-                        <h3 class="gpis-rede-group__title">DEBH-CPEDCS</h3>
-                        <div>
-                            <p class="gpis-rede-group__text">
-                                <!-- PENDENTE: confirmar nome completo, descrição e se o site está ativo -->
-                                <a href="https://debh-cpedcs.net.br" target="_blank" rel="noopener" class="gpis-textlink">debh-cpedcs.net.br ↗</a>
-                            </p>
-                        </div>
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
+                        <h2 id="nac-title" class="gpis-section-title">Rede nacional</h2>
                     </div>
-
+                    <dl class="gpis-defrows">
+                        <div>
+                            <dt>DEBH-CPEDCS</dt>
+                            <!-- PENDENTE: confirmar nome completo, descrição e se o site está ativo -->
+                            <dd><a href="https://debh-cpedcs.net.br" target="_blank" rel="noopener" class="gpis-textlink">debh-cpedcs.net.br ↗</a></dd>
+                        </div>
+                    </dl>
                     <!-- PENDENTE: Christian define a lista completa da rede nacional. -->
-                    <p class="gpis-rede-pending" style="margin-top:1.5rem;">Lista em preparação. Outros parceiros nacionais serão adicionados.</p>
                 </div>
             </div>
         </section>
 
-        <!-- BARRA DE LOGOS -->
-        <section class="gpis-proj-section" aria-label="Instituições parceiras">
+        <!-- INSTITUIÇÕES -->
+        <section class="gpis-logos" aria-label="Instituições da rede">
             <div class="container">
-                <div class="gpis-rede-logos">
-                    <a href="https://www.furg.br/" target="_blank" rel="noopener" class="gpis-rede-logos__item" title="Universidade Federal do Rio Grande">
-                        <span class="gpis-rede-logos__icon">
-                            <!-- PENDENTE: substituir por logo oficial da FURG -->
-                            <span class="gpis-rede-logos__icon-text">FURG</span>
-                        </span>
-                        <span class="gpis-rede-logos__name">FURG</span>
-                    </a>
-                    <a href="https://www.mmu.ac.uk/" target="_blank" rel="noopener" class="gpis-rede-logos__item" title="Manchester Metropolitan University">
-                        <span class="gpis-rede-logos__icon">
-                            <!-- PENDENTE: substituir por logo oficial da MMU -->
-                            <span class="gpis-rede-logos__icon-text">MMU</span>
-                        </span>
-                        <span class="gpis-rede-logos__name">MMU</span>
-                    </a>
-                    <a href="https://www.udd.cl/" target="_blank" rel="noopener" class="gpis-rede-logos__item" title="Universidad del Desarrollo">
-                        <span class="gpis-rede-logos__icon">
-                            <!-- PENDENTE: substituir por logo oficial da UDD -->
-                            <span class="gpis-rede-logos__icon-text">UDD</span>
-                        </span>
-                        <span class="gpis-rede-logos__name">UDD</span>
-                    </a>
-                    <a href="https://www.cientifica.edu.pe/" target="_blank" rel="noopener" class="gpis-rede-logos__item" title="Universidad Científica del Sur">
-                        <span class="gpis-rede-logos__icon">
-                            <!-- PENDENTE: substituir por logo oficial da UCSUR -->
-                            <span class="gpis-rede-logos__icon-text">UCSUR</span>
-                        </span>
-                        <span class="gpis-rede-logos__name">UCSUR</span>
-                    </a>
-                    <a href="https://debh-cpedcs.net.br" target="_blank" rel="noopener" class="gpis-rede-logos__item" title="DEBH-CPEDCS">
-                        <span class="gpis-rede-logos__icon">
-                            <!-- PENDENTE: substituir por logo oficial -->
-                            <span class="gpis-rede-logos__icon-text" style="font-size:0.625rem;">DEBH<br>CPEDCS</span>
-                        </span>
-                        <span class="gpis-rede-logos__name">DEBH-CPEDCS</span>
-                    </a>
-                </div>
+                <ul class="gpis-logos__row">
+                    <!-- PENDENTE: logo oficial da FURG (recebido só como imagem na conversa; falta o arquivo) -->
+                    <li><a href="https://www.furg.br/" target="_blank" rel="noopener" class="gpis-logos__text">FURG</a></li>
+                    <li><a href="https://www.mmu.ac.uk/" target="_blank" rel="noopener"><img src="../assets/logos/mmu.svg" alt="Manchester Metropolitan University" width="424" height="151"></a></li>
+                    <!-- PENDENTE: logo oficial da UDD -->
+                    <li><a href="https://www.udd.cl/" target="_blank" rel="noopener" class="gpis-logos__text">Universidad del Desarrollo</a></li>
+                    <li><a href="https://www.cientifica.edu.pe/" target="_blank" rel="noopener"><img src="../assets/logos/ucsur-positivo.svg" alt="Universidad Científica del Sur" width="350" height="98"></a></li>
+                </ul>
             </div>
         </section>
 
@@ -398,7 +286,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/main.js?v=8" defer></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
 
     <!--
     ========================================

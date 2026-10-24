@@ -29,6 +29,10 @@ sleep 2 && open "http://localhost:8000"
 - **Páginas internas:** cabecera clara (`#F0F4F7`) con trilha "← Voltar… / RÓTULO", marca del GPIS casi imperceptible. Cada línea de pesquisa conserva su color solo en el rótulo (`--tone`).
 - **Tipografía:** Schibsted Grotesk en títulos, Source Sans 3 en texto. Se probó una serif (Source Serif 4) y fue rechazada.
 - **Color:** una familia de azules; terracota como único acento cálido. Sin ámbar ni verde sueltos, sin degradados, sin halos, sin elevar tarjetas al pasar el ratón. Botones rectos (4px).
+- **Ancho:** contenedor ancho (hasta 1680px), poco blanco en los costados.
+- **Menú:** GPIS, Pesquisa, Projetos, Impacto, Equipe, Rede y Contato llevan a su sección en la home; desde cada sección se pasa a la página propia.
+- **Home (tomado de la referencia profesional, oct/2026):** franja de la Coorte 2019→2025 bajo el hero en azul claro `#3679B0` (crisis en `#2C5F8A`); frase central con las 4 líneas de pesquisa a la derecha (lista numerada 01–04) que entran con el scroll; Proyectos con título fijo a la izquierda y filas a la derecha; mapa con un azul por país, marcadores cuadrados y nombres con línea guía; Impacto con foto azulada a la izquierda y azul noche a la derecha.
+- **Patrón general:** título fijo a la izquierda y contenido que corre a la derecha (`.gpis-split`, y `.gpis-proj-section__inner` en páginas internas). Filas sin cajas en vez de tarjetas.
 - **Movimiento:** le gustan los movimientos leves (el mapa que se dibuja, el parallax suave en las cabeceras internas, las entradas al hacer scroll). Siempre respetar `prefers-reduced-motion`.
 
 ## Rechazado (no volver a proponer igual)
@@ -38,6 +42,8 @@ sleep 2 && open "http://localhost:8000"
 - Una página "Explorar" con buscador y filtros (se sintió como una lista más).
 
 ## Pendiente
+
+- Logos: MMU y UCSUR en `assets/logos/` (UCSUR en versión positiva para fondo claro). Faltan los archivos de FURG y UDD.
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
 

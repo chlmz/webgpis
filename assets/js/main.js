@@ -103,8 +103,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function initClaim(reduceMotion) {
     var section = document.querySelector('.gpis-home-page .gpis-claim');
     if (!section || reduceMotion) return;
+    // Em telas estreitas a frase e as linhas não cabem juntas na tela fixa.
+    if (window.matchMedia('(max-width: 991px)').matches) return;
     var text = section.querySelector('.gpis-claim__text');
     var facts = section.querySelector('.gpis-claim__facts');
+    var linesTitle = section.querySelector('.gpis-lines__title');
+    var lines = Array.prototype.slice.call(section.querySelectorAll('.gpis-lines__item'));
+    lines.forEach(function (li) { li.removeAttribute('data-reveal'); li.classList.remove('is-pending'); });
     var words = [];
 
     Array.prototype.slice.call(text.childNodes).forEach(function (node) {
@@ -139,6 +144,8 @@ function initClaim(reduceMotion) {
             w.classList.toggle('is-lit', o > 0.6);
         });
         facts.classList.toggle('is-on', p > 0.86);
+        if (linesTitle) linesTitle.classList.toggle('is-on', p > 0.06);
+        lines.forEach(function (li, i) { li.classList.toggle('is-on', p > 0.12 + i * 0.16); });
     }
 
     window.addEventListener('scroll', function () {

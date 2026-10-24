@@ -5,7 +5,7 @@ Sitio estático del GPIS (Grupo de Pesquisa e Inovação em Saúde, FURG), publi
 ## Cómo trabajar con el responsable del sitio
 
 - Responder en el idioma en que escribe (portugués, español o inglés; sigue al dominante).
-- Cada vez que haya que ejecutar algo, dar el bloque **completo** de PowerShell (Windows), listo para copiar y pegar, sin pasos sueltos. La copia local está en `C:\Users\clmz\webgpis-redesign`.
+- Cada vez que haya que ejecutar algo, dar el bloque **completo** de terminal (macOS/zsh), listo para copiar y pegar, sin pasos sueltos. La copia local está en `~/webgpis-redesign`.
 - Hacer una sola pregunta por vez.
 - Antes de un cambio visual grande, mostrar primero una prueba pequeña o una comparación de 2–3 opciones (un artifact recorrible funciona bien) y esperar su elección. No construir por adelantado.
 - No ampliar el alcance por cuenta propia: hacer lo pedido y proponer el resto. Lo que no pidió y no le gusta se revierte con `git revert`, nunca reescribiendo el historial.
@@ -14,12 +14,12 @@ Sitio estático del GPIS (Grupo de Pesquisa e Inovação em Saúde, FURG), publi
 
 Para ver el sitio localmente:
 
-```powershell
-cd C:\Users\clmz\webgpis-redesign
+```bash
+cd ~/webgpis-redesign
 git pull origin redesign-moderno
-Start-Process powershell -ArgumentList '-NoExit', '-Command', 'python -m http.server 8000'
-Start-Sleep -Seconds 2
-Start-Process "http://localhost:8000"
+python3 -m http.server 8000 &
+sleep 2 && open "http://localhost:8000"
+# Para parar el servidor: kill %1
 ```
 
 ## Dirección visual aprobada

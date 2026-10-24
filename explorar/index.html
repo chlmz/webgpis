@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busque e filtre projetos, publicações, pessoas e linhas de pesquisa do GPIS por palavra ou por tema.">
+    <meta property="og:title" content="Explorar | GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:description" content="Busque e filtre projetos, publicações, pessoas e linhas de pesquisa do GPIS por palavra ou por tema.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chlmz.github.io/webgpis/explorar/">
+    <meta property="og:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta property="og:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="GPIS">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explorar | GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <meta name="twitter:description" content="Busque e filtre projetos, publicações, pessoas e linhas de pesquisa do GPIS por palavra ou por tema.">
+    <meta name="twitter:image" content="https://chlmz.github.io/webgpis/assets/gpis-social.png">
+    <meta name="twitter:image:alt" content="GPIS — Grupo de Pesquisa e Inovação em Saúde">
+    <title>Explorar | GPIS — Grupo de Pesquisa e Inovação em Saúde</title>
+    <link rel="canonical" href="https://chlmz.github.io/webgpis/explorar/">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=5">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+
+    <!-- NAVBAR -->
+    <header class="gpis-site-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light gpis-navbar" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/logo.png" alt="GPIS" class="gpis-brand-logo">
+                    <small>Grupo de Pesquisa e Inovação em Saúde</small>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-links">
+                        <li class="nav-item"><a class="nav-link" href="../index.html#home">GPIS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#o-que-investigamos">Pesquisa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../impacto/">Impacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pessoas/">Equipe</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../explorar/">Explorar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#network">Rede</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section aria-label="Apresentação" class="gpis-proj-hero">
+            <div class="container">
+                <div class="gpis-proj-hero__inner">
+                    <a href="../index.html" class="gpis-proj-hero__back">← Voltar para o GPIS</a>
+                    <h1 class="gpis-proj-hero__title">Explorar o GPIS</h1>
+                    <p class="gpis-proj-hero__lead">
+                        Projetos, publicações, pessoas e linhas de pesquisa em um só lugar.
+                        Busque por uma palavra ou filtre por tema.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gpis-explore" class="gpis-explore" aria-label="Explorar">
+            <div class="container">
+                <div class="gpis-explore__tools">
+                    <label class="gpis-explore__search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+                        <span class="visually-hidden">Buscar</span>
+                        <input id="explore-q" type="search" placeholder="Ex.: enchentes, coorte, Chile…" autocomplete="off">
+                    </label>
+                    <div>
+                        <h2 class="gpis-explore__label">Tipo</h2>
+                        <div id="explore-types" class="gpis-chips" role="group" aria-label="Filtrar por tipo"></div>
+                    </div>
+                    <div>
+                        <h2 class="gpis-explore__label">Tema</h2>
+                        <div id="explore-topics" class="gpis-chips" role="group" aria-label="Filtrar por tema"></div>
+                    </div>
+                    <div class="gpis-explore__status">
+                        <p id="explore-count" aria-live="polite">Carregando…</p>
+                        <button id="explore-clear" class="gpis-textlink" type="button" hidden>Limpar filtros</button>
+                    </div>
+                </div>
+                <ul id="explore-results" class="gpis-explore__grid"></ul>
+                <noscript><p>A busca precisa de JavaScript. Use o menu para navegar pelas páginas do site.</p></noscript>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="gpis-footer">
+        <div class="container">
+            <div class="gpis-footer__inner">
+                <div class="gpis-footer__brand">
+                    <p class="gpis-footer__name">GPIS — Grupo de Pesquisa e Inovação em Saúde</p>
+                    <p class="gpis-footer__inst">FURG · Rio Grande, Brasil</p>
+                </div>
+                <div class="gpis-footer__right">
+                    <a href="mailto:chlmz@furg.br" class="gpis-footer__email">chlmz@furg.br</a>
+                    <p class="gpis-footer__copy">&copy; <span id="currentYear"></span> GPIS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=4" defer></script>
+    <script src="../assets/js/explore.js?v=3" defer></script>
+</body>
+</html>

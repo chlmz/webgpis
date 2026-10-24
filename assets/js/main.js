@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initNetworkMap(reduceMotion);
+    initBand(reduceMotion);
     initClaim(reduceMotion);
 });
 
@@ -147,68 +148,96 @@ function initClaim(reduceMotion) {
     update();
 }
 
+function initBand(reduceMotion) {
+    var band = document.querySelector('.gpis-band');
+    if (!band) return;
+    var track = band.querySelector('.gpis-band__track');
+    var year = band.querySelector('.gpis-band__y');
+    var place = function () { track.style.setProperty('--band-line-top', year.offsetHeight + 'px'); };
+    place();
+    window.addEventListener('resize', place);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    if (reduceMotion) { track.style.setProperty('--p', 1); return; }
+    // A linha avança de 2019 a 2025 enquanto a faixa sobe até o topo da tela.
+    var ticking = false;
+    var update = function () {
+        ticking = false;
+        var r = band.getBoundingClientRect();
+        var p = (window.innerHeight - r.bottom) / Math.max(1, window.innerHeight * 0.75 - r.height);
+        track.style.setProperty('--p', Math.max(0, Math.min(1, p)).toFixed(3));
+    };
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+}
+
 function initNetworkMap(reduceMotion) {
     var el = document.getElementById('gpis-map');
     if (!el || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
 
     var draw = function () {
-        var HIGHLIGHT = { 'Brazil': '#1E456A', 'Chile': '#5A8BB5', 'Peru': '#5A8BB5', 'United Kingdom': '#5A8BB5' };
+        var COLOR = { 'Brazil': '#1E456A', 'Peru': '#5A8BB5', 'United Kingdom': '#2C5F8A', 'Chile': '#9DBDD9' };
+        var INK = '#142C44';
         d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(function (topo) {
-            var countries = topojson.feature(topo, topo.objects.countries).features;
+            var countries = topojson.feature(topo, topo.objects.countries).features
+                .filter(function (d) { return d.properties.name !== 'Antarctica'; });
             var W = 760, H = 430;
             var svg = d3.select(el).append('svg')
                 .attr('viewBox', '0 0 ' + W + ' ' + H)
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr('aria-hidden', 'true')
-                .style('width', '100%').style('height', 'auto').style('display', 'block');
-            var projection = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: 'Sphere' });
+                .style('width', '100%').style('height', 'auto').style('display', 'block').style('overflow', 'visible');
+            var projection = d3.geoNaturalEarth1().fitExtent([[4, 4], [W - 4, H + 40]], { type: 'Sphere' });
             var path = d3.geoPath(projection);
-            svg.append('path').attr('d', path({ type: 'Sphere' })).attr('fill', '#FFFFFF');
             svg.append('g').selectAll('path').data(countries).join('path')
                 .attr('d', path)
-                .attr('fill', function (d) { return HIGHLIGHT[d.properties.name] || '#E4EAEF'; })
-                .attr('stroke', '#FFFFFF').attr('stroke-width', 0.6);
+                .attr('fill', function (d) { return COLOR[d.properties.name] || '#D6DFE7'; })
+                .attr('stroke', '#F0F4F7').attr('stroke-width', 0.6);
             var nodes = [
-                { country: 'Brazil', institution: 'FURG', coordinates: [-52.0986, -32.0350] },
-                { country: 'United Kingdom', institution: 'Manchester Metropolitan University', coordinates: [-2.2426, 53.4808] },
-                { country: 'Chile', institution: 'Universidad del Desarrollo', coordinates: [-70.6693, -33.4489] },
-                { country: 'Peru', institution: 'Universidad Científica del Sur', coordinates: [-77.0428, -12.0464] }
-            ];
-            var links = [
-                ['Brazil', 'United Kingdom'],
-                ['Brazil', 'Chile'],
-                ['Brazil', 'Peru']
+                { country: 'Brazil', name: 'FURG', sub: 'Rio Grande, Brasil', at: [-52.0986, -32.0350], dx: 54, dy: 34, anchor: 'start' },
+                { country: 'United Kingdom', name: 'Manchester Metropolitan University', sub: 'Reino Unido', at: [-2.2426, 53.4808], dx: 40, dy: -40, anchor: 'start' },
+                { country: 'Chile', name: 'Universidad del Desarrollo', sub: 'Chile', at: [-70.6693, -33.4489], dx: -34, dy: 26, anchor: 'end' },
+                { country: 'Peru', name: 'Universidad Científica del Sur', sub: 'Peru', at: [-77.0428, -12.0464], dx: -34, dy: -16, anchor: 'end' }
             ];
             var byName = {};
-            nodes.forEach(function (node) { byName[node.country] = node.coordinates; });
-            var arcs = svg.append('g').attr('fill', 'none').attr('stroke', '#2C5F8A')
-                .attr('stroke-width', 1.4).attr('opacity', 0.7)
-                .selectAll('path').data(links).join('path')
+            nodes.forEach(function (n) { byName[n.country] = n.at; });
+            var arcs = svg.append('g').attr('fill', 'none').attr('stroke', INK).attr('stroke-width', 1.5)
+                .selectAll('path').data([['Brazil', 'United Kingdom'], ['Brazil', 'Chile'], ['Brazil', 'Peru']]).join('path')
                 .attr('d', function (p) { return path({ type: 'LineString', coordinates: [byName[p[0]], byName[p[1]]] }); });
-            var dots = svg.append('g').selectAll('circle').data(nodes).join('circle')
-                .attr('cx', function (d) { return projection(d.coordinates)[0]; })
-                .attr('cy', function (d) { return projection(d.coordinates)[1]; })
-                .attr('r', 5).attr('fill', function (d) { return HIGHLIGHT[d.country]; })
-                .attr('stroke', '#FFFFFF').attr('stroke-width', 1.5);
+            var labels = svg.append('g').selectAll('g').data(nodes).join('g')
+                .attr('font-family', "'Source Sans 3', system-ui, sans-serif");
+            labels.each(function (n) {
+                var g = d3.select(this), pt = projection(n.at);
+                var lx = pt[0] + n.dx, ly = pt[1] + n.dy, dir = n.anchor === 'start' ? 1 : -1;
+                g.append('path').attr('d', 'M' + pt[0] + ',' + pt[1] + 'L' + lx + ',' + ly + 'h' + (8 * dir))
+                    .attr('stroke', INK).attr('stroke-width', 1).attr('fill', 'none');
+                var tx = lx + 12 * dir;
+                g.append('text').attr('x', tx).attr('y', ly - 2).attr('text-anchor', n.anchor)
+                    .attr('font-size', 13.5).attr('font-weight', 700).attr('fill', INK).text(n.name);
+                g.append('text').attr('x', tx).attr('y', ly + 14).attr('text-anchor', n.anchor)
+                    .attr('font-size', 12).attr('fill', '#5E6B74').text(n.sub);
+            });
+            var marks = svg.append('g').selectAll('rect').data(nodes).join('rect')
+                .attr('x', function (d) { return projection(d.at)[0] - 5; })
+                .attr('y', function (d) { return projection(d.at)[1] - 5; })
+                .attr('width', 10).attr('height', 10)
+                .attr('fill', '#FFFFFF').attr('stroke', INK).attr('stroke-width', 2);
 
-            if (reduceMotion) {
-                arcs.attr('stroke-dasharray', '4 4');
-                return;
-            }
-            // As conexões partem de Rio Grande e se desenham uma após a outra.
+            if (reduceMotion) return;
+            // As conexões partem de Rio Grande; cada nome aparece quando sua linha chega.
             arcs.each(function (_, i) {
                 var len = this.getTotalLength();
                 d3.select(this)
                     .attr('stroke-dasharray', len + ' ' + len)
                     .attr('stroke-dashoffset', len)
                     .transition().delay(250 + i * 220).duration(1100).ease(d3.easeCubicOut)
-                    .attr('stroke-dashoffset', 0)
-                    .on('end', function () { d3.select(this).attr('stroke-dasharray', '4 4'); });
+                    .attr('stroke-dashoffset', 0);
             });
-            dots.attr('r', 0)
-                .transition().delay(function (d, i) { return i === 0 ? 0 : 1250 + (i - 1) * 220; })
-                .duration(500).ease(d3.easeCubicOut)
-                .attr('r', 5);
+            var order = { 'Brazil': 0, 'United Kingdom': 1, 'Chile': 2, 'Peru': 3 };
+            var delay = function (d) { return order[d.country] === 0 ? 0 : 1100 + (order[d.country] - 1) * 220; };
+            labels.attr('opacity', 0).transition().delay(delay).duration(450).attr('opacity', 1);
+            marks.attr('opacity', 0).transition().delay(delay).duration(300).attr('opacity', 1);
         }).catch(function () { el.innerHTML = ''; });
     };
 

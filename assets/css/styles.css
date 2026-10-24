@@ -846,17 +846,14 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-network__dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    background: var(--gpis-azul-claro);
+    background: var(--gpis-azul-profundo);
     transform: translateY(-0.1rem);
 }
-.gpis-network__list li:first-child .gpis-network__dot { background: var(--gpis-azul-profundo); }
+.gpis-network__dot[data-country="Reino Unido"] { background: var(--gpis-azul-ciencia); }
+.gpis-network__dot[data-country="Chile"] { background: #9DBDD9; }
+.gpis-network__dot[data-country="Peru"] { background: #5A8BB5; }
 .gpis-network__map {
     margin: 0;
-    background: var(--gpis-papel);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-2);
-    padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.5vw, 1.75rem) 1rem;
 }
 /* Reserva a proporção do mapa (760×430) para evitar salto de layout. */
 .gpis-network__map #gpis-map { aspect-ratio: 760 / 430; }
@@ -2652,3 +2649,77 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     .gpis-linha-body { padding: 4rem 0; }
     .gpis-linha-projects { padding: 3.5rem 0; }
 }
+
+/* ============================================================
+   LARGURA ÚTIL — menos branco nas laterais (prova)
+============================================================ */
+@media (min-width: 1200px) {
+    .container { max-width: 1680px; padding-inline: clamp(24px, 3.4vw, 56px); }
+}
+
+/* ============================================================
+   HOME — FAIXA DA COORTE (linha do tempo a toda largura)
+============================================================ */
+.gpis-band { background: var(--gpis-azul-ciencia); color: #fff; }
+.gpis-band__scroll { overflow-x: auto; scrollbar-width: none; }
+.gpis-band__scroll::-webkit-scrollbar { display: none; }
+.gpis-band__track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    min-width: 720px;
+}
+.gpis-band__year {
+    display: grid;
+    grid-template-rows: auto 6px auto;
+    border-left: 1px solid rgba(255,255,255,0.18);
+}
+.gpis-band__year:first-of-type { border-left: 0; }
+.gpis-band__year.is-crisis { background: var(--gpis-azul-profundo); }
+.gpis-band__y {
+    padding: 0.85rem clamp(0.75rem, 1.2vw, 1.1rem) 0.55rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1rem + 1.6vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+}
+.gpis-band__e {
+    grid-row: 3;
+    padding: 0.7rem clamp(0.75rem, 1.2vw, 1.1rem) 0.85rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+.gpis-band__line, .gpis-band__fill {
+    position: absolute;
+    left: 0;
+    height: 6px;
+    top: var(--band-line-top, 4.1rem);
+    pointer-events: none;
+}
+.gpis-band__line { right: 0; background: rgba(255,255,255,0.22); }
+.gpis-band__fill { width: calc(100% / 14 + var(--p, 1) * (100% - 100% / 7)); background: #fff; }
+.gpis-band__fill::after {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: -4px;
+    width: 14px;
+    height: 14px;
+    background: var(--gpis-azul-noite);
+    border: 2px solid #fff;
+}
+.gpis-band__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 1.5rem;
+    padding-block: 1rem 1.15rem;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    font-weight: 600;
+}
+.gpis-band__legend a { color: #fff; text-underline-offset: 3px; }
+.gpis-band__legend a:hover { color: var(--on-dark-soft); }

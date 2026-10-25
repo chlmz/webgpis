@@ -3272,3 +3272,10 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-lang__a:is(:hover, :focus-visible) { color: var(--gpis-azul-ciencia); }
 .gpis-lang__a[aria-current="true"] { color: var(--gpis-azul-noite); text-decoration: underline; text-decoration-color: var(--gpis-terracota-sul); text-decoration-thickness: 2px; text-underline-offset: 0.35em; }
 @media (max-width: 991px) { .gpis-lang { margin: 0.5rem 0 0; padding: 0.5rem 0 0; border-left: 0; } }
+.gpis-fam__pair { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(0.75rem, 1.2vw, 1.25rem); align-items: stretch; }
+.gpis-fam__pair .gpis-fam__photo--wide { aspect-ratio: auto; height: 100%; }
+.gpis-fam__photo--tall { aspect-ratio: 3 / 4; max-width: 100%; }
+.gpis-fam__photo--tall img { object-position: 50% 40%; }
+@media (max-width: 575px) { .gpis-fam__pair { grid-template-columns: minmax(0, 1fr); } .gpis-fam__pair .gpis-fam__photo--wide { aspect-ratio: 4 / 3; height: auto; } }
+/* Os títulos já levam o traço terracota; a barra azul antiga ficaria duplicada. */
+:is(.gpis-proj-section__inner, .gpis-proj-pubs__inner, .gpis-proj-collab__inner, .gpis-impact-block__inner, .gpis-contact__inner)::before { content: none; }

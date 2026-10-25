@@ -53,8 +53,7 @@ sleep 2 && open "http://localhost:8000"
 - Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
 - DEBH-CPEDCS (Rede nacional): logo listo; falta nombre completo y descripción (el contenedor no resuelve dominios `.br`).
 - Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
-- Para as famílias: falta un teléfono o WhatsApp de la equipe, si existe.
-- Fotos con niños de frente (`impacto-atividade-familias.jpg`): confirmar permiso antes de usarla.
+- Fotos: hay permiso de uso para todas las fotos de `assets/images` (confirmado oct/2026).
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
 

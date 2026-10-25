@@ -1,0 +1,18 @@
+Variable / Field Name,Form Name,Section Header,Field Type,Field Label,"Choices, Calculations, OR Slider Labels",Field Note,Text Validation Type OR Show Slider Number,Text Validation Min,Text Validation Max,Identifier?,Branching Logic (Show field only if...),Required Field?,Custom Alignment,Question Number (surveys only),Matrix Group Name,Matrix Ranking?,Field Annotation
+record_id,atualizacao_cadastro,,text,ID do registro,,,,,,,,,,,,,
+intro,atualizacao_cadastro,,descriptive,<b>Atualização de cadastro — Coorte de Nascimentos de Rio Grande 2019</b><br>Este formulário é para mães e famílias que participam da Coorte atualizarem seus contatos. As informações são usadas apenas pela equipe da Coorte para manter contato com vocês.<br><br>[TEXTO SOBRE PRIVACIDADE E LGPD APROVADO PELO CEP],,,,,,,,,,,,,
+aceite_contato,atualizacao_cadastro,,yesno,Concordo que a equipe da Coorte use estas informações para entrar em contato comigo.,,,,,,,,y,,,,,
+nome_mae,atualizacao_cadastro,Quem está respondendo,text,Seu nome completo,,,,,,y,[aceite_contato] = '1',y,,,,,
+data_nasc_mae,atualizacao_cadastro,,text,Sua data de nascimento,,,date_dmy,,,y,[aceite_contato] = '1',,,,,,
+nome_crianca,atualizacao_cadastro,,text,Nome completo da criança que participa da Coorte,,,,,,y,[aceite_contato] = '1',y,,,,,
+data_nasc_crianca,atualizacao_cadastro,,text,Data de nascimento da criança,,A Coorte acompanha crianças nascidas em 2019.,date_dmy,01-01-2019,31-12-2019,y,[aceite_contato] = '1',y,,,,,
+telefone,atualizacao_cadastro,Seus contatos,text,Telefone com DDD,,Exemplo: (53) 99999-9999,,,,y,[aceite_contato] = '1',y,,,,,
+telefone_whats,atualizacao_cadastro,,yesno,Este número também é WhatsApp?,,,,,,,[aceite_contato] = '1',,,,,,
+telefone_2,atualizacao_cadastro,,text,Outro telefone para contato (opcional),,Pode ser de um familiar.,,,,y,[aceite_contato] = '1',,,,,,
+email,atualizacao_cadastro,,text,E-mail (opcional),,,email,,,y,[aceite_contato] = '1',,,,,,
+endereco,atualizacao_cadastro,Onde vocês moram,notes,Endereço completo,,"Rua, número e complemento",,,,y,[aceite_contato] = '1',,,,,,
+bairro,atualizacao_cadastro,,text,Bairro,,,,,,y,[aceite_contato] = '1',,,,,,
+cidade,atualizacao_cadastro,,text,Cidade,,,,,,y,[aceite_contato] = '1',,,,,,@DEFAULT='Rio Grande'
+mudou,atualizacao_cadastro,,checkbox,O que mudou desde o último contato?,"1, Telefone | 2, Endereço | 3, E-mail | 4, Nada mudou, só quero confirmar meus dados",,,,,,[aceite_contato] = '1',,,,,,
+melhor_horario,atualizacao_cadastro,,radio,Qual o melhor horário para falarmos com você?,"1, Manhã | 2, Tarde | 3, Noite | 4, Qualquer horário",,,,,,[aceite_contato] = '1',,,,,,
+recado,atualizacao_cadastro,,notes,Quer deixar algum recado para a equipe? (opcional),,,,,,,[aceite_contato] = '1',,,,,,

@@ -59,6 +59,13 @@ sleep 2 && open "http://localhost:8000"
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.
 
+## README e historia del proyecto
+
+- `README.md` (raíz) es el registro vivo del proyecto: qué es el sitio, cómo se trabaja y **cómo llegamos hasta aquí**. Leerlo al empezar una sesión nueva.
+- **Actualizarlo periódicamente**, como parte de cada entrega: al cerrar una sesión de trabajo o un hito, agregar una entrada en "Historia" (fecha, commits principales, qué cambió y por qué); registrar lo probado y rechazado; mover pendientes resueltos o nuevos; reflejar cambios de estructura, funciones de `main.js`, gestos o flujo de trabajo. Si este CLAUDE.md cambia en algo que afecte al README, actualizar ambos.
+- `.claude/base/` es la base de conocimiento (capturas por hito, demos, diccionario REDCap, scripts de QA); índice en `.claude/base/LEEME.md`. Guardar ahí capturas o demos nuevas que valga la pena conservar (JPEG reducido, sin bibliotecas de terceros) y registrarlas en el índice.
+- **El repositorio es público.** Ni el README ni nada dentro de `.claude/` puede contener las reglas confidenciales del contenido (personas excluidas, candidaturas en revisión, nombres internos de subproyectos, financiamientos). Esas reglas se piden al responsable del sitio y se aplican sin escribirlas en el repo.
+
 ## Recursos e ideas
 
 `.claude/recursos.md` es el catálogo vivo de skills, herramientas e ideas evaluadas: qué hay instalado, qué se descartó y por qué, y qué podría servir más adelante. Consultarlo antes de proponer herramientas nuevas, y agregar ahí todo lo que se evalúe.

@@ -1,0 +1,226 @@
+<title>Símbolo GPIS en movimiento</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: cuatro cabeceras de página interna apiladas, cada una con el símbolo redibujado en vectores y un comportamiento distinto. */
+:root {
+  --bg: #FFFFFF;
+  --band: #F0F4F7;
+  --ink: #142C44;
+  --muted: #5E6B74;
+  --line: #C8D2DA;
+  --mark: #1E456A;
+  --hole: #F0F4F7;
+  --light: #2C5F8A;
+  --accent: #C98B2E;
+  --o: 0.12;
+  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0E1E2E; --band: #142C44; --ink: #E8EEF3; --muted: #A9B8C4; --line: #2C4560; --mark: #9DBDD9; --hole: #142C44; --light: #5A8BB5; --accent: #E0B26A; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0E1E2E; --band: #142C44; --ink: #E8EEF3; --muted: #A9B8C4; --line: #2C4560; --mark: #9DBDD9; --hole: #142C44; --light: #5A8BB5; --accent: #E0B26A; color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+  padding-block: 2rem 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 1.5rem; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem); line-height: 1.08; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.lead { margin: 0.5rem 0 0; color: var(--muted); max-width: 62ch; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.seg button { font: 600 0.9375rem var(--font-body); padding: 0.55rem 1rem; background: transparent; color: var(--ink); border: 0; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.btn { font: 600 0.9375rem var(--font-body); padding: 0.55rem 1.1rem; border-radius: 4px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+.btn:hover, .seg button:hover { border-color: var(--ink); }
+button:focus-visible { outline: 2px solid var(--light); outline-offset: 2px; }
+.card { background: var(--band); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.head { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 340px); align-items: center; min-height: 260px; }
+.txt { padding: 2rem clamp(1rem, 3vw, 2.5rem); min-width: 0; }
+.crumb { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.75rem; }
+.crumb b { color: var(--accent); }
+.title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem); line-height: 1.06; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.sub { margin: 0.75rem 0 0; color: var(--muted); max-width: 46ch; }
+.art { height: 100%; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+svg.mark { width: min(100%, 260px); height: auto; overflow: visible; color: var(--mark); }
+.mark .grp { opacity: var(--o); transition: opacity 0.4s; }
+.mark .edge { stroke: var(--mark); stroke-width: 7; stroke-linecap: round; fill: none; }
+.mark .node { fill: var(--mark); transform-box: fill-box; transform-origin: center; }
+.mark .person { fill: var(--hole); }
+.mark .ring { fill: none; stroke: var(--light); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding: 0.75rem clamp(1rem, 3vw, 2.5rem); border-top: 1px solid var(--line); font-size: 0.9375rem; color: var(--muted); }
+.foot strong { color: var(--ink); font-family: var(--font-display); font-weight: 600; }
+.foot p { margin: 0; min-width: 0; flex: 1 1 24rem; }
+.note { font-size: 0.9375rem; color: var(--muted); max-width: 70ch; margin: 0; }
+@media (max-width: 640px) { .head { grid-template-columns: minmax(0, 1fr); } .art { padding-top: 0; } svg.mark { width: 190px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>El símbolo del GPIS, con movimiento según la página</h1>
+    <p class="lead">Mismo símbolo en todas las cabeceras internas, redibujado en vectores. Cambia solo lo que hace: se conecta en Rede, se expande en Impacto y se enciende por personas en Equipe. Cada animación dura pocos segundos y deja el símbolo quieto y discreto.</p>
+  </header>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Intensidad del símbolo en reposo">
+      <button type="button" id="i-sutil" aria-pressed="true">Sutil (como iría)</button>
+      <button type="button" id="i-visible" aria-pressed="false">Más visible</button>
+    </div>
+    <button type="button" class="btn" id="all">Repetir las tres</button>
+  </div>
+
+  <section class="card" data-mode="static" aria-label="Hoy: estático">
+    <div class="head">
+      <div class="txt"><p class="crumb">← Voltar · <b>Hoje</b></p><h2 class="title">Cabecera actual</h2><p class="sub">El símbolo siempre igual, en el mismo lugar.</p></div>
+      <div class="art"></div>
+    </div>
+    <div class="foot"><p><strong>Hoy.</strong> Sirve de referencia para comparar.</p></div>
+  </section>
+
+  <section class="card" data-mode="rede" aria-label="Rede: se conecta">
+    <div class="head">
+      <div class="txt"><p class="crumb">← Voltar para o GPIS · <b>Rede de pesquisa</b></p><h2 class="title">Saúde ao longo do ciclo de vida</h2><p class="sub">Brasil · Reino Unido · Chile · Peru</p></div>
+      <div class="art"></div>
+    </div>
+    <div class="foot"><p><strong>Rede: se conecta.</strong> Las conexiones se dibujan una a una y cada persona aparece cuando llega su línea, como la red que se arma entre instituciones.</p><button type="button" class="btn replay">Repetir</button></div>
+  </section>
+
+  <section class="card" data-mode="impacto" aria-label="Impacto: se expande">
+    <div class="head">
+      <div class="txt"><p class="crumb">GPIS · <b>Impacto</b></p><h2 class="title">Pesquisa que volta para a sociedade.</h2><p class="sub">Para nós, impacto não é apenas publicar.</p></div>
+      <div class="art"></div>
+    </div>
+    <div class="foot"><p><strong>Impacto: se expande.</strong> Desde el centro salen ondas que alcanzan una persona tras otra: el efecto de lo que se hace y vuelve a la sociedad.</p><button type="button" class="btn replay">Repetir</button></div>
+  </section>
+
+  <section class="card" data-mode="equipe" aria-label="Equipe: se enciende por personas">
+    <div class="head">
+      <div class="txt"><p class="crumb">GPIS · <b>Equipe</b></p><h2 class="title">Pesquisa é trabalho coletivo.</h2><p class="sub">Pesquisadores, estudantes e colaboradores em torno de uma agenda comum.</p></div>
+      <div class="art"></div>
+    </div>
+    <div class="foot"><p><strong>Equipe: se enciende por personas.</strong> Cada persona se ilumina por turno, y al pasar el mouse por encima las más cercanas responden.</p><button type="button" class="btn replay">Repetir</button></div>
+  </section>
+
+  <p class="note">En el sitio el símbolo seguiría en el mismo lugar que hoy, con el mismo tamaño y la misma opacidad de reposo. Con “reducir movimiento” activado en el sistema no hay animación y se ve el símbolo quieto.</p>
+</div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  // Posiciones y radios tomados del símbolo actual (lienzo 319 × 312).
+  var N = [[103.5,48.5,25],[181,35,24],[233,102.5,32.5],[59,165,34],[134,131,27.5],[192,186,24],[282.5,170,21],[255,231,26],[124,252.5,28.5]];
+  var E = [[0,1],[1,2],[0,3],[0,4],[2,4],[3,4],[4,5],[2,5],[2,6],[3,8],[5,8],[5,7],[6,7],[7,8]];
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+
+  function el(name, attrs, parent) {
+    var e = document.createElementNS(NS, name);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function build(card) {
+    var svg = el('svg', { viewBox: '0 0 319 312', class: 'mark', 'aria-hidden': 'true' });
+    var rings = el('g', {}, svg);
+    var grp = el('g', { class: 'grp' }, svg);
+    var edges = E.map(function (p) {
+      var a = N[p[0]], b = N[p[1]];
+      return el('line', { class: 'edge', x1: a[0], y1: a[1], x2: b[0], y2: b[1] }, grp);
+    });
+    var nodes = N.map(function (n) {
+      var g = el('g', {}, grp);
+      var c = el('circle', { class: 'node', cx: n[0], cy: n[1], r: n[2] }, g);
+      el('circle', { class: 'person', cx: n[0], cy: n[1] - n[2] * 0.22, r: n[2] * 0.24 }, g);
+      el('path', { class: 'person', d: 'M' + (n[0] - n[2] * 0.5) + ' ' + (n[1] + n[2] * 0.55) + 'a' + (n[2] * 0.5) + ' ' + (n[2] * 0.4) + ' 0 0 1 ' + (n[2]) + ' 0z' }, g);
+      return c;
+    });
+    var r3 = [1, 2, 3].map(function () { return el('circle', { class: 'ring', cx: N[4][0], cy: N[4][1], r: 20 }, rings); });
+    card.querySelector('.art').appendChild(svg);
+    card._m = { svg: svg, grp: grp, edges: edges, nodes: nodes, rings: r3, anims: [] };
+    if (card.dataset.mode === 'equipe') bindHover(card);
+  }
+  function stop(m) { m.anims.forEach(function (a) { a.cancel(); }); m.anims = []; }
+  function anim(m, target, frames, opts) {
+    var a = target.animate(frames, Object.assign({ fill: 'both' }, opts)); m.anims.push(a); return a;
+  }
+  function dist(i, j) { var a = N[i], b = N[j]; return Math.hypot(a[0] - b[0], a[1] - b[1]); }
+
+  var play = {
+    rede: function (m) {
+      var order = [3, 0, 4, 1, 2, 5, 6, 8, 7], seen = {}, t = 0;
+      m.nodes.forEach(function (n) { anim(m, n.parentNode, [{ opacity: 0 }, { opacity: 0 }], { duration: 1 }); });
+      m.edges.forEach(function (e) {
+        var len = e.getTotalLength(); e.style.strokeDasharray = len;
+        anim(m, e, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 500, delay: 200 + t * 230, easing: 'cubic-bezier(.2,.7,.2,1)' }); t++;
+      });
+      E.forEach(function (p, k) {
+        [p[1]].forEach(function (ni) {
+          if (seen[ni]) return; seen[ni] = 1;
+          anim(m, m.nodes[ni].parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 380, delay: 500 + k * 230, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        });
+      });
+      anim(m, m.nodes[3].parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 380, delay: 100 });
+      anim(m, m.nodes[0].parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 380, delay: 200 });
+    },
+    impacto: function (m) {
+      m.rings.forEach(function (r, i) {
+        anim(m, r, [{ opacity: 0.7, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(11)' }], { duration: 2400, delay: i * 700, easing: 'cubic-bezier(.2,.6,.3,1)' });
+      });
+      m.nodes.forEach(function (n, i) {
+        var d = i === 4 ? 0 : dist(4, i), delay = d * 8 + 150;
+        anim(m, n.parentNode, [{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(1.18)', opacity: 1, offset: 0.4 }, { transform: 'scale(1)', opacity: 1 }], { duration: 900, delay: delay, easing: 'ease-out' });
+        anim(m, n, [{ fill: 'var(--mark)' }, { fill: 'var(--light)', offset: 0.4 }, { fill: 'var(--mark)' }], { duration: 900, delay: delay });
+      });
+      m.edges.forEach(function (e, i) { anim(m, e, [{ stroke: 'var(--mark)' }, { stroke: 'var(--light)', offset: 0.5 }, { stroke: 'var(--mark)' }], { duration: 900, delay: 300 + i * 90 }); });
+    },
+    equipe: function (m) {
+      var order = [3, 0, 1, 4, 2, 5, 6, 7, 8];
+      m.nodes.forEach(function (n) { n.parentNode.style.opacity = ''; });
+      order.forEach(function (ni, k) {
+        var g = m.nodes[ni].parentNode;
+        anim(m, g, [{ opacity: 0.25, transform: 'scale(.9)' }, { opacity: 1, transform: 'scale(1.12)', offset: 0.35 }, { opacity: 1, transform: 'scale(1)' }], { duration: 800, delay: 150 + k * 260, easing: 'ease-out' });
+        anim(m, m.nodes[ni], [{ fill: 'var(--mark)' }, { fill: 'var(--accent)', offset: 0.35 }, { fill: 'var(--mark)' }], { duration: 1100, delay: 150 + k * 260 });
+      });
+    }
+  };
+  function run(card) {
+    var m = card._m, mode = card.dataset.mode;
+    stop(m);
+    m.edges.forEach(function (e) { e.style.strokeDasharray = ''; });
+    if (reduce || mode === 'static' || !play[mode]) return;
+    play[mode](m);
+  }
+  function bindHover(card) {
+    var m = card._m;
+    if (reduce) return;
+    card.querySelector('.art').addEventListener('pointermove', function (ev) {
+      var r = m.svg.getBoundingClientRect(), s = 319 / r.width;
+      var x = (ev.clientX - r.left) * s, y = (ev.clientY - r.top) * s;
+      m.nodes.forEach(function (n, i) {
+        var d = Math.hypot(N[i][0] - x, N[i][1] - y), k = Math.max(0, 1 - d / 90);
+        n.style.fill = k > 0.05 ? 'color-mix(in srgb, var(--accent) ' + Math.round(k * 100) + '%, var(--mark))' : '';
+        n.style.transform = 'scale(' + (1 + 0.15 * k).toFixed(3) + ')';
+      });
+    });
+    card.querySelector('.art').addEventListener('pointerleave', function () {
+      m.nodes.forEach(function (n) { n.style.fill = ''; n.style.transform = ''; });
+    });
+  }
+
+  cards.forEach(function (c) { build(c); var b = c.querySelector('.replay'); if (b) b.addEventListener('click', function () { run(c); }); });
+  document.getElementById('all').addEventListener('click', function () { cards.forEach(run); });
+
+  function setI(v) {
+    document.documentElement.style.setProperty('--o', v === 'sutil' ? '0.12' : '0.4');
+    document.getElementById('i-sutil').setAttribute('aria-pressed', v === 'sutil');
+    document.getElementById('i-visible').setAttribute('aria-pressed', v !== 'sutil');
+  }
+  document.getElementById('i-sutil').addEventListener('click', function () { setI('sutil'); });
+  document.getElementById('i-visible').addEventListener('click', function () { setI('visible'); });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }); }, { threshold: 0.6 });
+    cards.forEach(function (c) { io.observe(c); });
+  }
+})();
+</script>

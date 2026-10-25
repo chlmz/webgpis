@@ -1,0 +1,395 @@
+<title>GPIS · Frase central</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: faixas de largura total; cada proposta é uma seção alta com um palco fixo (sticky) que responde ao scroll. Identidade do site GPIS, só tema claro. */
+:root {
+    --azul: #1E456A;
+    --azul-ciencia: #2C5F8A;
+    --noite: #142C44;
+    --nevoa: #F0F4F7;
+    --papel: #FFFFFF;
+    --linha: #C8D2DA;
+    --linha-suave: #E4EAEF;
+    --ponto: #D5DEE6;
+    --texto: #23292E;
+    --texto-2: #5E6B74;
+    --meta: #64717B;
+    --terracota: #C98B2E;
+    --f-display: 'Schibsted Grotesk', system-ui, sans-serif;
+    --f-body: 'Source Sans 3', system-ui, sans-serif;
+    color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--papel); color: var(--texto); font-family: var(--f-body); font-size: 18px; line-height: 1.6; }
+h1, h2, p { margin: 0; }
+h1, h2 { text-wrap: balance; font-family: var(--f-display); font-weight: 600; letter-spacing: -0.02em; color: var(--noite); }
+a { color: var(--azul-ciencia); }
+:focus-visible { outline: 2px solid var(--azul-ciencia); outline-offset: 3px; }
+.wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Introdução */
+.intro { background: var(--nevoa); border-bottom: 1px solid var(--linha-suave); }
+.intro .wrap { display: grid; gap: 1.25rem; padding-block: clamp(3rem, 7vw, 5rem); }
+.intro h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); line-height: 1.08; max-width: 18ch; }
+.intro p { color: var(--texto-2); max-width: 60ch; }
+.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.jump a {
+    display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0 1rem;
+    border: 1px solid var(--linha); border-radius: 4px; background: var(--papel);
+    color: var(--azul); font-weight: 600; text-decoration: none;
+}
+.jump a:hover { border-color: var(--azul-ciencia); }
+.jump b { font-family: var(--f-display); color: var(--terracota); }
+
+/* Cabeçalho de cada proposta */
+.prop-head { border-top: 1px solid var(--linha); background: var(--papel); }
+.prop-head .wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.25rem 1.25rem; align-items: baseline; padding-block: 2.5rem 2rem; }
+.prop-head .letter { grid-row: 1 / span 2; font-family: var(--f-display); font-size: 3rem; font-weight: 600; line-height: 1; color: var(--terracota); }
+.prop-head h2 { font-size: clamp(1.375rem, 2.6vw, 1.75rem); line-height: 1.2; }
+.prop-head p { color: var(--texto-2); max-width: 62ch; }
+
+/* Mecânica comum: seção alta + palco fixo */
+.demo { position: relative; height: var(--h, 260vh); }
+.stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.hint { position: absolute; left: 50%; bottom: 1.25rem; transform: translateX(-50%); font-size: 0.875rem; color: var(--meta); transition: opacity 300ms; }
+
+/* A — a frase se escreve */
+.demo-a .stage { background: var(--papel); }
+.claim {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(1.875rem, 5vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--noite);
+    max-width: 22ch;
+}
+.claim .w { opacity: 0.14; transition: opacity 120ms linear, color 400ms; }
+.claim .w.key { font-weight: 600; }
+.claim .w.key.on { color: var(--azul-ciencia); }
+.after {
+    margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+    color: var(--texto-2); font-size: 1.0625rem; opacity: 0; transform: translateY(10px);
+    transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.after.on { opacity: 1; transform: none; }
+.after span { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+.after strong { font-family: var(--f-display); font-size: 1.5rem; color: var(--azul); font-weight: 600; }
+
+/* B — 2.313 pontos */
+.demo-b .stage { background: var(--nevoa); }
+.demo-b .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.count { font-family: var(--f-display); font-weight: 600; font-size: clamp(3.5rem, 9vw, 7rem); line-height: 0.95; letter-spacing: -0.04em; color: var(--azul); font-variant-numeric: tabular-nums; }
+.count-label { margin-top: 0.75rem; font-size: 1.125rem; color: var(--texto-2); max-width: 22ch; }
+.b-claim {
+    margin-top: 2rem; font-family: var(--f-display); font-weight: 500; font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+    line-height: 1.2; letter-spacing: -0.02em; color: var(--noite); max-width: 20ch;
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.b-claim em { font-style: normal; color: var(--azul-ciencia); font-weight: 600; }
+.b-claim.on { opacity: 1; transform: none; }
+.dots-box { position: relative; width: 100%; aspect-ratio: 7 / 4; max-width: 100%; }
+.dots-box canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.dots-cap { margin-top: 0.75rem; font-size: 0.875rem; color: var(--meta); }
+
+/* C — perguntas que viram uma ideia */
+.demo-c .stage { background: var(--papel); }
+.demo-c .wrap { position: relative; height: 100%; display: flex; align-items: center; }
+.qgrid { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 2rem) clamp(1.25rem, 3vw, 2.5rem); transition: opacity 600ms; }
+.q { opacity: 0; transform: translateY(10px); transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1), color 400ms; color: var(--texto-2); }
+.q small { display: block; margin-bottom: 0.3rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--meta); }
+.q p { font-family: var(--f-display); font-weight: 500; font-size: clamp(1rem, 1.35vw, 1.1875rem); line-height: 1.3; letter-spacing: -0.01em; }
+.q.seen { opacity: 0.38; transform: none; }
+.q.now { opacity: 1; transform: none; color: var(--noite); }
+.q.now small { color: var(--azul-ciencia); }
+.qgrid.resolve { opacity: 0.06; }
+.c-claim {
+    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 1.25rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    opacity: 0; pointer-events: none; transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.c-claim.on { opacity: 1; }
+.c-claim .claim { max-width: 20ch; }
+.c-claim .claim em { font-style: normal; font-weight: 600; color: var(--azul-ciencia); }
+.c-claim .sub { color: var(--texto-2); font-size: 1.0625rem; }
+
+/* Fecho */
+.outro { background: var(--noite); color: #fff; }
+.outro .wrap { display: grid; gap: 1rem; padding-block: clamp(3rem, 7vw, 5rem); }
+.outro h2 { color: #fff; font-size: clamp(1.625rem, 3.2vw, 2.25rem); }
+.outro p { color: rgba(255,255,255,0.84); max-width: 62ch; }
+
+@media (max-width: 760px) {
+    .demo-b .wrap { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .dots-box { aspect-ratio: 4 / 3; }
+    .b-claim { margin-top: 1rem; }
+    .qgrid { grid-template-columns: minmax(0, 1fr); }
+    .q:not(.now) { display: none; }
+    .q p { font-size: 1.375rem; }
+}
+
+/* Sem movimento: tudo no estado final, sem palco fixo. */
+.rm .demo { height: auto; }
+.rm .stage { position: static; height: auto; padding-block: 5rem; }
+.rm .hint { display: none; }
+.rm .c-claim { position: static; padding: 2rem 0 0; }
+.rm .demo-c .wrap { flex-direction: column; align-items: stretch; }
+.rm .q:not(.now) { display: block; }
+</style>
+
+<header class="intro">
+    <div class="wrap">
+        <h1>Três caminhos para a frase central da home</h1>
+        <p>A frase “Perguntas diferentes, uma mesma ideia: acompanhar vidas reais…” vem logo depois do hero. Aqui ela ganha três versões com movimento. Role devagar por cada uma e diga qual quer levar para o site. Todas usam só conteúdo que já existe no GPIS.</p>
+        <nav class="jump" aria-label="Ir para a proposta">
+            <a href="#a"><b>A</b> A frase se escreve</a>
+            <a href="#b"><b>B</b> 2.313 pontos</a>
+            <a href="#c"><b>C</b> Perguntas que viram uma ideia</a>
+        </nav>
+    </div>
+</header>
+
+<div class="prop-head" id="a">
+    <div class="wrap">
+        <span class="letter" aria-hidden="true">A</span>
+        <h2>A frase se escreve com o scroll</h2>
+        <p>A seção fica parada na tela e cada palavra acende conforme o visitante rola. “Acompanhar vidas reais” acende em azul. No fim aparecem os números do grupo.</p>
+    </div>
+</div>
+<section class="demo demo-a" data-demo="a" style="--h: 240vh" aria-label="Proposta A">
+    <div class="stage">
+        <div class="wrap">
+            <p class="claim" id="claim-a">Perguntas diferentes, uma mesma ideia: <em>acompanhar vidas reais</em> e produzir conhecimento que faça diferença para elas.</p>
+            <p class="after" id="after-a">
+                <span><strong>4</strong> linhas de pesquisa</span>
+                <span><strong>5</strong> projetos</span>
+                <span><strong>1</strong> coorte desde 2019</span>
+            </p>
+        </div>
+        <p class="hint" aria-hidden="true">Continue rolando ↓</p>
+    </div>
+</section>
+
+<div class="prop-head" id="b">
+    <div class="wrap">
+        <span class="letter" aria-hidden="true">B</span>
+        <h2>2.313 pontos, um por entrevista</h2>
+        <p>Cada ponto é uma das 2.313 entrevistas perinatais da Coorte Rio Grande 2019. Eles acendem enquanto o contador sobe, e a frase chega quando o quadro se completa. É dado real virando imagem.</p>
+    </div>
+</div>
+<section class="demo demo-b" data-demo="b" style="--h: 260vh" aria-label="Proposta B">
+    <div class="stage">
+        <div class="wrap">
+            <div>
+                <p class="count" id="count-b" aria-live="off">0</p>
+                <p class="count-label">entrevistas perinatais na Coorte Rio Grande 2019</p>
+                <p class="b-claim" id="claim-b">Por trás de cada número, uma família. Nosso trabalho é <em>acompanhar vidas reais</em> e produzir conhecimento que faça diferença para elas.</p>
+            </div>
+            <div>
+                <div class="dots-box"><canvas id="dots-b" aria-hidden="true"></canvas></div>
+                <p class="dots-cap">Cada ponto representa uma entrevista realizada em 2019.</p>
+            </div>
+        </div>
+        <p class="hint" aria-hidden="true">Continue rolando ↓</p>
+    </div>
+</section>
+
+<div class="prop-head" id="c">
+    <div class="wrap">
+        <span class="letter" aria-hidden="true">C</span>
+        <h2>Perguntas que viram uma ideia</h2>
+        <p>As doze perguntas reais das quatro linhas de pesquisa aparecem uma a uma. Quando o quadro se completa, elas recuam e a frase surge por cima. A frase deixa de ser abstrata: dá para ver as perguntas que ela resume.</p>
+    </div>
+</div>
+<section class="demo demo-c" data-demo="c" style="--h: 320vh" aria-label="Proposta C">
+    <div class="stage">
+        <div class="wrap">
+            <div class="qgrid" id="qgrid"></div>
+            <div class="c-claim" id="claim-c">
+                <p class="claim">Perguntas diferentes, uma mesma ideia: <em>acompanhar vidas reais</em> e produzir conhecimento que faça diferença para elas.</p>
+                <p class="sub">12 perguntas · 4 linhas de pesquisa</p>
+            </div>
+        </div>
+        <p class="hint" aria-hidden="true">Continue rolando ↓</p>
+    </div>
+</section>
+
+<footer class="outro">
+    <div class="wrap">
+        <h2>Qual delas vai para a home?</h2>
+        <p>Dá para combinar: por exemplo, os pontos de B como fundo discreto da frase de A. Depois de escolher, aplico no site com a mesma regra das outras animações: quem ativa “reduzir movimento” no sistema vê a frase pronta, sem efeito.</p>
+    </div>
+</footer>
+
+<script>
+(function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) document.documentElement.classList.add('rm');
+    var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
+    var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+
+    /* A: separar palavras mantendo o trecho-chave */
+    var claimA = document.getElementById('claim-a');
+    var words = [];
+    (function split(node, key) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+            if (n.nodeType === 3) {
+                var frag = document.createDocumentFragment();
+                n.textContent.split(/(\s+)/).forEach(function (part) {
+                    if (!part) return;
+                    if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+                    var s = document.createElement('span');
+                    s.className = 'w' + (key ? ' key' : '');
+                    s.textContent = part;
+                    words.push(s);
+                    frag.appendChild(s);
+                });
+                n.parentNode.replaceChild(frag, n);
+            } else if (n.nodeType === 1) {
+                split(n, key || n.tagName === 'EM');
+                if (n.tagName === 'EM') { while (n.firstChild) n.parentNode.insertBefore(n.firstChild, n); n.parentNode.removeChild(n); }
+            }
+        });
+    })(claimA, false);
+    claimA.setAttribute('aria-label', claimA.textContent.replace(/\s+/g, ' ').trim());
+    var afterA = document.getElementById('after-a');
+
+    function drawA(p) {
+        var n = words.length, t = clamp(p / 0.8) * n;
+        words.forEach(function (w, i) {
+            var o = clamp(t - i);
+            w.style.opacity = (0.14 + 0.86 * o).toFixed(3);
+            w.classList.toggle('on', o > 0.6);
+        });
+        afterA.classList.toggle('on', p > 0.86);
+    }
+
+    /* B: 2.313 pontos */
+    var TOTAL = 2313;
+    var canvas = document.getElementById('dots-b');
+    var ctx = canvas.getContext('2d');
+    var countEl = document.getElementById('count-b');
+    var claimB = document.getElementById('claim-b');
+    var order = [];
+    for (var i = 0; i < TOTAL; i++) order.push(i);
+    var seed = 7;
+    var rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+    for (var j = TOTAL - 1; j > 0; j--) { var k = Math.floor(rnd() * (j + 1)); var tmp = order[j]; order[j] = order[k]; order[k] = tmp; }
+    var rank = new Array(TOTAL);
+    order.forEach(function (idx, r) { rank[idx] = r; });
+    var geo = null, lastLit = -1;
+
+    function layout() {
+        var r = canvas.getBoundingClientRect();
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(r.width * dpr);
+        canvas.height = Math.round(r.height * dpr);
+        var cell = Math.sqrt((r.width * r.height) / TOTAL);
+        var cols = Math.floor(r.width / cell);
+        var rows = Math.ceil(TOTAL / cols);
+        while (rows * cell > r.height && cell > 2) { cell -= 0.1; cols = Math.floor(r.width / cell); rows = Math.ceil(TOTAL / cols); }
+        geo = { dpr: dpr, cell: cell, cols: cols, ox: (r.width - cols * cell) / 2, oy: (r.height - rows * cell) / 2 };
+        lastLit = -1;
+    }
+
+    function paintB(lit) {
+        if (!geo) layout();
+        if (lit === lastLit) return;
+        lastLit = lit;
+        var g = geo, rad = Math.max(1, g.cell * 0.34);
+        ctx.setTransform(g.dpr, 0, 0, g.dpr, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < TOTAL; i++) {
+            var x = g.ox + (i % g.cols) * g.cell + g.cell / 2;
+            var y = g.oy + Math.floor(i / g.cols) * g.cell + g.cell / 2;
+            ctx.fillStyle = rank[i] < lit ? '#2C5F8A' : '#D5DEE6';
+            ctx.beginPath();
+            ctx.arc(x, y, rad, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function drawB(p) {
+        var t = easeOut(clamp(p / 0.72));
+        var lit = Math.round(t * TOTAL);
+        countEl.textContent = lit.toLocaleString('pt-BR');
+        paintB(lit);
+        claimB.classList.toggle('on', p > 0.76);
+    }
+
+    /* C: perguntas reais das quatro linhas */
+    var QS = [
+        ['Saúde mental ao longo da vida', 'Quais trajetórias de sintomas depressivos e de ansiedade encontramos em mães ao longo dos primeiros anos após o parto?'],
+        ['Saúde entre gerações', 'O que se transmite entre gerações: risco, contexto, ou as duas coisas?'],
+        ['Crises e desigualdades', 'Que mudanças na saúde mental de mães e crianças observamos após as enchentes de 2024?'],
+        ['Métodos e inovação', 'O que registros administrativos acrescentam ao que já sabemos por entrevista?'],
+        ['Saúde mental ao longo da vida', 'Que condições sociais e familiares estão associadas às trajetórias mais persistentes?'],
+        ['Saúde entre gerações', 'Como a qualidade das interações no dia a dia se relaciona com o desenvolvimento infantil?'],
+        ['Crises e desigualdades', 'Quais famílias foram mais afetadas e que condições estiveram associadas a esse impacto?'],
+        ['Métodos e inovação', 'Como observar interações familiares no cotidiano de forma sistemática e pouco intrusiva?'],
+        ['Saúde mental ao longo da vida', 'Como a saúde mental em diferentes etapas da vida se relaciona com desenvolvimento e saúde em etapas posteriores?'],
+        ['Saúde entre gerações', 'Que condições de apoio e cuidado estão associadas a trajetórias mais favoráveis para famílias em maior vulnerabilidade?'],
+        ['Crises e desigualdades', 'O que a resposta a uma crise anterior nos ensina sobre a próxima?'],
+        ['Métodos e inovação', 'Onde a inteligência artificial ajuda de fato, e onde ela só adiciona ruído?']
+    ];
+    var qgrid = document.getElementById('qgrid');
+    var qEls = QS.map(function (q) {
+        var d = document.createElement('div');
+        d.className = 'q';
+        var s = document.createElement('small'); s.textContent = q[0];
+        var t = document.createElement('p'); t.textContent = q[1];
+        d.appendChild(s); d.appendChild(t);
+        qgrid.appendChild(d);
+        return d;
+    });
+    var claimC = document.getElementById('claim-c');
+
+    function drawC(p) {
+        var shown = Math.floor(clamp(p / 0.78) * QS.length + 0.0001);
+        var current = Math.min(shown, QS.length) - 1;
+        qEls.forEach(function (el, i) {
+            el.classList.toggle('now', i === current && p <= 0.82);
+            el.classList.toggle('seen', i < shown && !(i === current && p <= 0.82));
+        });
+        var resolve = p > 0.82;
+        qgrid.classList.toggle('resolve', resolve);
+        claimC.classList.toggle('on', resolve);
+    }
+
+    /* Scroll */
+    var demos = Array.prototype.map.call(document.querySelectorAll('[data-demo]'), function (el) {
+        return { el: el, id: el.getAttribute('data-demo'), hint: el.querySelector('.hint') };
+    });
+    var draw = { a: drawA, b: drawB, c: drawC };
+
+    function update() {
+        ticking = false;
+        var vh = window.innerHeight;
+        demos.forEach(function (d) {
+            var r = d.el.getBoundingClientRect();
+            if (r.bottom < -vh || r.top > vh * 2) return;
+            var p = reduce ? 1 : clamp(-r.top / Math.max(1, r.height - vh));
+            draw[d.id](p);
+            if (d.hint) d.hint.style.opacity = p > 0.05 ? 0 : 1;
+        });
+    }
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', function () { layout(); update(); });
+    layout();
+    drawA(reduce ? 1 : 0); drawB(reduce ? 1 : 0); drawC(reduce ? 1 : 0);
+    update();
+})();
+</script>

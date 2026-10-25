@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>C · Home contemporânea</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2C5F8A}a:hover{color:#1E456A}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; box-sizing: border-box; display: flex; flex-direction: column; font-family: 'Source Sans 3', system-ui, sans-serif; color: #23292E; background: #FFFFFF">
+  <header style="height: 76px; flex-shrink: 0; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #FFFFFF; border-bottom: 1px solid #E4EAEF">
+    <img src="/_blob/2a8779fd8bb34f78439dfdab3e276147" alt="GPIS" style="height: 40px; width: auto; display: block">
+    <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 16px; font-weight: 600">
+      <a href="#" style="text-decoration: none; color: #2C5F8A">GPIS</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Pesquisa</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Projetos</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Impacto</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Equipe</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Rede</a>
+      <a href="#" style="text-decoration: none; color: #23292E">Contato</a>
+    </nav>
+  </header>
+  <section aria-label="Apresentação do grupo" style="flex-grow: 1; display: grid; grid-template-columns: 7fr 5fr; background: #FFFFFF">
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 0 64px">
+      <span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #64717B">GPIS · FURG · Rio Grande, Brasil</span>
+      <h1 style="margin: 0; font-family: 'Schibsted Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 56px; line-height: 1.06; color: #142C44; letter-spacing: -0.02em">Pesquisa que começa nas pessoas.</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #5E6B74; max-width: 520px">Investigamos como experiências sociais, familiares e ambientais moldam a saúde ao longo da vida.</p>
+      <div style="display: flex; gap: 16px; margin-top: 8px">
+        <a href="#" style="display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; background: #1E456A; color: #FFFFFF; font-weight: 600; font-size: 16px; text-decoration: none">Conheça nossos projetos</a>
+        <a href="#" style="display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #C8D2DA; color: #1E456A; font-weight: 600; font-size: 16px; text-decoration: none">Linhas de pesquisa</a>
+      </div>
+    </div>
+    <div style="position: relative; overflow: hidden; background: {{panelBg}}; display: flex; align-items: center; justify-content: center">
+      <img src="/_blob/996a764a751d7617925fc0b918a87894" alt="" aria-hidden="true" style="width: 380px; height: auto; opacity: {{markOpacity}}">
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"panelBg":{"editor":"color","default":"#2C5F8A","options":["#2C5F8A","#1E456A","#142C44"]},"markOpacity":{"editor":"range","default":0.22,"min":0.08,"max":1,"step":0.01},"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { panelBg: this.props.panelBg ?? '#2C5F8A', markOpacity: this.props.markOpacity ?? 0.22 };
+  }
+}
+</script>
+</body>
+</html>

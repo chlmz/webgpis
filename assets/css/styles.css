@@ -3319,3 +3319,8 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-footer__social .gpis-ico { width: 1.375rem; height: 1.375rem; }
 /* Com oito itens no menu, o subtítulo da marca só aparece quando há espaço. */
 @media (min-width: 992px) and (max-width: 1279px) { .navbar-brand small { display: none; } }
+/* Elementos auxiliares dos gestos do símbolo (fora do grupo de opacidade baixa). */
+.gpis-mark__scan { stroke: var(--mark-cool); stroke-width: 2.5; opacity: 0; }
+.gpis-mark__view { fill: none; stroke: var(--mark-cool); stroke-width: 3; stroke-linecap: round; opacity: 0; }
+.gpis-mark__view path { vector-effect: non-scaling-stroke; }
+.gpis-mark__dot { fill: var(--mark-warm); opacity: 0; }

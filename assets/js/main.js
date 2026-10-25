@@ -329,6 +329,158 @@ function initMark(reduceMotion) {
                 anim(n.parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.18)', offset: 0.4 }, { transform: 'scale(1)' }], { duration: 900, delay: delay, easing: 'ease-out' });
             });
         },
+        // Dados: uma linha percorre o símbolo e cada pessoa acende quando é lida.
+        dados: function () {
+            var scan = el('line', { class: 'gpis-mark__scan', x1: 0, y1: -12, x2: 0, y2: 324 }, ringsG);
+            anim(scan, [{ transform: 'translateX(-20px)', opacity: 0 }, { opacity: 0.7, offset: 0.15 }, { opacity: 0.7, offset: 0.85 }, { transform: 'translateX(340px)', opacity: 0 }],
+                 { duration: 2600, delay: 200, easing: 'linear' });
+            nodes.forEach(function (n, i) {
+                var d = 200 + ((N[i][0] + 20) / 360) * 2600;
+                anim(n.parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.15)', offset: 0.3 }, { transform: 'scale(1)' }], { duration: 700, delay: d - 150, easing: 'ease-out' });
+                anim(n, [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-cool)', offset: 0.3 }, { fill: 'var(--mark-ink)' }], { duration: 1100, delay: d - 150 });
+            });
+        },
+        // Linkage: duas metades (duas fontes) se aproximam e os laços entre elas aparecem.
+        linkage: function () {
+            nodes.forEach(function (n, i) {
+                var dx = N[i][0] < 159.5 ? -46 : 46;
+                anim(n.parentNode, [{ transform: 'translateX(' + dx + 'px)', opacity: 0.35 }, { transform: 'translateX(0px)', opacity: 1 }],
+                     { duration: 1300, delay: 200, easing: ease });
+            });
+            edges.forEach(function (e, k) {
+                var a = N[E[k][0]][0] < 159.5, b = N[E[k][1]][0] < 159.5;
+                if (a === b) {
+                    var dx = a ? -46 : 46;
+                    anim(e, [{ transform: 'translateX(' + dx + 'px)', opacity: 0.35 }, { transform: 'translateX(0px)', opacity: 1 }], { duration: 1300, delay: 200, easing: ease });
+                } else {
+                    var len = e.getTotalLength();
+                    e.style.strokeDasharray = len;
+                    anim(e, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 600, delay: 1450 + k * 60, easing: ease });
+                    anim(e, [{ stroke: 'var(--mark-cool)' }, { stroke: 'var(--mark-ink)' }], { duration: 1400, delay: 1450 + k * 60 });
+                }
+            });
+        },
+        // Visão em primeira pessoa: um visor de câmera passa de pessoa em pessoa.
+        visao: function () {
+            var view = el('g', { class: 'gpis-mark__view' }, ringsG);
+            var h = 27, c = 11;
+            [[-1, -1], [1, -1], [1, 1], [-1, 1]].forEach(function (q) {
+                el('path', { d: 'M' + q[0] * h + ' ' + (q[1] * h - q[1] * c) + 'V' + q[1] * h + 'H' + (q[0] * h - q[0] * c) }, view);
+            });
+            var stops = [3, 4, 2, 7, 8];
+            var frames = stops.map(function (i, k) {
+                return { transform: 'translate(' + N[i][0] + 'px,' + N[i][1] + 'px) scale(' + (N[i][2] / 20).toFixed(2) + ')', offset: k / (stops.length - 1) };
+            });
+            frames[0].opacity = 0; frames[frames.length - 1].opacity = 0;
+            frames.forEach(function (f, k) { if (k > 0 && k < frames.length - 1) f.opacity = 0.8; });
+            anim(view, frames, { duration: 3600, delay: 200, easing: 'ease-in-out' });
+            stops.forEach(function (i, k) {
+                if (k === 0) return;
+                anim(nodes[i], [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-cool)', offset: 0.35 }, { fill: 'var(--mark-ink)' }], { duration: 1000, delay: 200 + (k / (stops.length - 1)) * 3600 - 350 });
+            });
+        },
+        // Métodos: os dados saem de uma grade ordenada e ganham forma de rede.
+        metodos: function () {
+            nodes.forEach(function (n, i) {
+                var gx = 70 + (i % 3) * 90, gy = 66 + Math.floor(i / 3) * 90;
+                anim(n.parentNode, [{ transform: 'translate(' + (gx - N[i][0]) + 'px,' + (gy - N[i][1]) + 'px) scale(.8)' }, { transform: 'translate(0px,0px) scale(1)', offset: 1 }],
+                     { duration: 1300, delay: 400 + i * 60, easing: ease });
+            });
+            edges.forEach(function (e, k) {
+                anim(e, [{ opacity: 0 }, { opacity: 1 }], { duration: 700, delay: 1500 + k * 40, easing: 'ease-out' });
+            });
+        },
+        // Publicações: as pessoas aparecem de cima para baixo, como linhas escritas.
+        publicacoes: function () {
+            var order = N.map(function (n, i) { return i; }).sort(function (a, b) { return N[a][1] - N[b][1]; });
+            order.forEach(function (i, k) {
+                anim(nodes[i].parentNode, [{ opacity: 0, transform: 'translateY(-10px)' }, { opacity: 1, transform: 'translateY(0px)' }], { duration: 600, delay: 150 + k * 170, easing: ease });
+            });
+            edges.forEach(function (e, k) {
+                var len = e.getTotalLength(), y = Math.min(N[E[k][0]][1], N[E[k][1]][1]);
+                e.style.strokeDasharray = len;
+                anim(e, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 600, delay: 400 + (y / 312) * 1500, easing: ease });
+            });
+        },
+        // Saúde mental ao longo da vida: um ponto percorre a rede, etapa por etapa.
+        trajetoria: function () {
+            var chain = [8, 3, 0, 4, 5, 7, 6, 2, 1];
+            var dot = el('circle', { class: 'gpis-mark__dot', cx: 0, cy: 0, r: 7 }, ringsG);
+            var leg = 420, total = leg * (chain.length - 1);
+            var frames = chain.map(function (i, k) { return { transform: 'translate(' + N[i][0] + 'px,' + N[i][1] + 'px)', offset: k / (chain.length - 1) }; });
+            frames[0].opacity = 0; frames[1].opacity = 0.85; frames[frames.length - 2].opacity = 0.85; frames[frames.length - 1].opacity = 0;
+            anim(dot, frames, { duration: total, delay: 300, easing: 'ease-in-out' });
+            chain.forEach(function (i, k) {
+                anim(nodes[i].parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.14)', offset: 0.35 }, { transform: 'scale(1)' }], { duration: 700, delay: 300 + k * leg - 120, easing: 'ease-out' });
+            });
+        },
+        // Saúde entre gerações: cada pessoa nasce a partir de quem veio antes.
+        geracoes: function () {
+            var parent = {}, level = {}, queue = [3, 2];
+            level[3] = 0; level[2] = 0;
+            while (queue.length) {
+                var cur = queue.shift();
+                E.forEach(function (p) {
+                    var nx = p[0] === cur ? p[1] : (p[1] === cur ? p[0] : -1);
+                    if (nx >= 0 && !(nx in level)) { level[nx] = level[cur] + 1; parent[nx] = cur; queue.push(nx); }
+                });
+            }
+            edges.forEach(function (e) { anim(e, [{ opacity: 0 }, { opacity: 0 }], { duration: 1 }); });
+            nodes.forEach(function (n, i) {
+                var d = 200 + level[i] * 650;
+                if (!(i in parent)) {
+                    anim(n.parentNode, [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 600, delay: d, easing: ease });
+                    return;
+                }
+                var pp = N[parent[i]];
+                anim(n.parentNode, [{ opacity: 0, transform: 'translate(' + (pp[0] - N[i][0]) + 'px,' + (pp[1] - N[i][1]) + 'px) scale(.3)' }, { opacity: 1, transform: 'translate(0px,0px) scale(1)' }],
+                     { duration: 800, delay: d, easing: ease });
+            });
+            edges.forEach(function (e, k) {
+                var lv = Math.max(level[E[k][0]], level[E[k][1]]);
+                anim(e, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 450 + lv * 650, easing: 'ease-out' });
+            });
+        },
+        // Crises: uma onda atravessa a rede, desloca e apaga as pessoas, e a rede se recompõe.
+        crises: function () {
+            var o = [0, 312];
+            var ring = el('circle', { class: 'gpis-mark__ring', cx: o[0], cy: o[1], r: 20 }, ringsG);
+            anim(ring, [{ opacity: 0.6, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(24)' }], { duration: 2200, delay: 200, easing: 'cubic-bezier(.2,.6,.3,1)' });
+            nodes.forEach(function (n, i) {
+                var vx = N[i][0] - o[0], vy = N[i][1] - o[1], d = Math.hypot(vx, vy), ux = vx / d, uy = vy / d;
+                anim(n.parentNode, [
+                    { transform: 'translate(0px,0px)', opacity: 1 },
+                    { transform: 'translate(' + (ux * 12).toFixed(1) + 'px,' + (uy * 12).toFixed(1) + 'px)', opacity: 0.5, offset: 0.3 },
+                    { transform: 'translate(' + (-ux * 4).toFixed(1) + 'px,' + (-uy * 4).toFixed(1) + 'px)', opacity: 0.85, offset: 0.6 },
+                    { transform: 'translate(0px,0px)', opacity: 1 }
+                ], { duration: 1500, delay: 200 + d * 4.5, easing: 'ease-out' });
+            });
+        },
+        // Enchentes: a água sobe de baixo para cima, tinge e balança as pessoas, e baixa.
+        enchentes: function () {
+            nodes.forEach(function (n, i) {
+                var d = 200 + (312 - N[i][1]) * 5;
+                anim(n.parentNode, [{ transform: 'translateY(0px)' }, { transform: 'translateY(5px)', offset: 0.3 }, { transform: 'translateY(-3px)', offset: 0.6 }, { transform: 'translateY(0px)' }],
+                     { duration: 1800, delay: d, easing: 'ease-in-out' });
+                anim(n, [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-cool)', offset: 0.25 }, { fill: 'var(--mark-cool)', offset: 0.7 }, { fill: 'var(--mark-ink)' }], { duration: 2600, delay: d });
+            });
+            edges.forEach(function (e, k) {
+                var y = (N[E[k][0]][1] + N[E[k][1]][1]) / 2;
+                anim(e, [{ stroke: 'var(--mark-ink)' }, { stroke: 'var(--mark-cool)', offset: 0.25 }, { stroke: 'var(--mark-cool)', offset: 0.7 }, { stroke: 'var(--mark-ink)' }], { duration: 2600, delay: 200 + (312 - y) * 5 });
+            });
+        },
+        // Visões do Cuidado: um anel de laços acende em sequência e o cuidado circula.
+        cuidado: function () {
+            var loop = [3, 0, 1, 2, 6, 7, 8, 3];
+            for (var k = 0; k < loop.length - 1; k++) {
+                var a = loop[k], b = loop[k + 1], idx = -1;
+                E.forEach(function (p, j) { if ((p[0] === a && p[1] === b) || (p[0] === b && p[1] === a)) idx = j; });
+                var d = 300 + k * 380;
+                if (idx >= 0) anim(edges[idx], [{ stroke: 'var(--mark-ink)' }, { stroke: 'var(--mark-warm)', offset: 0.25 }, { stroke: 'var(--mark-warm)', offset: 0.75 }, { stroke: 'var(--mark-ink)' }], { duration: 2400, delay: d });
+                anim(nodes[b], [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-warm)', offset: 0.3 }, { fill: 'var(--mark-ink)' }], { duration: 1600, delay: d + 200 });
+                anim(nodes[b].parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.12)', offset: 0.3 }, { transform: 'scale(1)' }], { duration: 900, delay: d + 200, easing: 'ease-out' });
+            }
+        },
         familias: function () {
             // Acolhimento: as pessoas se aproximam, os laços aparecem e um pulso
             // cálido percorre a rede, de pessoa em pessoa.

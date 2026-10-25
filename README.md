@@ -143,11 +143,11 @@ Si algo no gustó, se deshace con `git revert <commit>`; nunca reescribiendo el 
 
 ### Después de cambiar CSS o JS
 
-Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=25` y `main.js?v=17`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
+Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=26` y `main.js?v=18`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
 
 ```bash
 cd ~/webgpis-redesign
-grep -rl 'styles.css?v=25' --include=*.html . | xargs sed -i '' 's/styles.css?v=25/styles.css?v=26/g'
+grep -rl 'styles.css?v=26' --include=*.html . | xargs sed -i '' 's/styles.css?v=26/styles.css?v=27/g'
 python3 tools/i18n/build.py
 ```
 
@@ -268,7 +268,13 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 
 - Se guarda en `.claude/base/` el material producido (capturas por hito, demos, diccionario REDCap, scripts de QA) y se escribe este README como registro de la historia del proyecto.
 
-<!-- Agregar aquí la próxima etapa: "### 9. Título (fecha)" con los commits principales y qué cambió. -->
+### 9. Marca nítida en la home y cabeceras internas en revisión (25/oct)
+
+- La marca de fondo de la home era un PNG de 319 px mostrado a 560 px y se veía borrosa; ahora es el mismo símbolo en vectores (SVG en el HTML), quieto como antes.
+- El gesto del símbolo ya no intenta animarse cuando el símbolo está oculto (celular), lo que evitaba un error de JavaScript en Rede, Publicações y Linkage.
+- En revisión: el espacio vacío entre el texto y el símbolo en las cabeceras internas en pantallas anchas. Se mostraron tres opciones (A símbolo amplio, B dos columnas, C índice de la página): https://claude.ai/artifact/1w4btCLvPKEFfGQSBWp2oX
+
+<!-- Agregar aquí la próxima etapa: "### 10. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -277,6 +283,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
+- Cabeceras internas: elegir entre las opciones A, B o C para el espacio vacío en pantallas anchas.
 
 ## Base de conocimiento
 

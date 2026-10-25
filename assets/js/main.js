@@ -529,7 +529,8 @@ function initMark(reduceMotion) {
             });
         }
     };
-    if (play[mode]) setTimeout(play[mode], 250);
+    // Sem desenho visível (símbolo oculto no celular), o gesto não roda.
+    if (play[mode]) setTimeout(function () { if (svg.isConnected && svg.getBoundingClientRect().width) play[mode](); }, 250);
 }
 
 // Números que contam até o valor quando aparecem (o HTML já traz o valor final).

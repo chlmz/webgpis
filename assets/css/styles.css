@@ -415,6 +415,7 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     right: max(-3rem, calc((100vw - 1320px) / 2 - 2rem));
     width: min(42vw, 560px);
     height: auto;
+    aspect-ratio: 319 / 312;
     transform: translateY(-50%);
     opacity: 0.08;
     pointer-events: none;

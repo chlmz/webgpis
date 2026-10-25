@@ -3279,3 +3279,43 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 @media (max-width: 575px) { .gpis-fam__pair { grid-template-columns: minmax(0, 1fr); } .gpis-fam__pair .gpis-fam__photo--wide { aspect-ratio: 4 / 3; height: auto; } }
 /* Os títulos já levam o traço terracota; a barra azul antiga ficaria duplicada. */
 :is(.gpis-proj-section__inner, .gpis-proj-pubs__inner, .gpis-proj-collab__inner, .gpis-impact-block__inner, .gpis-contact__inner)::before { content: none; }
+
+/* ============================================================
+   FAMÍLIAS DA COORTE — canais e entrada visível
+============================================================ */
+.nav-link.gpis-nav-fam { color: var(--gpis-azul-ciencia); }
+.gpis-ico { width: 1.25em; height: 1.25em; fill: currentColor; flex: none; }
+.gpis-part { background: #3679B0; color: #fff; padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.gpis-part__inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2.5rem clamp(2rem, 5vw, 5rem); align-items: center; }
+.gpis-part .gpis-section-title { color: #fff; }
+.gpis-part__text { margin: 0 0 1.25rem; color: #fff; font-size: 1.125rem; line-height: 1.6; max-width: 46ch; }
+.gpis-part .gpis-textlink { color: #fff; text-decoration-color: rgba(255,255,255,0.5); }
+.gpis-part .gpis-textlink > .gpis-arrow { border-color: #fff; }
+.gpis-part .gpis-textlink:is(:hover, :focus-visible) > .gpis-arrow { background: #fff; stroke: #3679B0; }
+.gpis-channels { list-style: none; margin: 0; padding: 0; }
+.gpis-channels > li + li { border-top: 1px solid rgba(255,255,255,0.28); }
+.gpis-channels a {
+    display: grid; grid-template-columns: 3rem minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 1rem; align-items: center;
+    padding: 1.1rem 0; color: #fff; text-decoration: none;
+}
+.gpis-channels .gpis-ico { grid-row: span 2; padding: 0.6rem; box-sizing: content-box; border: 1.5px solid rgba(255,255,255,0.7); border-radius: 50%; width: 1.25rem; height: 1.25rem; transition: background var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out); }
+.gpis-channels__t { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.25rem, 1rem + 0.7vw, 1.625rem); letter-spacing: -0.02em; line-height: 1.2; }
+.gpis-channels__s { color: #fff; font-size: 1rem; }
+.gpis-channels a:is(:hover, :focus-visible) .gpis-ico { background: #fff; color: #3679B0; }
+.gpis-channels a:is(:hover, :focus-visible) .gpis-channels__t { text-decoration: underline; text-underline-offset: 0.2em; }
+.gpis-part :focus-visible, .gpis-channels--dark :focus-visible { outline-color: #fff; }
+@media (max-width: 991px) { .gpis-part__inner { grid-template-columns: minmax(0, 1fr); } }
+/* Na faixa de contato da página das famílias (azul profundo) */
+.gpis-fam__contact { min-width: 0; }
+.gpis-fam__email { margin: 1.25rem 0 0; color: var(--on-dark-soft); font-size: 1rem; }
+.gpis-fam__email a { color: #fff; font-weight: 600; overflow-wrap: anywhere; }
+/* Atalho no topo da página das famílias */
+.gpis-fam__hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin: 1.75rem 0 0; }
+.gpis-fam__wa { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.25rem; border-radius: var(--radius-sm); background: var(--gpis-azul-profundo); color: #fff; font-weight: 700; text-decoration: none; transition: background var(--dur-2) var(--ease-out); }
+.gpis-fam__wa:is(:hover, :focus-visible) { background: var(--gpis-azul-noite); color: #fff; }
+/* Redes no rodapé */
+.gpis-footer__social { display: flex; gap: 0.9rem; margin-top: 0.35rem; }
+.gpis-footer__social a { display: inline-flex; }
+.gpis-footer__social .gpis-ico { width: 1.375rem; height: 1.375rem; }
+/* Com oito itens no menu, o subtítulo da marca só aparece quando há espaço. */
+@media (min-width: 992px) and (max-width: 1279px) { .navbar-brand small { display: none; } }

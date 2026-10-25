@@ -30,7 +30,7 @@ sleep 2 && open "http://localhost:8000"
 - **Tipografía:** Schibsted Grotesk en títulos, Source Sans 3 en texto. Se probó una serif (Source Serif 4) y fue rechazada.
 - **Color:** una familia de azules; terracota como único acento cálido. Sin ámbar ni verde sueltos, sin degradados, sin halos, sin elevar tarjetas al pasar el ratón. Botones rectos (4px).
 - **Ancho:** contenedor ancho (hasta 1680px), poco blanco en los costados.
-- **Menú:** GPIS, Pesquisa, Projetos, Impacto, Equipe, Rede y Contato llevan a su sección en la home; desde cada sección se pasa a la página propia.
+- **Menú:** GPIS, Pesquisa, Projetos, Impacto, Equipe, Rede, Famílias y Contato llevan a su sección en la home; desde cada sección se pasa a la página propia. "Famílias" va destacado en azul y su bloque en la home ("Sua família participa da Coorte?") reúne WhatsApp, Instagram y Facebook de la Coorte y el enlace a `/familias/`.
 - **Home (tomado de la referencia profesional, oct/2026):** franja de la Coorte 2019→2025 bajo el hero en azul claro `#3679B0` (crisis en `#2C5F8A`); frase central con las 4 líneas de pesquisa a la derecha (lista numerada 01–04) que entran con el scroll; Proyectos con título fijo a la izquierda y filas a la derecha; mapa con un azul por país, marcadores cuadrados y nombres con línea guía; Impacto con foto azulada a la izquierda y azul noche a la derecha.
 - **Títulos de sección:** grandes (hasta 3.5rem), azul noche, con una línea terracota corta encima (eco del hero).
 - **Links a otras páginas:** subrayado discreto y flecha dentro de un círculo que se rellena al pasar el mouse. Nada de botones cuadrados para esto.
@@ -53,6 +53,8 @@ sleep 2 && open "http://localhost:8000"
 - Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
 - DEBH-CPEDCS (Rede nacional): logo listo; falta nombre completo y descripción (el contenedor no resuelve dominios `.br`).
 - Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
+- Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
+- Formulario o cuestionario de actualización de registro: pendiente de decidir plataforma (propuesta: encuesta REDCap institucional, con aprobación del CEP). Mientras tanto, "Atualizar meu cadastro" abre WhatsApp con mensaje listo.
 - Fotos: hay permiso de uso para todas las fotos de `assets/images` (confirmado oct/2026).
 
 - La frase central de la home ya usa la versión A (palabras que se encienden con el scroll, `initClaim` en `main.js`). Las versiones B (2.313 puntos) y C (12 preguntas) gustaron, pero para otras secciones; ver `.claude/recursos.md`.

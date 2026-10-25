@@ -329,6 +329,33 @@ function initMark(reduceMotion) {
                 anim(n.parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.18)', offset: 0.4 }, { transform: 'scale(1)' }], { duration: 900, delay: delay, easing: 'ease-out' });
             });
         },
+        familias: function () {
+            // Acolhimento: as pessoas se aproximam, os laços aparecem e um pulso
+            // cálido percorre a rede, de pessoa em pessoa.
+            nodes.forEach(function (n, i) {
+                var dx = (N[i][0] - 159.5) * 0.35, dy = (N[i][1] - 156) * 0.35;
+                anim(n.parentNode, [
+                    { opacity: 0, transform: 'translate(' + dx + 'px,' + dy + 'px) scale(.85)' },
+                    { opacity: 1, transform: 'translate(0px,0px) scale(1)' }
+                ], { duration: 1000, delay: 100 + i * 90, easing: ease });
+            });
+            edges.forEach(function (e, k) {
+                anim(e, [{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 900 + k * 45, easing: 'ease-out' });
+            });
+            var level = {}, queue = [3];
+            level[3] = 0;
+            while (queue.length) {
+                var cur = queue.shift();
+                E.forEach(function (p) {
+                    var next = p[0] === cur ? p[1] : (p[1] === cur ? p[0] : -1);
+                    if (next >= 0 && !(next in level)) { level[next] = level[cur] + 1; queue.push(next); }
+                });
+            }
+            nodes.forEach(function (n, i) {
+                anim(n, [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-warm)', offset: 0.4 }, { fill: 'var(--mark-ink)' }],
+                     { duration: 1000, delay: 1700 + level[i] * 300 });
+            });
+        },
         equipe: function () {
             [3, 0, 1, 4, 2, 5, 6, 7, 8].forEach(function (ni, k) {
                 anim(nodes[ni].parentNode, [{ opacity: 0.25, transform: 'scale(.9)' }, { opacity: 1, transform: 'scale(1.12)', offset: 0.35 }, { opacity: 1, transform: 'scale(1)' }], { duration: 800, delay: 150 + k * 260, easing: 'ease-out' });

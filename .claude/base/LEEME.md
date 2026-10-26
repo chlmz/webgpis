@@ -25,6 +25,8 @@ Capturas reducidas (JPEG, 1000 px de ancho) de los hitos del rediseño. El núme
 | `13-cabecera(s)-simbolo-amplio-*` | Cabeceras internas con el símbolo amplio (opción A, oct/2026) |
 | `14-home-marca-vectorial` | Hero de la home con la marca en vectores (ya no borrosa) |
 | `15-coorte-logo-vectorial` | Cabecera de la Coorte con su logo vectorizado, entero y más cerca del texto |
+| `16-novidades-resumen-home` | Home: bloque corto de Novidades al final, antes de Contato |
+| `16-novidades-pagina-*` | Página `/novidades/` en escritorio, celular e inglés |
 
 ## `demos/`
 

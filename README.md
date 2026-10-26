@@ -279,7 +279,17 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 
 - El logo de la Coorte en la cabecera de su página era un PNG chico (la figura ocupa ~214 px) ampliado casi 3 veces, y quedaba cortado en el borde derecho. Se vectorizó a partir de ese mismo PNG (`assets/images/coorte/logo-coorte-rg2019-marca.svg`, trazado con potrace) y ahora se muestra entero, hasta 600 px, más cerca del texto. Sigue entrando de lado. Si la Coorte tiene el logo original en vectores, conviene reemplazar el trazado por ese archivo.
 
-<!-- Agregar aquí la próxima etapa: "### 11. Título (fecha)" con los commits principales y qué cambió. -->
+### 11. Página propia de Novidades (26/oct)
+
+- Novidades salía del medio de la home (entre el mapa de la Rede e Impacto) con solo dos líneas por noticia: cortaba el recorrido y no alcanzaba para explicar una noticia como el premio Pepe Mujica.
+- Se creó `/novidades/`: cada noticia tiene fecha fija a la izquierda y el texto a la derecha, con tres datos (de qué se trata, quién participa, fuente oficial). Lo que aún falta se muestra como "A confirmar", discreto y marcado en el HTML con `<!-- PENDENTE -->` para completarlo.
+- En la home, Novidades pasó al final (después de "Sua família participa da Coorte?" y antes de Contato) y ahora muestra solo las noticias más recientes, cada título enlaza a su noticia completa en la página nueva, y "Todas as novidades" lleva a `/novidades/`.
+- Gesto del símbolo: una persona nueva llega por la izquierda, se conecta a la red y un pulso cálido anuncia la noticia.
+- Página en inglés (`/en/novidades/`) y entrada en el sitemap (PT y EN).
+- Antes de construir se mostró una prueba navegable: https://claude.ai/artifact/3AMG4Nqcax6zwQoLFxshee
+- Sigue pendiente la noticia del resultado del CNPq (Chamada MCTI/CNPq Nº 02/2026, Faixa B): solo hay un recibo de envío (30/abr/2026), no un resultado confirmado, así que no se publica todavía.
+
+<!-- Agregar aquí la próxima etapa: "### 12. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -289,6 +299,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
 - Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG.
+- Novidades do resultado do CNPq (Chamada MCTI/CNPq Nº 02/2026, Faixa B): esperar la confirmación oficial antes de publicar.
 
 ## Base de conocimiento
 

@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=28">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=29">
 </head>
 <body class="gpis-home-page">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -211,25 +211,6 @@
             </div>
         </section>
 
-        <!-- NOVIDADES -->
-        <section id="novidades" class="gpis-news" aria-labelledby="news-title">
-            <div class="container">
-                <div class="gpis-split">
-                    <div class="gpis-split__head">
-                        <h2 id="news-title" class="gpis-section-title">News</h2>
-                    </div>
-                    <ol class="gpis-news__list">
-                        <!-- Novas notícias entram no topo. PENDENTE: nome oficial exato do prêmio, parceiros da rede e link para o anúncio. -->
-                        <li data-reveal>
-                            <time class="gpis-news__date" datetime="2026-10">October 2026</time>
-                            <h3 class="gpis-news__t">GPIS and a Latin American network win the 2nd edition of the Pepe Mujica Award</h3>
-                            <p class="gpis-news__d">GPIS and partners from a Latin American research network were selected in the second edition of the Pepe Mujica Award.</p>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
         <!-- NOSSO IMPACTO -->
         <section id="impacto" class="gpis-impact-split" aria-labelledby="impact-title">
             <div class="gpis-impact-split__photo">
@@ -326,6 +307,25 @@
             </div>
         </section>
 
+        <!-- NOVIDADES (resumo): as 3 notícias mais recentes; o texto completo fica em novidades/. -->
+        <section id="novidades" class="gpis-news" aria-labelledby="news-title">
+            <div class="container">
+                <div class="gpis-split">
+                    <div class="gpis-split__head">
+                        <h2 id="news-title" class="gpis-section-title">News</h2>
+                        <a class="gpis-textlink" href="novidades/">All news <svg class="gpis-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+                    </div>
+                    <ol class="gpis-news__list">
+                        <li data-reveal>
+                            <time class="gpis-news__date" datetime="2026-10">October 2026</time>
+                            <h3 class="gpis-news__t"><a href="novidades/#premio-pepe-mujica">GPIS and a Latin American network win the 2nd edition of the Pepe Mujica Award</a></h3>
+                            <p class="gpis-news__d">GPIS and partners from a Latin American research network were selected in the second edition of the Pepe Mujica Award.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTATO -->
         <section id="contact" class="gpis-contact gpis-contact--institutional" aria-labelledby="contact-title">
             <div class="container">
@@ -414,6 +414,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous" defer></script>
-    <script src="../assets/js/main.js?v=18" defer></script>
+    <script src="../assets/js/main.js?v=19" defer></script>
 </body>
 </html>

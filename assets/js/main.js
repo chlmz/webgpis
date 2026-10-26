@@ -508,6 +508,25 @@ function initMark(reduceMotion) {
                      { duration: 1000, delay: 1700 + level[i] * 300 });
             });
         },
+        // Novidades: uma pessoa nova chega pela borda, se liga à rede e um pulso cálido anuncia a notícia.
+        novidades: function () {
+            var k = 3, links = [];
+            E.forEach(function (p, j) { if (p[0] === k || p[1] === k) links.push(j); });
+            anim(nodes[k].parentNode, [{ opacity: 0, transform: 'translateX(-70px)' }, { opacity: 1, transform: 'translateX(0px)' }], { duration: 1100, delay: 200, easing: ease });
+            links.forEach(function (j) {
+                var e = edges[j], len = e.getTotalLength();
+                e.style.strokeDasharray = len;
+                anim(e, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 600, delay: 1200, easing: ease });
+            });
+            var ring = el('circle', { class: 'gpis-mark__ring', cx: N[k][0], cy: N[k][1], r: 20 }, ringsG);
+            ring.style.stroke = 'var(--mark-warm)';
+            anim(ring, [{ opacity: 0.7, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(7)' }], { duration: 1800, delay: 1700, easing: 'cubic-bezier(.2,.6,.3,1)' });
+            anim(nodes[k], [{ fill: 'var(--mark-ink)' }, { fill: 'var(--mark-warm)', offset: 0.3 }, { fill: 'var(--mark-ink)' }], { duration: 1600, delay: 1700 });
+            links.forEach(function (j) {
+                var o = E[j][0] === k ? E[j][1] : E[j][0];
+                anim(nodes[o].parentNode, [{ transform: 'scale(1)' }, { transform: 'scale(1.12)', offset: 0.35 }, { transform: 'scale(1)' }], { duration: 800, delay: 2200, easing: 'ease-out' });
+            });
+        },
         equipe: function () {
             [3, 0, 1, 4, 2, 5, 6, 7, 8].forEach(function (ni, k) {
                 anim(nodes[ni].parentNode, [{ opacity: 0.25, transform: 'scale(.9)' }, { opacity: 1, transform: 'scale(1.12)', offset: 0.35 }, { opacity: 1, transform: 'scale(1)' }], { duration: 800, delay: 150 + k * 260, easing: 'ease-out' });

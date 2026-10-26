@@ -287,19 +287,25 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Gesto del símbolo: una persona nueva llega por la izquierda, se conecta a la red y un pulso cálido anuncia la noticia.
 - Página en inglés (`/en/novidades/`) y entrada en el sitemap (PT y EN).
 - Antes de construir se mostró una prueba navegable: https://claude.ai/artifact/3AMG4Nqcax6zwQoLFxshee
-- Sigue pendiente la noticia del resultado del CNPq (Chamada MCTI/CNPq Nº 02/2026, Faixa B): solo hay un recibo de envío (30/abr/2026), no un resultado confirmado, así que no se publica todavía.
+- Sigue pendiente la noticia del resultado oficial de la convocatoria: solo hay un recibo de envío (30/abr/2026), no un resultado confirmado, así que no se publica todavía.
 
-<!-- Agregar aquí la próxima etapa: "### 12. Título (fecha)" con los commits principales y qué cambió. -->
+### 12. Datos del Prêmio Pepe Mujica confirmados (26/oct)
+
+- El responsable del sitio confirmó que el Prêmio Pepe Mujica (2ª edição) es la convocatoria del Programa de Cooperação Prosul (MCTI, CNPq y AUGM) del recibo de envío de abril/2026, y que el resultado para el GPIS ya está confirmado oficialmente.
+- Se completaron los datos pendientes de la noticia en `/novidades/`: qué es el premio (en términos generales y verificables, sin citar montos ni el número interno del edital), quién participa (FURG junto con los socios ya públicos de la red: MMU, UDD y UCSUR) y un enlace interno a `/projetos/visoes-do-cuidado/`, el proyecto seleccionado.
+- Sigue pendiente solo el enlace a la fuente oficial del anuncio del resultado: no se encontró una página pública de resultados de la convocatoria (se buscó en gov.br/cnpq), así que queda como "A confirmar" hasta que el responsable del sitio lo entregue.
+- Por las reglas del sitio, no se publican montos de financiamiento ni el número o la categoría interna de la convocatoria; esa información se consultó solo para redactar el texto, nunca para citarla literalmente.
+
+<!-- Agregar aquí la próxima etapa: "### 13. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
 - Formulario de actualización de registro de las familias: falta publicar la encuesta REDCap (requiere el texto de privacidad aprobado por el CEP) y luego agregar el botón en la home y en `/familias/` (PT y EN). Mientras tanto el botón abre WhatsApp.
 - Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
-- Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
 - Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG.
-- Novidades do resultado do CNPq (Chamada MCTI/CNPq Nº 02/2026, Faixa B): esperar la confirmación oficial antes de publicar.
+- Novidades: falta el enlace a la fuente oficial del anuncio del resultado del Prêmio Pepe Mujica (no hay una página pública de resultados todavía).
 
 ## Base de conocimiento
 

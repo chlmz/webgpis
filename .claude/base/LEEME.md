@@ -27,6 +27,7 @@ Capturas reducidas (JPEG, 1000 px de ancho) de los hitos del rediseño. El núme
 | `15-coorte-logo-vectorial` | Cabecera de la Coorte con su logo vectorizado, entero y más cerca del texto |
 | `16-novidades-resumen-home` | Home: bloque corto de Novidades al final, antes de Contato |
 | `16-novidades-pagina-*` | Página `/novidades/` en escritorio, celular e inglés |
+| `17-novidades-pepe-mujica-completo` | Noticia del Prêmio Pepe Mujica con todos los datos confirmados |
 
 ## `demos/`
 

@@ -53,8 +53,7 @@ sleep 2 && open "http://localhost:8000"
 
 - Logos en `assets/logos/` (FURG con texto recoloreado, UCSUR positivo). El del PPGSP es muy pequeño (53×44 px): pedir versión mayor o vectorial.
 - DEBH-CPEDCS (Rede nacional): logo listo; falta nombre completo y descripción (el contenedor no resuelve dominios `.br`).
-- Novidades (`/novidades/`): confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
-- Novidades do CNPq (Chamada MCTI/CNPq Nº 02/2026, Faixa B): solo hay recibo de envío, no resultado; no publicar hasta la confirmación oficial.
+- Novidades (`/novidades/`): el premio Pepe Mujica (2ª edição) ya está confirmado, con descripción, parceiros y link a Visões do Cuidado. Falta solo el enlace a la fuente oficial del anuncio del resultado.
 - Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
 - Logo de la Coorte: pedir el original en vectores; hoy se usa un trazado del PNG (`logo-coorte-rg2019-marca.svg`).
 - Formulario o cuestionario de actualización de registro: pendiente de decidir plataforma (propuesta: encuesta REDCap institucional, con aprobación del CEP). Mientras tanto, "Atualizar meu cadastro" abre WhatsApp con mensaje listo.

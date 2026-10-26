@@ -77,7 +77,7 @@ sitemap.xml robots.txt
 | `initClaim` | Home | La frase central se enciende palabra por palabra y las 4 líneas entran con el scroll (solo escritorio) |
 | `initBand` | Home | Franja de la Coorte 2019→2025 |
 | `initNetworkMap` | Home | Mapa con un azul por país, marcadores cuadrados y nombres con línea guía; bilingüe |
-| `initMark` | Páginas internas | Símbolo del GPIS en vectores con un gesto según `<body data-mark="...">` |
+| `initMark` | Páginas internas | Símbolo del GPIS en vectores con un gesto según `<body data-mark="...">`; desde 1200 px se muestra amplio (hasta ~660 px) y cortado arriba y abajo |
 | `initCounters` | Coorte y otras | Cifras que cuentan al aparecer (formato según idioma) |
 | `initTimeline` | Coorte | Trayectoria con una línea que avanza con el scroll |
 | `initTyping` | Impacto | Frase de cierre que se escribe sola |
@@ -143,11 +143,11 @@ Si algo no gustó, se deshace con `git revert <commit>`; nunca reescribiendo el 
 
 ### Después de cambiar CSS o JS
 
-Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=26` y `main.js?v=18`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
+Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=27` y `main.js?v=18`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
 
 ```bash
 cd ~/webgpis-redesign
-grep -rl 'styles.css?v=26' --include=*.html . | xargs sed -i '' 's/styles.css?v=26/styles.css?v=27/g'
+grep -rl 'styles.css?v=27' --include=*.html . | xargs sed -i '' 's/styles.css?v=27/styles.css?v=28/g'
 python3 tools/i18n/build.py
 ```
 
@@ -207,6 +207,7 @@ Resumen; el detalle está en `.claude/CLAUDE.md`.
 - Títulos en serif (Source Serif 4).
 - Una página "Explorar" con buscador y filtros (commit `1d655a2`, revertido en `a7fd754`): se sentía como una lista más.
 - Etiquetas de estado en la Rede ("em andamento", "proposta"): lo no aprobado se redacta con prudencia en el texto.
+- Cabeceras internas en dos columnas (título a la izquierda, texto a la derecha) o con un índice "Nesta página": se prefirió agrandar el símbolo (oct/2026).
 
 ## Reglas de contenido
 
@@ -268,11 +269,11 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 
 - Se guarda en `.claude/base/` el material producido (capturas por hito, demos, diccionario REDCap, scripts de QA) y se escribe este README como registro de la historia del proyecto.
 
-### 9. Marca nítida en la home y cabeceras internas en revisión (25/oct)
+### 9. Marca nítida en la home y símbolo amplio en las cabeceras (25–26/oct)
 
 - La marca de fondo de la home era un PNG de 319 px mostrado a 560 px y se veía borrosa; ahora es el mismo símbolo en vectores (SVG en el HTML), quieto como antes.
 - El gesto del símbolo ya no intenta animarse cuando el símbolo está oculto (celular), lo que evitaba un error de JavaScript en Rede, Publicações y Linkage.
-- En revisión: el espacio vacío entre el texto y el símbolo en las cabeceras internas en pantallas anchas. Se mostraron tres opciones (A símbolo amplio, B dos columnas, C índice de la página): https://claude.ai/artifact/1w4btCLvPKEFfGQSBWp2oX
+- Cabeceras internas: en pantallas anchas quedaba un hueco grande entre el texto y el símbolo. Se compararon tres opciones (A símbolo amplio, B dos columnas, C índice de la página: https://claude.ai/artifact/1w4btCLvPKEFfGQSBWp2oX) y se eligió la **A**: desde 1200 px el símbolo crece hasta unos 660 px, se acerca al texto y se corta arriba y abajo, con opacidad 0,10. Entre 992 y 1199 px y en el celular no cambia; Impacto (cabecera con foto) tampoco. Capturas en `.claude/base/capturas/13-*` y `14-*`.
 
 <!-- Agregar aquí la próxima etapa: "### 10. Título (fecha)" con los commits principales y qué cambió. -->
 
@@ -283,7 +284,6 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
-- Cabeceras internas: elegir entre las opciones A, B o C para el espacio vacío en pantallas anchas.
 
 ## Base de conocimiento
 

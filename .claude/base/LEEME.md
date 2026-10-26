@@ -22,6 +22,8 @@ Capturas reducidas (JPEG, 1000 px de ancho) de los hitos del rediseño. El núme
 | `10-ingles-home` | Versión en inglés (`/en/`) |
 | `11-gestos-*` | Hojas con el gesto del símbolo del GPIS en cada página interna (cuadro intermedio y final) |
 | `12-logos-instituciones` | Control de los logos institucionales |
+| `13-cabecera(s)-simbolo-amplio-*` | Cabeceras internas con el símbolo amplio (opción A, oct/2026) |
+| `14-home-marca-vectorial` | Hero de la home con la marca en vectores (ya no borrosa) |
 
 ## `demos/`
 
@@ -29,6 +31,7 @@ Prototipos sueltos que se mostraron antes de construir. Se abren directamente en
 
 - `simbolo-gpis.html` — demo del símbolo del GPIS en vectores con un gesto por tema. Publicado como artifact: https://claude.ai/artifact/5btoLQ5KXmhLZJJxMCFEuZ
 - `frase-central.html` — las tres versiones de la frase central (A palabras que se encienden, B puntos, C preguntas). Artifact: https://claude.ai/artifact/A7bWFwAorKdZJz155AnTMq
+- Comparación de cabeceras internas (actual, A símbolo amplio, B dos columnas, C índice): https://claude.ai/artifact/1w4btCLvPKEFfGQSBWp2oX (se eligió la A)
 - `canvas-direcciones/` — primeras direcciones de diseño (A, B, C) para home e interna. Artifact: https://claude.ai/artifact/K4Nytci7sLBG7VCKm6EVrh
 
 ## `redcap/`

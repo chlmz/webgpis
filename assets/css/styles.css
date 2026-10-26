@@ -3056,6 +3056,15 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 /* Sobre a foto do Impacto: símbolo claro, do lado onde a foto aparece. */
 .gpis-impact-hero .gpis-mark { --mark-ink: #fff; --mark-hole: #1E3550; --mark-cool: #9DBDD9; z-index: 1; }
 .gpis-impact-hero .gpis-mark__grp { opacity: 0.16; }
+/* Pantalhas largas: o símbolo cresce, se aproxima do texto e é cortado em
+   cima e embaixo, ocupando o espaço livre da cabeceira (opção A, out/2026). */
+@media (min-width: 1200px) {
+    .gpis-proj-hero .gpis-mark {
+        width: clamp(440px, 38vw, 660px);
+        right: max(-4rem, calc((100vw - 1680px) / 2 - 1rem));
+    }
+    .gpis-proj-hero .gpis-mark__grp { opacity: 0.1; }
+}
 @media (max-width: 991px) {
     .gpis-mark { top: 1rem; right: -10%; width: 48%; transform: none; }
     .gpis-mark__grp { opacity: 0.09; }

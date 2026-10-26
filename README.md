@@ -143,11 +143,11 @@ Si algo no gustó, se deshace con `git revert <commit>`; nunca reescribiendo el 
 
 ### Después de cambiar CSS o JS
 
-Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=27` y `main.js?v=18`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
+Subir el número `?v=` en **todos** los HTML (hoy `styles.css?v=28` y `main.js?v=18`) para que nadie vea la versión vieja en caché, y regenerar el inglés:
 
 ```bash
 cd ~/webgpis-redesign
-grep -rl 'styles.css?v=27' --include=*.html . | xargs sed -i '' 's/styles.css?v=27/styles.css?v=28/g'
+grep -rl 'styles.css?v=28' --include=*.html . | xargs sed -i '' 's/styles.css?v=28/styles.css?v=29/g'
 python3 tools/i18n/build.py
 ```
 
@@ -275,7 +275,11 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - El gesto del símbolo ya no intenta animarse cuando el símbolo está oculto (celular), lo que evitaba un error de JavaScript en Rede, Publicações y Linkage.
 - Cabeceras internas: en pantallas anchas quedaba un hueco grande entre el texto y el símbolo. Se compararon tres opciones (A símbolo amplio, B dos columnas, C índice de la página: https://claude.ai/artifact/1w4btCLvPKEFfGQSBWp2oX) y se eligió la **A**: desde 1200 px el símbolo crece hasta unos 660 px, se acerca al texto y se corta arriba y abajo, con opacidad 0,10. Entre 992 y 1199 px y en el celular no cambia; Impacto (cabecera con foto) tampoco. Capturas en `.claude/base/capturas/13-*` y `14-*`.
 
-<!-- Agregar aquí la próxima etapa: "### 10. Título (fecha)" con los commits principales y qué cambió. -->
+### 10. Logo de la Coorte nítido (26/oct)
+
+- El logo de la Coorte en la cabecera de su página era un PNG chico (la figura ocupa ~214 px) ampliado casi 3 veces, y quedaba cortado en el borde derecho. Se vectorizó a partir de ese mismo PNG (`assets/images/coorte/logo-coorte-rg2019-marca.svg`, trazado con potrace) y ahora se muestra entero, hasta 600 px, más cerca del texto. Sigue entrando de lado. Si la Coorte tiene el logo original en vectores, conviene reemplazar el trazado por ese archivo.
+
+<!-- Agregar aquí la próxima etapa: "### 11. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -284,6 +288,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Novidades: confirmar el nombre oficial del premio Pepe Mujica (2ª edición), los socios de la red y el enlace al anuncio.
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
+- Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG.
 
 ## Base de conocimiento
 

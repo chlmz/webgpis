@@ -1309,43 +1309,25 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     content: "";
     position: absolute;
     top: 50%;
-    right: clamp(-3rem, -2vw, -1rem);
-    transform: translateY(calc(-46% + var(--py, 0px)));
-    width: clamp(420px, 40vw, 660px);
-    height: clamp(630px, 60vw, 990px);
-    background-image: url("../images/coorte/logo-coorte-rg2019-watermark.png");
-    /* The supplied PNG has wide transparent margins; scale the visible mark. */
-    background-size: 180% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: brightness(0);
-    opacity: 0.035;
+    /* Inteiro e perto do texto: não encosta nem é cortado na borda direita. */
+    right: max(1rem, calc((100vw - 1680px) / 2 + 6vw));
+    transform: translateY(calc(-50% + var(--py, 0px)));
+    width: clamp(440px, 36vw, 600px);
+    aspect-ratio: 222 / 199;
+    /* Logo vetorizado a partir do PNG da Coorte: nítido em qualquer tamanho. */
+    background: url("../images/coorte/logo-coorte-rg2019-marca.svg") center / contain no-repeat;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-    .gpis-proj-hero--coorte::after { right: -3rem; }
+    .gpis-proj-hero--coorte::after { width: 400px; right: 1rem; }
 }
 @media (max-width: 991px) {
-    .gpis-proj-hero--coorte::after {
-        width: clamp(315px, 38.5vw, 400px);
-        height: clamp(472.5px, 57.75vw, 600px);
-        right: -2rem;
-    }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-    .gpis-proj-hero--coorte::after { right: -8rem; }
+    .gpis-proj-hero--coorte::after { width: 340px; right: -3rem; }
 }
 @media (max-width: 576px) {
-    .gpis-proj-hero--coorte::after {
-        width: 262px;
-        height: 393px;
-        top: auto;
-        bottom: -2.5rem;
-        right: -4rem;
-        transform: none;
-        opacity: 0;
-    }
+    .gpis-proj-hero--coorte::after { content: none; }
 }
 
 /* ============================================================

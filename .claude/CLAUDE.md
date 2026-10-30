@@ -31,7 +31,7 @@ sleep 2 && open "http://localhost:8000"
 - **Color:** una familia de azules; terracota como único acento cálido. Sin ámbar ni verde sueltos, sin degradados, sin halos, sin elevar tarjetas al pasar el ratón. Botones rectos (4px).
 - **Ancho:** contenedor ancho (hasta 1680px), poco blanco en los costados.
 - **Menú:** GPIS, Pesquisa, Projetos, Impacto, Equipe, Rede, Famílias y Contato llevan a su sección en la home; desde cada sección se pasa a la página propia. "Famílias" va destacado en azul y su bloque en la home ("Sua família participa da Coorte?") reúne WhatsApp, Instagram y Facebook de la Coorte y el enlace a `/familias/`.
-- **Home (tomado de la referencia profesional, oct/2026):** franja de la Coorte 2019→2025 bajo el hero en azul claro `#3679B0` (crisis en `#2C5F8A`); frase central con las 4 líneas de pesquisa a la derecha (lista numerada 01–04) que entran con el scroll; Proyectos con título fijo a la izquierda y filas a la derecha; mapa con un azul por país, marcadores cuadrados y nombres con línea guía; Impacto con foto azulada a la izquierda y azul noche a la derecha.
+- **Home (tomado de la referencia profesional, oct/2026):** franja de la Coorte 2019→Agora (cámaras) bajo el hero en azul claro `#3679B0` (crisis en `#2C5F8A`); frase central con las 4 líneas de pesquisa a la derecha (lista numerada 01–04) que entran con el scroll; Proyectos con título fijo a la izquierda y filas a la derecha; mapa con un azul por país, marcadores cuadrados y nombres con línea guía; Impacto con foto azulada a la izquierda y azul noche a la derecha.
 - **Títulos de sección:** grandes (hasta 3.5rem), azul noche, con una línea terracota corta encima (eco del hero).
 - **Links a otras páginas:** subrayado discreto y flecha dentro de un círculo que se rellena al pasar el mouse. Nada de botones cuadrados para esto.
 - **Rede:** sin etiquetas de estado ("em andamento", "proposta"); lo que aún no está aprobado se redacta con prudencia en el texto (nunca "financiado" ni "aprovado").
@@ -57,6 +57,8 @@ sleep 2 && open "http://localhost:8000"
 - Novidades (`/novidades/`): el premio Pepe Mujica (2ª edição) ya está confirmado, con descripción, parceiros y link a Visões do Cuidado. Falta solo el enlace a la fuente oficial del anuncio del resultado.
 - Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
 - Logo de la Coorte: pedir el original en vectores; hoy se usa un trazado del PNG (`logo-coorte-rg2019-marca.svg`).
+- Pesquisa con cámaras: en la trayectoria (Coorte, Famílias y franja de la home) figura como "Agora" porque falta la fecha de inicio del campo; pedirla y reemplazar.
+- Ramas: solo `main`, `redesign-moderno`, `legacy` y `referencia-profesional` tienen uso; el resto se borra con el bloque de la entrada 14 del README (desde la nube no se puede: 403).
 - Formulario o cuestionario de actualización de registro: pendiente de decidir plataforma (propuesta: encuesta REDCap institucional, con aprobación del CEP). Mientras tanto, "Atualizar meu cadastro" abre WhatsApp con mensaje listo.
 - Fotos: todas las de `assets/images` fueron hechas con autorización explícita de las madres y hay permiso de uso (confirmado oct/2026). El aviso es obligatorio junto a cada foto con personas (ver "Autorización de imagen").
 
@@ -68,6 +70,10 @@ sleep 2 && open "http://localhost:8000"
 - **Actualizarlo periódicamente**, como parte de cada entrega: al cerrar una sesión de trabajo o un hito, agregar una entrada en "Historia" (fecha, commits principales, qué cambió y por qué); registrar lo probado y rechazado; mover pendientes resueltos o nuevos; reflejar cambios de estructura, funciones de `main.js`, gestos o flujo de trabajo. Si este CLAUDE.md cambia en algo que afecte al README, actualizar ambos.
 - `.claude/base/` es la base de conocimiento (capturas por hito, demos, diccionario REDCap, scripts de QA); índice en `.claude/base/LEEME.md`. Guardar ahí capturas o demos nuevas que valga la pena conservar (JPEG reducido, sin bibliotecas de terceros) y registrarlas en el índice.
 - **El repositorio es público.** Ni el README ni nada dentro de `.claude/` puede contener las reglas confidenciales del contenido (personas excluidas, candidaturas en revisión, nombres internos de subproyectos, financiamientos). Esas reglas se piden al responsable del sitio y se aplican sin escribirlas en el repo.
+
+## Biblioteca de divulgación
+
+Vídeos, capas, leyendas y fuentes de material para redes van en el repositorio privado `chlmz/gpis-biblioteca` (no en este repo: es público y los vídeos pesan). Cada pieza en `videos/AAAA-MM_nombre/` con MP4 (Reels 9:16 y feed 4:5), capas, `legenda.txt` y `FICHA.md`; los modelos en `fontes/` y `ferramentas/fazer-video.js` para generarlos. Las reglas de autorización e IA rotulada valen igual.
 
 ## Recursos e ideas
 

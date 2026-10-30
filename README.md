@@ -128,6 +128,8 @@ sleep 2 && open "http://localhost:8000"
 - `legacy` — el sitio anterior al rediseño (commit `54e3537`).
 - `referencia-profesional` — el sitio de referencia hecho por un profesional, del que se tomaron patrones.
 
+Solo estas cuatro ramas tienen uso. Las demás ya estaban fusionadas en `main` y se borran con el bloque de limpieza de la entrada 14 de la Historia. La de instrucciones de Codex, la única con un commit propio (un `AGENTS.md` reemplazado por `.claude/CLAUDE.md`), queda guardada como etiqueta `archivo/codex-instrucciones`.
+
 Publicar lo que está en la rama de trabajo:
 
 ```bash
@@ -303,7 +305,25 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - La regla queda como permanente (ver "Reglas de contenido"): vale también para los vídeos y las publicaciones en redes.
 - Fuera del repositorio se hicieron vídeos verticales y 4:5 para el Instagram de la Coorte (familias y campo de las cámaras) con las fotos de las oficinas y las ilustraciones conceptuales del sitio, rotuladas como tales. Las fotos de campo del estudio de Bagé (2017) que hay en el Drive se descartaron: son de otro estudio.
 
-<!-- Agregar aquí la próxima etapa: "### 14. Título (fecha)" con los commits principales y qué cambió. -->
+### 14. Cámaras en la trayectoria, noticia del campo, limpieza y biblioteca (30/oct)
+
+- **Trayectoria** (`88ea0d6`): la pesquisa con cámaras entra como último paso, "Agora · Pesquisa com câmeras", en la trayectoria de la Coorte (con enlace a Visão em primeira pessoa & IA) y en la de `/familias/`. La franja de la home suma una columna "Agora · Câmeras" (pasa de 7 a 8 columnas). Se usa "Agora" y no un año porque la fecha de inicio del campo no está registrada.
+- **Noticia** (`88ea0d6`): "Começou o trabalho de campo da pesquisa com câmeras" en `/novidades/` (cómo funciona, hecha con las familias, autorización, enlaces), también primera en el resumen de la home. Se decidió publicarla porque es un hito concreto y reciente, relevante para las familias, y Novidades tenía una sola noticia.
+- **Limpieza** (`4a64798`): se borraron las reglas CSS que solo apuntaban a clases que ninguna página usa (grilla antigua de la home, teaser de impacto, etiquetas de estado rechazadas, filas numeradas, bloques viejos de Equipe y del pie): 128 KB → 116 KB, con 34 capturas de página completa (17 páginas, escritorio y celular) idénticas píxel a píxel antes y después. Salieron también un PNG de marca de agua de la Coorte sin uso, un SVG de UCSUR sin uso, un script de QA desactualizado (`tools/qa/structural-check.cjs`) y la caché de Python que estaba versionada; se agregó `.gitignore`.
+- **Ramas:** el proxy del entorno en la nube no permite borrar ramas ni subir etiquetas (403), así que la limpieza de ramas se hace desde la copia local:
+
+  ```bash
+  cd ~/webgpis-redesign
+  git fetch origin --prune
+  git tag -a archivo/codex-instrucciones origin/chore/codex-project-instructions -m "Archivo: AGENTS.md de Codex, reemplazado por .claude/CLAUDE.md"
+  git push origin archivo/codex-instrucciones
+  git push origin --delete chore/codex-project-instructions feat/dados-colaboracao feat/publicacoes-sitemap fix/network-map-geography fix/social-metadata prueba-novidades prueba-referencia redesign-home-linhas-de-pesquisa
+  git branch -D prueba-novidades prueba-referencia 2>/dev/null; git branch -a
+  ```
+
+- **Biblioteca de divulgación:** los vídeos, capas, leyendas y las fuentes para rehacerlos quedan en un repositorio aparte y privado, `chlmz/gpis-biblioteca` (vídeos pesados fuera del sitio, borradores no públicos). Incluye `ferramentas/fazer-video.js`, que genera el MP4 desde cada modelo HTML (probado: reproduce el vídeo publicado cuadro por cuadro).
+
+<!-- Agregar aquí la próxima etapa: "### 15. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -313,6 +333,8 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
 - Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG. En la carpeta compartida "Documentos Coorte de Nascimentos de RG 2019" del Drive hay un "Logo Coorte alta definição.pdf" que probablemente lo resuelve.
 - Novidades: falta el enlace a la fuente oficial del anuncio del resultado del Prêmio Pepe Mujica (no hay una página pública de resultados todavía).
+- Pesquisa con cámaras: falta la fecha (mes/año) de inicio del trabajo de campo; mientras tanto la trayectoria dice "Agora".
+- Ramas: correr el bloque de limpieza de la entrada 14 desde la copia local.
 
 ## Base de conocimiento
 

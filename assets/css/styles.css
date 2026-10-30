@@ -2203,8 +2203,8 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-band__track {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    min-width: 720px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    min-width: 820px;
 }
 .gpis-band__year {
     display: grid;
@@ -2238,7 +2238,7 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
     pointer-events: none;
 }
 .gpis-band__line { right: 0; background: rgba(255,255,255,0.22); }
-.gpis-band__fill { width: calc(100% / 14 + var(--p, 1) * (100% - 100% / 7)); background: #fff; }
+.gpis-band__fill { width: calc(100% / 16 + var(--p, 1) * (100% - 100% / 8)); background: #fff; }
 .gpis-band__fill::after {
     content: '';
     position: absolute;

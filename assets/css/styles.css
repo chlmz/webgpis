@@ -3213,6 +3213,12 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 @media (max-width: 767px) { .gpis-care { grid-template-columns: minmax(0, 1fr); } }
 .gpis-proj-hero__family { margin: 1.25rem 0 0; }
 
+/* Aviso de autorização: sempre junto das fotos em que aparecem mães e crianças */
+.gpis-consent { display: flex; align-items: baseline; gap: 0.55rem; margin: 0.9rem 0 0; font-size: 0.875rem; line-height: 1.45; color: var(--gpis-cinza-200); }
+.gpis-consent::before { content: ""; flex: none; width: 0.5rem; height: 0.5rem; background: var(--gpis-terracota-sul); transform: translateY(-0.05rem); }
+.gpis-consent--photo { position: absolute; left: 0; bottom: 0; z-index: 2; margin: 0; padding: 0.45rem 0.8rem; background: rgba(20, 44, 68, 0.82); color: #fff; font-size: 0.8125rem; }
+.gpis-consent--hero { margin-top: 1.5rem; color: rgba(255, 255, 255, 0.88); }
+
 /* ============================================================
    HOME — NOVIDADES
 ============================================================ */

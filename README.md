@@ -321,7 +321,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
   git branch -D prueba-novidades prueba-referencia 2>/dev/null; git branch -a
   ```
 
-- **Biblioteca de divulgación:** los vídeos, capas, leyendas y las fuentes para rehacerlos quedan en un repositorio aparte y privado, `chlmz/gpis-biblioteca` (vídeos pesados fuera del sitio, borradores no públicos). Incluye `ferramentas/fazer-video.js`, que genera el MP4 desde cada modelo HTML (probado: reproduce el vídeo publicado cuadro por cuadro).
+- **Biblioteca de divulgación:** se pensó primero como un repositorio de GitHub, pero se decidió llevarla al Google Drive del responsable del sitio: carpeta **"GPIS — Biblioteca"** (privada; buscarla por ese título con el conector de Drive; el enlace no se escribe aquí porque el repositorio es público). Ahí van las fotos aprobadas del equipo, las oficinas y el campo, las figuras, los vídeos y posts ya hechos, los logos, los textos y las fuentes para rehacer los vídeos. La carpeta `01 Enviar aqui (por revisar)` es donde todo el grupo sube fotos; nada de ahí se usa sin revisión y sin confirmar la autorización de las madres (hay una planilla "Registro de lotes de fotos" y un `00 LEIA PRIMEIRO` con las reglas). La herramienta `ferramentas/fazer-video.js` (HTML → MP4, probada: reproduce el vídeo publicado cuadro por cuadro) y los modelos de cada vídeo viven en la carpeta `08 Fontes dos vídeos`. El repositorio `gpis-biblioteca` ya no se usa.
 
 <!-- Agregar aquí la próxima etapa: "### 15. Título (fecha)" con los commits principales y qué cambió. -->
 
@@ -335,6 +335,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Novidades: falta el enlace a la fuente oficial del anuncio del resultado del Prêmio Pepe Mujica (no hay una página pública de resultados todavía).
 - Pesquisa con cámaras: falta la fecha (mes/año) de inicio del trabajo de campo; mientras tanto la trayectoria dice "Agora".
 - Ramas: correr el bloque de limpieza de la entrada 14 desde la copia local.
+- Biblioteca en Drive: subir a mano los MP4, las fotos y las fuentes de los vídeos (el zip `para-arrastrar-ao-drive` de la sesión del 30/oct trae todo ordenado) y compartir `01 Enviar aqui` con el equipo como Editor, solo con correos concretos.
 
 ## Base de conocimiento
 

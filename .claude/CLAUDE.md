@@ -58,6 +58,7 @@ sleep 2 && open "http://localhost:8000"
 - Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
 - Logo de la Coorte: pedir el original en vectores; hoy se usa un trazado del PNG (`logo-coorte-rg2019-marca.svg`).
 - Pesquisa con cámaras: en la trayectoria (Coorte, Famílias y franja de la home) figura como "Agora" porque falta la fecha de inicio del campo; pedirla y reemplazar.
+- Biblioteca en Drive: falta subir a mano los MP4, las fotos y las fuentes de los vídeos (herramientas de Drive no suben archivos pesados) y compartir `01 Enviar aqui` con el equipo como Editor, solo con correos concretos.
 - Ramas: solo `main`, `redesign-moderno`, `legacy` y `referencia-profesional` tienen uso; el resto se borra con el bloque de la entrada 14 del README (desde la nube no se puede: 403).
 - Formulario o cuestionario de actualización de registro: pendiente de decidir plataforma (propuesta: encuesta REDCap institucional, con aprobación del CEP). Mientras tanto, "Atualizar meu cadastro" abre WhatsApp con mensaje listo.
 - Fotos: todas las de `assets/images` fueron hechas con autorización explícita de las madres y hay permiso de uso (confirmado oct/2026). El aviso es obligatorio junto a cada foto con personas (ver "Autorización de imagen").
@@ -73,7 +74,7 @@ sleep 2 && open "http://localhost:8000"
 
 ## Biblioteca de divulgación
 
-Vídeos, capas, leyendas y fuentes de material para redes van en el repositorio privado `chlmz/gpis-biblioteca` (no en este repo: es público y los vídeos pesan). Cada pieza en `videos/AAAA-MM_nombre/` con MP4 (Reels 9:16 y feed 4:5), capas, `legenda.txt` y `FICHA.md`; los modelos en `fontes/` y `ferramentas/fazer-video.js` para generarlos. Las reglas de autorización e IA rotulada valen igual.
+Todo el material de divulgación vive en el Google Drive del responsable del sitio, carpeta **"GPIS — Biblioteca"** (privada; buscarla por ese título con el conector de Drive). No en este repo: es público y los vídeos pesan. Estructura: `01 Enviar aqui (por revisar)` (donde sube todo el grupo; **nunca usar su contenido sin aprobación**), `02 Fotos aprovadas (com autorização)`, `03 Figuras e esquemas` (incluye las ilustraciones hechas con IA), `04 Vídeos e posts prontos` (una carpeta por pieza, con ficha y leyenda), `05 Logos e identidade`, `06 Textos e legendas`, `07 Apresentações e pôsteres`, `08 Fontes dos vídeos (modelos)` (con `ferramentas/fazer-video.js`), `99 Arquivo`. La planilla "Registro de lotes de fotos" dice qué lotes tienen la autorización de las madres confirmada. Para elegir material para el sitio o vídeos, usar solo las carpetas 02 a 06, y las reglas de autorización e IA rotulada valen igual.
 
 ## Recursos e ideas
 

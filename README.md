@@ -216,6 +216,7 @@ Resumen; el detalle está en `.claude/CLAUDE.md`.
 - No publicar correos personales: usar ORCID y enlaces institucionales.
 - No publicar montos, nombres de convocatorias, presupuestos, cronogramas internos, datos del comité de ética ni detalles de la infraestructura de protección de datos.
 - Lo que aún no está aprobado nunca se describe como "financiado" ni "aprovado".
+- **Autorización de imagen, siempre visible.** Toda foto o vídeo en que aparezcan madres o niños lleva, junto a la imagen, el aviso de que fue hecha y publicada con autorización explícita de las madres (hay menores de edad). En el sitio se usa la clase `.gpis-consent` (debajo de la foto, o `--photo` sobre ella, o `--hero` en una cabecera oscura); en los vídeos, una etiqueta sobre las fotos reales y una frase en el cierre; en las publicaciones de Instagram, una frase en la leyenda. Las ilustraciones hechas con IA llevan "Ilustração conceitual" y nunca se presentan como participantes reales.
 - Hay reglas adicionales sobre personas y socios que no se escriben aquí porque el repositorio es público: **consultar al responsable del sitio** antes de agregar o nombrar personas, socios o proyectos nuevos.
 
 ## Historia
@@ -296,7 +297,13 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Sigue pendiente solo el enlace a la fuente oficial del anuncio del resultado: no se encontró una página pública de resultados de la convocatoria (se buscó en gov.br/cnpq), así que queda como "A confirmar" hasta que el responsable del sitio lo entregue.
 - Por las reglas del sitio, no se publican montos de financiamiento ni el número o la categoría interna de la convocatoria; esa información se consultó solo para redactar el texto, nunca para citarla literalmente.
 
-<!-- Agregar aquí la próxima etapa: "### 13. Título (fecha)" con los commits principales y qué cambió. -->
+### 13. Autorización de las madres, visible en todo el sitio (30/oct)
+
+- Commit `8a4a8f2`. A pedido del responsable del sitio, cada foto con madres o niños dice ahora que fue hecha y publicada con autorización explícita de las madres: bloque Impacto de la home (sobre la foto), cabecera y mosaico de la oficina en `/impacto/`, fotos de la oficina en `/familias/`. En `/familias/`, "Como cuidamos das suas informações" suma el ítem "Fotos só com autorização" junto a "Vídeos só com autorização". Versión en inglés regenerada; CSS en `?v=30`.
+- La regla queda como permanente (ver "Reglas de contenido"): vale también para los vídeos y las publicaciones en redes.
+- Fuera del repositorio se hicieron vídeos verticales y 4:5 para el Instagram de la Coorte (familias y campo de las cámaras) con las fotos de las oficinas y las ilustraciones conceptuales del sitio, rotuladas como tales. Las fotos de campo del estudio de Bagé (2017) que hay en el Drive se descartaron: son de otro estudio.
+
+<!-- Agregar aquí la próxima etapa: "### 14. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -304,7 +311,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Facebook de la Coorte: hoy se enlaza una búsqueda; falta el enlace directo a la página.
 - Logo del PPGSP en mayor tamaño o vectorial (el actual es de 53×44 px).
 - DEBH-CPEDCS (Rede nacional): falta nombre completo y descripción.
-- Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG.
+- Logo de la Coorte en vectores (original): hoy se usa un trazado del PNG. En la carpeta compartida "Documentos Coorte de Nascimentos de RG 2019" del Drive hay un "Logo Coorte alta definição.pdf" que probablemente lo resuelve.
 - Novidades: falta el enlace a la fuente oficial del anuncio del resultado del Prêmio Pepe Mujica (no hay una página pública de resultados todavía).
 
 ## Base de conocimiento

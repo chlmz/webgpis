@@ -218,7 +218,8 @@ Resumen; el detalle está en `.claude/CLAUDE.md`.
 - No publicar correos personales: usar ORCID y enlaces institucionales.
 - No publicar montos, nombres de convocatorias, presupuestos, cronogramas internos, datos del comité de ética ni detalles de la infraestructura de protección de datos.
 - Lo que aún no está aprobado nunca se describe como "financiado" ni "aprovado".
-- **Autorización de imagen, siempre visible.** Toda foto o vídeo en que aparezcan madres o niños lleva, junto a la imagen, el aviso de que fue hecha y publicada con autorización explícita de las madres (hay menores de edad). En el sitio se usa la clase `.gpis-consent` (debajo de la foto, o `--photo` sobre ella, o `--hero` en una cabecera oscura); en los vídeos, una etiqueta sobre las fotos reales y una frase en el cierre; en las publicaciones de Instagram, una frase en la leyenda. Las ilustraciones hechas con IA llevan "Ilustração conceitual" y nunca se presentan como participantes reales.
+- **Autorización de imagen, siempre visible.** Toda foto o vídeo en que aparezcan madres o niños lleva, junto a la imagen, el aviso de que fue hecha y publicada con autorización explícita de las madres (hay menores de edad). En el sitio se usa la clase `.gpis-consent` (debajo de la foto, o `--photo` sobre ella, o `--hero` en una cabecera oscura); en los vídeos, una etiqueta sobre las fotos reales y una frase en el cierre; en las publicaciones de Instagram, una frase en la leyenda. Las imágenes hechas con IA siempre lo dicen. Las de Visão em primeira pessoa y las de los vídeos se hicieron con IA a partir de fotos reales de participantes de la Coorte: se dice así, llevan también el aviso de autorización y nunca se escribe que "no muestran participantes reales".
+- **Fotos del piloto de cámaras (2026):** se hicieron en una sala de la FURG y el campo no será así; en el sitio solo van recortes donde no se vea el lugar.
 - Hay reglas adicionales sobre personas y socios que no se escriben aquí porque el repositorio es público: **consultar al responsable del sitio** antes de agregar o nombrar personas, socios o proyectos nuevos.
 
 ## Historia
@@ -323,7 +324,15 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 
 - **Biblioteca de divulgación:** se pensó primero como un repositorio de GitHub, pero se decidió llevarla al Google Drive del responsable del sitio: carpeta **"GPIS — Biblioteca"** (privada; buscarla por ese título con el conector de Drive; el enlace no se escribe aquí porque el repositorio es público). Ahí van las fotos aprobadas del equipo, las oficinas y el campo, las figuras, los vídeos y posts ya hechos, los logos, los textos y las fuentes para rehacer los vídeos. La carpeta `01 Enviar aqui (por revisar)` es donde todo el grupo sube fotos; nada de ahí se usa sin revisión y sin confirmar la autorización de las madres (hay una planilla "Registro de lotes de fotos" y un `00 LEIA PRIMEIRO` con las reglas). La herramienta `ferramentas/fazer-video.js` (HTML → MP4, probada: reproduce el vídeo publicado cuadro por cuadro) y los modelos de cada vídeo viven en la carpeta `08 Fontes dos vídeos`. El repositorio `gpis-biblioteca` ya no se usa.
 
-<!-- Agregar aquí la próxima etapa: "### 15. Título (fecha)" con los commits principales y qué cambió. -->
+### 15. Fotos del piloto ordenadas y rótulos de IA corregidos (30–31/oct)
+
+- El responsable del sitio encontró la carpeta de imágenes del sitio anterior (`webpage-main/images`, en su OneDrive) y la subió al Drive. Se revisaron las 76 imágenes y se ordenaron en la biblioteca: fotos reales del piloto de la pesquisa con cámaras (2026), oficinas, equipo, vida en el GPIS e ilustraciones hechas con IA; las duplicadas y las que no se usan quedaron en `99 Arquivo`. El responsable confirmó que todas las madres autorizaron el uso de su imagen y la de sus hijos; quedó anotado en la planilla de lotes.
+- Se propusieron fotos del piloto para Visão em primeira pessoa & IA y para la noticia del campo (vista previa: https://claude.ai/artifact/AG5evYiEAaShFemMKZroJp). Decisión: **Visão se queda como estaba**, porque el piloto se hizo en una sala de la FURG y el campo no será así; en la noticia va una foto donde no se vea el lugar.
+- **Rótulos de IA corregidos:** las imágenes de Visão (la de la abordagem y el par de análisis de rostros) no son ilustraciones inventadas: son fotos de participantes de la Coorte modificadas con IA. El pie decía "não representam participantes… reais"; ahora dice que fueron creadas o modificadas con IA a partir de fotos de participantes, que las marcas del rostro ilustran el análisis y no son resultados, y lleva el aviso de autorización. También se ajustaron los textos alternativos y la versión en inglés.
+- **Rede:** el nombre "CHANGE Research Working Group" lleva ahora el enlace a la página oficial del grupo en la Universidad Científica del Sur (la descripción más completa sigue pendiente). **Causale Consultoria** entra en la Rede nacional, después de PPGSP/FURG y DEBH-CPEDCS, con el texto aprobado en la vista previa del 26/oct, comprobado con su sitio (Pelotas, delineamiento, recolección de datos, estadística; en el GPIS hace el trabajo de campo), y su logo, que vino dentro de la página guardada que mandó el responsable (`assets/logos/causale.png`).
+- Se dejaron fuera del sitio, por ahora: las ilustraciones de IA del sitio anterior (brillos y degradados, fuera de la dirección visual), los retratos individuales (solo hay de algunas personas y dos están retocados con IA), las fotos del equipo frente a las computadoras (en las pantallas se ve una cara) y las fotos de grupo (falta confirmar quién aparece).
+
+<!-- Agregar aquí la próxima etapa: "### 16. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 
@@ -335,6 +344,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - Novidades: falta el enlace a la fuente oficial del anuncio del resultado del Prêmio Pepe Mujica (no hay una página pública de resultados todavía).
 - Pesquisa con cámaras: falta la fecha (mes/año) de inicio del trabajo de campo; mientras tanto la trayectoria dice "Agora".
 - Ramas: correr el bloque de limpieza de la entrada 14 desde la copia local.
+- Vídeos e leyendas de Instagram: las leyendas decían que las imágenes de IA "não mostram participantes reais"; ya se corrigieron en el Drive (entrada 15). Si algún vídeo ya se publicó con la leyenda anterior, editar la leyenda en Instagram.
 - Biblioteca en Drive: subir a mano los MP4, las fotos y las fuentes de los vídeos (el zip `para-arrastrar-ao-drive` de la sesión del 30/oct trae todo ordenado) y compartir `01 Enviar aqui` con el equipo como Editor, solo con correos concretos.
 
 ## Base de conocimiento

@@ -2854,6 +2854,9 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .gpis-newsitem__t { margin: 0 0 1rem; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--gpis-azul-noite); max-width: 26ch; text-wrap: balance; }
 .gpis-newsitem__lead { margin: 0 0 2rem; font-size: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); line-height: 1.6; color: var(--gpis-grafite); max-width: 62ch; }
 .gpis-newsitem__facts { max-width: 62ch; }
+/* Foto dentro de uma notícia. */
+.gpis-newsitem__photo { margin: 0 0 2.5rem; max-width: 62ch; }
+.gpis-newsitem__photo img { display: block; width: 100%; height: auto; }
 /* Dado que ainda falta: visível, discreto e fácil de achar no HTML (comentário PENDENTE ao lado). */
 .gpis-pendente { color: var(--gpis-cinza-meta); font-style: italic; border-bottom: 1px dashed var(--border-default); }
 .gpis-facts--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }

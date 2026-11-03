@@ -1,14 +1,14 @@
 """List every translatable string of the PT site; keeps existing translations."""
 import json
 import os
-from common import ROOT, pages, segments, norm
+from common import ROOT, pages, segments, norm, contact_messages
 
 path = os.path.join(os.path.dirname(__file__), 'en.json')
 old = json.load(open(path)) if os.path.exists(path) else {}
 out, missing = {}, 0
 for rel in pages() + ['404.html']:
     src = open(os.path.join(ROOT, rel), encoding='utf-8').read()
-    for _, _, text in segments(src):
+    for _, _, text in segments(src) + contact_messages(src):
         k = norm(text)
         if k not in out:
             out[k] = old.get(k, '')

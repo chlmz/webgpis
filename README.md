@@ -164,7 +164,7 @@ python3 tools/i18n/extract.py   # agrega los textos nuevos a tools/i18n/en.json 
 python3 tools/i18n/build.py     # regenera /en/, el selector PT/EN y los hreflang
 ```
 
-Los títulos oficiales (disertaciones, artículos) y los nombres propios quedan sin traducir a propósito.
+Los títulos oficiales (disertaciones, artículos) y los nombres propios quedan sin traducir a propósito. Los asuntos de correo y los mensajes predefinidos de WhatsApp también se traducen desde `en.json`; el generador conserva sus destinatarios y codifica los textos para la URL.
 
 ### Página nueva
 
@@ -332,6 +332,13 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - **Rede:** el nombre "CHANGE Research Working Group" lleva ahora el enlace a la página oficial del grupo en la Universidad Científica del Sur (la descripción más completa sigue pendiente). **Causale Consultoria** entra en la Rede nacional, después de PPGSP/FURG y DEBH-CPEDCS, con el texto aprobado en la vista previa del 26/oct, comprobado con su sitio (Pelotas, delineamiento, recolección de datos, estadística; en el GPIS hace el trabajo de campo), y su logo, que vino dentro de la página guardada que mandó el responsable (`assets/logos/causale.png`).
 - **Vídeos:** el cuadro final de los 4 vídeos de Instagram también decía que las imágenes de IA "não mostram participantes reais". Se corrigió la frase en los modelos ("As imagens feitas com IA partem de fotos de participantes da Coorte") y se regeneraron los MP4 con `fazer-video.js`; las leyendas y la planilla de lotes del Drive se corrigieron igual.
 - Se dejaron fuera del sitio, por ahora: las ilustraciones de IA del sitio anterior (brillos y degradados, fuera de la dirección visual), los retratos individuales (solo hay de algunas personas y dos están retocados con IA), las fotos del equipo frente a las computadoras (en las pantallas se ve una cara) y las fotos de grupo (falta confirmar quién aparece).
+
+### 15. Revisión editorial bilingüe (3/nov/2026)
+
+- Rama `editorial/revisao-bilingue-2026-11`, basada en `main` (`2007cd198b1b03e393d90ac944bfd81dc57d15a2`). Se revisaron los 17 pares PT/EN y la página 404; se conservaron los textos que ya funcionaban, los nombres, los títulos oficiales, las cifras y los avisos de autorización y protección de datos.
+- Se corrigieron formulaciones causales y la omisión del autorreporte en Famílias; se aclararon los resúmenes sobre trayectorias después de consultar el artículo y el resumen de los autores. Se simplificaron presentaciones abstractas, se revisó el inglés como texto autónomo y se mantuvo la ortografía británica.
+- El flujo de traducción ahora extrae también los textos predefinidos de contacto (`subject`, `body`, `text` en enlaces de correo y WhatsApp), los guarda sin codificar en `en.json` y los vuelve a codificar al generar el inglés. No cambia los destinatarios ni otras URL.
+- Se regeneró `/en/` desde los fuentes PT y el diccionario. Se verificaron enlaces locales y anclas, integridad de estructura, textos de consentimiento, títulos científicos y repetibilidad de extracción/generación. No se hizo merge ni deploy.
 
 <!-- Agregar aquí la próxima etapa: "### 16. Título (fecha)" con los commits principales y qué cambió. -->
 

@@ -3,6 +3,7 @@ import glob
 import os
 import re
 from html.parser import HTMLParser
+from urllib.parse import unquote, urlsplit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 META_KEYS = {'description', 'og:title', 'og:description', 'og:image:alt',
@@ -85,3 +86,22 @@ def segments(src):
     p = Segments(src)
     p.feed(src)
     return p.spans
+
+
+def contact_messages(src):
+    """Collect encoded contact text, leaving destinations and other queries intact."""
+    spans = []
+    for link in re.finditer(r'\bhref="([^"\n]+)"', src):
+        url = link.group(1)
+        parts = urlsplit(url)
+        if not (parts.scheme == 'mailto' or
+                (parts.scheme == 'https' and parts.netloc == 'wa.me')):
+            continue
+        query_start = url.find('?')
+        if query_start < 0:
+            continue
+        for item in re.finditer(r'(?:^|&(?:amp;)?)(subject|body|text)=([^&]*)', url[query_start + 1:]):
+            start = link.start(1) + query_start + 1 + item.start(2)
+            end = link.start(1) + query_start + 1 + item.end(2)
+            spans.append((start, end, unquote(item.group(2))))
+    return spans

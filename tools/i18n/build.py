@@ -10,8 +10,9 @@ import os
 import posixpath
 import re
 import shutil
+from urllib.parse import quote
 
-from common import ROOT, pages, segments, norm
+from common import ROOT, pages, segments, norm, contact_messages
 
 SITE = 'https://chlmz.github.io/webgpis/'
 T = json.load(open(os.path.join(os.path.dirname(__file__), 'en.json'), encoding='utf-8'))
@@ -52,12 +53,13 @@ def inject(src, rel, cur, pt_href, en_href):
 
 def translate(src):
     out, last = [], 0
-    for start, end, text in sorted(segments(src)):
+    encoded = {(start, end) for start, end, _ in contact_messages(src)}
+    for start, end, text in sorted(segments(src) + contact_messages(src)):
         if start < last:
             continue
         en = T.get(norm(text)) or text
         out.append(src[last:start])
-        out.append(en)
+        out.append(quote(en, safe="") if (start, end) in encoded else en)
         last = end
     out.append(src[last:])
     return ''.join(out)

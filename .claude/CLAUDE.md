@@ -45,6 +45,20 @@ sleep 2 && open "http://localhost:8000"
 - **Fotos del piloto de cámaras (2026):** se hicieron en una sala de la FURG y el campo no será así. En el sitio solo van recortes donde no se vea el lugar; la página Visão em primeira pessoa se queda sin fotos del piloto (decisión oct/2026).
 - **Movimiento:** le gustan los movimientos leves (el mapa que se dibuja, el parallax suave en las cabeceras internas, las entradas al hacer scroll). Siempre respetar `prefers-reduced-motion`.
 
+## Voz del sitio (reglas de escritura, aprobadas nov/2026)
+
+Formal e inclusivo, con criterio de diseño: ni texto aburrido ni poético. Vale para PT y EN.
+
+1. **El título dice algo.** Hasta 6 palabras: un hecho o una pregunta concreta, nunca una etiqueta de carpeta ("Nossos objetivos", "Formação em pesquisa").
+2. **Una idea por frase.** Texto de apertura con hasta 25 palabras.
+3. **Quién hace qué.** Sujeto concreto y verbo de acción (acompanhamos, comparamos).
+4. **Rigor con verbos variados.** Asociación, nunca causa, pero sin una fórmula única ("se relaciona à" solo en preguntas de pesquisa; "Conheça" solo en botones).
+5. **"Por que importa" responde "¿y qué?"** para familias, servicios o investigación, sin prometer lo que el estudio no muestra. Nunca repite el resultado.
+6. **Llamada = pregunta corta + acción clara.** El botón dice lo que pasa ("Escrever para a coordenação").
+7. **"Vocês" en la página de las familias, "nós" en el resto.** Sin jerga ni poesía.
+
+El inglés se escribe como texto propio (británico), no como traducción literal. Evitar en EN: "Explore…" repetido, "relate to" en aperturas, "We are open to dialogue with…", "more and more", "Page for…".
+
 ## Rechazado (no volver a proponer igual)
 
 - Reemplazar la marca del GPIS por un gráfico de red genérico.

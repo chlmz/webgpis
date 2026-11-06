@@ -333,7 +333,7 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - **Vídeos:** el cuadro final de los 4 vídeos de Instagram también decía que las imágenes de IA "não mostram participantes reais". Se corrigió la frase en los modelos ("As imagens feitas com IA partem de fotos de participantes da Coorte") y se regeneraron los MP4 con `fazer-video.js`; las leyendas y la planilla de lotes del Drive se corrigieron igual.
 - Se dejaron fuera del sitio, por ahora: las ilustraciones de IA del sitio anterior (brillos y degradados, fuera de la dirección visual), los retratos individuales (solo hay de algunas personas y dos están retocados con IA), las fotos del equipo frente a las computadoras (en las pantallas se ve una cara) y las fotos de grupo (falta confirmar quién aparece).
 
-### 15. Revisión editorial bilingüe (3/nov/2026)
+### 15b. Revisión editorial bilingüe (3/nov/2026)
 
 - Rama `editorial/revisao-bilingue-2026-11`, basada en `main` (`2007cd198b1b03e393d90ac944bfd81dc57d15a2`). Se revisaron los 17 pares PT/EN y la página 404; se conservaron los textos que ya funcionaban, los nombres, los títulos oficiales, las cifras y los avisos de autorización y protección de datos.
 - Se corrigieron formulaciones causales y la omisión del autorreporte en Famílias; se aclararon los resúmenes sobre trayectorias después de consultar el artículo y el resumen de los autores. Se simplificaron presentaciones abstractas, se revisó el inglés como texto autónomo y se mantuvo la ortografía británica.
@@ -344,7 +344,15 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 
 - Se corrigió la afiliación de Christian Loret de Mola Zanatti a Universidade Federal do Rio Grande (FURG), según su confirmación, y se regeneró la versión inglesa. Rafaela Costa Martins y Cauane Blumenberg quedaron afiliados solo a Causale Consultoria; los demás integrantes del equipo nacional, a Universidade Federal do Rio Grande (FURG), según confirmación del responsable. También se retiró de la página Rede la frase que atribuía a Christian una afiliación al CHANGE, en portugués e inglés.
 
-<!-- Agregar aquí la próxima etapa: "### 16. Título (fecha)" con los commits principales y qué cambió. -->
+### 17. Voz del sitio: texto con criterio de diseño en PT y EN (6/nov/2026)
+
+- Se revisó con ojo crítico la revisión 15b. Se mantuvieron todas sus correcciones de rigor (asociación y no causa, autorreporte). Lo que salió de ella: títulos que se volvieron etiquetas de carpeta ("Nossos objetivos", "Formação em pesquisa"), un tic que reemplazó a otro ("se relaciona à" aparecía 25 veces y "Conheça" 38), "Por que importa" que repetía el resultado, resultados correctos pero pesados y llamadas largas que ya no invitaban a estudiantes. Diagnóstico y muestra aprobada: https://claude.ai/artifact/Hyobm8NDHUoCPk7ZPpk3Us
+- Se fijaron siete reglas de escritura (ver "Voz del sitio" en `.claude/CLAUDE.md`) y se aplicaron a todo el sitio en portugués: 46 textos en 16 páginas. Entre otros: títulos que dicen algo ("Formação com dados reais", "O que vem a seguir", "Quer colaborar?"), "Por que importa" que responde "¿y qué?" sin afirmar causa, la llamada de las líneas de pesquisa ("Quer trabalhar nesta linha?", con estudiantes y el botón "Escrever para a coordenação") y aperturas con sujeto y verbo. "Se relaciona" queda solo en las preguntas de pesquisa, donde es la fórmula correcta.
+- Al probar en el navegador, la frase central de la home se cambió de "Quatro linhas de pesquisa, um só método" a "Perguntas diferentes, um só método", porque repetía la fila de cifras "4 linhas de pesquisa" que va justo debajo. El "Por que importa" de los hábitos de las madres se corrigió aparte: la propuesta de la muestra repetía el resultado.
+- El inglés se reescribió como texto propio, no como traducción: los 46 textos nuevos y 37 existentes que arrastraban los tics del portugués ("Explore…" en diez botones, "relate to", "We are open to dialogue with…", "more and more", "Page for families"). Ortografía británica.
+- Verificado: enlaces internos (0 rotos), capturas de escritorio y celular en PT y EN de las secciones cambiadas, sin desborde horizontal ni errores de JavaScript.
+
+<!-- Agregar aquí la próxima etapa: "### 18. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente
 

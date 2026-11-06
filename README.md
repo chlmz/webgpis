@@ -340,6 +340,10 @@ Sitio institucional con home de tarjetas, páginas de las líneas de pesquisa, e
 - El flujo de traducción ahora extrae también los textos predefinidos de contacto (`subject`, `body`, `text` en enlaces de correo y WhatsApp), los guarda sin codificar en `en.json` y los vuelve a codificar al generar el inglés. No cambia los destinatarios ni otras URL.
 - Se regeneró `/en/` desde los fuentes PT y el diccionario. Se verificaron enlaces locales y anclas, integridad de estructura, textos de consentimiento, títulos científicos y repetibilidad de extracción/generación. No se hizo merge ni deploy.
 
+### 16. Afiliación institucional de la coordinación (6/nov/2026)
+
+- Se corrigió la afiliación de Christian Loret de Mola Zanatti a Universidade Federal do Rio Grande (FURG), según su confirmación, y se regeneró la versión inglesa. Rafaela Costa Martins y Cauane Blumenberg quedaron afiliados solo a Causale Consultoria; los demás integrantes del equipo nacional, a Universidade Federal do Rio Grande (FURG), según confirmación del responsable. También se retiró de la página Rede la frase que atribuía a Christian una afiliación al CHANGE, en portugués e inglés.
+
 <!-- Agregar aquí la próxima etapa: "### 16. Título (fecha)" con los commits principales y qué cambió. -->
 
 ## Pendiente

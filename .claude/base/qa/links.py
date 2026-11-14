@@ -13,8 +13,11 @@ for d, dirs, files in os.walk(root):
             if v.startswith(('http:', 'https:', 'mailto:', 'tel:', '#', 'data:', 'javascript:')):
                 continue
             v0 = re.split(r'[?#]', v)[0]
-            # el 404 usa rutas absolutas del sitio publicado (/webgpis/...)
-            t = os.path.join(root, v0[len('/webgpis/'):]) if v0.startswith('/webgpis/') else os.path.normpath(os.path.join(d, v0))
+            # 404.html usa rutas absolutas desde la raíz del dominio (/assets/...)
+            if v0.startswith('/'):
+                t = os.path.normpath(os.path.join(root, v0.lstrip('/')))
+            else:
+                t = os.path.normpath(os.path.join(d, v0))
             if os.path.isdir(t):
                 t = os.path.join(t, 'index.html')
             if not os.path.exists(t):

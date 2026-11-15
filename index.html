@@ -29,18 +29,20 @@
          window.GPIS_GA_MEASUREMENT_ID en assets/js/ga4.js -->
     <script src="assets/js/ga4.js?v=1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', window.GPIS_GA_MEASUREMENT_ID, {
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false
-      });
       (function () {
+        var id = window.GPIS_GA_MEASUREMENT_ID;
+        if (typeof id !== 'string' || !/^G-[A-Z0-9]{10}$/.test(id) || id === 'G-XXXXXXXXXX') return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', id, {
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' +
-          encodeURIComponent(window.GPIS_GA_MEASUREMENT_ID);
+          encodeURIComponent(id);
         document.head.appendChild(s);
       })();
     </script>

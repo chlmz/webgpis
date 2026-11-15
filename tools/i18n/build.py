@@ -14,9 +14,64 @@ from urllib.parse import quote
 
 from common import ROOT, pages, segments, norm, contact_messages
 
-SITE = 'https://chlmz.github.io/webgpis/'
+# Canonical origin. Paths stay as they are on the custom domain (no /webgpis/ prefix).
+SITE = 'https://gpisresearch.org/'
 T = json.load(open(os.path.join(os.path.dirname(__file__), 'en.json'), encoding='utf-8'))
 SKIP = ('http:', 'https:', 'mailto:', 'tel:', '#', '/', 'data:', 'javascript:')
+GA_BLOCK = re.compile(
+    r'    <!-- Google Analytics 4 \(gtag\).*?    <!-- /Google Analytics 4 -->\n',
+    re.S)
+SC_BLOCK = re.compile(
+    r'    <!-- Google Search Console:.*?    -->\n',
+    re.S)
+
+
+def asset_prefix(rel, lang):
+    page_dir = posixpath.dirname(rel.replace(os.sep, '/'))
+    if lang == 'en':
+        page_dir = posixpath.join('en', page_dir) if page_dir else 'en'
+    depth = 0 if not page_dir else page_dir.count('/') + 1
+    return '../' * depth
+
+
+def head_block(prefix):
+    """Shared head: GA4 snippet (ID lives only in assets/js/ga4.js) and Search Console placeholder."""
+    return (
+        '    <!-- Google Analytics 4 (gtag). Measurement ID: editar solo la línea\n'
+        '         window.GPIS_GA_MEASUREMENT_ID en assets/js/ga4.js -->\n'
+        '    <script src="%sassets/js/ga4.js?v=1"></script>\n'
+        '    <script>\n'
+        '      (function () {\n'
+        '        var id = window.GPIS_GA_MEASUREMENT_ID;\n'
+        '        if (typeof id !== \'string\' || !/^G-[A-Z0-9]{10}$/.test(id) || id === \'G-XXXXXXXXXX\') return;\n'
+        '        window.dataLayer = window.dataLayer || [];\n'
+        '        function gtag(){window.dataLayer.push(arguments);}\n'
+        '        gtag(\'js\', new Date());\n'
+        '        gtag(\'config\', id, {\n'
+        '          allow_google_signals: false,\n'
+        '          allow_ad_personalization_signals: false\n'
+        '        });\n'
+        '        var s = document.createElement(\'script\');\n'
+        '        s.async = true;\n'
+        '        s.src = \'https://www.googletagmanager.com/gtag/js?id=\' +\n'
+        '          encodeURIComponent(id);\n'
+        '        document.head.appendChild(s);\n'
+        '      })();\n'
+        '    </script>\n'
+        '    <!-- /Google Analytics 4 -->\n'
+        '    <!-- Google Search Console: descomentar y sustituir PEGAR_TOKEN_AQUI por el token de verificación. No hay token real todavía.\n'
+        '    <meta name="google-site-verification" content="PEGAR_TOKEN_AQUI">\n'
+        '    -->\n'
+    ) % prefix
+
+
+def ensure_head(src, prefix):
+    src = GA_BLOCK.sub('', src)
+    src = SC_BLOCK.sub('', src)
+    needle = '    <link rel="icon"'
+    if needle not in src:
+        raise SystemExit('missing icon link; cannot insert shared head')
+    return src.replace(needle, head_block(prefix) + needle, 1)
 
 
 def url_of(rel):
@@ -48,7 +103,7 @@ def inject(src, rel, cur, pt_href, en_href):
                       '    ' + switch(cur, pt_href, en_href) +
                       '\n                    </ul>\n                </div>\n            </div>\n        </nav>', 1)
     src = src.replace('    <link rel="canonical"', alternates(rel) + '    <link rel="canonical"', 1)
-    return src
+    return ensure_head(src, asset_prefix(rel, cur))
 
 
 def translate(src):
@@ -115,6 +170,11 @@ def main():
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, 'w', encoding='utf-8').write(en)
         count += 1
+    # 404 is served at the missing URL, so its assets stay root-absolute.
+    # The custom domain publishes the project at the domain root.
+    err_path = os.path.join(ROOT, '404.html')
+    err = open(err_path, encoding='utf-8').read().replace('/webgpis/', '/')
+    open(err_path, 'w', encoding='utf-8').write(ensure_head(err, '/'))
     print('built', count, 'English pages in /en/')
 
 

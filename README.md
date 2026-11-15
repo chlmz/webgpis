@@ -1,6 +1,6 @@
 # Sitio web del GPIS
 
-Sitio del **GPIS — Grupo de Pesquisa e Inovação em Saúde** (FURG, Rio Grande, RS). Publicado con GitHub Pages en **https://chlmz.github.io/webgpis/** (portugués) y **https://chlmz.github.io/webgpis/en/** (inglés).
+Sitio del **GPIS — Grupo de Pesquisa e Inovação em Saúde** (FURG, Rio Grande, RS). Publicado con GitHub Pages en **https://gpisresearch.org/** (portugués) y **https://gpisresearch.org/en/** (inglés).
 
 Este README explica qué es el sitio, cómo se trabaja en él y **cómo llegamos hasta aquí**. Es un documento vivo: la sección [Historia](#historia) se actualiza al terminar cada etapa de trabajo (ver [Cómo mantener este README](#cómo-mantener-este-readme)).
 
@@ -50,7 +50,7 @@ Todo existe en portugués (fuente) y en inglés (`/en/`, generado automáticamen
 
 ```
 index.html            home
-404.html              página de error (usa rutas absolutas /webgpis/...)
+404.html              página de error (rutas absolutas desde la raíz del dominio)
 pesquisa/ projetos/ impacto/ pessoas/ rede/ familias/ publicacoes/ dados/
 en/                   versión en inglés — GENERADA, no editar a mano
 assets/
